@@ -7,15 +7,15 @@ import "./App.scss";
 function App() {
   return (
     <div className="App">
-
-    <div className="container">
-      <BrowserRouter>
-        <Header />
-        <Routes>
-          <Route path="/" element={<div>Main</div>} />
-        </Routes>
-        <Footer dark={true} />
-      </BrowserRouter>
+      <div className="container">
+        <BrowserRouter>
+          <Header dark={false} />
+          <Routes>
+            <Route path="/" element={<div>Main</div>} />
+          </Routes>
+          <Footer dark={false} />
+        </BrowserRouter>
+      </div>
     </div>
   );
 }

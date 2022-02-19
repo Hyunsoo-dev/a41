@@ -1,13 +1,14 @@
 @import "../index.scss";
+@import "./variables.scss";
+
 .container_black {
   background-color: $gray0;
   display: flex;
   justify-content: center;
   width: 100%;
   height: 100px;
-  .wrapper_black {
-    background-color: $gray0;
-    // background-color: red;
+  .wrapper {
+    background-color: transparent;
     width: 1280px;
     height: 100px;
     display: flex;
@@ -38,24 +39,65 @@
       color: $gray5;
       border-bottom: 1px $gray5 solid;
     }
-  }
-}
-.container_white {
-  background-color: $gray5;
-  width: 100%;
-  height: 100px;
-  .wrapper_white {
-    background-color: $gray5;
-    width: 1440px;
-    height: 100px;
-    display: flex;
-    align-items: center;
-    .category {
-      color: $gray0;
+    .menu {
+      display: none;
     }
   }
 }
 
-@mixin font-color($theme) {
-  color: $theme;
+.container_white {
+  @extend .container_black;
+  background-color: $gray5;
+  .wrapper {
+    .category_wrapper {
+      .category {
+        color: $gray0;
+      }
+    }
+    .selected_language {
+      color: $gray0;
+      border-bottom: 1px $gray5 solid;
+    }
+  }
+}
+
+@include mobile {
+  .container_black {
+    .wrapper {
+      width: 375px;
+      height: 100px;
+      justify-content: space-between;
+      padding: 0 20px;
+
+      .logo_wrapper {
+      }
+      .category_wrapper {
+        display: none;
+      }
+      .language_wrapper {
+        display: none;
+      }
+      .menu {
+        display: block;
+      }
+    }
+  }
+}
+
+@include mobile {
+  .container_white {
+    @extend .container_black;
+    background-color: $gray5;
+    .wrapper {
+      .category_wrapper {
+        .category {
+          color: $gray0;
+        }
+      }
+      .selected_language {
+        color: $gray0;
+        border-bottom: 1px $gray5 solid;
+      }
+    }
+  }
 }
