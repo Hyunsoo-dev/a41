@@ -1,3 +1,7 @@
+/*
+Palette
+*/
+
 $gray0: #000000;
 $gray1: #4b4b4b;
 $gray2: #818181;
@@ -7,6 +11,9 @@ $gray5: #ffffff;
 $point: #99f100;
 $bg: #f6f6f7;
 
+/*
+Font face
+*/
 @font-face {
   font-family: "GmarketSansMedium";
   src: url("./Assets/Fonts/GmarketSansTTFMedium.ttf") format("truetype");
@@ -24,7 +31,9 @@ $bg: #f6f6f7;
   src: url("./Assets/Fonts/GmarketSansTTFLight.ttf") format("truetype");
   font-weight: 300;
 }
-
+/*
+Desktop font size
+*/
 $h0_size: 50px;
 $h1_size: 30px;
 $headline_size: 24px;
@@ -32,10 +41,28 @@ $body_size: 20px;
 $footnote1_size: 18px;
 $footnote2_size: 16px;
 $caption_size: 14px;
+/*
+Mobile font size
+*/
+$h0_mobile_size: 34px;
+$h1_mobile_size: 27px;
+$h2_mobile_size: 20px;
+$headline_mobile_size: 18px;
+$body1_mobile_size: 16px;
+$body2_mobile_size: 14px;
+$body3_mobile_size: 14px;
+$footnote2_mobile_size: 12px;
+$cation_mobile_size: 10px;
 
+/*
+Font weight
+*/
 $default_weight: 400;
 $h2_weight: 700;
 
+/*
+Desktop line height
+*/
 $h0_height: 50px;
 $h1_height: 30px;
 $h2_height: 36px;
@@ -46,10 +73,23 @@ $footnote1_height: 21px;
 $footnote2_height: 19px;
 $caption_height: 16px;
 
+/*
+Mobile line height
+*/
+$h0_mobile_height: 38px;
+$h1_mobile_height: 27px;
+$h2_mobile_height: 30px;
+$headline_mobile_height: 21px;
+$body1_mobile_height: 24px;
+$body2_mobile_height: 22px;
+$body3_mobile_height: 18px;
+$footnote2_mobile_height: 14px;
+$caption_mobile_height: 12px;
+
 body {
-  margin: 0;
   font-family: "GmarketSansMedium", "GmarketSansLight", "GmarketSansBold",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  height: 100vh;
 }
