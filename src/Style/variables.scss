@@ -1,0 +1,8 @@
+$breakpoint-mobile: 375px;
+$breakpoint-desktop: 768px;
+
+@mixin mobile {
+  @media (max-width: #{$breakpoint-mobile}) {
+    @content;
+  }
+}

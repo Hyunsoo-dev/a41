@@ -47,9 +47,9 @@ $footnote2_height: 19px;
 $caption_height: 16px;
 
 body {
-  margin: 0;
   font-family: "GmarketSansMedium", "GmarketSansLight", "GmarketSansBold",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  height: 100vh;
 }
