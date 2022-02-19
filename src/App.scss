@@ -1,10 +1,7 @@
-@import './index.scss';
+@import "./index.scss";
 
 .App {
   text-align: center;
-  @include themify {
-    font: font('body1');
-  }
 }
 
 .App-logo {
