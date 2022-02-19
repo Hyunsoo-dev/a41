@@ -6,16 +6,25 @@
   height: 180px;
   display: flex;
   align-items: center;
+  justify-content: center;
   position: fixed;
   bottom: 0;
   left: 0;
   background-color: $bg;
 }
 
+.footer-container-dark {
+  @extend .footer-container;
+  background-color: $gray0;
+}
+
+.content-box {
+  width: 1280px;
+}
+
 .footer-frame3 {
   height: 85px;
   display: flex;
-  margin-left: 220px;
 }
 
 .footer-frame2 {
@@ -54,6 +63,9 @@
     margin: 0;
     padding: 40px 20px;
     align-items: start;
+  }
+  .content-box {
+    width: 375px;
   }
   .footer-frame3 {
     margin: 0;
