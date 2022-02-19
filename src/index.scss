@@ -8,20 +8,20 @@ $point: #99f100;
 $bg: #f6f6f7;
 
 @font-face {
-  font-family: 'GmarketSansMedium';
-  src: url('./Assets/Fonts/GmarketSansTTFMedium.ttf') format('truetype');
+  font-family: "GmarketSansMedium";
+  src: url("./Assets/Fonts/GmarketSansTTFMedium.ttf") format("truetype");
   font-weight: normal;
 }
 
 @font-face {
-  font-family: 'GmarketSansBold';
-  src: url('./Assets/Fonts/GmarketSansTTFBold.ttf') format('truetype');
+  font-family: "GmarketSansBold";
+  src: url("./Assets/Fonts/GmarketSansTTFBold.ttf") format("truetype");
   font-weight: bold;
 }
 
 @font-face {
-  font-family: 'GmarketSansLight';
-  src: url('./Assets/Fonts/GmarketSansTTFLight.ttf') format('truetype');
+  font-family: "GmarketSansLight";
+  src: url("./Assets/Fonts/GmarketSansTTFLight.ttf") format("truetype");
   font-weight: lighter;
 }
 
@@ -78,11 +78,12 @@ $font: (
 
 body {
   margin: 0;
-  font-family: 'GmarketSansMedium', 'GmarketSansLight', 'GmarketSansBold';
+  font-family: "GmarketSansMedium", "GmarketSansLight", "GmarketSansBold";
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
 }
