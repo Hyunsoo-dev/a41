@@ -22,67 +22,33 @@ $bg: #f6f6f7;
 @font-face {
   font-family: 'GmarketSansLight';
   src: url('./Assets/Fonts/GmarketSansTTFLight.ttf') format('truetype');
-  font-weight: lighter;
+  font-weight: 300;
 }
 
-$font: (
-  $h0: (
-    font-size: 50px,
-    font-weight: 400,
-    line-height: 50px,
-  ),
-  $h1: (
-    font-size: 30px,
-    font-weight: 400,
-    line-height: 30px,
-  ),
-  $h2: (
-    font-size: 30px,
-    font-weight: 700,
-    line-height: 36px,
-  ),
-  $headline: (
-    font-size: 24px,
-    font-weight: 700,
-    line-height: 32px,
-  ),
-  $body1: (
-    font-size: 20px,
-    font-weight: 400,
-    line-height: 34px,
-  ),
-  $body2: (
-    font-size: 20px,
-    font-weight: 20px,
-    line-height: 27px,
-  ),
-  $footnote1
-    (
-      font-size: 18px,
-      font-weight: 400,
-      line-height: 21px,
-    ),
-  $footnote2
-    (
-      font-size: 16px,
-      font-weight: 400,
-      line-height: 19px,
-    ),
-  $caption
-    (
-      font-size: 14px,
-      font-weight: 400,
-      line-height: 16px,
-    ),
-);
+$h0_size: 50px;
+$h1_size: 30px;
+$headline_size: 24px;
+$body_size: 20px;
+$footnote1_size: 18px;
+$footnote2_size: 16px;
+$caption_size: 14px;
+
+$default_weight: 400;
+$h2_weight: 700;
+
+$h0_height: 50px;
+$h1_height: 30px;
+$h2_height: 36px;
+$headline_height: 32px;
+$body1_height: 34px;
+$body2_height: 27px;
+$footnote1_height: 21px;
+$footnote2_height: 19px;
+$caption_height: 16px;
 
 body {
   margin: 0;
-  font-family: 'GmarketSansMedium', 'GmarketSansLight', 'GmarketSansBold';
+  font-family: 'GmarketSansMedium', 'GmarketSansLight', 'GmarketSansBold', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
