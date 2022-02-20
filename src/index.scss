@@ -94,3 +94,11 @@ body {
   height: 100vh;
   margin: 0;
 }
+
+#root {
+  height: 100%;
+}
+
+// layout size
+$full_screen: 1440px;
+$content_screnn: 1280px;

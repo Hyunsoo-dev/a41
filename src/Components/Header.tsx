@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Outlet, Link } from "react-router-dom";
 import { ReactComponent as LogoGreen } from "../Assets/icon/logo_green.svg";
 import { ReactComponent as LogoWhite } from "../Assets/icon/logo_white.svg";
 import { ReactComponent as MenuBlack } from "../Assets/icon/menu_black.svg";
@@ -16,7 +16,7 @@ const Header = ({ dark }: any) => {
     <div className={dark ? "container_black" : "container_white"}>
       <div className="wrapper">
         <div className="logo_wrapper">
-          <Link className="category" to="/main">
+          <Link className="category" to="/">
             {dark ? <LogoWhite /> : <LogoGreen />}
           </Link>
         </div>
@@ -24,19 +24,20 @@ const Header = ({ dark }: any) => {
           <Link className="category" to="/ourthesis">
             our thesis
           </Link>
-          <Link className="category" to="/portfolio">
+          <Link className="category" to="/portfolio1">
             portfolio
           </Link>
-          <Link className="category" to="/content">
+          <Link className="category" to="/content1">
             content
           </Link>
-          <Link className="category" to="/team">
+          <Link className="category" to="/team1">
             team
           </Link>
           <Link className="category" to="/contact">
             contact
           </Link>
         </div>
+
         <div className="language_wrapper">
           <div
             className={
