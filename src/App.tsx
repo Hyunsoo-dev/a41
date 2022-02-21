@@ -20,7 +20,7 @@ function App() {
     <div id="container">
       <BrowserRouter>
         <Header dark={true} />
-        <main id="mainContainer">
+        {/*<main id="mainContainer">*/}
           <Routes>
             <Route path="/" element={<Main />} />
             <Route path="/ourThesis" element={<OurThesis />} />
@@ -32,7 +32,7 @@ function App() {
             <Route path="/team2" element={<Team2 />} />
             <Route path="/contact" element={<Contact />} />
           </Routes>
-        </main>
+        {/*</main>*/}
         <Footer dark={true} />
       </BrowserRouter>
     </div>

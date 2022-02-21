@@ -86,6 +86,10 @@ $body3_mobile_height: 18px;
 $footnote2_mobile_height: 14px;
 $caption_mobile_height: 12px;
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: "GmarketSansMedium", "GmarketSansLight", "GmarketSansBold",
     sans-serif;
@@ -101,4 +105,4 @@ body {
 
 // layout size
 $full_screen: 1440px;
-$content_screnn: 1280px;
+$content_screen: 1280px;
