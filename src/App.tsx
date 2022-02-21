@@ -2,17 +2,7 @@ import React from "react";
 import Footer from "./Components/Footer";
 import Header from "./Components/Header";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import {
-  Main,
-  Contact,
-  Contents1,
-  Contents2,
-  OurThesis,
-  Portfolio1,
-  Portfolio2,
-  Team1,
-  Team2,
-} from "./Page";
+import { Main, Contact, Contents1, Contents2, OurThesis, Portfolio1, Portfolio2, Team1, Team2 } from "./Page";
 import "./App.scss";
 
 function App() {
@@ -20,7 +10,7 @@ function App() {
     <div id="container">
       <BrowserRouter>
         <Header dark={true} />
-        {/*<main id="mainContainer">*/}
+        <main id="mainContainer">
           <Routes>
             <Route path="/" element={<Main />} />
             <Route path="/ourThesis" element={<OurThesis />} />
@@ -32,7 +22,7 @@ function App() {
             <Route path="/team2" element={<Team2 />} />
             <Route path="/contact" element={<Contact />} />
           </Routes>
-        {/*</main>*/}
+        </main>
         <Footer dark={true} />
       </BrowserRouter>
     </div>

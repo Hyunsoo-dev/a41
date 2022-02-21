@@ -91,18 +91,19 @@ html {
 }
 
 body {
-  font-family: "GmarketSansMedium", "GmarketSansLight", "GmarketSansBold",
-    sans-serif;
+  font-family: "GmarketSansMedium", "GmarketSansLight", "GmarketSansBold", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  height: 100vh;
+  // height: 100vh;
   margin: 0;
 }
 
 #root {
-  height: 100%;
 }
 
 // layout size
 $full_screen: 1440px;
 $content_screen: 1280px;
+
+// header size
+$header_height: 100px;
