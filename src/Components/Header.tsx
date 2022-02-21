@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Outlet, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { ReactComponent as LogoGreen } from "../Assets/icon/logo_green.svg";
 import { ReactComponent as LogoWhite } from "../Assets/icon/logo_white.svg";
 import { ReactComponent as MenuBlack } from "../Assets/icon/menu_black.svg";
