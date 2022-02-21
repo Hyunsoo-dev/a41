@@ -1,0 +1,93 @@
+@import "../index";
+@import "./variables";
+
+.content-box {
+  width: 1280px;
+}
+
+.container_img {
+  width: 100%;
+  height: 150vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  -webkit-transition: opacity 3s ease-in-out;
+  -moz-transition: opacity 3s ease-in-out;
+  -ms-transition: opacity 3s ease-in-out;
+  -o-transition: opacity 3s ease-in-out;
+  opacity: 1;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.51) 0.01%, #000000 100%), url("../Assets/thesis.jpg");
+}
+
+.container_bk {
+  @extend .container_img;
+  background: $gray0;
+}
+
+
+.title_box {
+  margin: 0;
+  position: fixed;
+  top: 300px;
+  .thesis_h0 {
+    font-family: "GmarketSansBold", "GmarketSansMedium", "GmarketSansLight", sans-serif;
+    font-size: $h0_size;
+    font-weight: $default_weight;
+    line-height: $h0_height;
+    color: $gray5;
+    z-index: 200;
+    margin-bottom: 20px;
+    .dot {
+      color: $point;
+    }
+  }
+}
+
+.thesis_content_box {
+  position: fixed;
+  top: 500px;
+}
+
+thesis_content_box_hidden{
+  display: none;
+}
+
+.thesis_content {
+  display: flex;
+  margin-bottom: 14px;
+  .thesis_headline_gray2 {
+    font-size: $headline_size;
+    font-weight: $h2_weight;
+    line-height: $headline-height;
+    color: $gray2;
+    margin-right: 10px;
+  }
+  .thesis_headline_gray5 {
+    @extend .thesis_headline_gray2;
+    color: $gray5;
+  }
+
+}
+
+
+.thesis_2nd_content_box {
+  position: fixed;
+  top: 500px;
+}
+
+.thesis_2nd_content_box_hidden {
+  display: none;
+}
+
+
+
+
+.thesis_2nd_content {
+  font-family: "GmarketSansBold", "GmarketSansMedium", "GmarketSansLight", sans-serif;
+  font-size: $headline_size;
+  font-weight: $h2_weight;
+  line-height: $headline-height;
+  color: $gray5;
+}
+
+
