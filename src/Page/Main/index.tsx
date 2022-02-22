@@ -1,115 +1,154 @@
 import React from "react";
 import "../../Style/Main.scss";
+import { ReactComponent as AlexLogo } from "../../Assets/image/mainPage/alexLogo.svg";
+import { ReactComponent as ApricotLogo } from "../../Assets/image/mainPage/apricotLogo.svg";
+import { ReactComponent as ArkadikoLogo } from "../../Assets/image/mainPage/arkadikoLogo.svg";
+import { ReactComponent as BlockSurveLogo } from "../../Assets/image/mainPage/blockSurveLogo.svg";
+import { ReactComponent as BribeLogo } from "../../Assets/image/mainPage/bribeLogo.svg";
 const Main = () => {
   return (
-    <section className="container_bg">
+    <>
       <section className="container">
-        <section className="main_title">
-          <div className="main_title_wrapper">
-            <article className="title">We are the sidekicks of heroes</article>
-            <article className="content">building digital innovation</article>
-          </div>
-        </section>
-        <section className="main_ventures">
-          <div className="main_ventures_wrapper">
-            <article>a41 Ventures</article>
-            <article>
-              a41 invests in disruptive technologies that will lead the next
-              digital innovation. We believe that those who do the heavy lifting
-              on the ground - members of the projects that we invest in - are
-              the true heroes that should stand out, with the help of sidekicks
-              like us. Members of a41 are dedicated to becoming the bridge and
-              catalyst of the next digital innovation.
-            </article>
-          </div>
-        </section>
-        <section className="main_ourThesis">
-          <div className="main_ourThesis_wrapper">
-            <article>our thesis</article>
-            <div>
-              <article>Winning the next era of</article>
-              <article>internet - Web 3, </article>
-              <article>Winning the next era of</article>
-              <article>finance - Open Finance</article>
-              <article>Winning the next era of</article>
-              <article>digital experience - Metaverse</article>
+        <section className="container-bg">
+          <section className="main-title">
+            <div className="main-title-wrapper">
+              <article className="title">We are the sidekicks of heroes</article>
+              <article className="title">building digital innovation</article>
             </div>
-          </div>
-        </section>
-        <section className="main_portfolio">
-          <div className="main_portfolio_wrapper">
-            <article>portfolio</article>
-            <div className="portfolio_box">
-              <article className="portfolio_logo"></article>
-              <article className="portfolio_logo"></article>
-              <article className="portfolio_logo"></article>
-              <article className="portfolio_logo"></article>
-              <article className="portfolio_logo"></article>
-            </div>
-          </div>
-        </section>
-        <section className="main_contents">
-          <div className="main_contents_wrapper">
-            <article></article>
-            <article></article>
-            <article></article>
-            <article></article>
-          </div>
-        </section>
-        <section className="main_team">
-          <div className="main_team_wrapper">
-            <article>
-              <div>
-                <img src="" />
-              </div>
-              <div>
-                <div>
-                  <div>John Park</div>
-                  <div>박광성</div>
-                </div>
-                <div>Co-Founder | Managing Partner</div>
-                <div>
-                  <div>새</div>
-                  <div>in</div>
-                </div>
-              </div>
-            </article>
-            <article>
-              <div>
-                <img src="" />
-              </div>
-              <div>
-                <div>
-                  <div>John Park</div>
-                  <div>박광성</div>
-                </div>
-                <div>Co-Founder | Managing Partner</div>
-                <div>
-                  <div>새</div>
-                  <div>in</div>
-                </div>
-              </div>
-            </article>
-            <article>
-              <div>
-                <img src="" />
-              </div>
-              <div>
-                <div>
-                  <div>John Park</div>
-                  <div>박광성</div>
-                </div>
-                <div>Co-Founder | Managing Partner</div>
-                <div>
-                  <div>새</div>
-                  <div>in</div>
-                </div>
-              </div>
-            </article>
-          </div>
+          </section>
         </section>
       </section>
-    </section>
+      <section className="container">
+        <section className="container-bg" id="opacity-bg">
+          <section className="main-ventures">
+            <div className="main-ventures-wrapper">
+              <article className="title">a41 Ventures</article>
+              <article className="content">
+                a41 invests in disruptive technologies that will lead the next digital innovation. We believe that those who do
+                the heavy lifting on the ground - members of the projects that we invest in - are the true heroes that should
+                stand out, with the help of sidekicks like us. Members of a41 are dedicated to becoming the bridge and catalyst of
+                the next digital innovation.
+              </article>
+            </div>
+          </section>
+        </section>
+      </section>
+      <section className="container">
+        <section className="container-bg" id="opacity-bg">
+          <section className="main-ourThesis">
+            <div className="main-ourThesis-wrapper">
+              <article className="title">our thesis</article>
+              <div className="content-box">
+                <article className="dark-content">Winning the next era of</article>
+                <article className="light-content">internet - Web 3, </article>
+              </div>
+              <div className="content-box">
+                <article className="dark-content">Winning the next era of</article>
+                <article className="light-content">finance - Open Finance</article>
+              </div>
+              <div className="content-box">
+                <article className="dark-content">Winning the next era of</article>
+                <article className="light-content">digital experience - Metaverse</article>
+              </div>
+            </div>
+          </section>
+        </section>
+      </section>
+      <section className="container-white">
+        <section className="container-bg-white">
+          <section className="main-portfolio">
+            <div className="main-portfolio-wrapper">
+              <article>portfolio</article>
+              <div className="portfolio-box">
+                <article className="portfolio-logo">
+                  <AlexLogo />
+                </article>
+                <article className="portfolio-logo">
+                  <ApricotLogo />
+                </article>
+                <article className="portfolio-logo">
+                  <ArkadikoLogo />
+                </article>
+                <article className="portfolio-logo">
+                  <BlockSurveLogo />
+                </article>
+                <article className="portfolio-logo">
+                  <BribeLogo />
+                </article>
+              </div>
+            </div>
+          </section>
+        </section>
+      </section>
+      <section className="container">
+        <section className="container-bg">
+          <section className="main-contents">
+            <div className="main-contents-wrapper">
+              <article></article>
+              <article></article>
+              <article></article>
+              <article></article>
+            </div>
+          </section>
+        </section>
+      </section>
+      <section className="container">
+        <section className="container-bg">
+          <section className="main-team">
+            <div className="main-team-wrapper">
+              <article>
+                <div>
+                  <img src="" />
+                </div>
+                <div>
+                  <div>
+                    <div>John Park</div>
+                    <div>박광성</div>
+                  </div>
+                  <div>Co-Founder | Managing Partner</div>
+                  <div>
+                    <div>새</div>
+                    <div>in</div>
+                  </div>
+                </div>
+              </article>
+              <article>
+                <div>
+                  <img src="" />
+                </div>
+                <div>
+                  <div>
+                    <div>John Park</div>
+                    <div>박광성</div>
+                  </div>
+                  <div>Co-Founder | Managing Partner</div>
+                  <div>
+                    <div>새</div>
+                    <div>in</div>
+                  </div>
+                </div>
+              </article>
+              <article>
+                <div>
+                  <img src="" />
+                </div>
+                <div>
+                  <div>
+                    <div>John Park</div>
+                    <div>박광성</div>
+                  </div>
+                  <div>Co-Founder | Managing Partner</div>
+                  <div>
+                    <div>새</div>
+                    <div>in</div>
+                  </div>
+                </div>
+              </article>
+            </div>
+          </section>
+        </section>
+      </section>
+    </>
   );
 };
 export default Main;

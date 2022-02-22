@@ -1,40 +1,109 @@
 @import "../index.scss";
 
-.container_bg {
-  // padding-top: 100px;
+.container {
+  width: 100%;
+  height: 1024px;
+  background-color: $gray0;
+  margin: 0 auto;
+}
+.container-white {
   width: 100%;
   height: 100%;
-  color: white;
-  background-image: url("../Assets/image/mainPage/darkerBg.png");
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-.container {
-  width: 1280px;
-  height: 100%;
-  color: white;
+  background-color: $gray5;
   margin: 0 auto;
 }
 
-.main_title {
+.container-bg {
+  width: 1440px;
+  height: 1024px;
+  color: white;
+  background-image: url("../Assets/image/mainPage/darkerBg.png");
+  background-repeat: no-repeat;
+  background-color: $gray0;
+  background-size: contain;
+  margin: 0 auto;
 }
-.main_title_wrapper {
+.container-bg-white {
+  width: 1440px;
+  height: 1024px;
+  color: $gray0;
+  background-color: $gray5;
+  margin: 0 auto;
+}
+
+.container-bg#opacity-bg {
+  width: 1440px;
+  height: 1024px;
+  color: white;
+  background: rgba(0, 0, 0, 0.1);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../Assets/image/mainPage/darkerBg.png");
+  background-repeat: no-repeat;
+
+  background-size: contain;
+  margin: 0 auto;
+}
+
+.main-title,
+.main-ventures {
+  color: $gray5;
+}
+.main-title-wrapper,
+.main-ventures,
+.main-ourThesis {
   width: 100%;
   height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  color: $gray5;
+}
+.main-portfolio,
+.main-contents,
+.main-tea {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: $gray0;
 }
 
-.main_title_wrapper .title,
-.main_title_wrapper .content {
+.main-title-wrapper .title {
   font-size: 82px;
-  font-family: "GmarketSansBold", "GmarketSansMedium", "GmarketSansLight",
-    sans-serif;
-  font-weight: $default_weight;
+  font-family: "GmarketSansBold", "GmarketSansMedium", "GmarketSansLight", sans-serif;
+  font-weight: $default-weight;
 }
 
+.main-ventures-wrapper .title {
+  font-size: $h0-size;
+  font-family: "GmarketSansBold", "GmarketSansMedium", "GmarketSansLight", sans-serif;
+  font-weight: $default-weight;
+}
+.main-ventures-wrapper .content {
+  font-size: $body-size;
+  font-family: "GmarketSansBold", "GmarketSansMedium", "GmarketSansLight", sans-serif;
+  font-weight: $default-weight;
+}
+
+.main-ourThesis-wrapper .title {
+  font-size: $h0-size;
+  font-family: "GmarketSansBold", "GmarketSansMedium", "GmarketSansLight", sans-serif;
+  font-weight: $default-weight;
+}
+.main-ourThesis-wrapper .content-box {
+  font-size: $h1-size;
+  font-family: "GmarketSansBold", "GmarketSansMedium", "GmarketSansLight", sans-serif;
+  font-weight: $default-weight;
+  display: flex;
+  .dark-content {
+    color: $gray2;
+  }
+  .light-content {
+    color: $gray5;
+  }
+}
 section {
   height: 500px;
 }
