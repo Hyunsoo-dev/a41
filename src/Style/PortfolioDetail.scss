@@ -1,0 +1,83 @@
+@import '../index';
+@import './variables';
+
+a {
+  text-decoration: none;
+}
+
+.container_box {
+  width: 100%;
+  display: flex;
+  justify-content: stretch;
+  margin-bottom: 150px;
+}
+
+.portfolio1_logo {
+  width: 150px;
+  height: 150px;
+  margin-right: 110px;
+}
+
+.text_box {
+  .contents{
+    font-family: "GmarketSansMedium", "GmarketSansLight", "GmarketSansBold", sans-serif;
+    font-size: $body_size;
+    font-weight: $default_weight;
+    line-height: $body1_height;
+    color: $gray5;
+    margin-bottom: 30px;
+  }
+}
+
+.portfolio_title_box {
+  .name {
+    font-family: "GmarketSansBold", "GmarketSansMedium", "GmarketSansLight", sans-serif;
+    font-size: $h1_size;
+    font-weight: $h2_weight;
+    line-height: $h2_height;
+    color: $gray5;
+    margin-right: 12px;
+  }
+  .protocol {
+    font-family: "GmarketSansMedium", "GmarketSansLight", "GmarketSansBold", sans-serif;
+    font-size: $body_size;
+    font-weight: $default_weight;
+    line-height: $body1_height;
+    color: $point;
+  }
+  margin-bottom: 20px;
+}
+
+.tag_box {
+  display: flex;
+  margin-bottom: 30px;
+  .tag_container {
+    font-family: "GmarketSansLight", "GmarketSansBold", "GmarketSansMedium", sans-serif;
+    font-size: $footnote2_size;
+    font-weight: $default_weight;
+    line-height: $footnote2_height;
+    display: flex;
+    width: 66px;
+    height: 27px;
+    border: 1px solid $gray5;
+    border-radius: 20px;
+    margin-right: 20px;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.goTwitter {
+  margin-bottom: 30px;
+  cursor: pointer;
+}
+
+.goToWeb {
+  display: flex;
+  cursor: pointer;
+  border: 1px solid $gray5;
+  width: 166px;
+  height: 46px;
+  justify-content: center;
+  align-items: center;
+}

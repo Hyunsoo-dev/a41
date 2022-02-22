@@ -39,20 +39,10 @@ const Header = ({ dark }: any) => {
         </div>
 
         <div className="language_wrapper">
-          <div
-            className={
-              language === "KO" ? "selected_language" : "unselected_language"
-            }
-            onClick={() => selecLanguage("KO")}
-          >
+          <div className={language === "KO" ? "selected_language" : "unselected_language"} onClick={() => selecLanguage("KO")}>
             KO
           </div>
-          <div
-            className={
-              language === "EN" ? "selected_language" : "unselected_language"
-            }
-            onClick={() => selecLanguage("EN")}
-          >
+          <div className={language === "EN" ? "selected_language" : "unselected_language"} onClick={() => selecLanguage("EN")}>
             EN
           </div>
         </div>

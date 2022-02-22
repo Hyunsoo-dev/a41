@@ -2,17 +2,7 @@ import React from "react";
 import Footer from "./Components/Footer";
 import Header from "./Components/Header";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import {
-  Main,
-  Contact,
-  Contents1,
-  Contents2,
-  OurThesis,
-  Portfolio1,
-  Portfolio2,
-  Team1,
-  Team2,
-} from "./Page";
+import { Main, Contact, Contents1, Contents2, OurThesis, Portfolio1, Portfolio2, Team1, Team2 } from "./Page";
 import "./App.scss";
 
 function App() {
