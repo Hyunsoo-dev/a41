@@ -24,7 +24,7 @@ const Header = ({ dark }: any) => {
           <Link className="category" to="/ourthesis">
             our thesis
           </Link>
-          <Link className="category" to="/portfolio1">
+          <Link className="category" to="/portfolio">
             portfolio
           </Link>
           <Link className="category" to="/content1">

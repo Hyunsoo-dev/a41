@@ -1,0 +1,15 @@
+@import '../index';
+@import './variables';
+
+
+.h0_title{
+  font-family: "GmarketSansBold", "GmarketSansMedium", "GmarketSansLight", sans-serif;
+  font-size: $h0_size;
+  font-weight: $default_weight;
+  line-height: $h0_height;
+  margin-top: 140px;
+}
+
+.dot {
+  color: $point;
+}

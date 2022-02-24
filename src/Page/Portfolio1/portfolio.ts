@@ -8,6 +8,7 @@ import Bribe from '../../Assets/icon/BRIBE.svg';
 
 export const data = [
     {
+        id: 0,
         img: ALEX,
         title: "ALEX",
         protocol: "Stacks DeFi",
@@ -17,6 +18,7 @@ export const data = [
         web: "https://www.alexgo.io/",
     },
     {
+        id: 1,
         img: Apricont,
         title: "Apricot Finance",
         protocol: "Lending Protocol",
@@ -26,6 +28,7 @@ export const data = [
         web: "https://apricot.one/",
     },
     {
+        id: 2,
         img: Arkadiko,
         title: "Arkadiko",
         protocol: "Stablecoin Protocol",
@@ -35,6 +38,7 @@ export const data = [
         web: "https://arkadiko.finance/",
     },
     {
+        id: 3,
         img: BlockSurvey,
         title: "Blocksurvey",
         protocol: "Survey Protocol",
@@ -44,6 +48,7 @@ export const data = [
         web: "https://blocksurvey.io/",
     },
     {
+        id: 4,
         img: Bribe,
         title: "Bribe",
         protocol: "Governance Marketplace",
