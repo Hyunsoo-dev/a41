@@ -104,6 +104,78 @@
     color: $gray5;
   }
 }
+
+.main-portfolio-wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 85%;
+}
+
+.main-portfolio-wrapper .title {
+  font-size: $h0-size;
+  font-family: "GmarketSansBold", "GmarketSansMedium", "GmarketSansLight", sans-serif;
+  font-weight: $default-weight;
+}
+.main-portfolio-wrapper .portfolio-box {
+  display: flex;
+  justify-content: space-around;
+}
+.main-contents-wrapper .title {
+  font-size: $h0-size;
+  font-family: "GmarketSansBold", "GmarketSansMedium", "GmarketSansLight", sans-serif;
+  font-weight: $default-weight;
+}
+.main-contents-wrapper .contents-box {
+  display: flex;
+  margin: 30px 0px;
+}
+.main-contents-wrapper .contents-box .contents-box-column1 {
+}
+.main-contents-wrapper .contents-box .contents-box-column2 {
+  margin-top: 30px;
+}
+
+/*
+  Main -> ContentComponent
+*/
+.content-container {
+}
+.content-container .content-thumbnail {
+  width: 520px;
+  height: 311px;
+}
+.content-container .content-title {
+  font-size: $headline_size;
+  font-family: "GmarketSansBold", "GmarketSansMedium", "GmarketSansLight", sans-serif;
+  font-weight: $h2_weight;
+  color: $gray0;
+}
+
+.content-container .content-subtitle {
+  font-size: $body_size;
+  font-family: "GmarketSansBold", "GmarketSansMedium", "GmarketSansLight", sans-serif;
+  font-weight: $default_weight;
+  color: $gray2;
+}
+.content-container .content-author {
+  font-size: $footnote2_size;
+  font-family: "GmarketSansBold", "GmarketSansMedium", "GmarketSansLight", sans-serif;
+  font-weight: $default_weight;
+  color: $gray2;
+}
+.content-container .content-date {
+  font-size: $footnote2_size;
+  font-family: "GmarketSansBold", "GmarketSansMedium", "GmarketSansLight", sans-serif;
+  font-weight: $default_weight;
+  color: $gray2;
+}
+.content-author-date-box {
+  display: flex;
+  .content-author {
+  }
+  .content-date {
+  }
+}
 section {
   height: 500px;
 }

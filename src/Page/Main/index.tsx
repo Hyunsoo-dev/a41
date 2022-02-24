@@ -1,5 +1,7 @@
 import React from "react";
 import "../../Style/Main.scss";
+import ContentComponent from "./ContentComponent";
+import column1_row1 from "../../Assets/image/mainPage/column1_row1.png";
 import { ReactComponent as AlexLogo } from "../../Assets/image/mainPage/alexLogo.svg";
 import { ReactComponent as ApricotLogo } from "../../Assets/image/mainPage/apricotLogo.svg";
 import { ReactComponent as ArkadikoLogo } from "../../Assets/image/mainPage/arkadikoLogo.svg";
@@ -58,13 +60,13 @@ const Main = () => {
         <section className="container-bg-white">
           <section className="main-portfolio">
             <div className="main-portfolio-wrapper">
-              <article>portfolio</article>
+              <article className="title">portfolio</article>
               <div className="portfolio-box">
                 <article className="portfolio-logo">
-                  <AlexLogo />
+                  <ArkadikoLogo />
                 </article>
                 <article className="portfolio-logo">
-                  <ApricotLogo />
+                  <ArkadikoLogo />
                 </article>
                 <article className="portfolio-logo">
                   <ArkadikoLogo />
@@ -80,14 +82,45 @@ const Main = () => {
           </section>
         </section>
       </section>
-      <section className="container">
-        <section className="container-bg">
+      <section className="container-white">
+        <section className="container-bg-white">
           <section className="main-contents">
             <div className="main-contents-wrapper">
-              <article></article>
-              <article></article>
-              <article></article>
-              <article></article>
+              <article className="title">Contents</article>
+              <div className="contents-box">
+                <div className="contents-box-column1">
+                  <ContentComponent
+                    thumbnail={column1_row1}
+                    title={"[Research] Pricing Everlasting Options"}
+                    subtitle={"This post explores ways to price everlasting options."}
+                    author={"Steve Kim"}
+                    date={"Dec 24, 2021"}
+                  />
+                  <ContentComponent
+                    thumbnail={column1_row1}
+                    title={"[Research] Pricing Everlasting Options"}
+                    subtitle={"This post explores ways to price everlasting options."}
+                    author={"Steve Kim"}
+                    date={"Dec 24, 2021"}
+                  />
+                </div>
+                <div className="contents-box-column2">
+                  <ContentComponent
+                    thumbnail={column1_row1}
+                    title={"[Research] Pricing Everlasting Options"}
+                    subtitle={"This post explores ways to price everlasting options."}
+                    author={"Steve Kim"}
+                    date={"Dec 24, 2021"}
+                  />
+                  <ContentComponent
+                    thumbnail={column1_row1}
+                    title={"[Research] Pricing Everlasting Options"}
+                    subtitle={"This post explores ways to price everlasting options."}
+                    author={"Steve Kim"}
+                    date={"Dec 24, 2021"}
+                  />
+                </div>
+              </div>
             </div>
           </section>
         </section>
