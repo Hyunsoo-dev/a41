@@ -3,19 +3,9 @@
 
 .content_box {
   width: $content_screen;
-  height: 200vh;
+  height: auto;
 }
-
 
 .portfolio1_title {
-  font-family: "GmarketSansBold", "GmarketSansMedium", "GmarketSansLight", sans-serif;
-  font-size: $h0_size;
-  font-weight: $default_weight;
-  line-height: $h0_height;
-  margin-top: 140px;
   margin-bottom: 155px;
-}
-
-.dot {
-  color: $point;
 }

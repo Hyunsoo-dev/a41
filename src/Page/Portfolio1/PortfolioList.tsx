@@ -1,7 +1,8 @@
 import React from "react";
+import {useNavigate, useLocation} from "react-router-dom";
 import Twitter from "../../Assets/twitter.svg";
 import Tags from "./Tags";
-import '../../Style/PortfolioDetail.scss';
+import '../../Style/PortfolioIist.scss';
 
 type PortfolioDetailProps = {
     img: string;
@@ -11,10 +12,15 @@ type PortfolioDetailProps = {
     tags: string[];
     sns: string;
     web: string;
+    flex: boolean;
+    size: string;
+    id: number;
 }
 
-const PortfolioDetail = ({img, title, protocol, contents, tags, sns, web}: PortfolioDetailProps) => {
+const PortfolioList= ({img, title, protocol, contents, tags, sns, web, flex, size, id}: PortfolioDetailProps) => {
 
+    const navigate = useNavigate();
+    const { pathname } = useLocation();
     const handleClick = (url: string) => {
         return window.open(
             url,
@@ -22,8 +28,13 @@ const PortfolioDetail = ({img, title, protocol, contents, tags, sns, web}: Portf
         );
     }
 
-    return <div className={"container_box"}>
-        <img className={"portfolio1_logo"} src={img} alt={`logo${title}`} />
+    return <div className={flex ? "container_box" : "container_box_column"} onClick={() => {
+        if (pathname == "/portfolio") {
+            return navigate(`${id}`, { state: id });
+        } return;
+        }
+    }>
+        <img className={size == "150" ? "portfolio1_logo_150" : "portfolio1_logo_240"} src={img} alt={`${title}logo`} />
         <div className={"text_box"}>
             <div className={"portfolio_title_box"}>
                 <span className={"name"}>{title}</span>
@@ -41,4 +52,4 @@ const PortfolioDetail = ({img, title, protocol, contents, tags, sns, web}: Portf
     </div>
 }
 
-export default PortfolioDetail;
+export default PortfolioList;
