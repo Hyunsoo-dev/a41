@@ -125,10 +125,11 @@ const Main = () => {
           </section>
         </section>
       </section>
-      <section className="container">
-        <section className="container-bg">
+      <section className="container-white">
+        <section className="container-bg-white">
           <section className="main-team">
             <div className="main-team-wrapper">
+              <article className="title">Team</article>
               <article>
                 <div>
                   <img src="" />

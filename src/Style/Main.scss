@@ -60,7 +60,7 @@
 }
 .main-portfolio,
 .main-contents,
-.main-tea {
+.main-team {
   width: 100%;
   height: 100%;
   display: flex;
@@ -120,6 +120,9 @@
   display: flex;
   justify-content: space-around;
 }
+/*
+  main contents
+*/
 .main-contents-wrapper .title {
   font-size: $h0-size;
   font-family: "GmarketSansBold", "GmarketSansMedium", "GmarketSansLight", sans-serif;
@@ -176,6 +179,21 @@
   .content-date {
   }
 }
+
+/*
+  Team section
+*/
+.main-team-wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 85%;
+}
+.main-team-wrapper .title {
+  font-size: $h0-size;
+  font-family: "GmarketSansBold", "GmarketSansMedium", "GmarketSansLight", sans-serif;
+  font-weight: $default-weight;
+}
+
 section {
   height: 500px;
 }
