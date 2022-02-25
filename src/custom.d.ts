@@ -6,3 +6,12 @@ declare module "*.svg" {
   const src: string;
   export default src;
 }
+
+declare module "*.png" {
+  const content: any;
+  export default content;
+  import React = require("react");
+  export const ReactComponent: React.FC<React.PNGProps<PNGPNGElement>>;
+  const src: string;
+  export default src;
+}

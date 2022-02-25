@@ -1,0 +1,30 @@
+@import "../index";
+@import "./variables";
+
+.article_title_box {
+  display: flex;
+  align-items: center;
+  margin-top: 230px;
+  margin-bottom: 50px;
+}
+.article_title {
+  font-family: "GmarketSansBold", "GmarketSansMedium", "GmarketSansLight", sans-serif;
+  font-size: $h1_size;
+  font-weight: $default_weight;
+  line-height: $h1_height;
+  margin-right: 12px;
+
+}
+
+.article_count {
+  font-family: "GmarketSansMedium", "GmarketSansLight", "GmarketSansBold", sans-serif;
+  font-size: $body_size;
+  font-weight: $default_weight;
+  line-height: $body2_height;
+  color: $gray3;
+}
+
+.grid_box {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
