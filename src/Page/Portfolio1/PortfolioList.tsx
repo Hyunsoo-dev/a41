@@ -29,7 +29,7 @@ const PortfolioList= ({img, title, protocol, contents, tags, sns, web, flex, siz
     }
 
     return <div className={flex ? "container_box" : "container_box_column"} onClick={() => {
-        if (pathname == "/portfolio") {
+        if (pathname === "/portfolio") {
             return navigate(`${id}`, { state: id });
         } return;
         }

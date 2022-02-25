@@ -81,6 +81,10 @@ a {
 .goTwitter {
   margin-bottom: 30px;
   cursor: pointer;
+  fill: $gray2;
+  &:hover {
+    fill: $point;
+  }
 }
 
 .goToWeb {
@@ -91,4 +95,9 @@ a {
   height: 46px;
   justify-content: center;
   align-items: center;
+  &:hover {
+    background-color: $point;
+    border: 1px solid $point;
+    color: $gray0;
+  }
 }

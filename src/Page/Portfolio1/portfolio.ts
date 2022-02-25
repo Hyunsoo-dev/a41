@@ -3,6 +3,8 @@ import Apricont from '../../Assets/icon/Apricot.svg';
 import Arkadiko from '../../Assets/icon/Arkadiko.svg';
 import BlockSurvey from '../../Assets/icon/Blockservey.svg';
 import Bribe from '../../Assets/icon/BRIBE.svg';
+import Alex_article_1 from '../../Assets/image/ArticleCard/alex_article_1.png';
+import Alex_article_2 from '../../Assets/image/ArticleCard/alex_article_2.png';
 
 
 
@@ -16,6 +18,22 @@ export const data = [
         tags: ["tag1", "tag2"],
         sns: "https://twitter.com/alexgobtc",
         web: "https://www.alexgo.io/",
+        article: [
+            { img: Alex_article_1,
+                link: "https://www.naver.com",
+                title: "[Investment] 거버넌스의 탈중앙화를 위해 쏘아 올린 작은 공",
+                summary: "이더리움 / 폴카닷 체인의 거버넌스 솔루션, 브라이브 프로토콜에 대한 소개글입니다.",
+                author: "Steve Kim",
+                date: "Dec 19, 2021",
+            },
+            { img: Alex_article_2,
+                link: "https://www.naver.com",
+                title: "[Investment] 클레임스왑: 클레이튼 생태계에 선순환을 제시하다.",
+                summary: "a41 Ventures가 생각하는 클레임스왑이 제시하는 선순환 구조와 미래에 대해서 다루어보았습니다.",
+                author: "Steve Kim",
+                date: "Dec 19, 2021",
+            }
+        ]
     },
     {
         id: 1,
@@ -26,6 +44,22 @@ export const data = [
         tags: ["tag1", "tag2"],
         sns: "https://twitter.com/ApricotFinance",
         web: "https://apricot.one/",
+        article: [
+            { img: "",
+                link: "",
+                title: "",
+                summary: "",
+                author: "",
+                date: "",
+            },
+            { img: "",
+                link: "",
+                title: "",
+                summary: "",
+                author: "",
+                date: "",
+            }
+        ]
     },
     {
         id: 2,
@@ -36,6 +70,22 @@ export const data = [
         tags: ["tag1", "tag2"],
         sns: "https://twitter.com/ArkadikoFinance/",
         web: "https://arkadiko.finance/",
+        article: [
+            { img: "",
+                link: "",
+                title: "",
+                summary: "",
+                author: "",
+                date: "",
+            },
+            { img: "",
+                link: "",
+                title: "",
+                summary: "",
+                author: "",
+                date: "",
+            }
+        ]
     },
     {
         id: 3,
@@ -46,6 +96,22 @@ export const data = [
         tags: ["tag1", "tag2"],
         sns: "https://twitter.com/blocksurvey",
         web: "https://blocksurvey.io/",
+        article: [
+            { img: "",
+                link: "",
+                title: "",
+                summary: "",
+                author: "",
+                date: "",
+            },
+            { img: "",
+                link: "",
+                title: "",
+                summary: "",
+                author: "",
+                date: "",
+            }
+        ]
     },
     {
         id: 4,
@@ -56,5 +122,21 @@ export const data = [
         tags: ["tag1", "tag2"],
         sns: "https://twitter.com/bribeprotocol?s=21",
         web: "https://www.bribe.xyz/",
+        article: [
+            { img: "",
+                link: "",
+                title: "",
+                summary: "",
+                author: "",
+                date: "",
+            },
+            { img: "",
+                link: "",
+                title: "",
+                summary: "",
+                author: "",
+                date: "",
+            }
+        ]
     }
 ]
