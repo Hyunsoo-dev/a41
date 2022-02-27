@@ -18,8 +18,8 @@ function App() {
             <Route path="/portfolio/:id" element={<Portfolio2 />} />
             <Route path="/content1" element={<Contents1 />} />
             <Route path="/content2" element={<Contents2 />} />
-            <Route path="/team1" element={<Team1 />} />
-            <Route path="/team2" element={<Team2 />} />
+            <Route path="/team" element={<Team1 />} />
+            <Route path="/team/:id" element={<Team2 />} />
             <Route path="/contact" element={<Contact />} />
           </Routes>
         {/*</main>*/}

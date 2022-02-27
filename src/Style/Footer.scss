@@ -50,7 +50,10 @@
 .icon-container {
   display: flex;
   margin-bottom: 20px;
-  img {
+  svg {
+    path {
+    fill: #818181;
+    }
     margin-right: 40px;
     width: 24px;
     height: 24px;
@@ -83,7 +86,11 @@
   }
   .icon-container {
     margin-bottom: 15px;
-    img {
+
+    svg {
+      path {
+        fill: $gray2;
+      }
       margin-right: 25px;
     }
   }

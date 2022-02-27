@@ -81,9 +81,13 @@ a {
 .goTwitter {
   margin-bottom: 30px;
   cursor: pointer;
-  fill: $gray2;
+    path {
+      fill: $gray2;
+    }
   &:hover {
-    fill: $point;
+    path {
+      fill: $point;
+    }
   }
 }
 

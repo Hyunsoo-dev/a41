@@ -1,0 +1,52 @@
+@import '../index';
+@import './variables';
+
+.profile_box {
+  display: flex;
+  align-items: flex-end;
+  margin-top: 176px;
+  margin-bottom: 140px;
+}
+
+.big_profile_img{
+  width: 400px;
+  height: 400px;
+  margin-right: 74px;
+}
+
+.big_img_border_box {
+  width: 410px;
+  height: 410px;
+  position: relative;
+  border-radius: 50%;
+  border: 1px solid $point;
+  left: -845px;
+  top: -10px;
+}
+
+hr {
+  width: 100%;
+  color: $gray2;
+  margin-bottom: 100px;
+}
+
+.profile_section {
+  font-family: "GmarketSansMedium", "GmarketSansLight", "GmarketSansBold", sans-serif;
+  font-size: $body_size;
+  font-weight: $default_weight;
+  line-height: $body1_height;
+  color: $gray5;
+  width: 100%;
+  height: auto;
+  margin-top: 50px;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  line-height: $body1_height;
+  li:before {
+    content: "-";
+  }
+}

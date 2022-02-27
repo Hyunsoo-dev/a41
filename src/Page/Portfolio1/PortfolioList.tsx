@@ -1,6 +1,6 @@
 import React from "react";
 import {useNavigate, useLocation} from "react-router-dom";
-import Twitter from "../../Assets/twitter.svg";
+import {ReactComponent as Twitter} from "../../Assets/twitter.svg";
 import Tags from "./Tags";
 import '../../Style/PortfolioIist.scss';
 
@@ -30,11 +30,11 @@ const PortfolioList= ({img, title, protocol, contents, tags, sns, web, flex, siz
 
     return <div className={flex ? "container_box" : "container_box_column"} onClick={() => {
         if (pathname === "/portfolio") {
-            return navigate(`${id}`, { state: id });
+            return navigate(`${id}`);
         } return;
         }
     }>
-        <img className={size == "150" ? "portfolio1_logo_150" : "portfolio1_logo_240"} src={img} alt={`${title}logo`} />
+        <img className={size === "150" ? "portfolio1_logo_150" : "portfolio1_logo_240"} src={img} alt={`${title}logo`} />
         <div className={"text_box"}>
             <div className={"portfolio_title_box"}>
                 <span className={"name"}>{title}</span>
@@ -44,8 +44,8 @@ const PortfolioList= ({img, title, protocol, contents, tags, sns, web, flex, siz
             <div className={"tag_box"}>{
                 tags.map((tag,idx) => <Tags tag={tag} key={idx} />)
             }</div>
-            <a href={sns} target={"_blank"}>
-                <img src={Twitter} alt={"snsButton"} className={"goTwitter"}/>
+            <a href={sns} target={"_blank"} rel={"noreferrer"}>
+                <Twitter className={"goTwitter"}/>
             </a>
             <div className={"goToWeb"} onClick={() => handleClick(web)}>visit web</div>
         </div>
