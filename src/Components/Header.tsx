@@ -30,7 +30,7 @@ const Header = ({ dark }: any) => {
           <Link className="category" to="/content1">
             content
           </Link>
-          <Link className="category" to="/team1">
+          <Link className="category" to="/team">
             team
           </Link>
           <Link className="category" to="/contact">

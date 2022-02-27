@@ -1,0 +1,21 @@
+@import '../index';
+@import "variables";
+
+.mail {
+  margin: 60px 0 45px;
+}
+
+.download_box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid $gray5;
+  font-family: "GmarketSansMedium", "GmarketSansLight", "GmarketSansBold", sans-serif;
+  font-size: $body_size;
+  font-weight: $default_weight;
+  line-height: $body1_height;
+  color: $gray5;
+  padding: 20px 36px;
+  margin-top: 100px;
+  margin-right: 100px;
+}

@@ -1,8 +1,8 @@
 
 import React from 'react';
 import '../Style/Footer.scss';
-import  LinkedIn  from "../Assets/linkedin.svg";
-import Twitter from '../Assets/twitter.svg';
+import {ReactComponent as LinkedIn}  from "../Assets/linkedin.svg";
+import {ReactComponent as Twitter} from '../Assets/twitter.svg';
 import LogoFooter from '../Assets/logoFooter.svg';
 
 type FooterProps = {
@@ -25,8 +25,8 @@ const Footer = ({ dark } : FooterProps) => {
                 <img src={LogoFooter} alt={"logoFooter"} className={"logo-footer"}/>
                 <div className={"footer-frame2"}>
                     <div className={"icon-container"}>
-                        <img src={LinkedIn} alt={"linkedIn"} onClick={handleClickLinkedIn}/>
-                        <img src={Twitter} alt={"twitter"} onClick={handleClickTwitter}/>
+                        <LinkedIn onClick={handleClickLinkedIn}/>
+                        <Twitter onClick={handleClickTwitter}/>
                     </div>
                     <p className={"first-child"}>
                         media@a41ventures.com

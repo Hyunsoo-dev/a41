@@ -1,0 +1,74 @@
+@import '../index';
+@import './variables';
+
+
+svg {
+  margin-right: 25px;
+  path {
+    fill: $gray5;
+  }
+}
+
+
+
+.list_box {
+  width: 302px;
+  height: 433px;
+  margin-top: 100px;
+  cursor: pointer;
+  .img_border_box {
+    position: relative;
+    top: -475px;
+    left: -20px;
+    width: 260px;
+    height: 260px;
+    border-radius: 130px;
+    border: 1px solid $point;
+    &:hover {
+      width: 250px;
+      height: 250px;
+      border-radius: 50%;
+      border: 1px solid $point;
+      background: linear-gradient(0deg, rgba(153, 241, 0, 0.2), rgba(153, 241, 0, 0.2));
+      top: -458px;
+      left: 0px;
+    }
+  }
+  img {
+    width: 250px;
+    height: 250px;
+    margin-bottom: 40px;
+  }
+}
+
+.row_box {
+  display: flex;
+  align-items: flex-end;
+  margin-bottom: 11px;
+}
+
+.en_name {
+  font-family: "GmarketSansBold", "GmarketSansMedium", "GmarketSansLight", sans-serif;
+  font-size: $h1_size;
+  font-weight: $h2_weight;
+  line-height: $h2_height;
+  color: $gray5;
+  margin-right: 16px;
+}
+
+.ko_name {
+  font-family: "GmarketSansLight", "GmarketSansBold", "GmarketSansMedium", sans-serif;
+  font-size: $footnote1_size;
+  font-weight: $default_weight;
+  line-height: $footnote1_height;
+  color: $gray3;
+}
+
+.position {
+  font-family: "GmarketSansMedium", "GmarketSansLight", "GmarketSansBold", sans-serif;
+  font-size: $body_size;
+  font-weight: $default_weight;
+  line-height: $body2_height;
+  color: $gray5;
+  margin-bottom: 30px;
+}
