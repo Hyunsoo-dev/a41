@@ -1,5 +1,5 @@
 import React from "react";
-const TeamComponent = ({ thumbnail, enName, koName, position, sns }: any) => {
+const TeamComponent = ({ thumbnail, enName, koName, position, Sns }: any) => {
   return (
     <section className="team-container">
       <section className="team-column1">
@@ -14,8 +14,9 @@ const TeamComponent = ({ thumbnail, enName, koName, position, sns }: any) => {
           <article>{position}</article>
         </section>
         <section className="sns-box">
-          <article className="sns-logo">logo</article>
-          <article className="sns-name">in</article>
+          <article className="sns-logo">
+            <Sns />
+          </article>
         </section>
       </section>
     </section>

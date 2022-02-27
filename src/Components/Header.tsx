@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { ReactComponent as LogoGreen } from "../Assets/icon/logo_green.svg";
 import { ReactComponent as LogoWhite } from "../Assets/icon/logo_white.svg";
@@ -12,8 +12,17 @@ const Header = ({ dark }: any) => {
     setLanguage(language);
   };
 
+  const [headerTheme, setHeaderTheme] = useState("black");
+  const [scrollPosition, setScrollPosition] = useState(0);
+  const updateScroll = () => {
+    setScrollPosition(window.pageYOffset);
+  };
+  useEffect(() => {
+    window.addEventListener("scroll", updateScroll);
+  });
+  console.log(scrollPosition);
   return (
-    <div className={dark ? "container_black" : "container_white"}>
+    <div className={scrollPosition > 2950 ? "container_white" : "container_black"}>
       <div className="wrapper">
         <div className="logo_wrapper">
           <Link className="category" to="/">
