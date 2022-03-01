@@ -44,3 +44,39 @@
     margin-right: 10px;
   }
 }
+
+@include mobile {
+  .card_box {
+    width: 100%;
+    height: 360px;
+    img {
+      width: 100%;
+      height: auto;
+    }
+    &:hover {
+      border: 1px solid $point;
+    }
+    margin-bottom: 66px;
+  }
+
+  .card_title {
+    font-size: $headline_mobile_size;
+    font-weight: $h2_weight;
+    line-height: $headline_mobile_height;
+    margin-top: 16px;
+  }
+
+  .card_summary {
+    font-size: $body2_mobile_size;
+    font-weight: $default_weight;
+    line-height: $body2_mobile_height;
+  }
+
+
+  .author_box {
+    span {
+      font-size: $footnote2_mobile_size;
+      line-height: $footnote2_mobile_height;
+    }
+  }
+}

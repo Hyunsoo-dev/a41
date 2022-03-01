@@ -4,7 +4,7 @@ export function useScroll() {
     const [scrollY, setScrollY] = useState<number>(0);
 
     const listener = () => {
-        setScrollY(window.pageYOffset);
+        setScrollY(window.scrollY);
     };
 
     useEffect(() => {

@@ -52,7 +52,7 @@ $body1_mobile_size: 16px;
 $body2_mobile_size: 14px;
 $body3_mobile_size: 14px;
 $footnote2_mobile_size: 12px;
-$cation_mobile_size: 10px;
+$caption_mobile_size: 10px;
 
 /*
 Font weight
@@ -88,13 +88,14 @@ $caption_mobile_height: 12px;
 
 html {
   scroll-behavior: smooth;
+
 }
 
 body {
   font-family: "GmarketSansMedium", "GmarketSansLight", "GmarketSansBold", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  // height: 100vh;
+  box-sizing: border-box;
   margin: 0;
 }
 

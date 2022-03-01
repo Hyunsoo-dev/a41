@@ -7,23 +7,17 @@
 
 .container_img {
   width: 100%;
-  min-height: 150vh;
+  min-height: 200vh;
   height: auto;
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  -webkit-transition: opacity 3s ease-in-out;
-  -moz-transition: opacity 3s ease-in-out;
-  -ms-transition: opacity 3s ease-in-out;
-  -o-transition: opacity 3s ease-in-out;
-  opacity: 1;
   background: linear-gradient(180deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.51) 0.01%, #000000 100%), url("../Assets/thesis.jpg");
 }
 
 .container_bk {
   @extend .container_img;
   background: $gray0;
-  padding-bottom: 200px;
 }
 
 
@@ -92,4 +86,60 @@ thesis_content_box_hidden{
   color: $gray5;
 }
 
+
+@include mobile {
+  .title_box {
+    margin: 0px 20px;
+    top: 160px;
+    .thesis_h0 {
+      font-family: "GmarketSansBold", "GmarketSansMedium", "GmarketSansLight", sans-serif;
+      font-size: $h0_mobile_size;
+      font-weight: $h2_weight;
+      line-height: $h0_mobile_height;
+      margin: 0;
+    }
+  }
+  .thesis_content_box {
+    margin: 0px 20px;
+    top: 350px;
+  }
+  .thesis_content {
+    flex-direction: column;
+    border-radius: 16px;
+    background-color: rgba(255, 255, 255, 0.15);
+    margin-bottom: 18px;
+    height: 50px;
+    padding: 15px 20px;
+    .thesis_headline_gray2 {
+      font-family: "GmarketSansBold", "GmarketSansMedium", "GmarketSansLight", sans-serif;
+      font-size: $headline_mobile_size;
+      font-weight: $h2_weight;
+      line-height: $headline_mobile_height;
+      color: $gray3;
+    }
+    .thesis_headline_gray5 {
+      @extend .thesis_headline_gray2;
+      color: $gray5;
+      margin-top: 7px;
+      letter-spacing: -1px;
+    }
+  }
+
+  .thesis_2nd_content_box {
+    top: 350px;
+    margin: 0px 20px;
+  }
+
+
+  .thesis_2nd_content {
+    font-family: "GmarketSansBold", "GmarketSansMedium", "GmarketSansLight", sans-serif;
+    font-size: $h2_mobile_size;
+    font-weight: $h2_weight;
+    line-height: $h2_mobile_height;
+    color: $gray5;
+    letter-spacing: -1px;
+    word-break: break-word;
+    margin-bottom: 113px;
+  }
+}
 

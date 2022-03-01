@@ -18,4 +18,10 @@
   padding: 20px 36px;
   margin-top: 100px;
   margin-right: 100px;
+
+  &:hover {
+    background-color: $point;
+    color: $gray0;
+    border: 1px solid $point;
+  }
 }

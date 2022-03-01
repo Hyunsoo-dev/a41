@@ -6,6 +6,7 @@
   align-items: flex-end;
   margin-top: 176px;
   margin-bottom: 140px;
+  position: relative;
 }
 
 .big_profile_img{
@@ -17,11 +18,11 @@
 .big_img_border_box {
   width: 410px;
   height: 410px;
-  position: relative;
+  position: absolute;
   border-radius: 50%;
   border: 1px solid $point;
-  left: -845px;
-  top: -10px;
+  left: -22px;
+  top: -22px;
 }
 
 hr {
@@ -49,4 +50,36 @@ ul {
   li:before {
     content: "-";
   }
+}
+
+@include mobile {
+  .profile_box {
+    align-items: center;
+    flex-direction: column;
+    margin-top: 60px;
+    margin-bottom: 70px;
+  }
+  .big_profile_img{
+    width: 200px;
+    height: 200px;
+    margin-bottom: 27px;
+    margin-right: 0px;
+  }
+
+  .big_img_border_box {
+    width: 208px;
+    height: 208px;
+    left: 53px;
+    top: -12px;
+  }
+
+  hr {
+    margin-bottom: 30px;
+  }
+
+  .profile_section {
+    font-size: $body1_mobile_size;
+    line-height: $body1_mobile_height;
+  }
+
 }
