@@ -7,10 +7,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  position: fixed;
-  bottom: 0;
-  left: 0;
   background-color: $bg;
+  box-sizing: border-box;
 }
 
 .footer-container-dark {
@@ -18,7 +16,7 @@
   background-color: $gray0;
 }
 
-.content-box {
+.footer-content-box {
   width: 1280px;
 }
 
@@ -41,6 +39,7 @@
     margin-bottom: 7px;
   }
 }
+
 .logo-footer {
   margin-right: 100px;
   width: 70px;
@@ -62,12 +61,11 @@
 
 @include mobile {
   .footer-container {
-    height: 130px;
-    margin: 0;
-    padding: 40px 20px;
+    height: 208px;
     align-items: start;
+    padding: 30px 20px;
   }
-  .content-box {
+  .footer-content-box {
     width: 375px;
   }
   .footer-frame3 {
@@ -75,10 +73,11 @@
     height: auto;
     flex-direction: column;
   }
-  .p {
-    font-size: $cation_mobile_size;
+  .footer-frame2 {
+    font-size: $caption_mobile_size;
     line-height: $caption_mobile_height;
   }
+
   .logo-footer {
     margin-bottom: 21px;
     width: 40px;

@@ -16,28 +16,32 @@ svg {
   height: 433px;
   margin-top: 100px;
   cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  position: relative;
   .img_border_box {
-    position: relative;
-    top: -475px;
-    left: -20px;
+    position: absolute;
+    top: -18px;
+    left: 8px;
     width: 260px;
     height: 260px;
     border-radius: 130px;
     border: 1px solid $point;
     &:hover {
-      width: 250px;
-      height: 250px;
+      width: 248px;
+      height: 248px;
       border-radius: 50%;
       border: 1px solid $point;
       background: linear-gradient(0deg, rgba(153, 241, 0, 0.2), rgba(153, 241, 0, 0.2));
-      top: -458px;
-      left: 0px;
+      top: 0px;
+      left: 25px;
     }
   }
   img {
     width: 250px;
     height: 250px;
     margin-bottom: 40px;
+    align-self: center;
   }
 }
 
@@ -71,4 +75,64 @@ svg {
   line-height: $body2_height;
   color: $gray5;
   margin-bottom: 30px;
+}
+
+@include mobile {
+
+  svg {
+    margin-right: 25px;
+    path {
+      fill: $gray5;
+      width: 20px;
+      height: 16px;
+    }
+  }
+
+  .list_box {
+    margin-top: 50px;
+    width: 244px;
+    height: 380px;
+    .img_border_box {
+      width: 210px;
+      height: 210px;
+      border-radius: 50%;
+      top: -12px;
+      left: 6px;
+      &:hover {
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        border: 1px solid $point;
+        background: linear-gradient(0deg, rgba(153, 241, 0, 0.2), rgba(153, 241, 0, 0.2));
+        top: 0px;
+        left: 21px;
+      }
+    }
+    img {
+      width: 200px;
+      height: 200px;
+      margin-bottom: 27px;
+      align-self: center;
+    }
+  }
+
+  .en_name {
+    font-size: $h2_mobile_size;
+    line-height: $h2_mobile_height;
+  }
+
+  .ko_name {
+    font-family: "GmarketSansMedium", "GmarketSansLight", "GmarketSansBold", sans-serif;
+    font-size: $body2_mobile_size;
+    font-weight: $default_weight;
+    line-height: $body2_mobile_height;
+  }
+
+  .position {
+    font-family: "GmarketSansLight", "GmarketSansBold", "GmarketSansMedium", sans-serif;
+    font-size: $body1_mobile_size;
+    line-height: $body1_mobile_height;
+    letter-spacing: -2px;
+    word-break: break-all;
+  }
 }

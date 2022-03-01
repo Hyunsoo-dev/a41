@@ -36,18 +36,18 @@ const PortfolioList= ({img, title, protocol, contents, tags, sns, web, flex, siz
     }>
         <img className={size === "150" ? "portfolio1_logo_150" : "portfolio1_logo_240"} src={img} alt={`${title}logo`} />
         <div className={"text_box"}>
-            <div className={"portfolio_title_box"}>
+            <div className={pathname === "/portfolio" ? "portfolio_title_box" : "portfolio_title_column_box"}>
                 <span className={"name"}>{title}</span>
                 <span className={"protocol"}>{protocol}</span>
             </div>
-            <div className={"contents"}>{contents}</div>
+            <div className={pathname === "/portfolio" ? "contents" : "portfolio2_contents"}>{contents}</div>
             <div className={"tag_box"}>{
                 tags.map((tag,idx) => <Tags tag={tag} key={idx} />)
             }</div>
             <a href={sns} target={"_blank"} rel={"noreferrer"}>
                 <Twitter className={"goTwitter"}/>
             </a>
-            <div className={"goToWeb"} onClick={() => handleClick(web)}>visit web</div>
+            <div className={pathname === "/portfolio" ? "goToWeb" : "portfolio2_goToWeb"} onClick={() => handleClick(web)}>visit web</div>
         </div>
     </div>
 }

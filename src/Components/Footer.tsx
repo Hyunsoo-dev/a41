@@ -20,7 +20,7 @@ const Footer = ({ dark } : FooterProps) => {
 
     return (
         <div className={dark ? "footer-container-dark" : "footer-container"}>
-            <div className="content-box">
+            <div className="footer-content-box">
                 <div className="footer-frame3">
                 <img src={LogoFooter} alt={"logoFooter"} className={"logo-footer"}/>
                 <div className={"footer-frame2"}>

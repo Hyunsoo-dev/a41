@@ -30,12 +30,14 @@ const TeamList = ({id, img, enName, koName, position, twit, linkedIn}: TeamListP
         <div className={"ko_name"}>{koName}</div>
         </div>
         {position.length === 1 ? <div className={"position"}>{position[0]}</div> : <div className={"position"}>{position[0]} | {position[1]}</div>}
+        <div className={"row_box"}>
         <a href={twit} target={"_blank"} rel={"noreferrer"}>
             <Twitter />
         </a>
         <a href={linkedIn} target={"_blank"} rel={"noreferrer"}>
             <LinkedIn />
         </a>
+        </div>
         <div className={'img_border_box'}></div>
     </div>
 }

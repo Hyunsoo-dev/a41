@@ -9,3 +9,11 @@
 .portfolio1_title {
   margin-bottom: 155px;
 }
+
+@include mobile {
+  .content_box {
+    width: 375px;
+    padding: 0 20px;
+    box-sizing: border-box;
+  }
+}

@@ -32,11 +32,11 @@ const OurThesis = () => {
                 </div>
                 <div
                     className={scrollY >= innerHeight / 3 ? "thesis_2nd_content_box" : "thesis_2nd_content_box_hidden"}>
-                <pre className={"thesis_2nd_content"}>
-                    In our publications,{'\n'}
-                    we will be sharing our thoughts on our investment,{'\n'}
+                <div className={"thesis_2nd_content"}>
+                    In our publications,<br />
+                    we will be sharing our thoughts on our investment,<br />
                     technical writings on projects and our ideas regarding the future.
-                </pre>
+                </div>
                 </div>
             </div>
         </div>

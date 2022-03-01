@@ -28,3 +28,25 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
 }
+
+@include mobile {
+  .article_title_box {
+    margin-top: 100px;
+    margin-bottom: 30px;
+  }
+  .article_title {
+    font-size: $h2_mobile_size;
+    line_height: $h2_mobile_height;
+    margin-right: 8px;
+  }
+  .article_count {
+    font-size: $body1_mobile_size;
+    line_height: $body1_mobile_height;
+  }
+  .grid_box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}

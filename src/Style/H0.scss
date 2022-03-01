@@ -13,3 +13,11 @@
 .dot {
   color: $point;
 }
+
+@include mobile {
+  .h0_title {
+    font-size: $h1_mobile_size;
+    line-height: $h1_mobile_height;
+    margin-top: 62px;
+  }
+}
