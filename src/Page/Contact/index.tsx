@@ -19,11 +19,9 @@ const Contact = () => {
     <div className={"content_box"}>
       <H0 title={"contact"} />
       <div className={"mail"}>media@a41ventues.com</div>
-      <div className={"row_box"}>
         <Twitter onClick={handleClickTwitter}/>
           <LinkedIn onClick={handleClickLinkedIn}/>
-      </div>
-      <div className={"row_box"}>
+      <div className={"contact_row_box"}>
         <Download title={"Logo File Download"}/>
         <Download title={"Brand Guid Download"} />
       </div>
