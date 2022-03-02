@@ -4,6 +4,7 @@ import { ReactComponent as LogoGreen } from "../Assets/icon/logo_green.svg";
 import { ReactComponent as LogoWhite } from "../Assets/icon/logo_white.svg";
 import { ReactComponent as MenuBlack } from "../Assets/icon/menu_black.svg";
 import { ReactComponent as MenuWhite } from "../Assets/icon/menu_white.svg";
+import { Contents1 } from "../Page/index";
 import "../Style/Header.scss";
 
 const Header = ({ dark }: any) => {
@@ -22,9 +23,7 @@ const Header = ({ dark }: any) => {
   });
   console.log(scrollPosition);
   return (
-    <div
-      className={scrollPosition > 3400 ? "container_white" : "container_black"}
-    >
+    <div className={scrollPosition > 3400 ? "container_white" : "container_black"}>
       <div className="wrapper">
         <div className="logo_wrapper">
           <Link className="category" to="/">
@@ -39,7 +38,7 @@ const Header = ({ dark }: any) => {
             portfolio
           </Link>
           <Link className="category" to="/content1">
-            content
+            content1
           </Link>
           <Link className="category" to="/team1">
             team
@@ -50,20 +49,10 @@ const Header = ({ dark }: any) => {
         </div>
 
         <div className="language_wrapper">
-          <div
-            className={
-              language === "KO" ? "selected_language" : "unselected_language"
-            }
-            onClick={() => selecLanguage("KO")}
-          >
+          <div className={language === "KO" ? "selected_language" : "unselected_language"} onClick={() => selecLanguage("KO")}>
             KO
           </div>
-          <div
-            className={
-              language === "EN" ? "selected_language" : "unselected_language"
-            }
-            onClick={() => selecLanguage("EN")}
-          >
+          <div className={language === "EN" ? "selected_language" : "unselected_language"} onClick={() => selecLanguage("EN")}>
             EN
           </div>
         </div>
