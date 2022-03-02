@@ -3,7 +3,8 @@ const TeamComponent = ({ thumbnail, enName, koName, position, Sns }: any) => {
   return (
     <section className="team-container">
       <section className="team-column1">
-        <img src={thumbnail} />
+        <div className="thumbnail-circle"></div>
+        <img className="thumbnail" src={thumbnail} />
       </section>
       <section className="team-column2">
         <section className="name-box">

@@ -1,16 +1,10 @@
 import React from "react";
 
-const ContentComponent = ({
-  thumbnail,
-  title,
-  subtitle,
-  author,
-  date,
-}: any) => {
+const ContentComponent = ({ thumbnail, title, subtitle, author, date }: any) => {
   return (
     <div className="content-container">
       <img className="content-thumbnail" src={thumbnail} />
-      <div className="content-contents">
+      <div className="content-box">
         <div className="content-title">{title}</div>
         <div className="content-subtitle">{subtitle}</div>
         <div className="content-author-date-box">
