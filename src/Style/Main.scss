@@ -1,17 +1,489 @@
 @import "../index.scss";
-
-.main_title_wrapper {
-  background-image: url("../Assets/image/mainPage/darkerBg.png");
+.container {
+  position: relative;
+  width: 100%;
+  height: 1024px;
+  background-color: $gray0;
+  margin: 0 auto;
 }
-#container {
+.container-white {
   width: 100%;
   height: 100%;
-  color: white;
+  background-color: $gray5;
+  margin: 0 auto;
+  padding: 150px 0px;
+}
+.greenDot {
+  margin-bottom: 5px;
 }
 
-section {
-  height: 500px;
-}
-.main_title .main_title_wrapper .title {
+.container-bg {
+  width: 1440px;
+  height: 1024px;
   color: white;
+  background-image: url("../Assets/image/mainPage/darkerBg.png");
+  background-repeat: no-repeat;
+  background-color: $gray0;
+  background-size: contain;
+  margin: 0 auto;
+}
+.container-bg-white {
+  width: 1440px;
+  height: 1024px;
+  color: $gray0;
+  background-color: $gray5;
+  margin: 0 auto;
+}
+
+.container-bg#opacity-bg {
+  width: 1440px;
+  height: 1024px;
+  color: white;
+  background: rgba(0, 0, 0, 0.1);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../Assets/image/mainPage/darkerBg.png");
+  background-repeat: no-repeat;
+
+  background-size: contain;
+  margin: 0 auto;
+}
+
+.main-title {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: $gray5;
+}
+.main-ourThesis,
+.main-ventures {
+  width: 1280px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  color: $gray5;
+}
+.main-portfolio,
+.main-contents,
+.main-team {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: $gray0;
+}
+
+.main-title-wrapper .title1,
+.main-title-wrapper .title2 {
+  font-size: 82px;
+  font-family: "GmarketSansBold", "GmarketSansMedium", "GmarketSansLight", sans-serif;
+  font-weight: $default-weight;
+  :nth-child(odd) {
+  }
+  :nth-child(even) {
+  }
+}
+
+.main-ventures-wrapper .title {
+  font-size: $h0-size;
+  font-family: "GmarketSansBold", "GmarketSansMedium", "GmarketSansLight", sans-serif;
+  font-weight: $default-weight;
+  display: flex;
+  align-items: flex-end;
+}
+.main-ventures-wrapper .content {
+  font-size: $body-size;
+  font-family: "GmarketSansBold", "GmarketSansMedium", "GmarketSansLight", sans-serif;
+  font-weight: $default-weight;
+}
+
+.main-ourThesis-wrapper .title {
+  font-size: $h0-size;
+  font-family: "GmarketSansBold", "GmarketSansMedium", "GmarketSansLight", sans-serif;
+  font-weight: $default-weight;
+  display: flex;
+  align-items: flex-end;
+}
+.main-ourThesis-wrapper .content-box {
+  font-size: $h1-size;
+  font-family: "GmarketSansBold", "GmarketSansMedium", "GmarketSansLight", sans-serif;
+  font-weight: $default-weight;
+  display: flex;
+  .dark-content {
+    color: $gray2;
+  }
+  .light-content {
+    color: $gray5;
+  }
+}
+
+/*
+  ------------- sticky start -----------
+*/
+.sticky-container {
+  // width: 100%;
+  background-color: $gray0;
+  margin-top: 100px;
+  width: 100%;
+  height: 350vh;
+}
+
+.sticky {
+  background-color: $gray0;
+  color: $gray5;
+  position: sticky;
+  height: 100vh;
+  top: 100px;
+}
+
+.slide-container {
+  position: relative;
+  background-color: $gray0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-image: url("../Assets/image/mainPage/darkerBg.png");
+  background-repeat: no-repeat;
+  background-color: $gray0;
+  background-size: contain;
+  margin: 0 auto;
+}
+
+#opacity-bg {
+  @extend .slide-container;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../Assets/image/mainPage/darkerBg.png");
+  transition: all 2s ease-in-out;
+}
+
+.slide {
+  color: $gray0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 250px;
+}
+.slide.hidden {
+  @extend .slide;
+  display: none;
+  animation: fade-out 1s ease-in-out;
+}
+.slide.visible {
+  @extend .slide;
+  display: block;
+  transition: display 1s ease-in-out;
+  animation: fade-in 1s ease-in-out;
+}
+.main-title .title1,
+.main-title .title2 {
+  transition: all 1s ease-in-out;
+}
+.main-title-action-p1 {
+  transition: all 1s ease-in-out;
+  transform: translateX(300px);
+}
+.main-title-action-p2 {
+  transition: all 1s ease-in-out;
+  transform: translateX(700px);
+}
+.main-title-action-p3 {
+  transition: all 1s ease-in-out;
+  transform: translateX(1100px);
+}
+.main-title-action-p4 {
+  transition: all 1s ease-in-out;
+  transform: translateX(1500px);
+  opacity: 0;
+}
+.main-title-action-n1 {
+  transition: all 1s ease-in-out;
+  transform: translateX(-300px);
+}
+.main-title-action-n2 {
+  transition: all 1s ease-in-out;
+  transform: translateX(-700px);
+}
+.main-title-action-n3 {
+  transition: all 1s ease-in-out;
+  transform: translateX(-1100px);
+}
+.main-title-action-n4 {
+  transition: all 1s ease-in-out;
+  transform: translateX(-1500px);
+  opacity: 0;
+}
+
+.main-ventures-action1 {
+  animation: fade-in-translate 1s ease-in-out;
+}
+.main-ventures-action2 {
+}
+.main-ventures-action3 {
+  animation: fade-out-translate 1s ease-in-out;
+}
+.main-our-thesis-action1 {
+  animation: fade-in-translate 1s ease-in-out;
+}
+.main-our-thesis-action2 {
+}
+.main-our-thesis-action3 {
+  animation: fade-out-translate 1s ease-in-out;
+}
+@keyframes fade-in-translate {
+  0% {
+    transform: translateY(20px);
+  }
+  100% {
+    transform: none;
+  }
+}
+@keyframes fade-out-translate {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-30px);
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes fade-out {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+/*
+  ------------- sticky end -----------
+*/
+
+.main-portfolio-wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 85%;
+}
+
+.main-portfolio-wrapper .title {
+  font-size: $h0-size;
+  font-family: "GmarketSansBold", "GmarketSansMedium", "GmarketSansLight", sans-serif;
+  font-weight: $default-weight;
+  display: flex;
+  align-items: flex-end;
+  margin-bottom: 60px;
+}
+.main-portfolio-wrapper .portfolio-box {
+  display: flex;
+  justify-content: space-between;
+}
+/*
+  main contents
+*/
+
+.main-contents-wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 85%;
+}
+
+.main-contents-wrapper .title {
+  font-size: $h0-size;
+  font-family: "GmarketSansBold", "GmarketSansMedium", "GmarketSansLight", sans-serif;
+  font-weight: $default-weight;
+  display: flex;
+  align-items: flex-end;
+  margin-bottom: 60px;
+}
+.main-contents-wrapper .contents-box {
+  display: flex;
+  margin: 30px 0px;
+}
+.main-contents-wrapper .contents-box .contents-box-column1 {
+  margin-right: 50px;
+}
+.main-contents-wrapper .contents-box .contents-box-column2 {
+  margin-top: 50px;
+}
+
+/*
+  Main -> ContentComponent
+*/
+.content-container {
+  margin-bottom: 70px;
+  &:hover {
+    border: 1px solid #99f100;
+  }
+}
+.content-container .content-thumbnail {
+  width: 520px;
+  height: 311px;
+}
+
+.content-container .content-box {
+  width: 520px;
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+}
+
+.content-container .content-title {
+  font-size: $headline_size;
+  font-family: "GmarketSansBold", "GmarketSansMedium", "GmarketSansLight", sans-serif;
+  font-weight: $h2_weight;
+  color: $gray0;
+  display: flex;
+  align-items: flex-end;
+  margin: 10px 0px;
+}
+
+.content-container .content-subtitle {
+  font-size: $body_size;
+  font-family: "GmarketSansMedium", "GmarketSansBold", "GmarketSansLight", sans-serif;
+  font-weight: $default_weight;
+  color: $gray2;
+  margin-bottom: 10px;
+}
+.content-container .content-author {
+  font-size: $footnote2_size;
+  font-family: "GmarketSansLight", "GmarketSansBold", "GmarketSansMedium", sans-serif;
+  font-weight: $default_weight;
+  color: $gray2;
+}
+.content-container .content-date {
+  font-size: $footnote2_size;
+  font-family: "GmarketSansLight", "GmarketSansBold", "GmarketSansMedium", sans-serif;
+  font-weight: $default_weight;
+  color: $gray2;
+}
+.content-author-date-box {
+  display: flex;
+  .content-author {
+  }
+  .content-date {
+  }
+}
+
+/*
+  Team section
+*/
+.main-team-wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 85%;
+}
+.main-team-wrapper .title {
+  font-size: $h0-size;
+  font-family: "GmarketSansBold", "GmarketSansMedium", "GmarketSansLight", sans-serif;
+  font-weight: $default-weight;
+  margin-bottom: 50px;
+  display: flex;
+  align-items: flex-end;
+}
+
+.main-team-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: space-around;
+
+  :nth-child(even) {
+    justify-content: flex-end;
+  }
+}
+/* 
+  Team Component section 
+*/
+
+.team-container {
+  display: flex;
+  padding: 50px 0px;
+}
+.team-column1 {
+  position: relative;
+}
+
+.team-column1 .thumbnail-circle {
+  width: 210px;
+  height: 210px;
+  border: 1px solid #99f100;
+  border-radius: 50%;
+  position: absolute;
+  transform: translate(-20px, -20px);
+
+  &:hover {
+    background-color: rgba(153, 241, 0, 0.2);
+    transform: translate(0px, 0px);
+  }
+}
+.team-column1 .thumbnail {
+  width: 210px;
+  height: 210px;
+  border-radius: 50%;
+}
+
+.team-container .team-column2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 15px;
+}
+
+.team-column2 .name-box {
+  display: flex;
+  align-items: center;
+  margin: 15px 0px;
+  .enName {
+    font-size: $h1_size;
+    font-family: "GmarketSansBold", "GmarketSansMedium", "GmarketSansLight", sans-serif;
+    font-weight: $h2_weight;
+    color: $gray0;
+
+    margin-right: 20px;
+  }
+  .koName {
+    font-size: $footnote1_size;
+    font-family: "GmarketSansLight", "GmarketSansBold", "GmarketSansMedium", sans-serif;
+    font-weight: $default-weight;
+    color: $gray2;
+    padding-top: 9px;
+  }
+}
+
+.team-column2 .job-box {
+  font-size: $body_size;
+  font-family: "GmarketSansMedium", "GmarketSansBold", "GmarketSansLight", sans-serif;
+  font-weight: $default-weight;
+  color: $gray0;
+}
+
+.team-column2 .sns-box {
+  display: flex;
+  align-items: flex-end;
+  height: 50px;
+  font-size: $body_size;
+  font-family: "GmarketSansBold", "GmarketSansMedium", "GmarketSansLight", sans-serif;
+  font-weight: $default-weight;
+  color: $gray0;
+  .sns-logo {
+    margin-right: 30px;
+  }
+  .sns-name {
+  }
 }

@@ -1,5 +1,133 @@
 import React from "react";
+import { Link, Outlet } from "react-router-dom";
+import "../../Style/Contents.scss";
+import { ReactComponent as GreenDot } from "../../Assets/image/mainPage/greenDot.svg";
+import { ReactComponent as GrayDot } from "../../Assets/image/content/grayDot.svg";
 const Contents1 = () => {
-  return <div>Contents1</div>;
+  return (
+    <div className="contents-container">
+      <div className="contents-page-container">
+        <div className="contents-page-title-wrapper">
+          <div className="title">
+            Contents <GreenDot className="greenDot" />
+          </div>
+        </div>
+        <div className="contents-page-list-wrapper">
+          <div className="page-content-box">
+            <Link to="/content/1" className="item">
+              <div className="column1">
+                <div className="title">[Research] Pricing Everlasting Options</div>
+                <div className="subTitle">This post explores ways to price everlasting options.</div>
+                <div className="content">
+                  In a journey of personal growth, it’s easy to lose sight of just how far you’ve come. So let's pause to
+                  <b>take a look at the progress that you’ve made.</b>
+                </div>
+                <div className="tag-box">
+                  <div className="tag">#tag1</div>
+                  <div className="tag">#tag2</div>
+                </div>
+                <div className="content-info-box">
+                  <div className="author">Author: Steve Kim</div>
+                  <GrayDot className="gray-dot" />
+                  <div className="date">Dec 24, 2021</div>
+                </div>
+              </div>
+              <div className="column2">
+                <div className="thumbnail"></div>
+              </div>
+            </Link>
+            <Link to="/content/1" className="item">
+              <div className="column1">
+                <div className="title">[Research] Pricing Everlasting Options</div>
+                <div className="subTitle">This post explores ways to price everlasting options.</div>
+                <div className="content">
+                  In a journey of personal growth, it’s easy to lose sight of just how far you’ve come. So let's pause to
+                  <b>take a look at the progress that you’ve made.</b>
+                </div>
+                <div className="tag-box">
+                  <div className="tag">#tag1</div>
+                  <div className="tag">#tag2</div>
+                </div>
+                <div className="content-info-box">
+                  <div className="author">Author: Steve Kim</div>
+                  <GrayDot className="gray-dot" />
+                  <div className="date">Dec 24, 2021</div>
+                </div>
+              </div>
+              <div className="column2">
+                <div className="thumbnail"></div>
+              </div>
+            </Link>{" "}
+            <Link to="/content/1" className="item">
+              <div className="column1">
+                <div className="title">[Research] Pricing Everlasting Options</div>
+                <div className="subTitle">This post explores ways to price everlasting options.</div>
+                <div className="content">
+                  In a journey of personal growth, it’s easy to lose sight of just how far you’ve come. So let's pause to
+                  <b>take a look at the progress that you’ve made.</b>
+                </div>
+                <div className="tag-box">
+                  <div className="tag">#tag1</div>
+                  <div className="tag">#tag2</div>
+                </div>
+                <div className="content-info-box">
+                  <div className="author">Author: Steve Kim</div>
+                  <GrayDot className="gray-dot" />
+                  <div className="date">Dec 24, 2021</div>
+                </div>
+              </div>
+              <div className="column2">
+                <div className="thumbnail"></div>
+              </div>
+            </Link>{" "}
+            <Link to="/content/1" className="item">
+              <div className="column1">
+                <div className="title">[Research] Pricing Everlasting Options</div>
+                <div className="subTitle">This post explores ways to price everlasting options.</div>
+                <div className="content">
+                  In a journey of personal growth, it’s easy to lose sight of just how far you’ve come. So let's pause to
+                  <b>take a look at the progress that you’ve made.</b>
+                </div>
+                <div className="tag-box">
+                  <div className="tag">#tag1</div>
+                  <div className="tag">#tag2</div>
+                </div>
+                <div className="content-info-box">
+                  <div className="author">Author: Steve Kim</div>
+                  <GrayDot className="gray-dot" />
+                  <div className="date">Dec 24, 2021</div>
+                </div>
+              </div>
+              <div className="column2">
+                <div className="thumbnail"></div>
+              </div>
+            </Link>{" "}
+            <Link to="/content/1" className="item">
+              <div className="column1">
+                <div className="title">[Research] Pricing Everlasting Options</div>
+                <div className="subTitle">This post explores ways to price everlasting options.</div>
+                <div className="content">
+                  In a journey of personal growth, it’s easy to lose sight of just how far you’ve come. So let's pause to
+                  <b>take a look at the progress that you’ve made.</b>
+                </div>
+                <div className="tag-box">
+                  <div className="tag">#tag1</div>
+                  <div className="tag">#tag2</div>
+                </div>
+                <div className="content-info-box">
+                  <div className="author">Author: Steve Kim</div>
+                  <GrayDot className="gray-dot" />
+                  <div className="date">Dec 24, 2021</div>
+                </div>
+              </div>
+              <div className="column2">
+                <div className="thumbnail"></div>
+              </div>
+            </Link>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
 };
 export default Contents1;
