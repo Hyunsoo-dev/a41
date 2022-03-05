@@ -30,7 +30,7 @@ const Team2 = () => {
                     <LinkedIn/>
                 </a>
                 </div>
-                <div className={'big_img_border_box'}></div>
+                <div className={'big_img_border_box'} />
             </div>
             <hr />
             <div className={"profile_article"}>
