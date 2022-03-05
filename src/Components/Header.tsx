@@ -1,9 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { ReactComponent as LogoGreen } from "../Assets/icon/logo_green.svg";
 import { ReactComponent as LogoWhite } from "../Assets/icon/logo_white.svg";
 import { ReactComponent as MenuBlack } from "../Assets/icon/menu_black.svg";
 import { ReactComponent as MenuWhite } from "../Assets/icon/menu_white.svg";
+import { Contents1 } from "../Page/index";
 import "../Style/Header.scss";
 
 const Header = ({ dark }: any) => {
@@ -12,8 +13,17 @@ const Header = ({ dark }: any) => {
     setLanguage(language);
   };
 
+  const [headerTheme, setHeaderTheme] = useState("black");
+  const [scrollPosition, setScrollPosition] = useState(0);
+  const updateScroll = () => {
+    setScrollPosition(window.pageYOffset);
+  };
+  useEffect(() => {
+    window.addEventListener("scroll", updateScroll);
+  });
+  console.log(scrollPosition);
   return (
-    <div className={dark ? "container_black" : "container_white"}>
+    <div className={scrollPosition > 3400 ? "container_white" : "container_black"}>
       <div className="wrapper">
         <div className="logo_wrapper">
           <Link className="category" to="/">
@@ -28,7 +38,7 @@ const Header = ({ dark }: any) => {
             portfolio
           </Link>
           <Link className="category" to="/content1">
-            content
+            content1
           </Link>
           <Link className="category" to="/team">
             team
