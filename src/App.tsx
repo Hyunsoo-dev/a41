@@ -19,7 +19,7 @@ function App() {
   return (
     <div id="container">
       <BrowserRouter>
-        <Header dark={true} />
+        <Header />
         {/*<main id="mainContainer">*/}
         <Routes>
           <Route path="/" element={<Main />} />

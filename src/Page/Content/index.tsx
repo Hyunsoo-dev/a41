@@ -7,25 +7,29 @@ const Content = () => {
   const [scrollPosition, setScrollPosition] = useState(0);
   const [height, setHeight] = useState(0);
   const updateScrollPosition = () => {
-    setScrollPosition(window.scrollY);
+    setScrollPosition(
+      document.body.scrollTop || document.documentElement.scrollTop
+    );
   };
-  console.log(
-    "document.body.scrollHeight :",
-    document.documentElement.scrollHeight -
-      document.documentElement.clientHeight
-  );
-
-  console.log(scrollPosition);
+  // console.log(
+  //   "document.body.scrollHeight :",
+  //   document.documentElement.scrollHeight -
+  //     document.documentElement.clientHeight
+  // );
+  console.log("clientHeight :", document.documentElement.offsetHeight);
+  console.log("scrollHeight :", document.documentElement.scrollHeight);
+  console.log("scrollPosition :", scrollPosition);
 
   useEffect(() => {
     window.addEventListener("scroll", updateScrollPosition);
   });
   useEffect(() => {
-    setHeight(
+    const winHeight =
       document.documentElement.scrollHeight -
-        document.documentElement.clientHeight
-    );
-  }, []);
+      document.documentElement.clientHeight;
+
+    setHeight(winHeight);
+  });
 
   return (
     <div className="content-page-container">
