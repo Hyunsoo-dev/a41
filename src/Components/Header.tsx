@@ -7,7 +7,7 @@ import { ReactComponent as MenuWhite } from "../Assets/icon/menu_white.svg";
 import { Contents1 } from "../Page/index";
 import "../Style/Header.scss";
 
-const Header = () => {
+const Header = ({ clickMenu }: any) => {
   const [language, setLanguage] = useState("KO");
   const selecLanguage = (language: string) => {
     setLanguage(language);
@@ -72,7 +72,7 @@ const Header = () => {
             EN
           </div>
         </div>
-        <div className="menu">
+        <div className="menu" onClick={() => clickMenu()}>
           {scrollPosition > 3400 ? <MenuBlack /> : <MenuWhite />}
         </div>
       </div>

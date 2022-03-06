@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import Footer from "./Components/Footer";
 import Header from "./Components/Header";
+import SideBar from "./Components/SideBar";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import {
   Main,
@@ -13,13 +14,20 @@ import {
   Team1,
   Team2,
 } from "./Page";
+
 import "./App.scss";
 
 function App() {
+  const [clickedSideBar, setClickedSideBar] = useState(false);
+  const clickMenu = () => {
+    setClickedSideBar(!clickedSideBar);
+  };
+
   return (
     <div id="container">
       <BrowserRouter>
-        <Header />
+        <Header clickMenu={clickMenu} />
+        <SideBar clickedSideBar={clickedSideBar} />
         {/*<main id="mainContainer">*/}
         <Routes>
           <Route path="/" element={<Main />} />
