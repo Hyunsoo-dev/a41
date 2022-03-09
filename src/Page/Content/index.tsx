@@ -117,6 +117,24 @@ const Content = () => {
             </div>
           </div>
         </div>
+        <div className="content-page-content-wrapper">
+          <div>
+            <div className="prev-content">
+              <div className="column1">arrow</div>
+              <div className="column2">
+                <div>이전글</div>
+                <div className="title">Pre Content Title</div>
+              </div>
+            </div>
+            <div className="next-content">
+              <div className="column2">
+                <div>다음글</div>
+                <div className="title">Next Content Title</div>
+              </div>
+              <div className="column1">arrow</div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );

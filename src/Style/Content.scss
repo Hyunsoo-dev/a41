@@ -1,5 +1,5 @@
 @import "../index.scss";
-
+@import "../Style/variables.scss";
 .content-page-container {
   position: relative;
   background-color: #ffffff;
@@ -109,6 +109,47 @@
       font-weight: $default_weight;
       line-height: 34px;
       margin-bottom: 20px;
+    }
+  }
+}
+
+@include mobile {
+  .content-page-wrapper {
+    width: 335px;
+    .content-page-header-wrapper {
+      .title {
+        font-size: 22px;
+      }
+      .subtitle {
+        font-size: 14px;
+      }
+      .content-info-box {
+        .author,
+        .date {
+          font-size: 12px;
+        }
+      }
+    }
+
+    .content-page-content-wrapper {
+      .disclaimer {
+        font-size: 14px;
+        margin-bottom: 30px;
+      }
+      .thumbnail {
+        width: 335px;
+        height: 220px;
+        margin-bottom: 30px;
+      }
+      .content-box {
+        width: 100%;
+        .title,
+        .content {
+          margin: 0;
+          font-size: 14px;
+          line-height: 22px;
+        }
+      }
     }
   }
 }
