@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect} from "react";
 import H0 from "../../Components/H0";
 import {data} from "../Team1/teamlistdata";
 import {useLocation} from "react-router-dom";
@@ -8,6 +8,12 @@ import {ReactComponent as LinkedIn} from "../../Assets/linkedin.svg";
 import ArticleCard from "../Portfolio2/ArticleCard";
 
 const Team2 = () => {
+
+    useEffect(() => {
+        window.scrollTo({top:0, left:0, behavior:'auto'});
+        return () => {}
+    }, []);
+
     const {pathname} = useLocation();
     const id: number = Number(pathname.substring(pathname.length - 1));
 
