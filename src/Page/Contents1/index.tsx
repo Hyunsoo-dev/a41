@@ -1,9 +1,15 @@
-import React from "react";
+import React, {useEffect} from "react";
 import { Link, Outlet } from "react-router-dom";
 import "../../Style/Contents.scss";
 import { ReactComponent as GreenDot } from "../../Assets/image/mainPage/greenDot.svg";
 import { ReactComponent as GrayDot } from "../../Assets/image/content/grayDot.svg";
 const Contents1 = () => {
+
+  useEffect(() => {
+    window.scrollTo({top:0, left:0, behavior:'auto'});
+    return () => {}
+  }, []);
+
   return (
     <div className="contents-container">
       <div className="contents-page-container">

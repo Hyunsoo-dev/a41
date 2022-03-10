@@ -12,7 +12,12 @@ import { ReactComponent as GreenDot } from "../../Assets/image/mainPage/greenDot
 import { ReactComponent as SnsLogo } from "../../Assets/image/mainPage/sns.svg";
 import team_thumbnail from "../../Assets/image/mainPage/team_thumbnail.png";
 const Main = () => {
-  console.log(window.scrollY);
+
+  useEffect(() => {
+    window.scrollTo({top:0, left:0, behavior:'auto'});
+    return () => {}
+  }, []);
+
   const [scrollPosition, setScrollPosition] = useState(0);
   const updateScrollPosition = () => {
     setScrollPosition(window.scrollY);

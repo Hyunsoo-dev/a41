@@ -3,6 +3,11 @@ import React, { useState, useEffect } from "react";
 import "../../Style/Content.scss";
 import { useParams } from "react-router-dom";
 const Content = () => {
+  useEffect(() => {
+    window.scrollTo({top:0, left:0, behavior:'auto'});
+    return () => {}
+  }, []);
+
   const params = useParams();
   const [scrollPosition, setScrollPosition] = useState(0);
   const [height, setHeight] = useState(0);

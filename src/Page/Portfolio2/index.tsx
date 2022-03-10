@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect} from "react";
 import {useLocation} from "react-router-dom";
 import {data} from "../Portfolio1/portfolio";
 import PortfolioList from "../Portfolio1/PortfolioList";
@@ -8,6 +8,12 @@ import '../../Style/Portfolio2.scss';
 import ArticleCard from "./ArticleCard";
 
 const Portfolio2 = () => {
+
+    useEffect(() => {
+        window.scrollTo({top:0, left:0, behavior:'auto'});
+        return () => {}
+    }, []);
+
     const {pathname} = useLocation();
     const id: number = Number(pathname.substring(pathname.length - 1));
 
