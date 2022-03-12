@@ -10,6 +10,9 @@ import BlockSurveLogo from "../../Assets/image/mainPage/blockSurveLogo.png";
 import BribeLogo from "../../Assets/image/mainPage/bribeLogo.png";
 import { ReactComponent as GreenDot } from "../../Assets/image/mainPage/greenDot.svg";
 import { ReactComponent as SnsLogo } from "../../Assets/image/mainPage/sns.svg";
+import { ReactComponent as RightArrow } from "../../Assets/image/mainPage/rightArrowIcon.svg";
+import { ReactComponent as ViewMoreIcon } from "../../Assets/image/mainPage/viewMoreIcon.svg";
+import ViewMoreIconMobile from "../../Assets/image/mainPage/viewMoreIconMobile.png";
 import team_thumbnail from "../../Assets/image/mainPage/team_thumbnail.png";
 import H0 from "../../Components/H0";
 const Main = () => {
@@ -201,7 +204,7 @@ const Main = () => {
                   <img src={BribeLogo} alt="" />
                 </article>
                 <article className="view-more-button-box">
-                  <img src={""} alt="" />
+                  <img src={ViewMoreIconMobile} alt="" />
                 </article>
               </div>
             </div>
@@ -211,8 +214,14 @@ const Main = () => {
       <section className="container-white">
         <section className="container-bg-white">
           <section className="main-contents">
-            <div className="main-contents-wrapper">
+            <div className="main-contents-title-wrapper">
               <H0 title="Contents" />
+              <div className="icon-box">
+                <RightArrow className="right-arrow" />
+                <div className="view-more-text">view more</div>
+              </div>
+            </div>
+            <div className="main-contents-wrapper">
               <div className="contents-box">
                 <div className="contents-box-column1">
                   <ContentComponent

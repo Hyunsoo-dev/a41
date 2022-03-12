@@ -20,6 +20,7 @@ import "./App.scss";
 function App() {
   const [clickedSideBar, setClickedSideBar] = useState(false);
   const clickMenu = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
     setClickedSideBar(!clickedSideBar);
   };
 
