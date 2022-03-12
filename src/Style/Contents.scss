@@ -1,9 +1,9 @@
 @import "../index.scss";
-
+@import "../Style/variables.scss";
 .contents-container {
   background-color: #f6f6f7;
   width: 100%;
-  height: 100vh;
+  height: auto;
   padding-top: 180px;
   margin-top: 100px;
 }
@@ -19,7 +19,8 @@
   margin-bottom: 80px;
   .title {
     font-size: $h0-size;
-    font-family: "GmarketSansBold", "GmarketSansMedium", "GmarketSansLight", sans-serif;
+    font-family: "GmarketSansBold", "GmarketSansMedium", "GmarketSansLight",
+      sans-serif;
     font-weight: $default-weight;
     color: $gray0;
     display: flex;
@@ -69,21 +70,24 @@
 .column1 {
   .title {
     font-size: $h1_size;
-    font-family: "GmarketSansBold", "GmarketSansMedium", "GmarketSansLight", sans-serif;
+    font-family: "GmarketSansBold", "GmarketSansMedium", "GmarketSansLight",
+      sans-serif;
     font-weight: $h2_weight;
     color: $gray0;
     margin-bottom: 10px;
   }
   .subTitle {
     font-size: $body_size;
-    font-family: "GmarketSansMedium", "GmarketSansBold", "GmarketSansLight", sans-serif;
+    font-family: "GmarketSansMedium", "GmarketSansBold", "GmarketSansLight",
+      sans-serif;
     font-weight: $default_weight;
     color: $gray0;
     margin-bottom: 16px;
   }
   .content {
     font-size: $body_size;
-    font-family: "GmarketSansMedium", "GmarketSansBold", "GmarketSansLight", sans-serif;
+    font-family: "GmarketSansMedium", "GmarketSansBold", "GmarketSansLight",
+      sans-serif;
     font-weight: $default_weight;
     color: $gray2;
     margin-bottom: 16px;
@@ -100,7 +104,8 @@
       width: 66px;
       height: 27px;
       font-size: $footnote2_size;
-      font-family: "GmarketSansLight", "GmarketSansMedium", "GmarketSansBold", sans-serif;
+      font-family: "GmarketSansLight", "GmarketSansMedium", "GmarketSansBold",
+        sans-serif;
       font-weight: $default_weight;
       color: $gray2;
       margin-right: 30px;
@@ -116,12 +121,75 @@
     .author,
     .date {
       font-size: $footnote2_size;
-      font-family: "GmarketSansLight", "GmarketSansMedium", "GmarketSansBold", sans-serif;
+      font-family: "GmarketSansLight", "GmarketSansMedium", "GmarketSansBold",
+        sans-serif;
       font-weight: $default_weight;
       color: $gray2;
     }
     .gray-dot {
       margin: 0 20px;
+    }
+  }
+}
+
+@include mobile {
+  .contents-page-container {
+    width: 335px;
+    .contents-page-title-wrapper {
+      display: flex;
+      margin-bottom: 50px;
+      .title {
+        font-size: 27px;
+      }
+      .icon-box {
+        display: none;
+        #search-icon {
+          fill: black;
+          color: black;
+        }
+      }
+    }
+    .page-content-box {
+      .item {
+        background-color: #f6f6f7;
+        box-shadow: none;
+        width: 100%;
+        flex-direction: column;
+        padding: 0;
+
+        .column1 {
+          order: 2;
+          width: 100%;
+          margin-right: 0px;
+
+          .title {
+            font-size: 18px;
+          }
+          .subTitle {
+            font-size: 14px;
+            color: $gray2;
+          }
+          .content,
+          .tag-box {
+            display: none;
+          }
+          .content-info-box {
+            .author,
+            .date {
+              font-size: 12px;
+            }
+          }
+        }
+        .column2 {
+          order: 1;
+          width: 100%;
+          margin-bottom: 16px;
+          .thumbnail {
+            width: 335px;
+            height: 221px;
+          }
+        }
+      }
     }
   }
 }

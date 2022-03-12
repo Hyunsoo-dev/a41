@@ -1,4 +1,8 @@
 @import "../index.scss";
+@import "../Style/variables.scss";
+* {
+  box-sizing: border-box;
+}
 .container {
   position: relative;
   width: 100%;
@@ -19,7 +23,7 @@
 
 .container-bg {
   width: 1440px;
-  height: 1024px;
+  height: auto;
   color: white;
   background-image: url("../Assets/image/mainPage/darkerBg.png");
   background-repeat: no-repeat;
@@ -29,7 +33,7 @@
 }
 .container-bg-white {
   width: 1440px;
-  height: 1024px;
+  height: auto;
   color: $gray0;
   background-color: $gray5;
   margin: 0 auto;
@@ -40,7 +44,8 @@
   height: 1024px;
   color: white;
   background: rgba(0, 0, 0, 0.1);
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../Assets/image/mainPage/darkerBg.png");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("../Assets/image/mainPage/darkerBg.png");
   background-repeat: no-repeat;
 
   background-size: contain;
@@ -82,7 +87,8 @@
 .main-title-wrapper .title1,
 .main-title-wrapper .title2 {
   font-size: 82px;
-  font-family: "GmarketSansBold", "GmarketSansMedium", "GmarketSansLight", sans-serif;
+  font-family: "GmarketSansBold", "GmarketSansMedium", "GmarketSansLight",
+    sans-serif;
   font-weight: $default-weight;
   :nth-child(odd) {
   }
@@ -92,27 +98,35 @@
 
 .main-ventures-wrapper .title {
   font-size: $h0-size;
-  font-family: "GmarketSansBold", "GmarketSansMedium", "GmarketSansLight", sans-serif;
+  font-family: "GmarketSansBold", "GmarketSansMedium", "GmarketSansLight",
+    sans-serif;
   font-weight: $default-weight;
   display: flex;
   align-items: flex-end;
 }
 .main-ventures-wrapper .content {
   font-size: $body-size;
-  font-family: "GmarketSansBold", "GmarketSansMedium", "GmarketSansLight", sans-serif;
+  font-family: "GmarketSansBold", "GmarketSansMedium", "GmarketSansLight",
+    sans-serif;
   font-weight: $default-weight;
+  margin-top: 40px;
 }
 
 .main-ourThesis-wrapper .title {
   font-size: $h0-size;
-  font-family: "GmarketSansBold", "GmarketSansMedium", "GmarketSansLight", sans-serif;
+  font-family: "GmarketSansBold", "GmarketSansMedium", "GmarketSansLight",
+    sans-serif;
   font-weight: $default-weight;
   display: flex;
   align-items: flex-end;
 }
-.main-ourThesis-wrapper .content-box {
+.main-ourThesis-wrapper .content-wrapper {
+  margin-top: 40px;
+}
+.main-ourThesis-wrapper .main-content-box {
   font-size: $h1-size;
-  font-family: "GmarketSansBold", "GmarketSansMedium", "GmarketSansLight", sans-serif;
+  font-family: "GmarketSansBold", "GmarketSansMedium", "GmarketSansLight",
+    sans-serif;
   font-weight: $default-weight;
   display: flex;
   .dark-content {
@@ -160,7 +174,8 @@
 
 #opacity-bg {
   @extend .slide-container;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../Assets/image/mainPage/darkerBg.png");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("../Assets/image/mainPage/darkerBg.png");
   transition: all 2s ease-in-out;
 }
 
@@ -283,20 +298,82 @@
 
 .main-portfolio-wrapper .title {
   font-size: $h0-size;
-  font-family: "GmarketSansBold", "GmarketSansMedium", "GmarketSansLight", sans-serif;
+  font-family: "GmarketSansBold", "GmarketSansMedium", "GmarketSansLight",
+    sans-serif;
   font-weight: $default-weight;
   display: flex;
   align-items: flex-end;
   margin-bottom: 60px;
 }
 .main-portfolio-wrapper .portfolio-box {
+  margin-top: 40px;
   display: flex;
   justify-content: space-between;
+  .view-more-button-box {
+    display: none;
+  }
 }
+
 /*
   main contents
 */
+.main-contents-title-wrapper {
+  width: 85%;
+  height: auto;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
 
+  .icon-box {
+    margin-right: 50px;
+    height: 30px;
+    width: 150px;
+    white-space: nowrap;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .right-arrow {
+      display: block;
+      position: absolute;
+      margin-left: 112px;
+    }
+    .view-more-text {
+      position: absolute;
+      top: 0;
+      left: -200px;
+      // display: none;
+      color: #99f100;
+      font-size: 24px;
+      font-family: "GmarketSansBold", "GmarketSansLight", "GmarketSansMedium",
+        sans-serif;
+      font-weight: $h2_weight;
+    }
+  }
+  .icon-box:hover {
+    .right-arrow {
+      transform: translateX(200px);
+      transition: transform 0.3s ease;
+    }
+    .view-more-text {
+      // display: block;
+      transform: translateX(200px);
+      transition: transform 0.3s ease;
+    }
+  }
+  .icon-box:not(:hover) {
+    .right-arrow {
+      transform: translateX(0px);
+      transition: transform 0.3s ease;
+    }
+    .view-more-text {
+      // display: block;
+      transform: translateX(0px);
+      transition: transform 0.3s ease;
+    }
+  }
+}
 .main-contents-wrapper {
   display: flex;
   flex-direction: column;
@@ -305,7 +382,8 @@
 
 .main-contents-wrapper .title {
   font-size: $h0-size;
-  font-family: "GmarketSansBold", "GmarketSansMedium", "GmarketSansLight", sans-serif;
+  font-family: "GmarketSansBold", "GmarketSansMedium", "GmarketSansLight",
+    sans-serif;
   font-weight: $default-weight;
   display: flex;
   align-items: flex-end;
@@ -313,10 +391,10 @@
 }
 .main-contents-wrapper .contents-box {
   display: flex;
-  margin: 30px 0px;
+  margin: 40px 0px;
 }
 .main-contents-wrapper .contents-box .contents-box-column1 {
-  margin-right: 50px;
+  margin-right: 124px;
 }
 .main-contents-wrapper .contents-box .contents-box-column2 {
   margin-top: 50px;
@@ -345,7 +423,8 @@
 
 .content-container .content-title {
   font-size: $headline_size;
-  font-family: "GmarketSansBold", "GmarketSansMedium", "GmarketSansLight", sans-serif;
+  font-family: "GmarketSansBold", "GmarketSansMedium", "GmarketSansLight",
+    sans-serif;
   font-weight: $h2_weight;
   color: $gray0;
   display: flex;
@@ -355,20 +434,23 @@
 
 .content-container .content-subtitle {
   font-size: $body_size;
-  font-family: "GmarketSansMedium", "GmarketSansBold", "GmarketSansLight", sans-serif;
+  font-family: "GmarketSansMedium", "GmarketSansBold", "GmarketSansLight",
+    sans-serif;
   font-weight: $default_weight;
   color: $gray2;
   margin-bottom: 10px;
 }
 .content-container .content-author {
   font-size: $footnote2_size;
-  font-family: "GmarketSansLight", "GmarketSansBold", "GmarketSansMedium", sans-serif;
+  font-family: "GmarketSansLight", "GmarketSansBold", "GmarketSansMedium",
+    sans-serif;
   font-weight: $default_weight;
   color: $gray2;
 }
 .content-container .content-date {
   font-size: $footnote2_size;
-  font-family: "GmarketSansLight", "GmarketSansBold", "GmarketSansMedium", sans-serif;
+  font-family: "GmarketSansLight", "GmarketSansBold", "GmarketSansMedium",
+    sans-serif;
   font-weight: $default_weight;
   color: $gray2;
 }
@@ -390,7 +472,8 @@
 }
 .main-team-wrapper .title {
   font-size: $h0-size;
-  font-family: "GmarketSansBold", "GmarketSansMedium", "GmarketSansLight", sans-serif;
+  font-family: "GmarketSansBold", "GmarketSansMedium", "GmarketSansLight",
+    sans-serif;
   font-weight: $default-weight;
   margin-bottom: 50px;
   display: flex;
@@ -451,7 +534,8 @@
   margin: 15px 0px;
   .enName {
     font-size: $h1_size;
-    font-family: "GmarketSansBold", "GmarketSansMedium", "GmarketSansLight", sans-serif;
+    font-family: "GmarketSansBold", "GmarketSansMedium", "GmarketSansLight",
+      sans-serif;
     font-weight: $h2_weight;
     color: $gray0;
 
@@ -459,7 +543,8 @@
   }
   .koName {
     font-size: $footnote1_size;
-    font-family: "GmarketSansLight", "GmarketSansBold", "GmarketSansMedium", sans-serif;
+    font-family: "GmarketSansLight", "GmarketSansBold", "GmarketSansMedium",
+      sans-serif;
     font-weight: $default-weight;
     color: $gray2;
     padding-top: 9px;
@@ -468,7 +553,8 @@
 
 .team-column2 .job-box {
   font-size: $body_size;
-  font-family: "GmarketSansMedium", "GmarketSansBold", "GmarketSansLight", sans-serif;
+  font-family: "GmarketSansMedium", "GmarketSansBold", "GmarketSansLight",
+    sans-serif;
   font-weight: $default-weight;
   color: $gray0;
 }
@@ -478,12 +564,148 @@
   align-items: flex-end;
   height: 50px;
   font-size: $body_size;
-  font-family: "GmarketSansBold", "GmarketSansMedium", "GmarketSansLight", sans-serif;
+  font-family: "GmarketSansBold", "GmarketSansMedium", "GmarketSansLight",
+    sans-serif;
   font-weight: $default-weight;
   color: $gray0;
   .sns-logo {
     margin-right: 30px;
   }
   .sns-name {
+  }
+}
+
+@include mobile {
+  .sticky-container {
+    height: 450vh;
+    // display: none;
+    .sticky {
+      .slide-container {
+        width: 335px;
+        .main-title {
+          .title1,
+          .title2 {
+            font-size: $h0_mobile_size;
+            font-family: "GmarketSansBold", "GmarketSansMedium",
+              "GmarketSansLight", sans-serif;
+            font-weight: $default-weight;
+          }
+        }
+        .main-ventures {
+          width: 335px;
+          .content {
+            font-size: $body1_mobile_size;
+            font-family: "GmarketSansMedium", "GmarketSansBold",
+              "GmarketSansLight", sans-serif;
+            font-weight: $default-weight;
+          }
+        }
+        .main-ourThesis {
+          width: 335px;
+
+          .main-content-box {
+            width: 335px;
+            height: 80px;
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 16px;
+            margin-bottom: 18px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            padding-left: 20px;
+            .dark-content {
+              font-size: $headline_mobile_size;
+              font-family: "GmarketSansBold", "GmarketSansMedium",
+                "GmarketSansLight", sans-serif;
+              font-weight: $default-weight;
+              color: $gray3;
+            }
+            .light-content {
+              font-size: $headline_mobile_size;
+              font-family: "GmarketSansBold", "GmarketSansMedium",
+                "GmarketSansLight", sans-serif;
+              font-weight: $default-weight;
+              color: $gray5;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .container-white {
+    .container-bg-white {
+      width: 335px;
+      .main-portfolio {
+        justify-content: normal;
+        .main-portfolio-wrapper {
+          width: 100%;
+          .portfolio-box {
+            flex-wrap: wrap;
+            .portfolio-logo {
+              img {
+                width: 95.67px;
+                height: 84px;
+              }
+            }
+            .view-more-button-box {
+              display: block;
+              img {
+                width: 95.67px;
+                height: 84px;
+              }
+            }
+          }
+        }
+      }
+      .main-contents {
+        width: 335px;
+        .main-contents-title-wrapper {
+          width: 100%;
+          height: auto;
+          display: flex;
+        }
+        .main-contents-wrapper {
+          width: 100%;
+          .contents-box {
+            flex-direction: column;
+            flex-wrap: wrap;
+            .content-container {
+              .content-thumbnail {
+                width: 335px;
+                height: 220px;
+              }
+              .content-box {
+                width: 335px;
+                .content-title {
+                  font-size: $headline_mobile_size;
+                }
+                .content-subtitle {
+                  font-size: $body2_mobile_size;
+                }
+                .content-author-date-box {
+                  .content-author,
+                  .content-date {
+                    font-size: $footnote2_mobile_size;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+      .main-team {
+        width: 335px;
+        .main-team-wrapper {
+          width: 100%;
+          .main-team-box {
+            .team-container {
+              flex-direction: column;
+              align-items: center;
+            }
+          }
+        }
+      }
+    }
   }
 }

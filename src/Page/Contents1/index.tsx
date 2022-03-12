@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import "../../Style/Contents.scss";
 import { ReactComponent as GreenDot } from "../../Assets/image/mainPage/greenDot.svg";
 import { ReactComponent as GrayDot } from "../../Assets/image/content/grayDot.svg";
+import { ReactComponent as SearchIcon } from "../../Assets/image/content/searchIcon.svg";
+import { ReactComponent as FilterIcon } from "../../Assets/image/content/filterIcon.svg";
 const Contents1 = () => {
 
   useEffect(() => {
@@ -17,15 +19,24 @@ const Contents1 = () => {
           <div className="title">
             Contents <GreenDot className="greenDot" />
           </div>
+          <div className="icon-box">
+            <SearchIcon id="search-icon" />
+            {/* <FilterIcon /> */}
+          </div>
         </div>
         <div className="contents-page-list-wrapper">
           <div className="page-content-box">
             <Link to="/content/1" className="item">
               <div className="column1">
-                <div className="title">[Research] Pricing Everlasting Options</div>
-                <div className="subTitle">This post explores ways to price everlasting options.</div>
+                <div className="title">
+                  [Research] Pricing Everlasting Options
+                </div>
+                <div className="subTitle">
+                  This post explores ways to price everlasting options.
+                </div>
                 <div className="content">
-                  In a journey of personal growth, it’s easy to lose sight of just how far you’ve come. So let's pause to
+                  In a journey of personal growth, it’s easy to lose sight of
+                  just how far you’ve come. So let's pause to
                   <b>take a look at the progress that you’ve made.</b>
                 </div>
                 <div className="tag-box">
@@ -44,10 +55,15 @@ const Contents1 = () => {
             </Link>
             <Link to="/content/1" className="item">
               <div className="column1">
-                <div className="title">[Research] Pricing Everlasting Options</div>
-                <div className="subTitle">This post explores ways to price everlasting options.</div>
+                <div className="title">
+                  [Research] Pricing Everlasting Options
+                </div>
+                <div className="subTitle">
+                  This post explores ways to price everlasting options.
+                </div>
                 <div className="content">
-                  In a journey of personal growth, it’s easy to lose sight of just how far you’ve come. So let's pause to
+                  In a journey of personal growth, it’s easy to lose sight of
+                  just how far you’ve come. So let's pause to
                   <b>take a look at the progress that you’ve made.</b>
                 </div>
                 <div className="tag-box">
@@ -63,13 +79,18 @@ const Contents1 = () => {
               <div className="column2">
                 <div className="thumbnail"></div>
               </div>
-            </Link>{" "}
+            </Link>
             <Link to="/content/1" className="item">
               <div className="column1">
-                <div className="title">[Research] Pricing Everlasting Options</div>
-                <div className="subTitle">This post explores ways to price everlasting options.</div>
+                <div className="title">
+                  [Research] Pricing Everlasting Options
+                </div>
+                <div className="subTitle">
+                  This post explores ways to price everlasting options.
+                </div>
                 <div className="content">
-                  In a journey of personal growth, it’s easy to lose sight of just how far you’ve come. So let's pause to
+                  In a journey of personal growth, it’s easy to lose sight of
+                  just how far you’ve come. So let's pause to
                   <b>take a look at the progress that you’ve made.</b>
                 </div>
                 <div className="tag-box">
@@ -85,13 +106,18 @@ const Contents1 = () => {
               <div className="column2">
                 <div className="thumbnail"></div>
               </div>
-            </Link>{" "}
+            </Link>
             <Link to="/content/1" className="item">
               <div className="column1">
-                <div className="title">[Research] Pricing Everlasting Options</div>
-                <div className="subTitle">This post explores ways to price everlasting options.</div>
+                <div className="title">
+                  [Research] Pricing Everlasting Options
+                </div>
+                <div className="subTitle">
+                  This post explores ways to price everlasting options.
+                </div>
                 <div className="content">
-                  In a journey of personal growth, it’s easy to lose sight of just how far you’ve come. So let's pause to
+                  In a journey of personal growth, it’s easy to lose sight of
+                  just how far you’ve come. So let's pause to
                   <b>take a look at the progress that you’ve made.</b>
                 </div>
                 <div className="tag-box">
@@ -107,13 +133,18 @@ const Contents1 = () => {
               <div className="column2">
                 <div className="thumbnail"></div>
               </div>
-            </Link>{" "}
+            </Link>
             <Link to="/content/1" className="item">
               <div className="column1">
-                <div className="title">[Research] Pricing Everlasting Options</div>
-                <div className="subTitle">This post explores ways to price everlasting options.</div>
+                <div className="title">
+                  [Research] Pricing Everlasting Options
+                </div>
+                <div className="subTitle">
+                  This post explores ways to price everlasting options.
+                </div>
                 <div className="content">
-                  In a journey of personal growth, it’s easy to lose sight of just how far you’ve come. So let's pause to
+                  In a journey of personal growth, it’s easy to lose sight of
+                  just how far you’ve come. So let's pause to
                   <b>take a look at the progress that you’ve made.</b>
                 </div>
                 <div className="tag-box">

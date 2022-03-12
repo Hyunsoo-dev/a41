@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import Footer from "./Components/Footer";
 import Header from "./Components/Header";
+import SideBar from "./Components/SideBar";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import {
   Main,
@@ -14,13 +15,21 @@ import {
   Team2,
   Stake,
 } from "./Page";
+
 import "./App.scss";
 
 function App() {
+  const [clickedSideBar, setClickedSideBar] = useState(false);
+  const clickMenu = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+    setClickedSideBar(!clickedSideBar);
+  };
+
   return (
     <div id="container">
       <BrowserRouter>
-        <Header dark={true} />
+        <Header clickMenu={clickMenu} />
+        <SideBar clickedSideBar={clickedSideBar} />
         {/*<main id="mainContainer">*/}
         <Routes>
           <Route path="/" element={<Main />} />
