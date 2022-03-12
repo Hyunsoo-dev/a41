@@ -71,6 +71,7 @@ a {
 .tag_box {
   display: flex;
   margin-bottom: 30px;
+  color: $gray5;
   .tag_container {
     font-family: "GmarketSansLight", "GmarketSansBold", "GmarketSansMedium", sans-serif;
     font-size: $footnote2_size;
