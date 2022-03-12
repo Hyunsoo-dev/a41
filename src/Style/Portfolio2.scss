@@ -36,12 +36,12 @@
   }
   .article_title {
     font-size: $h2_mobile_size;
-    line_height: $h2_mobile_height;
+    line-height: $h2_mobile_height;
     margin-right: 8px;
   }
   .article_count {
     font-size: $body1_mobile_size;
-    line_height: $body1_mobile_height;
+    line-height: $body1_mobile_height;
   }
   .grid_box {
     display: flex;

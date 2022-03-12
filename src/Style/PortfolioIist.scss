@@ -138,10 +138,13 @@ a {
     .contents {
       height: 36px;
       overflow: hidden;
+      background: linear-gradient(180deg, rgba(255, 255, 255, 5) 0%, #000000 87.85%);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
       font-size: $footnote2_mobile_size;
       font-weight: $default_weight;
       line-height: $footnote2_mobile_height;
-      background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000000 83.85%);
       margin-bottom: 20px;
     }
     .portfolio2_contents {
