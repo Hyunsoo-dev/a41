@@ -71,6 +71,7 @@ a {
 .tag_box {
   display: flex;
   margin-bottom: 30px;
+  color: $gray5;
   .tag_container {
     font-family: "GmarketSansLight", "GmarketSansBold", "GmarketSansMedium", sans-serif;
     font-size: $footnote2_size;
@@ -84,6 +85,7 @@ a {
     margin-right: 20px;
     justify-content: center;
     align-items: center;
+    color: $gray5;
   }
 }
 
@@ -108,6 +110,7 @@ a {
   height: 46px;
   justify-content: center;
   align-items: center;
+  color: $gray5;
   &:hover {
     background-color: $point;
     border: 1px solid $point;
@@ -135,10 +138,13 @@ a {
     .contents {
       height: 36px;
       overflow: hidden;
+      background: linear-gradient(180deg, rgba(255, 255, 255, 5) 0%, #000000 87.85%);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
       font-size: $footnote2_mobile_size;
       font-weight: $default_weight;
       line-height: $footnote2_mobile_height;
-      background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000000 83.85%);
       margin-bottom: 20px;
     }
     .portfolio2_contents {

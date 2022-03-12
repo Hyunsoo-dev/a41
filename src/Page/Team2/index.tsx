@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect} from "react";
 import H0 from "../../Components/H0";
 import {data} from "../Team1/teamlistdata";
 import {useLocation} from "react-router-dom";
@@ -8,6 +8,12 @@ import {ReactComponent as LinkedIn} from "../../Assets/linkedin.svg";
 import ArticleCard from "../Portfolio2/ArticleCard";
 
 const Team2 = () => {
+
+    useEffect(() => {
+        window.scrollTo({top:0, left:0, behavior:'auto'});
+        return () => {}
+    }, []);
+
     const {pathname} = useLocation();
     const id: number = Number(pathname.substring(pathname.length - 1));
 
@@ -30,15 +36,15 @@ const Team2 = () => {
                     <LinkedIn/>
                 </a>
                 </div>
-                <div className={'big_img_border_box'}></div>
+                <div className={'big_img_border_box'} />
             </div>
             <hr />
             <div className={"profile_article"}>
                 {data[id].profile.map((p,idx) => {
                     if (Array.isArray(p)) {
                         return <ul>
-                            {p.map((li,idx) => {
-                                return <li key={idx}>{li}</li>}
+                            {p.map((li,s_idx) => {
+                                return <li key={s_idx}>{li}</li>}
                             )}
                         </ul>
                     } else {
@@ -55,9 +61,9 @@ const Team2 = () => {
                 <span className={"article_count"}>{data[id].article.length}</span>
             </div>
             <div className={"grid_box"}>
-                {data[id].article.map(e => {
+                {data[id].article.map((e, idx) => {
                     return <ArticleCard title={e.title} img={e.img} link={e.link} summary={e.summary} author={e.author}
-                                        date={e.date} key={e.title}/>
+                                        date={e.date} key={idx}/>
                 })}
             </div>
         </div>

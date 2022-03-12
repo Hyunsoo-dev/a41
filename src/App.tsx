@@ -13,6 +13,7 @@ import {
   Portfolio2,
   Team1,
   Team2,
+  Stake,
 } from "./Page";
 
 import "./App.scss";
@@ -37,6 +38,7 @@ function App() {
           <Route path="/portfolio/:id" element={<Portfolio2 />} />
           <Route path="/content1" element={<Contents1 />}></Route>
           <Route path="/content/:contentId" element={<Content />} />
+          <Route path="/stake" element={<Stake />} />
           <Route path="/team" element={<Team1 />} />
           <Route path="/team/:id" element={<Team2 />} />
           <Route path="/contact" element={<Contact />} />

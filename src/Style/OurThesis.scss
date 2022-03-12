@@ -20,7 +20,6 @@
   background: $gray0;
 }
 
-
 .title_box {
   margin: 0;
   position: fixed;
@@ -44,8 +43,66 @@
   top: 500px;
 }
 
-thesis_content_box_hidden{
+.thesis1_action3 {
+  animation: fade-out-translate 1s forwards;
+}
+
+.thesis1_action4 {
   display: none;
+}
+
+.thesis_2nd_content_box {
+  position: fixed;
+  top: 500px;
+  display: none;
+}
+
+.thesis2_action1 {
+  display: block;
+  animation: fade-in-translate 1s forwards;
+}
+
+.thesis2_action2 {
+  display: block;
+}
+
+.thesis2_action3 {
+  display: block;
+}
+
+.background_action1 {
+  animation: fade-out 1s forwards;
+  background: $gray0;
+}
+
+@keyframes fade-out {
+  0% {
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.51) 0.01%, #000000 100%), url("../Assets/thesis.jpg");
+  }
+  100% {
+    background: linear-gradient(180deg, rgba(0, 0 , 0, 0.3) 0%, rgba(0, 0, 0, 0.7) 0.01%, #000000 40%), url("../Assets/thesis.jpg");
+  }
+}
+
+@keyframes fade-in-translate {
+  0% {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fade-out-translate {
+  0% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-30px);
+    opacity: 0;
+  }
 }
 
 .thesis_content {
@@ -66,14 +123,6 @@ thesis_content_box_hidden{
 }
 
 
-.thesis_2nd_content_box {
-  position: fixed;
-  top: 500px;
-}
-
-.thesis_2nd_content_box_hidden {
-  display: none;
-}
 
 
 
@@ -89,7 +138,7 @@ thesis_content_box_hidden{
 
 @include mobile {
   .title_box {
-    margin: 0px 20px;
+    margin: 0 20px;
     top: 160px;
     .thesis_h0 {
       font-family: "GmarketSansBold", "GmarketSansMedium", "GmarketSansLight", sans-serif;
@@ -100,7 +149,7 @@ thesis_content_box_hidden{
     }
   }
   .thesis_content_box {
-    margin: 0px 20px;
+    margin: 0 20px;
     top: 350px;
   }
   .thesis_content {
@@ -127,7 +176,7 @@ thesis_content_box_hidden{
 
   .thesis_2nd_content_box {
     top: 350px;
-    margin: 0px 20px;
+    margin: 0 20px;
   }
 
 
@@ -142,4 +191,3 @@ thesis_content_box_hidden{
     margin-bottom: 113px;
   }
 }
-

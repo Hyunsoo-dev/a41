@@ -7,6 +7,11 @@ import RightArrowIcon from "../../Assets/image/content/rightArrowIcon.png";
 import ContentThumbnail from "../../Assets/image/content/content_thumbnail.png";
 import { useParams } from "react-router-dom";
 const Content = () => {
+  useEffect(() => {
+    window.scrollTo({top:0, left:0, behavior:'auto'});
+    return () => {}
+  }, []);
+
   const params = useParams();
   const contentId = params.contentId as string;
   const [scrollPosition, setScrollPosition] = useState(0);

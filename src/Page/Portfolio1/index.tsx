@@ -1,10 +1,16 @@
-import React from "react";
+import React, {useEffect} from "react";
 import "../../Style/Portfolio1.scss";
 import {data} from './portfolio';
 import PortfolioList from "./PortfolioList";
 import H0 from "../../Components/H0";
 
 const Portfolio1 = () => {
+
+
+    useEffect(() => {
+        window.scrollTo({top:0, left:0, behavior:'auto'});
+        return () => {}
+    }, []);
 
     return <div className={"container_bk"}>
         <div className={"content_box"}>
