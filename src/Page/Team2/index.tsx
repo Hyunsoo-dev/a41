@@ -36,15 +36,15 @@ const Team2 = () => {
                     <LinkedIn/>
                 </a>
                 </div>
-                <div className={'big_img_border_box'}></div>
+                <div className={'big_img_border_box'} />
             </div>
             <hr />
             <div className={"profile_article"}>
                 {data[id].profile.map((p,idx) => {
                     if (Array.isArray(p)) {
                         return <ul>
-                            {p.map((li,idx) => {
-                                return <li key={idx}>{li}</li>}
+                            {p.map((li,s_idx) => {
+                                return <li key={s_idx}>{li}</li>}
                             )}
                         </ul>
                     } else {
@@ -61,9 +61,9 @@ const Team2 = () => {
                 <span className={"article_count"}>{data[id].article.length}</span>
             </div>
             <div className={"grid_box"}>
-                {data[id].article.map(e => {
+                {data[id].article.map((e, idx) => {
                     return <ArticleCard title={e.title} img={e.img} link={e.link} summary={e.summary} author={e.author}
-                                        date={e.date} key={e.title}/>
+                                        date={e.date} key={idx}/>
                 })}
             </div>
         </div>

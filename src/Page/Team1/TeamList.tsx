@@ -38,7 +38,7 @@ const TeamList = ({id, img, enName, koName, position, twit, linkedIn}: TeamListP
             <LinkedIn />
         </a>
         </div>
-        <div className={'img_border_box'}></div>
+        <div className={'img_border_box'} />
     </div>
 }
 

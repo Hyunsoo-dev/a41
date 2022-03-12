@@ -1,0 +1,41 @@
+@import '../index';
+@import './variables';
+
+.stake_title {
+  font-family: "GmarketSansBold", "GmarketSansMedium", "GmarketSansLight", sans-serif;
+  font-size: $h1_size;
+  font-weight: $default_weight;
+  line-height: $h1_height;
+  color: $gray5;
+  margin-top: 70px;
+}
+
+.stake_subtitle {
+  font-size: $headline_size;
+  line-height: $headline_height;
+  font-weight: $h2_weight;
+  color: $gray5;
+  margin-top: 14px;
+  margin-bottom: 70px;
+}
+
+
+.swiper-slide {
+  width: auto;
+
+}
+
+@include mobile {
+  .stake_title {
+    font-size: $h2_mobile_size;
+    line-height: $h2_mobile_height;
+    margin-top: 50px;
+    letter-spacing: -1px;
+  }
+  .stake_subtitle {
+    font-size: $body3_mobile_size;
+    font-weight: $default_weight;
+    line-height: $body3_mobile_height;
+    word-break: break-word;
+  }
+}

@@ -52,10 +52,10 @@ export const data = [
         profile: ["John is on the front end of a41, owning close relationships with the builders of the digital innovations and key global investors and funds. He leads overall management, deal sourcing of a41.",
             "Before co-founding a41 Ventures, John has led the foundation of Nonce - a co-living space for start-ups, as COO. He then has led Faraday, a consulting and advisory firm for cypto VCs such as Multicoin Capital and Hashed, and led the business development of DSRV.",
             "Previous to a41",
-            ["- Head of BD, DSRV",
-                "- Managing Partner, Faraday",
-                "- Co-Founder & COO, Nonce",
-                "- BA in Government & Legal Studies, Bowdoin College"],
+            [" Head of BD, DSRV",
+                " Managing Partner, Faraday",
+                " Co-Founder & COO, Nonce",
+                " BA in Government & Legal Studies, Bowdoin College"],
         ],
         article: [
             {

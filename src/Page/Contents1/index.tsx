@@ -1,5 +1,5 @@
 import React, {useEffect} from "react";
-import { Link, Outlet } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "../../Style/Contents.scss";
 import { ReactComponent as GreenDot } from "../../Assets/image/mainPage/greenDot.svg";
 import { ReactComponent as GrayDot } from "../../Assets/image/content/grayDot.svg";
