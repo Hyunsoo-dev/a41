@@ -36,7 +36,7 @@ function App() {
           <Route path="/ourThesis" element={<OurThesis />} />
           <Route path="/portfolio" element={<Portfolio1 />} />
           <Route path="/portfolio/:id" element={<Portfolio2 />} />
-          <Route path="/content1" element={<Contents1 />}></Route>
+          <Route path="/contents" element={<Contents1 />}></Route>
           <Route path="/content/:contentId" element={<Content />} />
           <Route path="/stake" element={<Stake />} />
           <Route path="/team" element={<Team1 />} />

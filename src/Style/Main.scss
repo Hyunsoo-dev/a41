@@ -296,14 +296,8 @@
   width: 85%;
 }
 
-.main-portfolio-wrapper .title {
-  font-size: $h0-size;
-  font-family: "GmarketSansBold", "GmarketSansMedium", "GmarketSansLight",
-    sans-serif;
-  font-weight: $default-weight;
-  display: flex;
-  align-items: flex-end;
-  margin-bottom: 60px;
+.main-portfolio-wrapper .h0_title {
+  color: $gray0;
 }
 .main-portfolio-wrapper .portfolio-box {
   margin-top: 40px;
@@ -323,7 +317,9 @@
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
-
+  .h0_title {
+    color: $gray0;
+  }
   .icon-box {
     margin-right: 50px;
     height: 30px;
@@ -470,14 +466,8 @@
   flex-direction: column;
   width: 85%;
 }
-.main-team-wrapper .title {
-  font-size: $h0-size;
-  font-family: "GmarketSansBold", "GmarketSansMedium", "GmarketSansLight",
-    sans-serif;
-  font-weight: $default-weight;
-  margin-bottom: 50px;
-  display: flex;
-  align-items: flex-end;
+.main-team-wrapper .h0_title {
+  color: $gray0;
 }
 
 .main-team-box {
@@ -577,9 +567,11 @@
 
 @include mobile {
   .sticky-container {
+    width: 375px;
     height: 450vh;
     // display: none;
     .sticky {
+      width: 100%;
       .slide-container {
         width: 335px;
         .main-title {

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { ReactComponent as LogoWhite } from "../Assets/icon/logo_white.svg";
 import { ReactComponent as LogoGreen } from "../Assets/icon/logo_green.svg";
 import { ReactComponent as MenuBlack } from "../Assets/icon/menu_black.svg";
@@ -14,6 +14,32 @@ const Header = ({ clickMenu }: any) => {
 
   const [headerTheme, setHeaderTheme] = useState("black");
   const [scrollPosition, setScrollPosition] = useState(0);
+
+  /*
+    locations.pathname === "/content1" || "/content/number" 라면 
+    header의 className을 header-container-white로 바꿔준다
+    또한 스크롤에 따라 header의 bgColor가 바뀌는 것은 main page에서만 적용되어야 하기 때문에 
+    locations.pathname === "/"인 경우만 해당 header를 넣어준다.
+  */
+
+  const locations = useLocation();
+
+  const respondOnLocation = (locations: any) => {
+    const parsedCurrentPathname = locations.pathname.slice(0, 8);
+    switch (parsedCurrentPathname) {
+      case "/content":
+        return "header-container-white content-header";
+
+      case "/":
+        return scrollPosition > 3600
+          ? "header-container-white"
+          : "header-container-black";
+
+      default:
+        return "header-container-black";
+    }
+  };
+
   const updateScroll = () => {
     setScrollPosition(window.pageYOffset);
   };
@@ -22,13 +48,7 @@ const Header = ({ clickMenu }: any) => {
   });
   console.log(scrollPosition);
   return (
-    <div
-      className={
-        scrollPosition > 3400
-          ? "header-container-white"
-          : "header-container-black"
-      }
-    >
+    <div className={respondOnLocation(locations)}>
       <div className="wrapper">
         <div className="logo_wrapper">
           <Link className="category" to="/">
@@ -42,7 +62,7 @@ const Header = ({ clickMenu }: any) => {
           <Link className="category" to="/portfolio">
             portfolio
           </Link>
-          <Link className="category" to="/content1">
+          <Link className="category" to="/contents">
             content1
           </Link>
           <Link className="category" to="/team">
