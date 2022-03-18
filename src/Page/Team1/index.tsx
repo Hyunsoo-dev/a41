@@ -7,10 +7,11 @@ import '../../Style/Team1.scss';
 const Team1 = () => {
   const [data, setData] = useState([]);
 
+  const api = process.env.RE;
   useEffect(() => {
     const client = createClient({
-      space: REACT_APP_CONETNTFUL_SPACE,
-      accessToken: REACT_APP_CONTENTFUL_API_KEY,
+      space: process.env.REACT_APP_CONETNTFUL_SPACE as string,
+      accessToken: process.env.REACT_APP_CONTENTFUL_API_KEY as string,
     });
 
     client.getEntries({ content_type: 'team' }).then((res: any) => {
