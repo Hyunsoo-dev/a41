@@ -14,8 +14,8 @@ const Team2 = () => {
 
   useEffect(() => {
     const client = createClient({
-      space: 'wx3giiipzhrz',
-      accessToken: 'lUlFHBlFhQmeCT_AjNIm51f422G0xb-pVA7XxeV9fNQ',
+      space: REACT_APP_CONETNTFUL_SPACE,
+      accessToken: REACT_APP_CONTENTFUL_API_KEY,
     });
 
     client.getEntry(id as string).then(res => setDetail(res.fields));
