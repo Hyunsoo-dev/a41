@@ -13,6 +13,7 @@ const Contents1 = () => {
   }, []);
 
   return (
+
     <div className="contents-container">
       <div className="contents-page-container">
         <div className="contents-page-title-wrapper">
