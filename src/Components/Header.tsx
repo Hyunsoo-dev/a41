@@ -44,7 +44,7 @@ const Header = ({ clickMenu }: any) => {
   useEffect(() => {
     window.addEventListener('scroll', updateScroll);
   });
-  console.log(scrollPosition);
+
   return (
     <div className={respondOnLocation(locations)}>
       <div className="wrapper">
@@ -61,7 +61,10 @@ const Header = ({ clickMenu }: any) => {
             portfolio
           </Link>
           <Link className="category" to="/contents">
-            content1
+            content
+          </Link>
+          <Link className="category" to="/stake">
+            stake
           </Link>
           <Link className="category" to="/team">
             team
