@@ -1,11 +1,11 @@
 @import "../index.scss";
 @import "./variables.scss";
 
-.container_black {
+.header-container-black {
   transition: 0.5s;
   background-color: $gray0;
   position: fixed;
-  z-index: 1;
+  z-index: 3;
   top: 0;
   left: 0;
   display: flex;
@@ -29,6 +29,10 @@
       .category {
         color: $gray5;
         text-decoration: none;
+        font-size: $footnote1_size;
+        font-family: "GmarketSansBold", "GmarketSansMedium", "GmarketSansLight",
+          sans-serif;
+        font-weight: $h2_weight;
       }
     }
     .language_wrapper {
@@ -50,8 +54,8 @@
   }
 }
 
-.container_white {
-  @extend .container_black;
+.header-container-white {
+  @extend .header-container-black;
   background-color: $gray5;
   .wrapper {
     .category_wrapper {
@@ -67,10 +71,10 @@
 }
 
 @include mobile {
-  .container_black {
+  .header-container-black {
+    width: 375px;
+    height: 100px;
     .wrapper {
-      width: 375px;
-      height: 100px;
       justify-content: space-between;
       padding: 0 20px;
 
@@ -78,20 +82,24 @@
       }
       .category_wrapper {
         display: none;
+        .category {
+          display: none;
+        }
       }
       .language_wrapper {
         display: none;
       }
       .menu {
         display: block;
+        fill: $gray5;
+        cursor: pointer;
       }
     }
   }
 }
 
 @include mobile {
-  .container_white {
-    @extend .container_black;
+  .header-container_white {
     background-color: $gray5;
     .wrapper {
       .category_wrapper {

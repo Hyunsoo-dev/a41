@@ -27,7 +27,10 @@
 }
 
 hr {
-  width: 100%;
+  position: relative;
+  left: 50%;
+  width: 100vw;
+  margin-left: -50vw;
   color: $gray2;
   margin-bottom: 100px;
 }

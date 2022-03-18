@@ -1,0 +1,51 @@
+@import '../index';
+@import './variables';
+
+.card_container {
+  width: 365px;
+  height: 395px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.1);
+  display: flex;
+  flex-direction: column;
+  padding: 62px;
+  justify-content: flex-end;
+  box-sizing: border-box;
+
+  .stake_button {
+    font-family: "GmarketSansBold", "GmarketSansMedium", "GmarketSansLight", sans-serif;
+    font-size: $h1_size;
+    font-weight: $h2_weight;
+    line-height: $h2_height;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: $gray0;
+    color: $point;
+    border: 1px solid $point;
+    border-radius: 10px;
+    width: 236px;
+    height: 68px;
+  }
+  &:hover {
+    border: 1px solid $gray5;
+    .stake_button {
+      background-color: $point;
+      color: $gray0;
+    }
+  }
+}
+
+@include mobile {
+  .card_container {
+    width: 259px;
+    height: 305px;
+    padding: 36px;
+    .stake_button {
+      width: 187px;
+      height: 42px;
+      font-size: $headline_mobile_size;
+      line-height: $headline_mobile_height;
+    }
+  }
+}

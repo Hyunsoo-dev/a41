@@ -31,7 +31,6 @@ const TeamList = ({id, img, enName, koName, position, twit, linkedIn}: TeamListP
             <div className={"en_name"}>{enName}</div>
             <div className={"ko_name"}>{koName}</div>
         </div>
-        {/*{position.length === 1 ? <div className={"position"}>{position[0]}</div> : <div className={"position"}>{position[0]} | {position[1]}</div>}*/}
         <div className={"position"}>{position} </div>
         <div className={"row_box"}>
             {twit && <a href={twit} target={"_blank"} rel={"noreferrer"}>
@@ -42,7 +41,7 @@ const TeamList = ({id, img, enName, koName, position, twit, linkedIn}: TeamListP
                     <LinkedIn/>
                 </a>}
         </div>
-        <div className={'img_border_box'}></div>
+        <div className={'img_border_box'} />
     </div>
 }
 

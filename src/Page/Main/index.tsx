@@ -3,14 +3,18 @@ import "../../Style/Main.scss";
 import ContentComponent from "./ContentComponent";
 import TeamComponent from "./TeamComponent";
 import column1_row1 from "../../Assets/image/mainPage/column1_row1.png";
-import { ReactComponent as AlexLogo } from "../../Assets/image/mainPage/alexLogo.svg";
-import { ReactComponent as ApricotLogo } from "../../Assets/image/mainPage/apricotLogo.svg";
-import { ReactComponent as ArkadikoLogo } from "../../Assets/image/mainPage/arkadikoLogo.svg";
-import { ReactComponent as BlockSurveLogo } from "../../Assets/image/mainPage/blockSurveLogo.svg";
-import { ReactComponent as BribeLogo } from "../../Assets/image/mainPage/bribeLogo.svg";
+import AlexLogo from "../../Assets/image/mainPage/alexLogo.png";
+import ApricotLogo from "../../Assets/image/mainPage/apricotLogo.png";
+import ArkadikoLogo from "../../Assets/image/mainPage/arkadikoLogo.png";
+import BlockSurveLogo from "../../Assets/image/mainPage/blockSurveLogo.png";
+import BribeLogo from "../../Assets/image/mainPage/bribeLogo.png";
 import { ReactComponent as GreenDot } from "../../Assets/image/mainPage/greenDot.svg";
 import { ReactComponent as SnsLogo } from "../../Assets/image/mainPage/sns.svg";
+import { ReactComponent as RightArrow } from "../../Assets/image/mainPage/rightArrowIcon.svg";
+import { ReactComponent as ViewMoreIcon } from "../../Assets/image/mainPage/viewMoreIcon.svg";
+import ViewMoreIconMobile from "../../Assets/image/mainPage/viewMoreIconMobile.png";
 import team_thumbnail from "../../Assets/image/mainPage/team_thumbnail.png";
+import H0 from "../../Components/H0";
 const Main = () => {
 
   useEffect(() => {
@@ -75,52 +79,107 @@ const Main = () => {
     <>
       <section className="sticky-container">
         <section className="sticky">
-          <section id={scrollPosition > 1100 && scrollPosition <= 3800 ? "opacity-bg" : ""} className="slide-container">
-            <article className={`slide ${scrollPosition < 1100 ? "visible" : "hidden"}`}>
+          <section
+            id={
+              scrollPosition > 1100 && scrollPosition <= 3800
+                ? "opacity-bg"
+                : ""
+            }
+            className="slide-container"
+          >
+            <article
+              className={`slide ${
+                scrollPosition < 1100 ? "visible" : "hidden"
+              }`}
+            >
               <section className="main-title">
                 <div className="main-title-wrapper">
-                  <article ref={mainTitle1} className={`title1 ${controlMainTitle(mainTitle1, scrollPosition)}`}>
+                  <article
+                    ref={mainTitle1}
+                    className={`title1 ${controlMainTitle(
+                      mainTitle1,
+                      scrollPosition
+                    )}`}
+                  >
                     We are the sidekicks of heroes
                   </article>
-                  <article ref={mainTitle2} className={`title2 ${controlMainTitle(mainTitle2, scrollPosition)}`}>
+                  <article
+                    ref={mainTitle2}
+                    className={`title2 ${controlMainTitle(
+                      mainTitle2,
+                      scrollPosition
+                    )}`}
+                  >
                     building digital innovation
                   </article>
                 </div>
               </section>
             </article>
-            <article className={`slide ${scrollPosition > 1100 && scrollPosition <= 2000 ? "visible" : "hidden"}`}>
+            <article
+              className={`slide ${
+                scrollPosition > 1100 && scrollPosition <= 2000
+                  ? "visible"
+                  : "hidden"
+              }`}
+            >
               <section className="main-ventures">
-                <div className={`main-ventures-wrapper ${controlVentures(scrollPosition)}`}>
-                  <article className="title">
-                    a41 Ventures
-                    <GreenDot className="greenDot" />
-                  </article>
+                <div
+                  className={`main-ventures-wrapper ${controlVentures(
+                    scrollPosition
+                  )}`}
+                >
+                  <H0 title="a41 Ventures" />
                   <article className="content">
-                    a41 invests in disruptive technologies that will lead the next digital innovation. We believe that those who
-                    do the heavy lifting on the ground - members of the projects that we invest in - are the true heroes that
-                    should stand out, with the help of sidekicks like us. Members of a41 are dedicated to becoming the bridge and
-                    catalyst of the next digital innovation.
+                    a41 invests in disruptive technologies that will lead the
+                    next digital innovation. We believe that those who do the
+                    heavy lifting on the ground - members of the projects that
+                    we invest in - are the true heroes that should stand out,
+                    with the help of sidekicks like us. Members of a41 are
+                    dedicated to becoming the bridge and catalyst of the next
+                    digital innovation.
                   </article>
                 </div>
               </section>
             </article>
-            <article className={`slide ${scrollPosition > 2000 && scrollPosition < 3000 ? "visible" : "hidden"}`}>
+            <article
+              className={`slide ${
+                scrollPosition > 2000 && scrollPosition < 3000
+                  ? "visible"
+                  : "hidden"
+              }`}
+            >
               <section className="main-ourThesis">
-                <div className={`main-ourThesis-wrapper ${controlOurThesis(scrollPosition)}`}>
-                  <article className="title">
-                    our thesis <GreenDot className="greenDot" />
-                  </article>
-                  <div className="content-box">
-                    <article className="dark-content">Winning the next era of</article>
-                    <article className="light-content">internet - Web 3, </article>
-                  </div>
-                  <div className="content-box">
-                    <article className="dark-content">Winning the next era of</article>
-                    <article className="light-content">finance - Open Finance</article>
-                  </div>
-                  <div className="content-box">
-                    <article className="dark-content">Winning the next era of</article>
-                    <article className="light-content">digital experience - Metaverse</article>
+                <div
+                  className={`main-ourThesis-wrapper ${controlOurThesis(
+                    scrollPosition
+                  )}`}
+                >
+                  <H0 title="our thesis" />
+                  <div className="content-wrapper">
+                    <div className="main-content-box">
+                      <article className="dark-content">
+                        Winning the next era of
+                      </article>
+                      <article className="light-content">
+                        internet - Web 3,
+                      </article>
+                    </div>
+                    <div className="main-content-box">
+                      <article className="dark-content">
+                        Winning the next era of
+                      </article>
+                      <article className="light-content">
+                        finance - Open Finance
+                      </article>
+                    </div>
+                    <div className="main-content-box">
+                      <article className="dark-content">
+                        Winning the next era of
+                      </article>
+                      <article className="light-content">
+                        digital experience - Metaverse
+                      </article>
+                    </div>
                   </div>
                 </div>
               </section>
@@ -132,24 +191,25 @@ const Main = () => {
         <section className="container-bg-white">
           <section className="main-portfolio">
             <div className="main-portfolio-wrapper">
-              <article className="title">
-                portfolio <GreenDot className="greenDot" />
-              </article>
+              <H0 title="Portfolio" />
               <div className="portfolio-box">
                 <article className="portfolio-logo">
-                  <ArkadikoLogo />
+                  <img src={AlexLogo} alt="" />
                 </article>
                 <article className="portfolio-logo">
-                  <ArkadikoLogo />
+                  <img src={ApricotLogo} alt="" />
                 </article>
                 <article className="portfolio-logo">
-                  <ArkadikoLogo />
+                  <img src={ArkadikoLogo} alt="" />
                 </article>
                 <article className="portfolio-logo">
-                  <BlockSurveLogo />
+                  <img src={BlockSurveLogo} alt="" />
                 </article>
                 <article className="portfolio-logo">
-                  <BribeLogo />
+                  <img src={BribeLogo} alt="" />
+                </article>
+                <article className="view-more-button-box">
+                  <img src={ViewMoreIconMobile} alt="" />
                 </article>
               </div>
             </div>
@@ -159,23 +219,31 @@ const Main = () => {
       <section className="container-white">
         <section className="container-bg-white">
           <section className="main-contents">
+            <div className="main-contents-title-wrapper">
+              <H0 title="Contents" />
+              <div className="icon-box">
+                <RightArrow className="right-arrow" />
+                <div className="view-more-text">view more</div>
+              </div>
+            </div>
             <div className="main-contents-wrapper">
-              <article className="title">
-                Contents <GreenDot className="greenDot" />
-              </article>
               <div className="contents-box">
                 <div className="contents-box-column1">
                   <ContentComponent
                     thumbnail={column1_row1}
                     title={"[Research] Pricing Everlasting Options"}
-                    subtitle={"This post explores ways to price everlasting options."}
+                    subtitle={
+                      "This post explores ways to price everlasting options."
+                    }
                     author={"Steve Kim"}
                     date={"Dec 24, 2021"}
                   />
                   <ContentComponent
                     thumbnail={column1_row1}
                     title={"[Research] Pricing Everlasting Options"}
-                    subtitle={"This post explores ways to price everlasting options."}
+                    subtitle={
+                      "This post explores ways to price everlasting options."
+                    }
                     author={"Steve Kim"}
                     date={"Dec 24, 2021"}
                   />
@@ -184,14 +252,18 @@ const Main = () => {
                   <ContentComponent
                     thumbnail={column1_row1}
                     title={"[Research] Pricing Everlasting Options"}
-                    subtitle={"This post explores ways to price everlasting options."}
+                    subtitle={
+                      "This post explores ways to price everlasting options."
+                    }
                     author={"Steve Kim"}
                     date={"Dec 24, 2021"}
                   />
                   <ContentComponent
                     thumbnail={column1_row1}
                     title={"[Research] Pricing Everlasting Options"}
-                    subtitle={"This post explores ways to price everlasting options."}
+                    subtitle={
+                      "This post explores ways to price everlasting options."
+                    }
                     author={"Steve Kim"}
                     date={"Dec 24, 2021"}
                   />
@@ -205,9 +277,7 @@ const Main = () => {
         <section className="container-bg-white">
           <section className="main-team">
             <div className="main-team-wrapper">
-              <article className="title">
-                Team <GreenDot className="greenDot" />
-              </article>
+              <H0 title="Team" />
               <article className="main-team-box">
                 <TeamComponent
                   thumbnail={team_thumbnail}

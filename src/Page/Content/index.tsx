@@ -1,6 +1,10 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 // import "../../Style/Content.scss";
 import "../../Style/Content.scss";
+import LeftArrowIcon from "../../Assets/image/content/leftArrowIcon.png";
+import RightArrowIcon from "../../Assets/image/content/rightArrowIcon.png";
+import ContentThumbnail from "../../Assets/image/content/content_thumbnail.png";
 import { useParams } from "react-router-dom";
 const Content = () => {
   useEffect(() => {
@@ -9,28 +13,31 @@ const Content = () => {
   }, []);
 
   const params = useParams();
+  const contentId = params.contentId as string;
   const [scrollPosition, setScrollPosition] = useState(0);
   const [height, setHeight] = useState(0);
-  const updateScrollPosition = () => {
-    setScrollPosition(window.scrollY);
-  };
-  console.log(
-    "document.body.scrollHeight :",
-    document.documentElement.scrollHeight -
-      document.documentElement.clientHeight
-  );
 
-  console.log(scrollPosition);
+  const updateScrollPosition = () => {
+    setScrollPosition(
+      document.body.scrollTop || document.documentElement.scrollTop
+    );
+  };
+
+  console.log("clientHeight :", document.documentElement.offsetHeight);
+  console.log("scrollHeight :", document.documentElement.scrollHeight);
+  console.log("scrollPosition :", scrollPosition);
 
   useEffect(() => {
     window.addEventListener("scroll", updateScrollPosition);
   });
+
   useEffect(() => {
-    setHeight(
+    const winHeight =
       document.documentElement.scrollHeight -
-        document.documentElement.clientHeight
-    );
-  }, []);
+      document.documentElement.clientHeight;
+
+    setHeight(winHeight);
+  });
 
   return (
     <div className="content-page-container">
@@ -117,6 +124,48 @@ const Content = () => {
               starts from the option with the nearest expiration date.
             </div>
           </div>
+        </div>
+      </div>
+      <div className="content-page-direction-wrapper">
+        <div>
+          <Link
+            to={`/content/${parseInt(contentId) - 1}`}
+            className="prev-content"
+          >
+            <img
+              className="background-image"
+              src={ContentThumbnail}
+              alt=""
+            ></img>
+            <div className="content">
+              <div className="column1">
+                <img src={LeftArrowIcon} alt="" />
+              </div>
+              <div className="column2">
+                <div>이전글</div>
+                <div className="title">Pre Content Title</div>
+              </div>
+            </div>
+          </Link>
+          <Link
+            to={`/content/${parseInt(contentId) + 1}`}
+            className="next-content"
+          >
+            <img
+              className="background-image"
+              src={ContentThumbnail}
+              alt=""
+            ></img>
+            <div className="content">
+              <div className="column2">
+                <div>다음글</div>
+                <div className="title">Next Content Title</div>
+              </div>
+              <div className="column1">
+                <img src={RightArrowIcon} alt="" />
+              </div>
+            </div>
+          </Link>
         </div>
       </div>
     </div>

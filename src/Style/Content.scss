@@ -1,5 +1,5 @@
 @import "../index.scss";
-
+@import "../Style/variables.scss";
 .content-page-container {
   position: relative;
   background-color: #ffffff;
@@ -9,12 +9,12 @@
   width: 100%;
   height: auto;
   position: relative;
+  margin-top: 100px;
 }
 .content-page-wrapper {
   box-sizing: border-box;
   width: $content_screen;
   height: auto;
-  margin-top: 100px;
   margin-bottom: 200px;
 }
 
@@ -66,12 +66,12 @@
     margin-left: -50vw;
     left: 50%;
     background-color: $gray4;
-    height: 1px;
+    height: 2px;
     bottom: 50px;
     .content-page-progress-bar {
       position: relative;
       z-index: 3;
-      height: 3px;
+      height: 5px;
       background: $point;
 
       left: 50%;
@@ -82,6 +82,7 @@
 }
 
 .content-page-content-wrapper {
+  margin-bottom: 55px;
   .disclaimer {
     margin-bottom: 94px;
   }
@@ -109,6 +110,117 @@
       font-weight: $default_weight;
       line-height: 34px;
       margin-bottom: 20px;
+    }
+  }
+}
+
+.content-page-direction-wrapper {
+  display: none;
+}
+@include mobile {
+  .content-page-wrapper {
+    width: 335px;
+    .content-page-header-wrapper {
+      .title {
+        font-size: 22px;
+      }
+      .subtitle {
+        font-size: 14px;
+      }
+      .content-info-box {
+        .author,
+        .date {
+          font-size: 12px;
+        }
+      }
+    }
+
+    .content-page-content-wrapper {
+      .disclaimer {
+        font-size: 14px;
+        margin-bottom: 30px;
+      }
+      .thumbnail {
+        width: 335px;
+        height: 220px;
+        margin-bottom: 30px;
+      }
+      .content-box {
+        width: 100%;
+        .title,
+        .content {
+          margin: 0;
+          font-size: 14px;
+          line-height: 22px;
+        }
+      }
+    }
+  }
+  .content-page-direction-wrapper {
+    display: block;
+    position: relative;
+    width: 100%;
+    .prev-content {
+      display: flex;
+      position: relative;
+      height: 70px;
+      color: $gray5;
+
+      .background-image {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        filter: blur(7px);
+      }
+      .content {
+        position: static;
+        z-index: 3;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        background: rgba(0, 0, 0, 0.4);
+        .column1 {
+          flex: 1;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+        .column2 {
+          flex: 9;
+          padding: 15px 0px;
+        }
+      }
+    }
+    .next-content {
+      display: flex;
+      position: relative;
+      height: 70px;
+      color: $gray5;
+      .background-image {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        filter: blur(4px);
+      }
+      .content {
+        position: static;
+        z-index: 3;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        background: rgba(0, 0, 0, 0.3);
+        .column1 {
+          flex: 1;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+        .column2 {
+          flex: 9;
+          padding: 15px 0px;
+          margin-left: 37.5px;
+        }
+      }
     }
   }
 }
