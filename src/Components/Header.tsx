@@ -43,6 +43,7 @@ const Header = ({ clickMenu }: any) => {
   };
   useEffect(() => {
     window.addEventListener('scroll', updateScroll);
+    return () => {};
   });
 
   return (
