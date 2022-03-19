@@ -74,22 +74,25 @@ const Header = ({ clickMenu }: any) => {
         </div>
 
         <div className="language_wrapper">
-          <div
-            className={
-              language === "KO" ? "selected_language" : "unselected_language"
-            }
-            onClick={() => selecLanguage("KO")}
-          >
-            KO
+          <div className="language_box">
+            <div
+              className={
+                language === "KO" ? "selected_language" : "unselected_language"
+              }
+              onClick={() => selecLanguage("KO")}
+            >
+              KO
+            </div>
+            <div
+              className={
+                language === "EN" ? "selected_language" : "unselected_language"
+              }
+              onClick={() => selecLanguage("EN")}
+            >
+              EN
+            </div>
           </div>
-          <div
-            className={
-              language === "EN" ? "selected_language" : "unselected_language"
-            }
-            onClick={() => selecLanguage("EN")}
-          >
-            EN
-          </div>
+          <div className={language === "KO" ? "KO-active" : "EN-active"}></div>
         </div>
         <div className="menu" onClick={() => clickMenu()}>
           {scrollPosition > 3400 ? <MenuBlack /> : <MenuWhite />}
