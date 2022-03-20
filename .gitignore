@@ -22,5 +22,9 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
+<<<<<<< HEAD
 #API-Key
 .env
+=======
+.env
+>>>>>>> c29f532 ([wip]Contentful Api 생성)
