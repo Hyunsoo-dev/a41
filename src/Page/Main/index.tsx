@@ -15,6 +15,8 @@ import { ReactComponent as ViewMoreIcon } from "../../Assets/image/mainPage/view
 import ViewMoreIconMobile from "../../Assets/image/mainPage/viewMoreIconMobile.png";
 import team_thumbnail from "../../Assets/image/mainPage/team_thumbnail.png";
 import H0 from "../../Components/H0";
+import { getAllMemberInfo, getMemberInfo } from "../../Contentful/Contentful";
+
 const Main = () => {
   useEffect(() => {
     window.scrollTo({ top: 0, left: 0, behavior: "auto" });
@@ -27,6 +29,10 @@ const Main = () => {
   };
   const mainTitle1 = useRef(null);
   const mainTitle2 = useRef(null);
+  useEffect(() => {
+    getAllMemberInfo();
+    // getMemberInfo();
+  }, []);
   useEffect(() => {
     window.addEventListener("scroll", updateScrollPosition);
   });
