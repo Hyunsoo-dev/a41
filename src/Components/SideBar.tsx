@@ -23,7 +23,7 @@ const SideBar = ({ clickMenu, clickedSideBar }: any) => {
           portfolio
         </Link>
         <Link
-          to="/content1"
+          to="/contents"
           className="sidebar-item"
           onClick={() => clickMenu()}
         >

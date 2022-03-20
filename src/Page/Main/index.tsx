@@ -16,10 +16,9 @@ import ViewMoreIconMobile from "../../Assets/image/mainPage/viewMoreIconMobile.p
 import team_thumbnail from "../../Assets/image/mainPage/team_thumbnail.png";
 import H0 from "../../Components/H0";
 const Main = () => {
-
   useEffect(() => {
-    window.scrollTo({top:0, left:0, behavior:'auto'});
-    return () => {}
+    window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+    return () => {};
   }, []);
 
   const [scrollPosition, setScrollPosition] = useState(0);
