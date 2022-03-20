@@ -1,18 +1,18 @@
-import React, { useState, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
-import { ReactComponent as LogoWhite } from '../Assets/icon/logo_white.svg';
-import { ReactComponent as LogoGreen } from '../Assets/icon/logo_green.svg';
-import { ReactComponent as MenuBlack } from '../Assets/icon/menu_black.svg';
-import { ReactComponent as MenuWhite } from '../Assets/icon/menu_white.svg';
-import '../Style/Header.scss';
+import React, { useState, useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
+import { ReactComponent as LogoWhite } from "../Assets/icon/logo_white.svg";
+import { ReactComponent as LogoGreen } from "../Assets/icon/logo_green.svg";
+import { ReactComponent as MenuBlack } from "../Assets/icon/menu_black.svg";
+import { ReactComponent as MenuWhite } from "../Assets/icon/menu_white.svg";
+import "../Style/Header.scss";
 
 const Header = ({ clickMenu }: any) => {
-  const [language, setLanguage] = useState('KO');
+  const [language, setLanguage] = useState("KO");
   const selecLanguage = (language: string) => {
     setLanguage(language);
   };
 
-  const [headerTheme, setHeaderTheme] = useState('black');
+  const [headerTheme, setHeaderTheme] = useState("black");
   const [scrollPosition, setScrollPosition] = useState(0);
 
   /*
@@ -27,14 +27,16 @@ const Header = ({ clickMenu }: any) => {
   const respondOnLocation = (locations: any) => {
     const parsedCurrentPathname = locations.pathname.slice(0, 8);
     switch (parsedCurrentPathname) {
-      case '/content':
-        return 'header-container-white content-header';
+      case "/content":
+        return "header-container-white content-header";
 
-      case '/':
-        return scrollPosition > 3600 ? 'header-container-white' : 'header-container-black';
+      case "/":
+        return scrollPosition > 3600
+          ? "header-container-white"
+          : "header-container-black";
 
       default:
-        return 'header-container-black';
+        return "header-container-black";
     }
   };
 
@@ -42,7 +44,7 @@ const Header = ({ clickMenu }: any) => {
     setScrollPosition(window.pageYOffset);
   };
   useEffect(() => {
-    window.addEventListener('scroll', updateScroll);
+    window.addEventListener("scroll", updateScroll);
     return () => {};
   });
 
@@ -76,12 +78,25 @@ const Header = ({ clickMenu }: any) => {
         </div>
 
         <div className="language_wrapper">
-          <div className={language === 'KO' ? 'selected_language' : 'unselected_language'} onClick={() => selecLanguage('KO')}>
-            KO
+          <div className="language_box">
+            <div
+              className={
+                language === "KO" ? "selected_language" : "unselected_language"
+              }
+              onClick={() => selecLanguage("KO")}
+            >
+              KO
+            </div>
+            <div
+              className={
+                language === "EN" ? "selected_language" : "unselected_language"
+              }
+              onClick={() => selecLanguage("EN")}
+            >
+              EN
+            </div>
           </div>
-          <div className={language === 'EN' ? 'selected_language' : 'unselected_language'} onClick={() => selecLanguage('EN')}>
-            EN
-          </div>
+          <div className={language === "KO" ? "KO-active" : "EN-active"}></div>
         </div>
         <div className="menu" onClick={() => clickMenu()}>
           {scrollPosition > 3400 ? <MenuBlack /> : <MenuWhite />}

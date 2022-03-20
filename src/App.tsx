@@ -1,16 +1,27 @@
-import React, { useState } from 'react';
-import Footer from './Components/Footer';
-import Header from './Components/Header';
-import SideBar from './Components/SideBar';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { Main, Contact, Contents1, Content, OurThesis, Portfolio1, Portfolio2, Team1, Team2, Stake } from './Page';
+import React, { useState } from "react";
+import Footer from "./Components/Footer";
+import Header from "./Components/Header";
+import SideBar from "./Components/SideBar";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import {
+  Main,
+  Contact,
+  Contents1,
+  Content,
+  OurThesis,
+  Portfolio1,
+  Portfolio2,
+  Team1,
+  Team2,
+  Stake,
+} from "./Page";
 
-import './App.scss';
+import "./App.scss";
 
 function App() {
   const [clickedSideBar, setClickedSideBar] = useState(false);
   const clickMenu = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    window.scrollTo({ top: 0, behavior: "smooth" });
     setClickedSideBar(!clickedSideBar);
   };
 
