@@ -1,25 +1,23 @@
 import React, { useEffect, useState } from 'react';
 import H0 from '../../Components/H0';
-import { createClient } from 'contentful';
 import { useParams } from 'react-router-dom';
 import { ReactComponent as Twitter } from '../../Assets/twitter.svg';
 import { ReactComponent as LinkedIn } from '../../Assets/linkedin.svg';
 import ArticleCard from '../Portfolio2/ArticleCard';
 
 import '../../Style/Team2.scss';
+import {getMemberInfo} from "../../Contentful/Contentful";
 
 const Team2 = () => {
   const [detail, setDetail] = useState<any>();
   let { id } = useParams();
 
   useEffect(() => {
-    const client = createClient({
-      space: process.env.REACT_APP_SPACE_ID as string,
-      accessToken: process.env.REACT_APP_ACCESS_TOKEN as string,
-    });
-
-    client.getEntry(id as string).then(res => setDetail(res.fields));
-    return () => {};
+    const ac = new AbortController();
+    getMemberInfo(id).then(res => setDetail(res.fields));
+    return () => {
+      return ac.abort();
+    };
   }, [id]);
 
   useEffect(() => {

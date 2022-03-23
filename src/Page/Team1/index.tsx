@@ -1,23 +1,20 @@
 import React, { useEffect, useState } from 'react';
-import { createClient } from 'contentful';
 import H0 from '../../Components/H0';
 import TeamList from './TeamList';
 import '../../Style/Team1.scss';
+import {getAllMemberInfo} from "../../Contentful/Contentful";
 
 const Team1 = () => {
-  const [data, setData] = useState([]);
+  const [data, setData] = useState<any[]>([]);
 
-  const api = process.env.RE;
   useEffect(() => {
-    const client = createClient({
-      space: process.env.REACT_APP_SPACE_ID as string,
-      accessToken: process.env.REACT_APP_ACCESS_TOKEN as string,
-    });
-
-    client.getEntries({ content_type: 'team' }).then((res: any) => {
-      return setData(res.items);
-    });
-    return () => {};
+    const ac = new AbortController();
+    getAllMemberInfo().then(r => setData(r.items.sort((a, b) => {
+      return a.fields.index - b.fields.index
+    })));
+    return () => {
+      return ac.abort();
+    };
   }, []);
 
   useEffect(() => {

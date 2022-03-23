@@ -31,10 +31,13 @@ const Main = () => {
   const mainTitle2 = useRef(null);
   useEffect(() => {
     getAllMemberInfo();
-    // getMemberInfo();
+    return () => {}
   }, []);
   useEffect(() => {
     window.addEventListener("scroll", updateScrollPosition);
+    return () => {
+      window.removeEventListener("scroll", updateScrollPosition);
+    }
   });
   const controlMainTitle = (element: any, scrollPosition: number): any => {
     let className = "";
