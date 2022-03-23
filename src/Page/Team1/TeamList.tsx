@@ -18,14 +18,15 @@ const TeamList = ({id, img, enName, koName, position, twit, linkedIn}: TeamListP
     const navigate = useNavigate();
     const {pathname} = useLocation();
 
-    return <div className={"list_box"} onClick={() => {
+    const handleClick = () => {
         if (pathname === "/team") {
             return navigate(`${id}`);
         }
-        ;
         return;
     }
-    }>
+
+
+    return <div className={"list_box"} onClick={handleClick}>
         <img src={img} alt={"profile_img"}/>
         <div className={"row_box"}>
             <div className={"en_name"}>{enName}</div>
@@ -41,7 +42,7 @@ const TeamList = ({id, img, enName, koName, position, twit, linkedIn}: TeamListP
                     <LinkedIn/>
                 </a>}
         </div>
-        <div className={'img_border_box'} />
+        <div className={'img_border_box'}/>
     </div>
 }
 
