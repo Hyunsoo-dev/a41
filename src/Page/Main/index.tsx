@@ -16,7 +16,7 @@ import ViewMoreIconMobile from "../../Assets/image/mainPage/viewMoreIconMobile.p
 import team_thumbnail from "../../Assets/image/mainPage/team_thumbnail.png";
 import H0 from "../../Components/H0";
 import { getAllMemberInfo, getMemberInfo } from "../../Contentful/Contentful";
-
+import ViewMoreButton from "../../Components/ViewMoreButton";
 const Main = () => {
   useEffect(() => {
     window.scrollTo({ top: 0, left: 0, behavior: "auto" });
@@ -31,13 +31,13 @@ const Main = () => {
   const mainTitle2 = useRef(null);
   useEffect(() => {
     getAllMemberInfo();
-    return () => {}
+    return () => {};
   }, []);
   useEffect(() => {
     window.addEventListener("scroll", updateScrollPosition);
     return () => {
       window.removeEventListener("scroll", updateScrollPosition);
-    }
+    };
   });
   const controlMainTitle = (element: any, scrollPosition: number): any => {
     let className = "";
@@ -100,8 +100,8 @@ const Main = () => {
                 scrollPosition < 1100 ? "visible" : "hidden"
               }`}
             >
-              <section className="main-title">
-                <div className="main-title-wrapper">
+              <section className="main-vision">
+                <div className="main-vision-wrapper">
                   <article
                     ref={mainTitle1}
                     className={`title1 ${controlMainTitle(
@@ -198,8 +198,11 @@ const Main = () => {
       <section className="container-white">
         <section className="container-bg-white">
           <section className="main-portfolio">
-            <div className="main-portfolio-wrapper">
+            <div className="main-title-wrapper">
               <H0 title="Portfolio" />
+              <ViewMoreButton />
+            </div>
+            <div className="main-portfolio-wrapper">
               <div className="portfolio-box">
                 <article className="portfolio-logo">
                   <img src={AlexLogo} alt="" />
@@ -227,12 +230,9 @@ const Main = () => {
       <section className="container-white">
         <section className="container-bg-white">
           <section className="main-contents">
-            <div className="main-contents-title-wrapper">
+            <div className="main-title-wrapper">
               <H0 title="Contents" />
-              <div className="icon-box">
-                <RightArrow className="right-arrow" />
-                <div className="view-more-text">view more</div>
-              </div>
+              <ViewMoreButton />
             </div>
             <div className="main-contents-wrapper">
               <div className="contents-box">
@@ -284,8 +284,11 @@ const Main = () => {
       <section className="container-white">
         <section className="container-bg-white">
           <section className="main-team">
-            <div className="main-team-wrapper">
+            <div className="main-title-wrapper">
               <H0 title="Team" />
+              <ViewMoreButton />
+            </div>
+            <div className="main-team-wrapper">
               <article className="main-team-box">
                 <TeamComponent
                   thumbnail={team_thumbnail}

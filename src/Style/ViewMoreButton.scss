@@ -1,0 +1,51 @@
+@import "../index.scss";
+@import "../Style/variables.scss";
+.icon-box {
+  margin-right: 50px;
+  height: 30px;
+  width: 150px;
+  white-space: nowrap;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .right-arrow {
+    display: block;
+    position: absolute;
+    margin-left: 112px;
+  }
+  .view-more-text {
+    position: absolute;
+    top: 0;
+    left: -200px;
+    // display: none;
+    color: #99f100;
+    font-size: 24px;
+    font-family: "GmarketSansBold", "GmarketSansLight", "GmarketSansMedium",
+      sans-serif;
+    font-weight: $h2_weight;
+  }
+}
+.icon-box:hover {
+  .right-arrow {
+    transform: translateX(200px);
+    transition: transform 0.3s ease;
+  }
+  .view-more-text {
+    // display: block;
+    transform: translateX(200px);
+    transition: transform 0.3s ease;
+  }
+}
+.icon-box:not(:hover) {
+  .right-arrow {
+    transform: translateX(0px);
+    transition: transform 0.3s ease;
+  }
+  .view-more-text {
+    // display: block;
+    transform: translateX(0px);
+    transition: transform 0.3s ease;
+  }
+}
