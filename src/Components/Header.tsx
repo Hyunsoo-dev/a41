@@ -5,14 +5,14 @@ import { ReactComponent as LogoGreen } from "../Assets/icon/logo_green.svg";
 import { ReactComponent as MenuBlack } from "../Assets/icon/menu_black.svg";
 import { ReactComponent as MenuWhite } from "../Assets/icon/menu_white.svg";
 import "../Style/Header.scss";
-
+import { useRecoilState } from "recoil";
+import { colorTheme } from "../GlobalState/recoil";
 const Header = ({ clickMenu }: any) => {
   const [language, setLanguage] = useState("KO");
   const selecLanguage = (language: string) => {
     setLanguage(language);
   };
-
-  const [headerTheme, setHeaderTheme] = useState("black");
+  const [headerColor, setHeaderColor] = useRecoilState(colorTheme);
   const [scrollPosition, setScrollPosition] = useState(0);
 
   /*
@@ -46,10 +46,16 @@ const Header = ({ clickMenu }: any) => {
   useEffect(() => {
     window.addEventListener("scroll", updateScroll);
     return () => {};
-  });
+  }, []);
 
   return (
-    <div className={respondOnLocation(locations)}>
+    <div
+      className={
+        headerColor === "black"
+          ? "header-container-black"
+          : "header-container-white"
+      }
+    >
       <div className="wrapper">
         <div className="logo_wrapper">
           <Link className="category" to="/">

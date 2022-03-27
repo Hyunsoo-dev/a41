@@ -17,7 +17,12 @@ import team_thumbnail from "../../Assets/image/mainPage/team_thumbnail.png";
 import H0 from "../../Components/H0";
 import { getAllMemberInfo, getMemberInfo } from "../../Contentful/Contentful";
 import ViewMoreButton from "../../Components/ViewMoreButton";
+import { useRecoilState } from "recoil";
+import { colorTheme } from "../../GlobalState/recoil";
+
 const Main = () => {
+  const [headerColor, setHeaderColor] = useRecoilState(colorTheme);
+
   useEffect(() => {
     window.scrollTo({ top: 0, left: 0, behavior: "auto" });
     return () => {};
@@ -25,6 +30,12 @@ const Main = () => {
 
   const [scrollPosition, setScrollPosition] = useState(0);
   const updateScrollPosition = () => {
+    if (window.pageYOffset > 3600 && headerColor !== "white") {
+      setHeaderColor("white");
+    } else if (window.pageYOffset <= 3600 && headerColor !== "black") {
+      setHeaderColor("black");
+    }
+
     setScrollPosition(window.scrollY);
   };
   const mainTitle1 = useRef(null);
