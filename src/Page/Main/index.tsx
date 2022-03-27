@@ -22,25 +22,30 @@ import { colorTheme } from "../../GlobalState/recoil";
 
 const Main = () => {
   const [headerColor, setHeaderColor] = useRecoilState(colorTheme);
+  const [scrollPosition, setScrollPosition] = useState(0);
+
+  const mainTitle1 = useRef(null);
+  const mainTitle2 = useRef(null);
+  const updateScrollPosition = () => {
+    if (window.pageYOffset > 3600 && headerColor !== "white") {
+      setHeaderColor("white");
+      setScrollPosition(window.scrollY);
+    } else if (window.pageYOffset <= 3600 && headerColor !== "black") {
+      setHeaderColor("black");
+      setScrollPosition(window.scrollY);
+    } else {
+      setScrollPosition(window.scrollY);
+    }
+
+    console.log("window.pageYOffset :", window.pageYOffset, "headerColor :", headerColor);
+  };
 
   useEffect(() => {
     window.scrollTo({ top: 0, left: 0, behavior: "auto" });
     return () => {};
   }, []);
-
-  const [scrollPosition, setScrollPosition] = useState(0);
-  const updateScrollPosition = () => {
-    if (window.pageYOffset > 3600 && headerColor !== "white") {
-      setHeaderColor("white");
-    } else if (window.pageYOffset <= 3600 && headerColor !== "black") {
-      setHeaderColor("black");
-    }
-
-    setScrollPosition(window.scrollY);
-  };
-  const mainTitle1 = useRef(null);
-  const mainTitle2 = useRef(null);
   useEffect(() => {
+    setHeaderColor("black");
     getAllMemberInfo();
     return () => {};
   }, []);
@@ -98,106 +103,48 @@ const Main = () => {
     <>
       <section className="sticky-container">
         <section className="sticky">
-          <section
-            id={
-              scrollPosition > 1100 && scrollPosition <= 3800
-                ? "opacity-bg"
-                : ""
-            }
-            className="slide-container"
-          >
-            <article
-              className={`slide ${
-                scrollPosition < 1100 ? "visible" : "hidden"
-              }`}
-            >
+          <section id={scrollPosition > 1100 && scrollPosition <= 3800 ? "opacity-bg" : ""} className="slide-container">
+            <article className={`slide ${scrollPosition < 1100 ? "visible" : "hidden"}`}>
               <section className="main-vision">
                 <div className="main-vision-wrapper">
-                  <article
-                    ref={mainTitle1}
-                    className={`title1 ${controlMainTitle(
-                      mainTitle1,
-                      scrollPosition
-                    )}`}
-                  >
+                  <article ref={mainTitle1} className={`title1 ${controlMainTitle(mainTitle1, scrollPosition)}`}>
                     We are the sidekicks of heroes
                   </article>
-                  <article
-                    ref={mainTitle2}
-                    className={`title2 ${controlMainTitle(
-                      mainTitle2,
-                      scrollPosition
-                    )}`}
-                  >
+                  <article ref={mainTitle2} className={`title2 ${controlMainTitle(mainTitle2, scrollPosition)}`}>
                     building digital innovation
                   </article>
                 </div>
               </section>
             </article>
-            <article
-              className={`slide ${
-                scrollPosition > 1100 && scrollPosition <= 2000
-                  ? "visible"
-                  : "hidden"
-              }`}
-            >
+            <article className={`slide ${scrollPosition > 1100 && scrollPosition <= 2000 ? "visible" : "hidden"}`}>
               <section className="main-ventures">
-                <div
-                  className={`main-ventures-wrapper ${controlVentures(
-                    scrollPosition
-                  )}`}
-                >
+                <div className={`main-ventures-wrapper ${controlVentures(scrollPosition)}`}>
                   <H0 title="a41 Ventures" />
                   <article className="content">
-                    a41 invests in disruptive technologies that will lead the
-                    next digital innovation. We believe that those who do the
-                    heavy lifting on the ground - members of the projects that
-                    we invest in - are the true heroes that should stand out,
-                    with the help of sidekicks like us. Members of a41 are
-                    dedicated to becoming the bridge and catalyst of the next
-                    digital innovation.
+                    a41 invests in disruptive technologies that will lead the next digital innovation. We believe that those who
+                    do the heavy lifting on the ground - members of the projects that we invest in - are the true heroes that
+                    should stand out, with the help of sidekicks like us. Members of a41 are dedicated to becoming the bridge and
+                    catalyst of the next digital innovation.
                   </article>
                 </div>
               </section>
             </article>
-            <article
-              className={`slide ${
-                scrollPosition > 2000 && scrollPosition < 3000
-                  ? "visible"
-                  : "hidden"
-              }`}
-            >
+            <article className={`slide ${scrollPosition > 2000 && scrollPosition < 3000 ? "visible" : "hidden"}`}>
               <section className="main-ourThesis">
-                <div
-                  className={`main-ourThesis-wrapper ${controlOurThesis(
-                    scrollPosition
-                  )}`}
-                >
+                <div className={`main-ourThesis-wrapper ${controlOurThesis(scrollPosition)}`}>
                   <H0 title="our thesis" />
                   <div className="content-wrapper">
                     <div className="main-content-box">
-                      <article className="dark-content">
-                        Winning the next era of
-                      </article>
-                      <article className="light-content">
-                        internet - Web 3,
-                      </article>
+                      <article className="dark-content">Winning the next era of</article>
+                      <article className="light-content">internet - Web 3,</article>
                     </div>
                     <div className="main-content-box">
-                      <article className="dark-content">
-                        Winning the next era of
-                      </article>
-                      <article className="light-content">
-                        finance - Open Finance
-                      </article>
+                      <article className="dark-content">Winning the next era of</article>
+                      <article className="light-content">finance - Open Finance</article>
                     </div>
                     <div className="main-content-box">
-                      <article className="dark-content">
-                        Winning the next era of
-                      </article>
-                      <article className="light-content">
-                        digital experience - Metaverse
-                      </article>
+                      <article className="dark-content">Winning the next era of</article>
+                      <article className="light-content">digital experience - Metaverse</article>
                     </div>
                   </div>
                 </div>
@@ -251,18 +198,14 @@ const Main = () => {
                   <ContentComponent
                     thumbnail={column1_row1}
                     title={"[Research] Pricing Everlasting Options"}
-                    subtitle={
-                      "This post explores ways to price everlasting options."
-                    }
+                    subtitle={"This post explores ways to price everlasting options."}
                     author={"Steve Kim"}
                     date={"Dec 24, 2021"}
                   />
                   <ContentComponent
                     thumbnail={column1_row1}
                     title={"[Research] Pricing Everlasting Options"}
-                    subtitle={
-                      "This post explores ways to price everlasting options."
-                    }
+                    subtitle={"This post explores ways to price everlasting options."}
                     author={"Steve Kim"}
                     date={"Dec 24, 2021"}
                   />
@@ -271,18 +214,14 @@ const Main = () => {
                   <ContentComponent
                     thumbnail={column1_row1}
                     title={"[Research] Pricing Everlasting Options"}
-                    subtitle={
-                      "This post explores ways to price everlasting options."
-                    }
+                    subtitle={"This post explores ways to price everlasting options."}
                     author={"Steve Kim"}
                     date={"Dec 24, 2021"}
                   />
                   <ContentComponent
                     thumbnail={column1_row1}
                     title={"[Research] Pricing Everlasting Options"}
-                    subtitle={
-                      "This post explores ways to price everlasting options."
-                    }
+                    subtitle={"This post explores ways to price everlasting options."}
                     author={"Steve Kim"}
                     date={"Dec 24, 2021"}
                   />

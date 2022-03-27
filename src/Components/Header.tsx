@@ -22,21 +22,15 @@ const Header = ({ clickMenu }: any) => {
     locations.pathname === "/"인 경우만 해당 header를 넣어준다.
   */
 
-  const locations = useLocation();
-
-  const respondOnLocation = (locations: any) => {
+  const location = useLocation();
+  const toggleMenu = (locations: any) => {
     const parsedCurrentPathname = locations.pathname.slice(0, 8);
     switch (parsedCurrentPathname) {
-      case "/content":
-        return "header-container-white content-header";
-
       case "/":
-        return scrollPosition > 3600
-          ? "header-container-white"
-          : "header-container-black";
-
+        return scrollPosition > 3400 ? <MenuBlack /> : <MenuWhite />;
       default:
-        return "header-container-black";
+        console.log("!!");
+        return headerColor === "black" ? <MenuWhite /> : <MenuBlack />;
     }
   };
 
@@ -49,17 +43,12 @@ const Header = ({ clickMenu }: any) => {
   }, []);
 
   return (
-    <div
-      className={
-        headerColor === "black"
-          ? "header-container-black"
-          : "header-container-white"
-      }
-    >
+    <div className={headerColor === "black" ? "header-container-black" : "header-container-white"}>
       <div className="wrapper">
         <div className="logo_wrapper">
           <Link className="category" to="/">
-            {scrollPosition > 3400 ? <LogoWhite /> : <LogoGreen />}
+            {scrollPosition > 3400 ? <LogoWhite /> : <LogoWhite />}
+            {/* {toggleLogo(location)} */}
           </Link>
         </div>
         <div className="category_wrapper">
@@ -85,27 +74,18 @@ const Header = ({ clickMenu }: any) => {
 
         <div className="language_wrapper">
           <div className="language_box">
-            <div
-              className={
-                language === "KO" ? "selected_language" : "unselected_language"
-              }
-              onClick={() => selecLanguage("KO")}
-            >
+            <div className={language === "KO" ? "selected_language" : "unselected_language"} onClick={() => selecLanguage("KO")}>
               KO
             </div>
-            <div
-              className={
-                language === "EN" ? "selected_language" : "unselected_language"
-              }
-              onClick={() => selecLanguage("EN")}
-            >
+            <div className={language === "EN" ? "selected_language" : "unselected_language"} onClick={() => selecLanguage("EN")}>
               EN
             </div>
           </div>
           <div className={language === "KO" ? "KO-active" : "EN-active"}></div>
         </div>
         <div className="menu" onClick={() => clickMenu()}>
-          {scrollPosition > 3400 ? <MenuBlack /> : <MenuWhite />}
+          {toggleMenu(location)}
+          {/* {scrollPosition > 3400 ? <MenuBlack /> : <MenuWhite />} */}
         </div>
       </div>
     </div>

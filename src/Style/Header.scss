@@ -30,8 +30,7 @@
         color: $gray5;
         text-decoration: none;
         font-size: $footnote1_size;
-        font-family: "GmarketSansBold", "GmarketSansMedium", "GmarketSansLight",
-          sans-serif;
+        font-family: "GmarketSansBold", "GmarketSansMedium", "GmarketSansLight", sans-serif;
         font-weight: $h2_weight;
       }
     }
@@ -137,6 +136,11 @@
       .selected_language {
         color: $gray0;
         border-bottom: 1px $gray5 solid;
+      }
+      .menu {
+        display: block;
+        fill: $gray0;
+        cursor: pointer;
       }
     }
   }
