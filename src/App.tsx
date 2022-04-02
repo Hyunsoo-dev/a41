@@ -3,18 +3,7 @@ import Footer from "./Components/Footer";
 import Header from "./Components/Header";
 import SideBar from "./Components/SideBar";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import {
-  Main,
-  Contact,
-  Contents1,
-  Content,
-  OurThesis,
-  Portfolio1,
-  Portfolio2,
-  Team1,
-  Team2,
-  Stake,
-} from "./Page";
+import { Main, Contact, Contents1, Content, OurThesis, Portfolio1, Portfolio2, Team1, Team2, Stake } from "./Page";
 
 import "./App.scss";
 
@@ -29,7 +18,7 @@ function App() {
     <div id="container">
       <BrowserRouter>
         <Header clickMenu={clickMenu} />
-        <SideBar clickedSideBar={clickedSideBar} />
+        <SideBar clickMenu={clickMenu} clickedSideBar={clickedSideBar} />
         {/*<main id="mainContainer">*/}
         <Routes>
           <Route path="/" element={<Main />} />

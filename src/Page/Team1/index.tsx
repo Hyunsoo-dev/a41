@@ -1,32 +1,41 @@
-import React, { useEffect, useState } from 'react';
-import H0 from '../../Components/H0';
-import TeamList from './TeamList';
-import '../../Style/Team1.scss';
-import {getAllMemberInfo} from "../../Contentful/Contentful";
-
+import React, { useEffect, useState } from "react";
+import H0 from "../../Components/H0";
+import TeamList from "./TeamList";
+import "../../Style/Team1.scss";
+import { getAllMemberInfo } from "../../Contentful/Contentful";
+import { useRecoilState } from "recoil";
+import { colorTheme } from "../../GlobalState/recoil";
 const Team1 = () => {
   const [data, setData] = useState<any[]>([]);
+  const [headerColor, setHeaderColor] = useRecoilState(colorTheme);
 
   useEffect(() => {
+    setHeaderColor("black");
+  });
+  useEffect(() => {
     const ac = new AbortController();
-    getAllMemberInfo().then(r => setData(r.items.sort((a, b) => {
-      return a.fields.index - b.fields.index
-    })));
+    getAllMemberInfo().then((r) =>
+      setData(
+        r.items.sort((a, b) => {
+          return a.fields.index - b.fields.index;
+        })
+      )
+    );
     return () => {
       return ac.abort();
     };
   }, []);
 
   useEffect(() => {
-    window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
+    window.scrollTo({ top: 0, left: 0, behavior: "auto" });
     return () => {};
   }, []);
 
   return (
-    <div className={'container_bk'}>
-      <div className={'content_box'}>
-        <H0 title={'team'} />
-        <div className={'grid_box'}>
+    <div className={"container_bk"}>
+      <div className={"content_box"}>
+        <H0 title={"team"} />
+        <div className={"grid_box"}>
           {data &&
             data.map((el: any, idx) => {
               return (

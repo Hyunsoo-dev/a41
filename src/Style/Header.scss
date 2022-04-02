@@ -11,10 +11,12 @@
   display: flex;
   justify-content: center;
   width: 100%;
+
   height: $header_height;
   .wrapper {
+    max-width: 1440px;
     background-color: transparent;
-    width: $content_screen;
+    width: 1440px;
     height: 100px;
     display: flex;
 
@@ -30,12 +32,11 @@
         color: $gray5;
         text-decoration: none;
         font-size: $footnote1_size;
-        font-family: "GmarketSansBold", "GmarketSansMedium", "GmarketSansLight",
-          sans-serif;
+        font-family: "GmarketSansBold", "GmarketSansMedium", "GmarketSansLight", sans-serif;
         font-weight: $h2_weight;
       }
     }
-    .language_wrapper {
+    .language_wrapper-black {
       flex: 0.1;
 
       cursor: pointer;
@@ -65,12 +66,33 @@
         transform: translateX(0%);
         transition: transform 1s;
       }
+      .unselected_language {
+        color: $gray2;
+      }
+      .selected_language {
+        color: $gray5;
+      }
     }
-    .unselected_language {
-      color: $gray2;
+    .menu {
+      display: none;
     }
-    .selected_language {
-      color: $gray5;
+
+    .language_wrapper-white {
+      @extend .language_wrapper-black;
+      .EN-active {
+        // @extend .EN-active;
+        background: $gray0;
+      }
+      .KO-active {
+        // @extend .KO-active;
+        background: $gray0;
+      }
+      .unselected_language {
+        color: $gray3;
+      }
+      .selected_language {
+        color: $gray0;
+      }
     }
     .menu {
       display: none;
@@ -81,6 +103,7 @@
 .header-container-white {
   @extend .header-container-black;
   background-color: rgba(255, 255, 255, 0.4);
+  background-color: $gray5;
   .wrapper {
     .category_wrapper {
       .category {
@@ -99,7 +122,8 @@
 }
 @include mobile {
   .header-container-black {
-    width: 375px;
+    min-width: 320px;
+    width: 100%;
     height: 100px;
     .wrapper {
       justify-content: space-between;
@@ -113,7 +137,10 @@
           display: none;
         }
       }
-      .language_wrapper {
+      .language_wrapper-black {
+        display: none;
+      }
+      .language_wrapper-white {
         display: none;
       }
       .menu {
@@ -137,6 +164,11 @@
       .selected_language {
         color: $gray0;
         border-bottom: 1px $gray5 solid;
+      }
+      .menu {
+        display: block;
+        fill: $gray0;
+        cursor: pointer;
       }
     }
   }

@@ -1,19 +1,26 @@
-import React, {useEffect} from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import "../../Style/Contents.scss";
 import { ReactComponent as GreenDot } from "../../Assets/image/mainPage/greenDot.svg";
 import { ReactComponent as GrayDot } from "../../Assets/image/content/grayDot.svg";
 import { ReactComponent as SearchIcon } from "../../Assets/image/content/searchIcon.svg";
 import { ReactComponent as FilterIcon } from "../../Assets/image/content/filterIcon.svg";
+import { useRecoilState } from "recoil";
+import { colorTheme } from "../../GlobalState/recoil";
+
 const Contents1 = () => {
+  const [headerColor, setHeaderColor] = useRecoilState(colorTheme);
 
   useEffect(() => {
-    window.scrollTo({top:0, left:0, behavior:'auto'});
-    return () => {}
+    setHeaderColor("white");
+  });
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+    return () => {};
   }, []);
 
   return (
-
     <div className="contents-container">
       <div className="contents-page-container">
         <div className="contents-page-title-wrapper">

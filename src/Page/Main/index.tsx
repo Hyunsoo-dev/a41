@@ -16,28 +16,44 @@ import ViewMoreIconMobile from "../../Assets/image/mainPage/viewMoreIconMobile.p
 import team_thumbnail from "../../Assets/image/mainPage/team_thumbnail.png";
 import H0 from "../../Components/H0";
 import { getAllMemberInfo, getMemberInfo } from "../../Contentful/Contentful";
+import ViewMoreButton from "../../Components/ViewMoreButton";
+import { useRecoilState } from "recoil";
+import { colorTheme } from "../../GlobalState/recoil";
 
 const Main = () => {
+  const [headerColor, setHeaderColor] = useRecoilState(colorTheme);
+  const [scrollPosition, setScrollPosition] = useState(0);
+
+  const mainTitle1 = useRef(null);
+  const mainTitle2 = useRef(null);
+  const updateScrollPosition = () => {
+    if (window.pageYOffset > 3600 && headerColor !== "white") {
+      setHeaderColor("white");
+      setScrollPosition(window.scrollY);
+    } else if (window.pageYOffset <= 3600 && headerColor !== "black") {
+      setHeaderColor("black");
+      setScrollPosition(window.scrollY);
+    } else {
+      setScrollPosition(window.scrollY);
+    }
+
+    console.log("window.pageYOffset :", window.pageYOffset, "headerColor :", headerColor);
+  };
+
   useEffect(() => {
     window.scrollTo({ top: 0, left: 0, behavior: "auto" });
     return () => {};
   }, []);
-
-  const [scrollPosition, setScrollPosition] = useState(0);
-  const updateScrollPosition = () => {
-    setScrollPosition(window.scrollY);
-  };
-  const mainTitle1 = useRef(null);
-  const mainTitle2 = useRef(null);
   useEffect(() => {
+    setHeaderColor("black");
     getAllMemberInfo();
-    return () => {}
+    return () => {};
   }, []);
   useEffect(() => {
     window.addEventListener("scroll", updateScrollPosition);
     return () => {
       window.removeEventListener("scroll", updateScrollPosition);
-    }
+    };
   });
   const controlMainTitle = (element: any, scrollPosition: number): any => {
     let className = "";
@@ -87,106 +103,48 @@ const Main = () => {
     <>
       <section className="sticky-container">
         <section className="sticky">
-          <section
-            id={
-              scrollPosition > 1100 && scrollPosition <= 3800
-                ? "opacity-bg"
-                : ""
-            }
-            className="slide-container"
-          >
-            <article
-              className={`slide ${
-                scrollPosition < 1100 ? "visible" : "hidden"
-              }`}
-            >
-              <section className="main-title">
-                <div className="main-title-wrapper">
-                  <article
-                    ref={mainTitle1}
-                    className={`title1 ${controlMainTitle(
-                      mainTitle1,
-                      scrollPosition
-                    )}`}
-                  >
+          <section id={scrollPosition > 1100 && scrollPosition <= 3800 ? "opacity-bg" : ""} className="slide-container">
+            <article className={`slide ${scrollPosition < 1100 ? "visible" : "hidden"}`}>
+              <section className="main-vision">
+                <div className="main-vision-wrapper">
+                  <article ref={mainTitle1} className={`title1 ${controlMainTitle(mainTitle1, scrollPosition)}`}>
                     We are the sidekicks of heroes
                   </article>
-                  <article
-                    ref={mainTitle2}
-                    className={`title2 ${controlMainTitle(
-                      mainTitle2,
-                      scrollPosition
-                    )}`}
-                  >
+                  <article ref={mainTitle2} className={`title2 ${controlMainTitle(mainTitle2, scrollPosition)}`}>
                     building digital innovation
                   </article>
                 </div>
               </section>
             </article>
-            <article
-              className={`slide ${
-                scrollPosition > 1100 && scrollPosition <= 2000
-                  ? "visible"
-                  : "hidden"
-              }`}
-            >
+            <article className={`slide ${scrollPosition > 1100 && scrollPosition <= 2000 ? "visible" : "hidden"}`}>
               <section className="main-ventures">
-                <div
-                  className={`main-ventures-wrapper ${controlVentures(
-                    scrollPosition
-                  )}`}
-                >
+                <div className={`main-ventures-wrapper ${controlVentures(scrollPosition)}`}>
                   <H0 title="a41 Ventures" />
                   <article className="content">
-                    a41 invests in disruptive technologies that will lead the
-                    next digital innovation. We believe that those who do the
-                    heavy lifting on the ground - members of the projects that
-                    we invest in - are the true heroes that should stand out,
-                    with the help of sidekicks like us. Members of a41 are
-                    dedicated to becoming the bridge and catalyst of the next
-                    digital innovation.
+                    a41 invests in disruptive technologies that will lead the next digital innovation. We believe that those who
+                    do the heavy lifting on the ground - members of the projects that we invest in - are the true heroes that
+                    should stand out, with the help of sidekicks like us. Members of a41 are dedicated to becoming the bridge and
+                    catalyst of the next digital innovation.
                   </article>
                 </div>
               </section>
             </article>
-            <article
-              className={`slide ${
-                scrollPosition > 2000 && scrollPosition < 3000
-                  ? "visible"
-                  : "hidden"
-              }`}
-            >
+            <article className={`slide ${scrollPosition > 2000 && scrollPosition < 3000 ? "visible" : "hidden"}`}>
               <section className="main-ourThesis">
-                <div
-                  className={`main-ourThesis-wrapper ${controlOurThesis(
-                    scrollPosition
-                  )}`}
-                >
+                <div className={`main-ourThesis-wrapper ${controlOurThesis(scrollPosition)}`}>
                   <H0 title="our thesis" />
                   <div className="content-wrapper">
                     <div className="main-content-box">
-                      <article className="dark-content">
-                        Winning the next era of
-                      </article>
-                      <article className="light-content">
-                        internet - Web 3,
-                      </article>
+                      <article className="dark-content">Winning the next era of</article>
+                      <article className="light-content">internet - Web 3,</article>
                     </div>
                     <div className="main-content-box">
-                      <article className="dark-content">
-                        Winning the next era of
-                      </article>
-                      <article className="light-content">
-                        finance - Open Finance
-                      </article>
+                      <article className="dark-content">Winning the next era of</article>
+                      <article className="light-content">finance - Open Finance</article>
                     </div>
                     <div className="main-content-box">
-                      <article className="dark-content">
-                        Winning the next era of
-                      </article>
-                      <article className="light-content">
-                        digital experience - Metaverse
-                      </article>
+                      <article className="dark-content">Winning the next era of</article>
+                      <article className="light-content">digital experience - Metaverse</article>
                     </div>
                   </div>
                 </div>
@@ -198,8 +156,11 @@ const Main = () => {
       <section className="container-white">
         <section className="container-bg-white">
           <section className="main-portfolio">
-            <div className="main-portfolio-wrapper">
+            <div className="main-title-wrapper">
               <H0 title="Portfolio" />
+              <ViewMoreButton />
+            </div>
+            <div className="main-portfolio-wrapper">
               <div className="portfolio-box">
                 <article className="portfolio-logo">
                   <img src={AlexLogo} alt="" />
@@ -227,12 +188,9 @@ const Main = () => {
       <section className="container-white">
         <section className="container-bg-white">
           <section className="main-contents">
-            <div className="main-contents-title-wrapper">
+            <div className="main-title-wrapper">
               <H0 title="Contents" />
-              <div className="icon-box">
-                <RightArrow className="right-arrow" />
-                <div className="view-more-text">view more</div>
-              </div>
+              <ViewMoreButton />
             </div>
             <div className="main-contents-wrapper">
               <div className="contents-box">
@@ -240,18 +198,14 @@ const Main = () => {
                   <ContentComponent
                     thumbnail={column1_row1}
                     title={"[Research] Pricing Everlasting Options"}
-                    subtitle={
-                      "This post explores ways to price everlasting options."
-                    }
+                    subtitle={"This post explores ways to price everlasting options."}
                     author={"Steve Kim"}
                     date={"Dec 24, 2021"}
                   />
                   <ContentComponent
                     thumbnail={column1_row1}
                     title={"[Research] Pricing Everlasting Options"}
-                    subtitle={
-                      "This post explores ways to price everlasting options."
-                    }
+                    subtitle={"This post explores ways to price everlasting options."}
                     author={"Steve Kim"}
                     date={"Dec 24, 2021"}
                   />
@@ -260,18 +214,14 @@ const Main = () => {
                   <ContentComponent
                     thumbnail={column1_row1}
                     title={"[Research] Pricing Everlasting Options"}
-                    subtitle={
-                      "This post explores ways to price everlasting options."
-                    }
+                    subtitle={"This post explores ways to price everlasting options."}
                     author={"Steve Kim"}
                     date={"Dec 24, 2021"}
                   />
                   <ContentComponent
                     thumbnail={column1_row1}
                     title={"[Research] Pricing Everlasting Options"}
-                    subtitle={
-                      "This post explores ways to price everlasting options."
-                    }
+                    subtitle={"This post explores ways to price everlasting options."}
                     author={"Steve Kim"}
                     date={"Dec 24, 2021"}
                   />
@@ -284,8 +234,11 @@ const Main = () => {
       <section className="container-white">
         <section className="container-bg-white">
           <section className="main-team">
-            <div className="main-team-wrapper">
+            <div className="main-title-wrapper">
               <H0 title="Team" />
+              <ViewMoreButton />
+            </div>
+            <div className="main-team-wrapper">
               <article className="main-team-box">
                 <TeamComponent
                   thumbnail={team_thumbnail}

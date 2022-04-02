@@ -27,15 +27,13 @@
 
   .title {
     font-size: 45px;
-    font-family: "GmarketSansBold", "GmarketSansMedium", "GmarketSansLight",
-      sans-serif;
+    font-family: "GmarketSansBold", "GmarketSansMedium", "GmarketSansLight", sans-serif;
     font-weight: 54.01px;
     margin-bottom: 10px;
   }
   .subtitle {
     font-size: $body_size;
-    font-family: "GmarketSansMedium", "GmarketSansBold", "GmarketSansLight",
-      sans-serif;
+    font-family: "GmarketSansMedium", "GmarketSansBold", "GmarketSansLight", sans-serif;
     font-weight: 54.01px;
     margin-bottom: 60px;
   }
@@ -45,8 +43,7 @@
     .author,
     .date {
       font-size: $footnote2_size;
-      font-family: "GmarketSansLight", "GmarketSansMedium", "GmarketSansBold",
-        sans-serif;
+      font-family: "GmarketSansLight", "GmarketSansMedium", "GmarketSansBold", sans-serif;
       font-weight: $default_weight;
       color: $gray2;
     }
@@ -97,16 +94,14 @@
   .content-box {
     .title {
       font-size: $h1_size;
-      font-family: "GmarketSansBold", "GmarketSansMedium", "GmarketSansLight",
-        sans-serif;
+      font-family: "GmarketSansBold", "GmarketSansMedium", "GmarketSansLight", sans-serif;
       font-weight: $h2_weight;
       line-height: 34px;
       margin-bottom: 10px;
     }
     .content {
       font-size: $body_size;
-      font-family: "GmarketSansMedium", "GmarketSansBold", "GmarketSansLight",
-        sans-serif;
+      font-family: "GmarketSansMedium", "GmarketSansBold", "GmarketSansLight", sans-serif;
       font-weight: $default_weight;
       line-height: 34px;
       margin-bottom: 20px;
@@ -119,7 +114,8 @@
 }
 @include mobile {
   .content-page-wrapper {
-    width: 335px;
+    min-width: 335px;
+    width: 90%;
     .content-page-header-wrapper {
       .title {
         font-size: 22px;

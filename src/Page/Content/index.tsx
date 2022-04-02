@@ -6,10 +6,18 @@ import LeftArrowIcon from "../../Assets/image/content/leftArrowIcon.png";
 import RightArrowIcon from "../../Assets/image/content/rightArrowIcon.png";
 import ContentThumbnail from "../../Assets/image/content/content_thumbnail.png";
 import { useParams } from "react-router-dom";
+import { useRecoilState } from "recoil";
+import { colorTheme } from "../../GlobalState/recoil";
 const Content = () => {
+  const [headerColor, setHeaderColor] = useRecoilState(colorTheme);
+
   useEffect(() => {
-    window.scrollTo({top:0, left:0, behavior:'auto'});
-    return () => {}
+    setHeaderColor("white");
+  });
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+    return () => {};
   }, []);
 
   const params = useParams();
@@ -29,6 +37,9 @@ const Content = () => {
 
   useEffect(() => {
     window.addEventListener("scroll", updateScrollPosition);
+    return () => {
+      window.removeEventListener("scroll", updateScrollPosition);
+    };
   });
 
   useEffect(() => {

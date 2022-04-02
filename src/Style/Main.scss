@@ -9,8 +9,12 @@
   height: 1024px;
   background-color: $gray0;
   margin: 0 auto;
+  overflow: scroll;
 }
 .container-white {
+  // min-width: 1280px;
+  overflow: scroll;
+  max-width: 1440px;
   width: 100%;
   height: 100%;
   background-color: $gray5;
@@ -32,7 +36,8 @@
   margin: 0 auto;
 }
 .container-bg-white {
-  width: 1440px;
+  // width: 1280px;
+  width: 100%;
   height: auto;
   color: $gray0;
   background-color: $gray5;
@@ -44,15 +49,14 @@
   height: 1024px;
   color: white;
   background: rgba(0, 0, 0, 0.1);
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url("../Assets/image/mainPage/darkerBg.png");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../Assets/image/mainPage/darkerBg.png");
   background-repeat: no-repeat;
 
   background-size: contain;
   margin: 0 auto;
 }
 
-.main-title {
+.main-vision {
   width: 100%;
   height: 100%;
   display: flex;
@@ -84,11 +88,10 @@
   color: $gray0;
 }
 
-.main-title-wrapper .title1,
-.main-title-wrapper .title2 {
+.main-vision-wrapper .title1,
+.main-vision-wrapper .title2 {
   font-size: 82px;
-  font-family: "GmarketSansBold", "GmarketSansMedium", "GmarketSansLight",
-    sans-serif;
+  font-family: "GmarketSansBold", "GmarketSansMedium", "GmarketSansLight", sans-serif;
   font-weight: $default-weight;
   :nth-child(odd) {
   }
@@ -98,24 +101,21 @@
 
 .main-ventures-wrapper .title {
   font-size: $h0-size;
-  font-family: "GmarketSansBold", "GmarketSansMedium", "GmarketSansLight",
-    sans-serif;
+  font-family: "GmarketSansBold", "GmarketSansMedium", "GmarketSansLight", sans-serif;
   font-weight: $default-weight;
   display: flex;
   align-items: flex-end;
 }
 .main-ventures-wrapper .content {
   font-size: $body-size;
-  font-family: "GmarketSansBold", "GmarketSansMedium", "GmarketSansLight",
-    sans-serif;
+  font-family: "GmarketSansBold", "GmarketSansMedium", "GmarketSansLight", sans-serif;
   font-weight: $default-weight;
   margin-top: 40px;
 }
 
 .main-ourThesis-wrapper .title {
   font-size: $h0-size;
-  font-family: "GmarketSansBold", "GmarketSansMedium", "GmarketSansLight",
-    sans-serif;
+  font-family: "GmarketSansBold", "GmarketSansMedium", "GmarketSansLight", sans-serif;
   font-weight: $default-weight;
   display: flex;
   align-items: flex-end;
@@ -125,8 +125,7 @@
 }
 .main-ourThesis-wrapper .main-content-box {
   font-size: $h1-size;
-  font-family: "GmarketSansBold", "GmarketSansMedium", "GmarketSansLight",
-    sans-serif;
+  font-family: "GmarketSansBold", "GmarketSansMedium", "GmarketSansLight", sans-serif;
   font-weight: $default-weight;
   display: flex;
   .dark-content {
@@ -145,6 +144,7 @@
   background-color: $gray0;
   margin-top: 100px;
   width: 100%;
+  // min-width: 1280px;
   height: 350vh;
 }
 
@@ -174,8 +174,7 @@
 
 #opacity-bg {
   @extend .slide-container;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url("../Assets/image/mainPage/darkerBg.png");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../Assets/image/mainPage/darkerBg.png");
   transition: all 2s ease-in-out;
 }
 
@@ -286,6 +285,11 @@
   }
 }
 
+@include mobile {
+  #sticky-container {
+    height: 150vh;
+  }
+}
 /*
   ------------- sticky end -----------
 */
@@ -311,7 +315,7 @@
 /*
   main contents
 */
-.main-contents-title-wrapper {
+.main-title-wrapper {
   width: 85%;
   height: auto;
   display: flex;
@@ -319,55 +323,6 @@
   justify-content: space-between;
   .h0_title {
     color: $gray0;
-  }
-  .icon-box {
-    margin-right: 50px;
-    height: 30px;
-    width: 150px;
-    white-space: nowrap;
-    overflow: hidden;
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    .right-arrow {
-      display: block;
-      position: absolute;
-      margin-left: 112px;
-    }
-    .view-more-text {
-      position: absolute;
-      top: 0;
-      left: -200px;
-      // display: none;
-      color: #99f100;
-      font-size: 24px;
-      font-family: "GmarketSansBold", "GmarketSansLight", "GmarketSansMedium",
-        sans-serif;
-      font-weight: $h2_weight;
-    }
-  }
-  .icon-box:hover {
-    .right-arrow {
-      transform: translateX(200px);
-      transition: transform 0.3s ease;
-    }
-    .view-more-text {
-      // display: block;
-      transform: translateX(200px);
-      transition: transform 0.3s ease;
-    }
-  }
-  .icon-box:not(:hover) {
-    .right-arrow {
-      transform: translateX(0px);
-      transition: transform 0.3s ease;
-    }
-    .view-more-text {
-      // display: block;
-      transform: translateX(0px);
-      transition: transform 0.3s ease;
-    }
   }
 }
 .main-contents-wrapper {
@@ -378,8 +333,7 @@
 
 .main-contents-wrapper .title {
   font-size: $h0-size;
-  font-family: "GmarketSansBold", "GmarketSansMedium", "GmarketSansLight",
-    sans-serif;
+  font-family: "GmarketSansBold", "GmarketSansMedium", "GmarketSansLight", sans-serif;
   font-weight: $default-weight;
   display: flex;
   align-items: flex-end;
@@ -388,6 +342,7 @@
 .main-contents-wrapper .contents-box {
   display: flex;
   margin: 40px 0px;
+  justify-content: center;
 }
 .main-contents-wrapper .contents-box .contents-box-column1 {
   margin-right: 124px;
@@ -419,8 +374,7 @@
 
 .content-container .content-title {
   font-size: $headline_size;
-  font-family: "GmarketSansBold", "GmarketSansMedium", "GmarketSansLight",
-    sans-serif;
+  font-family: "GmarketSansBold", "GmarketSansMedium", "GmarketSansLight", sans-serif;
   font-weight: $h2_weight;
   color: $gray0;
   display: flex;
@@ -430,23 +384,20 @@
 
 .content-container .content-subtitle {
   font-size: $body_size;
-  font-family: "GmarketSansMedium", "GmarketSansBold", "GmarketSansLight",
-    sans-serif;
+  font-family: "GmarketSansMedium", "GmarketSansBold", "GmarketSansLight", sans-serif;
   font-weight: $default_weight;
   color: $gray2;
   margin-bottom: 10px;
 }
 .content-container .content-author {
   font-size: $footnote2_size;
-  font-family: "GmarketSansLight", "GmarketSansBold", "GmarketSansMedium",
-    sans-serif;
+  font-family: "GmarketSansLight", "GmarketSansBold", "GmarketSansMedium", sans-serif;
   font-weight: $default_weight;
   color: $gray2;
 }
 .content-container .content-date {
   font-size: $footnote2_size;
-  font-family: "GmarketSansLight", "GmarketSansBold", "GmarketSansMedium",
-    sans-serif;
+  font-family: "GmarketSansLight", "GmarketSansBold", "GmarketSansMedium", sans-serif;
   font-weight: $default_weight;
   color: $gray2;
 }
@@ -524,8 +475,7 @@
   margin: 15px 0px;
   .enName {
     font-size: $h1_size;
-    font-family: "GmarketSansBold", "GmarketSansMedium", "GmarketSansLight",
-      sans-serif;
+    font-family: "GmarketSansBold", "GmarketSansMedium", "GmarketSansLight", sans-serif;
     font-weight: $h2_weight;
     color: $gray0;
 
@@ -533,8 +483,7 @@
   }
   .koName {
     font-size: $footnote1_size;
-    font-family: "GmarketSansLight", "GmarketSansBold", "GmarketSansMedium",
-      sans-serif;
+    font-family: "GmarketSansLight", "GmarketSansBold", "GmarketSansMedium", sans-serif;
     font-weight: $default-weight;
     color: $gray2;
     padding-top: 9px;
@@ -543,8 +492,7 @@
 
 .team-column2 .job-box {
   font-size: $body_size;
-  font-family: "GmarketSansMedium", "GmarketSansBold", "GmarketSansLight",
-    sans-serif;
+  font-family: "GmarketSansMedium", "GmarketSansBold", "GmarketSansLight", sans-serif;
   font-weight: $default-weight;
   color: $gray0;
 }
@@ -554,8 +502,7 @@
   align-items: flex-end;
   height: 50px;
   font-size: $body_size;
-  font-family: "GmarketSansBold", "GmarketSansMedium", "GmarketSansLight",
-    sans-serif;
+  font-family: "GmarketSansBold", "GmarketSansMedium", "GmarketSansLight", sans-serif;
   font-weight: $default-weight;
   color: $gray0;
   .sns-logo {
@@ -567,33 +514,35 @@
 
 @include mobile {
   .sticky-container {
-    width: 375px;
+    min-width: 320px;
+    width: 100%;
     height: 450vh;
     // display: none;
     .sticky {
       width: 100%;
       .slide-container {
-        width: 335px;
-        .main-title {
+        width: 80%;
+        min-width: 320px;
+        .main-vision {
           .title1,
           .title2 {
             font-size: $h0_mobile_size;
-            font-family: "GmarketSansBold", "GmarketSansMedium",
-              "GmarketSansLight", sans-serif;
+            font-family: "GmarketSansBold", "GmarketSansMedium", "GmarketSansLight", sans-serif;
             font-weight: $default-weight;
           }
         }
         .main-ventures {
-          width: 335px;
+          width: 80%;
+          min-width: 320px;
           .content {
             font-size: $body1_mobile_size;
-            font-family: "GmarketSansMedium", "GmarketSansBold",
-              "GmarketSansLight", sans-serif;
+            font-family: "GmarketSansMedium", "GmarketSansBold", "GmarketSansLight", sans-serif;
             font-weight: $default-weight;
           }
         }
         .main-ourThesis {
-          width: 335px;
+          width: 80%;
+          min-width: 320px;
 
           .main-content-box {
             width: 335px;
@@ -607,15 +556,13 @@
             padding-left: 20px;
             .dark-content {
               font-size: $headline_mobile_size;
-              font-family: "GmarketSansBold", "GmarketSansMedium",
-                "GmarketSansLight", sans-serif;
+              font-family: "GmarketSansBold", "GmarketSansMedium", "GmarketSansLight", sans-serif;
               font-weight: $default-weight;
               color: $gray3;
             }
             .light-content {
               font-size: $headline_mobile_size;
-              font-family: "GmarketSansBold", "GmarketSansMedium",
-                "GmarketSansLight", sans-serif;
+              font-family: "GmarketSansBold", "GmarketSansMedium", "GmarketSansLight", sans-serif;
               font-weight: $default-weight;
               color: $gray5;
             }
@@ -627,7 +574,9 @@
 
   .container-white {
     .container-bg-white {
-      width: 335px;
+      width: 80%;
+      min-width: 320px;
+
       .main-portfolio {
         justify-content: normal;
         .main-portfolio-wrapper {
@@ -651,7 +600,9 @@
         }
       }
       .main-contents {
-        width: 335px;
+        width: 80%;
+        min-width: 320px;
+
         .main-contents-title-wrapper {
           width: 100%;
           height: auto;
@@ -687,7 +638,9 @@
         }
       }
       .main-team {
-        width: 335px;
+        width: 80%;
+        min-width: 320px;
+
         .main-team-wrapper {
           width: 100%;
           .main-team-box {
