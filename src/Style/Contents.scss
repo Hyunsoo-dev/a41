@@ -2,6 +2,7 @@
 @import "../Style/variables.scss";
 .contents-container {
   background-color: #f6f6f7;
+  overflow: scroll;
   width: 100%;
   height: auto;
   padding-top: 180px;
@@ -19,8 +20,7 @@
   margin-bottom: 80px;
   .title {
     font-size: $h0-size;
-    font-family: "GmarketSansBold", "GmarketSansMedium", "GmarketSansLight",
-      sans-serif;
+    font-family: "GmarketSansBold", "GmarketSansMedium", "GmarketSansLight", sans-serif;
     font-weight: $default-weight;
     color: $gray0;
     display: flex;
@@ -70,24 +70,21 @@
 .column1 {
   .title {
     font-size: $h1_size;
-    font-family: "GmarketSansBold", "GmarketSansMedium", "GmarketSansLight",
-      sans-serif;
+    font-family: "GmarketSansBold", "GmarketSansMedium", "GmarketSansLight", sans-serif;
     font-weight: $h2_weight;
     color: $gray0;
     margin-bottom: 10px;
   }
   .subTitle {
     font-size: $body_size;
-    font-family: "GmarketSansMedium", "GmarketSansBold", "GmarketSansLight",
-      sans-serif;
+    font-family: "GmarketSansMedium", "GmarketSansBold", "GmarketSansLight", sans-serif;
     font-weight: $default_weight;
     color: $gray0;
     margin-bottom: 16px;
   }
   .content {
     font-size: $body_size;
-    font-family: "GmarketSansMedium", "GmarketSansBold", "GmarketSansLight",
-      sans-serif;
+    font-family: "GmarketSansMedium", "GmarketSansBold", "GmarketSansLight", sans-serif;
     font-weight: $default_weight;
     color: $gray2;
     margin-bottom: 16px;
@@ -104,8 +101,7 @@
       width: 66px;
       height: 27px;
       font-size: $footnote2_size;
-      font-family: "GmarketSansLight", "GmarketSansMedium", "GmarketSansBold",
-        sans-serif;
+      font-family: "GmarketSansLight", "GmarketSansMedium", "GmarketSansBold", sans-serif;
       font-weight: $default_weight;
       color: $gray2;
       margin-right: 30px;
@@ -121,8 +117,7 @@
     .author,
     .date {
       font-size: $footnote2_size;
-      font-family: "GmarketSansLight", "GmarketSansMedium", "GmarketSansBold",
-        sans-serif;
+      font-family: "GmarketSansLight", "GmarketSansMedium", "GmarketSansBold", sans-serif;
       font-weight: $default_weight;
       color: $gray2;
     }

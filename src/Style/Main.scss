@@ -9,8 +9,12 @@
   height: 1024px;
   background-color: $gray0;
   margin: 0 auto;
+  overflow: scroll;
 }
 .container-white {
+  // min-width: 1280px;
+  overflow: scroll;
+  max-width: 1440px;
   width: 100%;
   height: 100%;
   background-color: $gray5;
@@ -32,7 +36,8 @@
   margin: 0 auto;
 }
 .container-bg-white {
-  width: 1440px;
+  // width: 1280px;
+  width: 100%;
   height: auto;
   color: $gray0;
   background-color: $gray5;
@@ -139,6 +144,7 @@
   background-color: $gray0;
   margin-top: 100px;
   width: 100%;
+  // min-width: 1280px;
   height: 350vh;
 }
 
@@ -336,6 +342,7 @@
 .main-contents-wrapper .contents-box {
   display: flex;
   margin: 40px 0px;
+  justify-content: center;
 }
 .main-contents-wrapper .contents-box .contents-box-column1 {
   margin-right: 124px;
@@ -507,13 +514,15 @@
 
 @include mobile {
   .sticky-container {
-    width: 375px;
+    min-width: 320px;
+    width: 100%;
     height: 450vh;
     // display: none;
     .sticky {
       width: 100%;
       .slide-container {
-        width: 335px;
+        width: 80%;
+        min-width: 320px;
         .main-vision {
           .title1,
           .title2 {
@@ -523,7 +532,8 @@
           }
         }
         .main-ventures {
-          width: 335px;
+          width: 80%;
+          min-width: 320px;
           .content {
             font-size: $body1_mobile_size;
             font-family: "GmarketSansMedium", "GmarketSansBold", "GmarketSansLight", sans-serif;
@@ -531,7 +541,8 @@
           }
         }
         .main-ourThesis {
-          width: 335px;
+          width: 80%;
+          min-width: 320px;
 
           .main-content-box {
             width: 335px;
@@ -563,7 +574,9 @@
 
   .container-white {
     .container-bg-white {
-      width: 335px;
+      width: 80%;
+      min-width: 320px;
+
       .main-portfolio {
         justify-content: normal;
         .main-portfolio-wrapper {
@@ -587,7 +600,9 @@
         }
       }
       .main-contents {
-        width: 335px;
+        width: 80%;
+        min-width: 320px;
+
         .main-contents-title-wrapper {
           width: 100%;
           height: auto;
@@ -623,7 +638,9 @@
         }
       }
       .main-team {
-        width: 335px;
+        width: 80%;
+        min-width: 320px;
+
         .main-team-wrapper {
           width: 100%;
           .main-team-box {

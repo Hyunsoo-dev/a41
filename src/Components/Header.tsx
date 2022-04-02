@@ -15,13 +15,6 @@ const Header = ({ clickMenu }: any) => {
   const [headerColor, setHeaderColor] = useRecoilState(colorTheme);
   const [scrollPosition, setScrollPosition] = useState(0);
 
-  /*
-    locations.pathname === "/content1" || "/content/number" 라면 
-    header의 className을 header-container-white로 바꿔준다
-    또한 스크롤에 따라 header의 bgColor가 바뀌는 것은 main page에서만 적용되어야 하기 때문에 
-    locations.pathname === "/"인 경우만 해당 header를 넣어준다.
-  */
-
   const location = useLocation();
   const toggleMenu = (locations: any) => {
     const parsedCurrentPathname = locations.pathname.slice(0, 8);
@@ -72,7 +65,7 @@ const Header = ({ clickMenu }: any) => {
           </Link>
         </div>
 
-        <div className="language_wrapper">
+        <div className={headerColor === "black" ? "language_wrapper-black" : "language_wrapper-white"}>
           <div className="language_box">
             <div className={language === "KO" ? "selected_language" : "unselected_language"} onClick={() => selecLanguage("KO")}>
               KO
