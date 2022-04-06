@@ -2,7 +2,7 @@
 @import "../Style/variables.scss";
 .contents-container {
   background-color: #f6f6f7;
-  overflow: scroll;
+
   width: 100%;
   height: auto;
   padding-top: 180px;
@@ -32,6 +32,7 @@
   .page-content-box {
     display: flex;
     flex-direction: column;
+    align-items: center;
     .item {
       box-sizing: border-box;
       text-decoration: none;
@@ -40,6 +41,7 @@
       width: 1164px;
       height: 309px;
       margin-bottom: 70px;
+
       &:hover {
         border: 3px solid #99f100;
       }
@@ -146,12 +148,16 @@
     }
     .page-content-box {
       .item {
+        &:hover {
+          border: 3px solid #99f100;
+        }
         background-color: #f6f6f7;
         box-shadow: none;
-        width: 100%;
+        width: 102%;
+        height: auto;
         flex-direction: column;
         padding: 0;
-
+        padding-bottom: 80px;
         .column1 {
           order: 2;
           width: 100%;

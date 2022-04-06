@@ -7,7 +7,7 @@ import { ReactComponent as MenuWhite } from "../Assets/icon/menu_white.svg";
 import "../Style/Header.scss";
 import { useRecoilState } from "recoil";
 import { colorTheme } from "../GlobalState/recoil";
-const Header = ({ clickMenu }: any) => {
+const Header = ({ clickMenu, clickedSideBar }: any) => {
   const [language, setLanguage] = useState("KO");
   const selecLanguage = (language: string) => {
     setLanguage(language);
@@ -16,6 +16,7 @@ const Header = ({ clickMenu }: any) => {
   const [scrollPosition, setScrollPosition] = useState(0);
 
   const location = useLocation();
+
   const toggleMenu = (locations: any) => {
     const parsedCurrentPathname = locations.pathname.slice(0, 8);
     switch (parsedCurrentPathname) {
@@ -32,6 +33,7 @@ const Header = ({ clickMenu }: any) => {
   };
   useEffect(() => {
     window.addEventListener("scroll", updateScroll);
+
     return () => {};
   }, []);
 

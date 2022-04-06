@@ -14,19 +14,19 @@
 .container-white {
   // min-width: 1280px;
   // overflow: scroll;
-  max-width: 1440px;
+  max-width: 1280px;
   width: 100%;
   height: 100%;
   background-color: $gray5;
   margin: 0 auto;
-  padding: 150px 0px;
+  padding: 150px 18px;
 }
 .greenDot {
   margin-bottom: 5px;
 }
 
 .container-bg {
-  width: 1440px;
+  width: 1280px;
   height: auto;
   color: white;
   background-image: url("../Assets/image/mainPage/darkerBg.png");
@@ -42,10 +42,11 @@
   color: $gray0;
   background-color: $gray5;
   margin: 0 auto;
+  overflow: hidden;
 }
 
 .container-bg#opacity-bg {
-  width: 1440px;
+  width: 1280px;
   height: 1024px;
   color: white;
   background: rgba(0, 0, 0, 0.1);
@@ -67,7 +68,8 @@
 }
 .main-ourThesis,
 .main-ventures {
-  width: 1280px;
+  max-width: 1280px;
+  width: 100%;
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -75,6 +77,7 @@
   align-items: center;
   margin: 0 auto;
   color: $gray5;
+  overflow: hidden;
 }
 .main-portfolio,
 .main-contents,
@@ -107,7 +110,7 @@
   align-items: flex-end;
 }
 .main-ventures-wrapper .content {
-  font-size: $body-size;
+  font-size: clamp($footnote1_size, 3vw, $h1-size);
   font-family: "GmarketSansBold", "GmarketSansMedium", "GmarketSansLight", sans-serif;
   font-weight: $default-weight;
   margin-top: 40px;
@@ -124,7 +127,7 @@
   margin-top: 40px;
 }
 .main-ourThesis-wrapper .main-content-box {
-  font-size: $h1-size;
+  font-size: clamp($footnote1_size, 3vw, $h1-size);
   font-family: "GmarketSansBold", "GmarketSansMedium", "GmarketSansLight", sans-serif;
   font-weight: $default-weight;
   display: flex;
@@ -146,6 +149,7 @@
   width: 100%;
   // min-width: 1280px;
   height: 350vh;
+  padding: 0 18px;
 }
 
 .sticky {
@@ -154,6 +158,7 @@
   position: sticky;
   height: 100vh;
   top: 100px;
+  padding: 0 10px;
 }
 
 .slide-container {
@@ -239,6 +244,7 @@
   animation: fade-in-translate 1s ease-in-out;
 }
 .main-ventures-action2 {
+  padding: 0 18px;
 }
 .main-ventures-action3 {
   animation: fade-out-translate 1s ease-in-out;
@@ -293,11 +299,13 @@
 /*
   ------------- sticky end -----------
 */
-
+.main-portfolio {
+}
 .main-portfolio-wrapper {
   display: flex;
   flex-direction: column;
-  width: 85%;
+
+  width: 100%;
 }
 
 .main-portfolio-wrapper .h0_title {
@@ -307,6 +315,7 @@
   margin-top: 40px;
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
   .view-more-button-box {
     display: none;
   }
@@ -316,11 +325,12 @@
   main contents
 */
 .main-title-wrapper {
-  width: 85%;
+  width: 100%;
   height: auto;
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
+
   .h0_title {
     color: $gray0;
   }
@@ -328,7 +338,7 @@
 .main-contents-wrapper {
   display: flex;
   flex-direction: column;
-  width: 85%;
+  width: 100%;
 }
 
 .main-contents-wrapper .title {
@@ -343,19 +353,22 @@
   display: flex;
   margin: 40px 0px;
   justify-content: center;
+  flex-wrap: wrap;
+  gap: 124px;
 }
 .main-contents-wrapper .contents-box .contents-box-column1 {
-  margin-right: 124px;
+  // margin-right: 124px;
 }
 .main-contents-wrapper .contents-box .contents-box-column2 {
-  margin-top: 50px;
+  // margin-top: 50px;
 }
 
 /*
   Main -> ContentComponent
 */
 .content-container {
-  margin-bottom: 70px;
+  padding-bottom: 70px;
+  margin-bottom: 80px;
   &:hover {
     border: 1px solid #99f100;
   }
@@ -602,7 +615,12 @@
       .main-contents {
         width: 80%;
         min-width: 320px;
-
+        margin: 0 auto;
+        .main-title-wrapper {
+          .icon-box {
+            display: none;
+          }
+        }
         .main-contents-title-wrapper {
           width: 100%;
           height: auto;
@@ -610,10 +628,16 @@
         }
         .main-contents-wrapper {
           width: 100%;
+
           .contents-box {
             flex-direction: column;
             flex-wrap: wrap;
+            align-items: center;
+            .contents-box-column1 {
+              margin-right: 0;
+            }
             .content-container {
+              padding-bottom: 47px;
               .content-thumbnail {
                 width: 335px;
                 height: 220px;
