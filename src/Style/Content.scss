@@ -13,7 +13,8 @@
 }
 .content-page-wrapper {
   box-sizing: border-box;
-  width: $content_screen;
+  max-width: $content_screen;
+  width: 100%;
   height: auto;
   margin-bottom: 200px;
 }
@@ -24,6 +25,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  padding: 0 18px;
 
   .title {
     font-size: 45px;
@@ -79,6 +81,7 @@
 }
 
 .content-page-content-wrapper {
+  padding: 0 18px;
   margin-bottom: 55px;
   .disclaimer {
     margin-bottom: 94px;
@@ -92,6 +95,8 @@
     margin-bottom: 60px;
   }
   .content-box {
+    width: 100%;
+    max-width: 1280px;
     .title {
       font-size: $h1_size;
       font-family: "GmarketSansBold", "GmarketSansMedium", "GmarketSansLight", sans-serif;

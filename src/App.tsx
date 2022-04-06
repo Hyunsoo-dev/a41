@@ -17,7 +17,7 @@ function App() {
   return (
     <div id="container">
       <BrowserRouter>
-        <Header clickMenu={clickMenu} />
+        <Header clickMenu={clickMenu} clickedSideBar={clickedSideBar} />
         <SideBar clickMenu={clickMenu} clickedSideBar={clickedSideBar} />
         {/*<main id="mainContainer">*/}
         <Routes>
