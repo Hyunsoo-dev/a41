@@ -19,14 +19,14 @@
   height: 100%;
   background-color: $gray5;
   margin: 0 auto;
-  padding: 150px 18px;
+  padding: 100px 0px;
 }
 .greenDot {
   margin-bottom: 5px;
 }
 
 .container-bg {
-  width: 1280px;
+  width: 1024px;
   height: auto;
   color: white;
   background-image: url("../Assets/image/mainPage/darkerBg.png");
@@ -46,12 +46,11 @@
 }
 
 .container-bg#opacity-bg {
-  width: 1280px;
+  width: 1024px;
   height: 1024px;
   color: white;
   background: rgba(0, 0, 0, 0.1);
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url("../Assets/image/mainPage/darkerBg.png");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../Assets/image/mainPage/darkerBg.png");
   background-repeat: no-repeat;
 
   background-size: contain;
@@ -66,6 +65,8 @@
   justify-content: center;
   align-items: center;
   color: $gray5;
+
+  overflow-x: hidden;
 }
 .main-ourThesis,
 .main-ventures {
@@ -93,12 +94,13 @@
   margin: 0 auto;
   color: $gray0;
 }
-
+.main-vision-wrapper {
+  width: 1024px;
+}
 .main-vision-wrapper .title1,
 .main-vision-wrapper .title2 {
   font-size: 58px;
-  font-family: "GmarketSansBold", "GmarketSansMedium", "GmarketSansLight",
-    sans-serif;
+  font-family: "GmarketSansBold", "GmarketSansMedium", "GmarketSansLight", sans-serif;
   font-weight: $default-weight;
   :nth-child(odd) {
   }
@@ -109,8 +111,7 @@
 .main-ventures-wrapper .title {
   // font-size: $h0-size;
   font-size: 34px;
-  font-family: "GmarketSansBold", "GmarketSansMedium", "GmarketSansLight",
-    sans-serif;
+  font-family: "GmarketSansBold", "GmarketSansMedium", "GmarketSansLight", sans-serif;
   font-weight: $default-weight;
   display: flex;
   align-items: flex-end;
@@ -118,8 +119,7 @@
 .main-ventures-wrapper .content {
   // font-size: clamp($footnote1_size, 3vw, $h1-size);
   font-size: 18px;
-  font-family: "GmarketSansMedium", "GmarketSansBold", "GmarketSansLight",
-    sans-serif;
+  font-family: "GmarketSansMedium", "GmarketSansBold", "GmarketSansLight", sans-serif;
   font-weight: $default-weight;
   margin-top: 40px;
 }
@@ -127,8 +127,7 @@
 .main-ourThesis-wrapper .title {
   // font-size: $h0-size;
   font-size: 34px;
-  font-family: "GmarketSansBold", "GmarketSansMedium", "GmarketSansLight",
-    sans-serif;
+  font-family: "GmarketSansBold", "GmarketSansMedium", "GmarketSansLight", sans-serif;
   font-weight: $default-weight;
   display: flex;
   align-items: flex-end;
@@ -139,8 +138,7 @@
 .main-ourThesis-wrapper .main-content-box {
   // font-size: clamp($footnote1_size, 3vw, $h1-size);
   font-size: 18px;
-  font-family: "GmarketSansBold", "GmarketSansMedium", "GmarketSansLight",
-    sans-serif;
+  font-family: "GmarketSansBold", "GmarketSansMedium", "GmarketSansLight", sans-serif;
   font-weight: $default-weight;
   display: flex;
   .dark-content {
@@ -160,8 +158,9 @@
   margin-top: 100px;
   width: 100%;
   // min-width: 1280px;
-  height: 350vh;
-  padding: 0 18px;
+  // height: 350vh;
+  height: 4000px;
+  max-height: 4000px;
 }
 
 .sticky {
@@ -169,8 +168,12 @@
   color: $gray5;
   position: sticky;
   height: 100vh;
+  // max-height: 728px;
+
   top: 100px;
-  padding: 0 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .slide-container {
@@ -187,15 +190,23 @@
   background-color: $gray0;
   background-size: contain;
   margin: 0 auto;
+  max-height: 728px;
 }
 
 #opacity-bg {
   @extend .slide-container;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url("../Assets/image/mainPage/darkerBg.png");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../Assets/image/mainPage/darkerBg.png");
   transition: all 2s ease-in-out;
 }
+.main-sticky-title-wrapper {
+  font-family: "GmarketSansBold", "GmarketSansMedium", "GmarketSansLight", sans-serif;
+  // font-size: $h0_size;
+  font-size: 34px;
+  font-weight: $default_weight;
+  line-height: $h0_height;
 
+  color: $gray5;
+}
 .slide {
   color: $gray0;
   display: flex;
@@ -214,6 +225,14 @@
   width: 816px;
   transition: display 1s ease-in-out;
   animation: fade-in 1s ease-in-out;
+}
+.slide.visible#main-vision-visible {
+  @extend .slide;
+  display: block;
+  width: 1024px;
+  transition: display 1s ease-in-out;
+  animation: fade-in 1s ease-in-out;
+  overflow-x: hidden;
 }
 .main-title .title1,
 .main-title .title2 {
@@ -258,7 +277,7 @@
   animation: fade-in-translate 1s ease-in-out;
 }
 .main-ventures-action2 {
-  padding: 0 18px;
+  // padding: 0 18px;
 }
 .main-ventures-action3 {
   animation: fade-out-translate 1s ease-in-out;
@@ -330,10 +349,16 @@
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  img {
-    width: 123px;
-    height: 109px;
+
+  .portfolio-logo {
+    width: 128px;
+    height: 128px;
+    img {
+      width: 100%;
+      height: 100%;
+    }
   }
+
   .view-more-button-box {
     display: none;
   }
@@ -361,8 +386,7 @@
 
 .main-contents-wrapper .title {
   font-size: $h0-size;
-  font-family: "GmarketSansBold", "GmarketSansMedium", "GmarketSansLight",
-    sans-serif;
+  font-family: "GmarketSansBold", "GmarketSansMedium", "GmarketSansLight", sans-serif;
   font-weight: $default-weight;
   display: flex;
   align-items: flex-end;
@@ -372,7 +396,7 @@
   display: flex;
   margin: 40px 0px;
   justify-content: center;
-  gap: 124px;
+  gap: 88px;
 }
 .main-contents-wrapper .contents-box .contents-box-column1 {
   // margin-right: 124px;
@@ -385,10 +409,13 @@
   Main -> ContentComponent
 */
 .content-container {
+  box-sizing: content-box;
   width: 364px;
   height: 396px;
-  padding-bottom: 70px;
+
   margin-bottom: 80px;
+  border: none;
+  border: 1px solid #ffffff;
   &:hover {
     border: 1px solid #99f100;
   }
@@ -408,8 +435,7 @@
 .content-container .content-title {
   // font-size: $headline_size;
   font-size: 20px;
-  font-family: "GmarketSansBold", "GmarketSansMedium", "GmarketSansLight",
-    sans-serif;
+  font-family: "GmarketSansBold", "GmarketSansMedium", "GmarketSansLight", sans-serif;
   font-weight: $h2_weight;
   color: $gray0;
   display: flex;
@@ -424,8 +450,7 @@
 .content-container .content-subtitle {
   // font-size: $body_size;
   font-size: 18px;
-  font-family: "GmarketSansMedium", "GmarketSansBold", "GmarketSansLight",
-    sans-serif;
+  font-family: "GmarketSansMedium", "GmarketSansBold", "GmarketSansLight", sans-serif;
   font-weight: $default_weight;
   color: $gray2;
   margin-bottom: 10px;
@@ -433,16 +458,14 @@
 .content-container .content-author {
   // font-size: $footnote2_size;
   font-size: 15px;
-  font-family: "GmarketSansLight", "GmarketSansBold", "GmarketSansMedium",
-    sans-serif;
+  font-family: "GmarketSansLight", "GmarketSansBold", "GmarketSansMedium", sans-serif;
   font-weight: $default_weight;
   color: $gray2;
 }
 .content-container .content-date {
   // font-size: $footnote2_size;
   font-size: 15px;
-  font-family: "GmarketSansLight", "GmarketSansBold", "GmarketSansMedium",
-    sans-serif;
+  font-family: "GmarketSansLight", "GmarketSansBold", "GmarketSansMedium", sans-serif;
   font-weight: $default_weight;
   color: $gray2;
 }
@@ -489,21 +512,22 @@
 }
 
 .team-column1 .thumbnail-circle {
-  width: 210px;
-  height: 210px;
-  border: 1px solid #99f100;
+  width: 200px;
+  height: 200px;
+  // border: 1px solid #99f100;
   border-radius: 50%;
   position: absolute;
   transform: translate(-20px, -20px);
 
   &:hover {
     background-color: rgba(153, 241, 0, 0.2);
+    border: 1px solid #99f100;
     transform: translate(0px, 0px);
   }
 }
 .team-column1 .thumbnail {
-  width: 210px;
-  height: 210px;
+  width: 200px;
+  height: 200px;
   border-radius: 50%;
 }
 
@@ -519,18 +543,18 @@
   align-items: center;
   margin: 15px 0px;
   .enName {
-    font-size: $h1_size;
-    font-family: "GmarketSansBold", "GmarketSansMedium", "GmarketSansLight",
-      sans-serif;
+    // font-size: $h1_size;
+    font-size: 22px;
+    font-family: "GmarketSansBold", "GmarketSansMedium", "GmarketSansLight", sans-serif;
     font-weight: $h2_weight;
     color: $gray0;
 
     margin-right: 20px;
   }
   .koName {
-    font-size: $footnote1_size;
-    font-family: "GmarketSansLight", "GmarketSansBold", "GmarketSansMedium",
-      sans-serif;
+    // font-size: $footnote1_size;
+    font-size: 16px;
+    font-family: "GmarketSansLight", "GmarketSansBold", "GmarketSansMedium", sans-serif;
     font-weight: $default-weight;
     color: $gray2;
     padding-top: 9px;
@@ -538,9 +562,9 @@
 }
 
 .team-column2 .job-box {
-  font-size: $body_size;
-  font-family: "GmarketSansMedium", "GmarketSansBold", "GmarketSansLight",
-    sans-serif;
+  // font-size: $body_size;
+  font-size: 18px;
+  font-family: "GmarketSansMedium", "GmarketSansBold", "GmarketSansLight", sans-serif;
   font-weight: $default-weight;
   color: $gray0;
 }
@@ -550,8 +574,7 @@
   align-items: flex-end;
   height: 50px;
   font-size: $body_size;
-  font-family: "GmarketSansBold", "GmarketSansMedium", "GmarketSansLight",
-    sans-serif;
+  font-family: "GmarketSansBold", "GmarketSansMedium", "GmarketSansLight", sans-serif;
   font-weight: $default-weight;
   color: $gray0;
   .sns-logo {
@@ -566,18 +589,29 @@
     min-width: 320px;
     width: 100%;
     height: 450vh;
+    max-width: 768px;
+    max-height: 4000px;
     // display: none;
     .sticky {
       width: 100%;
       .slide-container {
-        width: 80%;
+        width: 100%;
         min-width: 320px;
+        .slide.visible {
+          padding-bottom: 0px;
+        }
         .main-vision {
+          .main-vision-wrapper {
+            max-width: 768px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+          }
           .title1,
           .title2 {
             font-size: $h0_mobile_size;
-            font-family: "GmarketSansBold", "GmarketSansMedium",
-              "GmarketSansLight", sans-serif;
+            font-family: "GmarketSansBold", "GmarketSansMedium", "GmarketSansLight", sans-serif;
             font-weight: $default-weight;
           }
         }
@@ -586,8 +620,7 @@
           min-width: 320px;
           .content {
             font-size: $body1_mobile_size;
-            font-family: "GmarketSansMedium", "GmarketSansBold",
-              "GmarketSansLight", sans-serif;
+            font-family: "GmarketSansMedium", "GmarketSansBold", "GmarketSansLight", sans-serif;
             font-weight: $default-weight;
           }
         }
@@ -607,15 +640,13 @@
             padding-left: 20px;
             .dark-content {
               font-size: $headline_mobile_size;
-              font-family: "GmarketSansBold", "GmarketSansMedium",
-                "GmarketSansLight", sans-serif;
+              font-family: "GmarketSansBold", "GmarketSansMedium", "GmarketSansLight", sans-serif;
               font-weight: $default-weight;
               color: $gray3;
             }
             .light-content {
               font-size: $headline_mobile_size;
-              font-family: "GmarketSansBold", "GmarketSansMedium",
-                "GmarketSansLight", sans-serif;
+              font-family: "GmarketSansBold", "GmarketSansMedium", "GmarketSansLight", sans-serif;
               font-weight: $default-weight;
               color: $gray5;
             }
@@ -626,8 +657,12 @@
   }
 
   .container-white {
+    max-width: 100%;
+    padding: 0 18px;
+    min-width: 320px;
+    overflow-x: hidden;
     .container-bg-white {
-      width: 80%;
+      width: 100%;
       min-width: 320px;
 
       .main-portfolio {
@@ -635,25 +670,34 @@
         .main-portfolio-wrapper {
           width: 100%;
           .portfolio-box {
-            flex-wrap: wrap;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: 1fr 1fr 1fr;
+            row-gap: 20px;
+            justify-items: center;
+            align-items: center;
             .portfolio-logo {
+              width: 95.67px;
+              height: 84px;
               img {
-                width: 95.67px;
-                height: 84px;
+                width: 100%;
+                height: auto;
               }
             }
             .view-more-button-box {
               display: block;
+              width: 95.67px;
+              height: 84px;
               img {
-                width: 95.67px;
-                height: 84px;
+                width: 100%;
+                height: auto;
               }
             }
           }
         }
       }
       .main-contents {
-        width: 80%;
+        width: 100%;
         min-width: 320px;
         margin: 0 auto;
         .main-title-wrapper {
@@ -677,6 +721,8 @@
               margin-right: 0;
             }
             .content-container {
+              width: 100%;
+              height: auto;
               padding-bottom: 47px;
               .content-thumbnail {
                 width: 335px;
@@ -700,9 +746,15 @@
             }
           }
         }
+        .view-more-button-box {
+          width: 100%;
+          max-width: 337px;
+          margin: 0 auto;
+          text-align: right;
+        }
       }
       .main-team {
-        width: 80%;
+        width: 100%;
         min-width: 320px;
 
         .main-team-wrapper {
@@ -711,6 +763,22 @@
             .team-container {
               flex-direction: column;
               align-items: center;
+              .team-column2 {
+                .name-box {
+                  align-items: center;
+                  .enName {
+                    font-size: 20px;
+                  }
+                  .koName {
+                    font-size: 14px;
+                    padding-top: 5px;
+                  }
+                }
+              }
+
+              .job-box {
+                font-size: 16px;
+              }
             }
           }
         }

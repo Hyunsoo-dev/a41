@@ -54,21 +54,20 @@
   }
 }
 
-.sidebar-nav-wrapper {
-  display: flex;
-  justify-content: flex-end;
-  padding-right: 16px;
-  .language {
-    font-size: $body3_mobile_size;
-    font-family: "GmarketSansBold", "GmarketSansMedium", "GmarketSansLight",
-      sans-serif;
-    font-weight: $h2-weight;
-    color: $gray5;
-    margin-right: 10px;
-    border-bottom: 2px solid $gray5;
-    padding-bottom: 3px;
-  }
-}
+// .sidebar-nav-wrapper {
+//   display: flex;
+//   justify-content: flex-end;
+//   padding-right: 16px;
+//   .language {
+//     font-size: $body3_mobile_size;
+//     font-family: "GmarketSansBold", "GmarketSansMedium", "GmarketSansLight", sans-serif;
+//     font-weight: $h2-weight;
+//     color: $gray5;
+//     margin-right: 10px;
+//     border-bottom: 2px solid $gray5;
+//     padding-bottom: 3px;
+//   }
+// }
 
 .sidebar-category-wrapper {
   display: flex;
@@ -77,9 +76,51 @@
   .sidebar-item {
     margin: 40px 0px;
     font-size: $h1_mobile_size;
-    font-family: "GmarketSansBold", "GmarketSansMedium", "GmarketSansLight",
-      sans-serif;
+    font-family: "GmarketSansBold", "GmarketSansMedium", "GmarketSansLight", sans-serif;
     font-weight: $default-weight;
+    color: $gray5;
+  }
+}
+.sidebar-nav-wrapper {
+  display: flex;
+  padding-right: 25px;
+  flex-direction: column;
+  align-items: flex-end;
+  .language_box {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding-top: 3px;
+    font-family: "GmarketSansBold", "GmarketSansMedium", "GmarketSansLight", sans-serif;
+    font-size: $caption_size;
+    font-weight: $h2_weight;
+    margin-bottom: 0px;
+    gap: 30px;
+  }
+  .EN-active {
+    position: relative;
+    background: $gray5;
+    width: 26px;
+    margin-right: 24px;
+    height: 2px;
+    margin-top: 3px;
+    transform: translateX(100%);
+    transition: transform 0.2s;
+  }
+  .KO-active {
+    position: relative;
+    background: $gray5;
+    width: 26px;
+    margin-right: 51px;
+    margin-top: 3px;
+    height: 2px;
+    transform: translateX(0%);
+    transition: transform 0.2s;
+  }
+  .unselected_language {
+    color: $gray2;
+  }
+  .selected_language {
     color: $gray5;
   }
 }

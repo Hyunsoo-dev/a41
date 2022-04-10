@@ -31,22 +31,16 @@ const Header = ({ clickMenu, clickedSideBar }: any) => {
   };
   const onClickedCategory = (event: any) => {
     if (event.currentTarget.className === "logo_wrapper") {
-      categoryWrapper.current.childNodes.forEach((item: any) =>
-        item.classList.remove("selected")
-      );
+      categoryWrapper.current.childNodes.forEach((item: any) => item.classList.remove("selected"));
       return;
     }
 
     const parentElement = event.currentTarget;
     const element = event.target;
     const selectedItem = event.target.id;
-    const selectedCategoryIdx = Array.from(parentElement.childNodes).findIndex(
-      (ele: any) => ele.classList[1] === "selected"
-    );
+    const selectedCategoryIdx = Array.from(parentElement.childNodes).findIndex((ele: any) => ele.classList[1] === "selected");
     if (selectedCategoryIdx !== -1) {
-      parentElement.childNodes[selectedCategoryIdx].classList.remove(
-        "selected"
-      );
+      parentElement.childNodes[selectedCategoryIdx].classList.remove("selected");
     }
     element.classList.add("selected");
     setSelectedCategory(selectedItem);
@@ -61,25 +55,15 @@ const Header = ({ clickMenu, clickedSideBar }: any) => {
   }, []);
 
   return (
-    <div
-      className={
-        headerColor === "black"
-          ? "header-container-black"
-          : "header-container-white"
-      }
-    >
+    <div className={headerColor === "black" ? "header-container-black" : "header-container-white"}>
       <div className="wrapper">
         <div className="logo_wrapper" onClick={onClickedCategory}>
           <Link className="category" to="/">
-            {scrollPosition > 3400 ? <LogoWhite /> : <LogoWhite />}
+            {scrollPosition > 4000 ? <div id="a41LogoWhite"></div> : <div id="a41LogoGreen"></div>}
             {/* {toggleLogo(location)} */}
           </Link>
         </div>
-        <div
-          ref={categoryWrapper}
-          className="category_wrapper"
-          onClick={onClickedCategory}
-        >
+        <div ref={categoryWrapper} className="category_wrapper" onClick={onClickedCategory}>
           <Link id="headerOurthesis" className="category" to="/ourthesis">
             our thesis
           </Link>
@@ -100,28 +84,12 @@ const Header = ({ clickMenu, clickedSideBar }: any) => {
           </Link>
         </div>
 
-        <div
-          className={
-            headerColor === "black"
-              ? "language_wrapper-black"
-              : "language_wrapper-white"
-          }
-        >
+        <div className={headerColor === "black" ? "language_wrapper-black" : "language_wrapper-white"}>
           <div className="language_box">
-            <div
-              className={
-                language === "KO" ? "selected_language" : "unselected_language"
-              }
-              onClick={() => selecLanguage("KO")}
-            >
+            <div className={language === "KO" ? "selected_language" : "unselected_language"} onClick={() => selecLanguage("KO")}>
               KO
             </div>
-            <div
-              className={
-                language === "EN" ? "selected_language" : "unselected_language"
-              }
-              onClick={() => selecLanguage("EN")}
-            >
+            <div className={language === "EN" ? "selected_language" : "unselected_language"} onClick={() => selecLanguage("EN")}>
               EN
             </div>
           </div>
