@@ -13,28 +13,37 @@
 }
 .content-page-wrapper {
   box-sizing: border-box;
-  max-width: $content_screen;
+  // max-width: $content_screen;
+  max-width: 1024px;
   width: 100%;
+
   height: auto;
+
   margin-bottom: 200px;
 }
 
 .content-page-header-wrapper {
   height: 425px;
+  max-width: 816px;
+  width: 100%;
   padding-top: 100px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   padding: 0 18px;
+  margin: 0 auto;
 
   .title {
-    font-size: 45px;
-    font-family: "GmarketSansBold", "GmarketSansMedium", "GmarketSansLight", sans-serif;
-    font-weight: 54.01px;
+    // font-size: 45px;
+    font-size: 36px;
+    font-family: "GmarketSansMedium", "GmarketSansBold", "GmarketSansLight", sans-serif;
+    // font-family: "Pretendard";
+    font-weight: 400px;
     margin-bottom: 10px;
   }
   .subtitle {
-    font-size: $body_size;
+    // font-size: $body_size;
+    font-size: 18px;
     font-family: "GmarketSansMedium", "GmarketSansBold", "GmarketSansLight", sans-serif;
     font-weight: 54.01px;
     margin-bottom: 60px;
@@ -44,7 +53,8 @@
     align-items: center;
     .author,
     .date {
-      font-size: $footnote2_size;
+      // font-size: $footnote2_size;
+      font-size: 18px;
       font-family: "GmarketSansLight", "GmarketSansMedium", "GmarketSansBold", sans-serif;
       font-weight: $default_weight;
       color: $gray2;
@@ -82,9 +92,14 @@
 
 .content-page-content-wrapper {
   padding: 0 18px;
+
+  max-width: 816px;
+  width: 100%;
   margin-bottom: 55px;
+  margin: 0 auto;
   .disclaimer {
     margin-bottom: 94px;
+    font-size: 18px;
   }
 
   .thumbnail {
@@ -105,7 +120,8 @@
       margin-bottom: 10px;
     }
     .content {
-      font-size: $body_size;
+      // font-size: $body_size;
+      font-size: 18px;
       font-family: "GmarketSansMedium", "GmarketSansBold", "GmarketSansLight", sans-serif;
       font-weight: $default_weight;
       line-height: 34px;

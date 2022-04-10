@@ -10,6 +10,7 @@ $gray4: #e0e0e0;
 $gray5: #ffffff;
 $point: #99f100;
 $bg: #f6f6f7;
+$headerCategoryBgColor: rgba(153, 241, 0, 0.4);
 
 /*
 Font face
@@ -88,11 +89,11 @@ $caption_mobile_height: 12px;
 
 html {
   scroll-behavior: smooth;
-
 }
 
 body {
-  font-family: "GmarketSansMedium", "GmarketSansLight", "GmarketSansBold", sans-serif;
+  font-family: "GmarketSansMedium", "GmarketSansLight", "GmarketSansBold",
+    sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   box-sizing: border-box;
