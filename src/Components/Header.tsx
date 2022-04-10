@@ -23,7 +23,7 @@ const Header = ({ clickMenu, clickedSideBar }: any) => {
     const parsedCurrentPathname = locations.pathname.slice(0, 8);
     switch (parsedCurrentPathname) {
       case "/":
-        return scrollPosition > 3400 ? <MenuBlack /> : <MenuWhite />;
+        return scrollPosition > 4000 ? <MenuBlack /> : <MenuWhite />;
       default:
         console.log("!!");
         return headerColor === "black" ? <MenuWhite /> : <MenuBlack />;
@@ -59,7 +59,7 @@ const Header = ({ clickMenu, clickedSideBar }: any) => {
       <div className="wrapper">
         <div className="logo_wrapper" onClick={onClickedCategory}>
           <Link className="category" to="/">
-            {scrollPosition > 4000 ? <div id="a41LogoWhite"></div> : <div id="a41LogoGreen"></div>}
+            {scrollPosition > 4000 ? <div id="a41LogoGreen"></div> : <div id="a41LogoWhite"></div>}
             {/* {toggleLogo(location)} */}
           </Link>
         </div>
