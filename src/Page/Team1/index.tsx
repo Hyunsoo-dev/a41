@@ -35,7 +35,7 @@ const Team1 = () => {
     <div className={"container_bk"}>
       <div className={"content_box"}>
         <H0 title={"team"} />
-        <div className={"grid_box"}>
+        <div className={"team_grid_box"}>
           {data &&
             data.map((el: any, idx) => {
               return (

@@ -26,23 +26,24 @@ const TeamList = ({id, img, enName, koName, position, twit, linkedIn}: TeamListP
     }
 
 
-    return <div className={"list_box"} onClick={handleClick}>
-        <img src={img} alt={"profile_img"}/>
+    return <div className={"list_box"} >
+        <div className={"pointer_box"} onClick={handleClick}>
+        <img src={img} alt={"profile_img"} />
         <div className={"row_box"}>
             <div className={"en_name"}>{enName}</div>
             <div className={"ko_name"}>{koName}</div>
         </div>
         <div className={"position"}>{position} </div>
+        </div>
         <div className={"row_box"}>
             {twit && <a href={twit} target={"_blank"} rel={"noreferrer"}>
-                <Twitter/>
+                <Twitter className={"team_twitter"}/>
             </a>}
             {linkedIn &&
                 <a href={linkedIn} target={"_blank"} rel={"noreferrer"}>
-                    <LinkedIn/>
+                    <LinkedIn className={"team_linkedIn"}/>
                 </a>}
         </div>
-        <div className={'img_border_box'}/>
     </div>
 }
 

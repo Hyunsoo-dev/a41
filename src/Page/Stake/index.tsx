@@ -24,15 +24,11 @@ const Stake = () => {
         <div className={"stake_subtitle"}>
           a41 is running full node and validator in various blockchains.
         </div>
-        <Swiper slidesPerView={"auto"} spaceBetween={30} className="mySwiper">
+        <div className={"stake_grid_box"}>
           {idx.map((i) => {
-            return (
-              <SwiperSlide key={i}>
-                <StakeCard />
-              </SwiperSlide>
-            );
+            return <StakeCard key={i} />
           })}
-        </Swiper>
+        </div>
       </div>
     </div>
   );

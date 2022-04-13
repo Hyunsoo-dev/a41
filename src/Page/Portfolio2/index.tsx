@@ -53,9 +53,10 @@ const Portfolio2 = () => {
               sns={pf.fields.sns === undefined ? "" : pf.fields.sns.twitter}
               web={pf.fields.webUrl}
               flex={false}
-              size={"150"}
+              size={"240"}
               id={pf.sys.id}
               key={pf.sys.id}
+              isGrid={false}
             />
             <div className={"article_title_box"}>
               <div className={"article_title"}>article</div>
@@ -63,21 +64,21 @@ const Portfolio2 = () => {
                 {pf.fields.article === undefined ? 0 : pf.fields.article.length}
               </span>
             </div>
-            {pf.fields.article && (
-              <div className={"grid_box"}>
-                {pf.fields.article.map((e: any) => {
-                  return (
-                    <ArticleCard
-                      title={e.title}
-                      img={e.img}
-                      link={e.link}
-                      summary={e.summary}
-                      author={e.author}
-                      date={e.date}
-                      key={e.title}
-                    />
-                  );
-                })}
+            {pf.fields.article === undefined ? <div className={"no_article"}>No article</div> :  (
+                <div className={"grid_box"}>
+                  {pf.fields.article.map((e: any) => {
+                    return (
+                        <ArticleCard
+                            title={e.title}
+                            img={e.img}
+                            link={e.link}
+                            summary={e.summary}
+                            author={e.author}
+                            date={e.date}
+                            key={e.title}
+                        />
+                    );
+                  })}
               </div>
             )}
           </>

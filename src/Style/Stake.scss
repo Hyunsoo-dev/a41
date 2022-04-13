@@ -19,10 +19,11 @@
   margin-bottom: 70px;
 }
 
-
-.swiper-slide {
-  width: auto;
-
+.stake_grid_box{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-column-gap: 56px;
+  grid-row-gap: 50px;
 }
 
 @include mobile {
@@ -37,5 +38,10 @@
     font-weight: $default_weight;
     line-height: $body3_mobile_height;
     word-break: break-word;
+  }
+
+  .stake_grid_box {
+    display: flex;
+    flex-direction: column;
   }
 }

@@ -54,7 +54,7 @@ const OurThesis = () => {
           className={"title_box"}
           style={
             scrollY > 785
-              ? innerWidth > 375
+              ? innerWidth > 768
                 ? { top: `${300 - (scrollY - 645 - (divTop as number))}px` }
                 : { top: `${160 - (scrollY - 633 - (divTop as number))}px` }
               : {}
@@ -93,7 +93,7 @@ const OurThesis = () => {
           className={`thesis_2nd_content_box ${thesis2ContentControl()}`}
           style={
             scrollY > 785
-              ? innerWidth > 375
+              ? innerWidth > 768
                 ? { top: `${500 - (scrollY - 645 - (divTop as number))}px` }
                 : { top: `${350 - (scrollY - 633 - (divTop as number))}px` }
               : {}
