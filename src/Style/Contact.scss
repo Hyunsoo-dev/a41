@@ -1,33 +1,40 @@
 @import '../index';
 @import "variables";
 
-.mail {
-  margin: 60px 0 45px;
-  color: $gray5;
+.mail_box {
+  display: flex;
+  align-items: center;
+  margin-top: 50px;
+  .mail_icon {
+    margin-right: 15px;
+  }
+  .mail {
+    color: $gray5;
+  }
 }
 
 .contact_row_box {
   display: flex;
+  margin-bottom: 30px;
 }
 
 .download_box {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   border: 1px solid $gray5;
   font-family: "GmarketSansMedium", "GmarketSansLight", "GmarketSansBold", sans-serif;
-  font-size: $body_size;
+  font-size: 15px;
   font-weight: $default_weight;
   line-height: $body1_height;
   color: $gray5;
+  width: auto;
   padding: 20px 36px;
   margin-top: 100px;
   margin-right: 100px;
-
+  cursor: pointer;
   &:hover {
     background-color: $point;
     color: $gray0;
     border: 1px solid $point;
+    font-weight: bold;
   }
 }
 

@@ -4,7 +4,7 @@
 .article_title_box {
   display: flex;
   align-items: center;
-  margin-top: 230px;
+  margin-top: 180px;
   margin-bottom: 50px;
 }
 .article_title {
@@ -22,6 +22,17 @@
   font-weight: $default_weight;
   line-height: $body2_height;
   color: $gray3;
+}
+
+.no_article {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+  font-size: $headline_size;
+  line-height: $headline_height;
+  font-weight: $h2_weight;
+  color: $gray2;
 }
 
 .grid_box {

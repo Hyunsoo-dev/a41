@@ -2,14 +2,15 @@
 @import './variables';
 
 .card_container {
-  width: 365px;
-  height: 395px;
+  width: 380px;
+  height: 440px;
   border-radius: 20px;
   background: rgba(255, 255, 255, 0.1);
   display: flex;
   flex-direction: column;
-  padding: 62px;
+  padding: 51px;
   justify-content: flex-end;
+  align-items: center;
   box-sizing: border-box;
 
   .stake_button {
@@ -24,8 +25,8 @@
     color: $point;
     border: 1px solid $point;
     border-radius: 10px;
-    width: 236px;
-    height: 68px;
+    width: 208px;
+    height: 56px;
   }
   &:hover {
     border: 1px solid $gray5;
@@ -38,11 +39,11 @@
 
 @include mobile {
   .card_container {
-    width: 259px;
+    width: 100%;
     height: 305px;
     padding: 36px;
     .stake_button {
-      width: 187px;
+      width: 80%;
       height: 42px;
       font-size: $headline_mobile_size;
       line-height: $headline_mobile_height;

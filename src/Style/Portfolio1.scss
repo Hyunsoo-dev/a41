@@ -2,12 +2,21 @@
 @import "./variables";
 
 .content_box {
-  width: $content_screen;
+  max-width: 816px;
+  width: 100%;
   height: auto;
 }
 
+.view_icon {
+  margin: 0;
+  cursor: pointer;
+}
+
 .portfolio1_title {
-  margin-bottom: 155px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 100px;
 }
 
 @include mobile {
@@ -18,5 +27,8 @@
   }
   .portfolio1_title {
     margin-bottom: 57px;
+  }
+  .view_icon {
+    display: none;
   }
 }

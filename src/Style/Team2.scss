@@ -4,26 +4,18 @@
 .profile_box {
   display: flex;
   align-items: flex-end;
-  margin-top: 176px;
-  margin-bottom: 140px;
+  margin-top: 90px;
+  margin-bottom: 100px;
   position: relative;
 }
 
 .big_profile_img{
-  width: 400px;
-  height: 400px;
-  margin-right: 74px;
+  width: 300px;
+  height: 300px;
+  margin-right: 70px;
   border-radius: 50%;
-}
-
-.big_img_border_box {
-  width: 410px;
-  height: 410px;
-  position: absolute;
-  border-radius: 50%;
-  border: 1px solid $point;
-  left: -22px;
-  top: -22px;
+  object-fit: cover;
+  object-position: top;
 }
 
 hr {
