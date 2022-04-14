@@ -7,11 +7,21 @@
   path {
     fill: $gray5;
   }
+  &:hover {
+    path {
+      fill: $point;
+    }
+  }
 }
 
 .team_linkedIn {
   path {
     fill: $gray5;
+  }
+  &:hover {
+    path {
+      fill: $point;
+    }
   }
 }
 

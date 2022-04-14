@@ -55,10 +55,20 @@
         padding-top: 1px;
       }
       .category.selected {
-        background-color: $headerCategoryBgColor;
+        //background-color: $headerCategoryBgColor;
+        color: $point;
+        text-decoration: underline;
+        text-decoration-color: $point;
+        text-underline-offset: 7px;
+        text-underline-style: thick;
       }
       .category:hover {
-        background-color: $headerCategoryBgColor;
+        //background-color: $headerCategoryBgColor;
+        color: $point;
+        text-decoration: underline;
+        text-decoration-color: $point;
+        text-underline-offset: 7px;
+        text-underline-style: thick;
       }
     }
     .language_wrapper-black {
