@@ -8,10 +8,31 @@
   background: rgba(255, 255, 255, 0.1);
   display: flex;
   flex-direction: column;
-  padding: 51px;
-  justify-content: flex-end;
+  padding: 30px;
   align-items: center;
   box-sizing: border-box;
+
+  .stake_thumbnail {
+    width: 120px;
+    height: auto;
+    object-fit: cover;
+  }
+
+  .staking_title {
+    font-family: "GmarketSansBold", "GmarketSansMedium", "GmarketSansLight", sans-serif;
+    font-size: $headline_size;
+    font-weight: $h2_weight;
+    line-height: $headline_height;
+    color: $gray5;
+    margin-top: 30px;
+  }
+  .staking_desc {
+    @extend .staking_title;
+    font-size: $caption_size;
+    margin-top: 15px;
+    word-break: keep-all;
+    width: 100%;
+  }
 
   .stake_button {
     font-family: "GmarketSansBold", "GmarketSansMedium", "GmarketSansLight", sans-serif;
@@ -27,6 +48,7 @@
     border-radius: 10px;
     width: 208px;
     height: 56px;
+    margin-top: 30px;
   }
   &:hover {
     border: 1px solid $gray5;
@@ -37,13 +59,21 @@
   }
 }
 
+
 @include mobile {
   .card_container {
     width: 100%;
-    height: 305px;
+    height: auto;
     padding: 36px;
+    .stake_thumbnail {
+      width: 70px;
+    }
+    .staking_title {
+      font-size: $body2_mobile_size;
+      line-height: $body2_mobile_height;
+      margin-top: 10px;
+    }
     .stake_button {
-      width: 80%;
       height: 42px;
       font-size: $headline_mobile_size;
       line-height: $headline_mobile_height;

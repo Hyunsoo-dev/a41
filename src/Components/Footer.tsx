@@ -27,8 +27,12 @@ const Footer = ({ dark }: FooterProps) => {
           <img src={LogoFooter} alt={"logoFooter"} className={"logo-footer"} />
           <div className={"footer-frame2"}>
             <div className={"icon-container"}>
+              <a href={"https://twitter.com/a41_ventures"} target={"_blank"} rel={"noreferrer"}>
               <LinkedIn onClick={handleClickLinkedIn} />
-              <Twitter onClick={handleClickTwitter} />
+              </a>
+              <a href={"https://kr.linkedin.com/company/a41-ventures"} target={"_blank"} rel={"noreferrer"}>
+                <Twitter onClick={handleClickTwitter} />
+              </a>
             </div>
             <p className={"first-child"}>media@a41ventures.com</p>
             <p>Copyright 2021.a41ventures all rights reserved.</p>
