@@ -64,7 +64,7 @@ const Portfolio1 = () => {
                                         ? ""
                                         : data.fields.introduction.content[0].content[0].value
                                 }
-                                tags={["tag1", "tag2"]}
+                                tags={null}
                                 sns={data.fields.sns === undefined ? "" : data.fields.sns.twitter}
                                 web={data.fields.webUrl}
                                 flex={true}

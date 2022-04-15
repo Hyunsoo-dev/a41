@@ -11,7 +11,7 @@ type PortfolioDetailProps = {
     chain: string;
     abstract: string;
     contents: string;
-    tags: string[];
+    tags: string[] | null;
     sns: string;
     web: string;
     flex: boolean;
