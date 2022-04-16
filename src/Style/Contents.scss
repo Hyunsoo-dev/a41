@@ -17,14 +17,20 @@
 }
 .contents-page-title-wrapper {
   margin-bottom: 80px;
+  display: flex;
+  align-items: flex-end;
   .title {
     // font-size: $h0-size;
     font-size: 34px;
-    font-family: "GmarketSansBold", "GmarketSansMedium", "GmarketSansLight", sans-serif;
+    font-family: "GmarketSansBold", "GmarketSansMedium", "GmarketSansLight",
+      sans-serif;
     font-weight: $default-weight;
     color: $gray0;
     display: flex;
     align-items: flex-end;
+  }
+  .icon-box {
+    display: none;
   }
 }
 
@@ -71,7 +77,8 @@
   .title {
     // font-size: $h1_size;
     font-size: 22px;
-    font-family: "GmarketSansBold", "GmarketSansMedium", "GmarketSansLight", sans-serif;
+    font-family: "GmarketSansBold", "GmarketSansMedium", "GmarketSansLight",
+      sans-serif;
     font-weight: $h2_weight;
     color: $gray0;
     margin-bottom: 10px;
@@ -79,7 +86,8 @@
   .subTitle {
     // font-size: $body_size;
     font-size: 18px;
-    font-family: "GmarketSansMedium", "GmarketSansBold", "GmarketSansLight", sans-serif;
+    font-family: "GmarketSansMedium", "GmarketSansBold", "GmarketSansLight",
+      sans-serif;
     font-weight: $default_weight;
     color: $gray0;
     margin-bottom: 16px;
@@ -87,7 +95,8 @@
   .content {
     // font-size: $body_size;
     font-size: 18px;
-    font-family: "GmarketSansMedium", "GmarketSansBold", "GmarketSansLight", sans-serif;
+    font-family: "GmarketSansMedium", "GmarketSansBold", "GmarketSansLight",
+      sans-serif;
     font-weight: $default_weight;
     color: $gray2;
     margin-bottom: 16px;
@@ -105,7 +114,8 @@
       height: 27px;
       // font-size: $footnote2_size;
       font-size: 15px;
-      font-family: "GmarketSansLight", "GmarketSansMedium", "GmarketSansBold", sans-serif;
+      font-family: "GmarketSansLight", "GmarketSansMedium", "GmarketSansBold",
+        sans-serif;
       font-weight: $default_weight;
       color: $gray2;
       margin-right: 30px;
@@ -122,7 +132,8 @@
     .date {
       // font-size: $footnote2_size;
       font-size: 15px;
-      font-family: "GmarketSansLight", "GmarketSansMedium", "GmarketSansBold", sans-serif;
+      font-family: "GmarketSansLight", "GmarketSansMedium", "GmarketSansBold",
+        sans-serif;
       font-weight: $default_weight;
       color: $gray2;
     }
@@ -135,6 +146,7 @@
 @include mobile {
   .contents-page-container {
     width: 335px;
+    padding: 0px;
     .contents-page-title-wrapper {
       display: flex;
       margin-bottom: 50px;
@@ -152,15 +164,15 @@
     .page-content-box {
       .item {
         &:hover {
-          border: 3px solid #99f100;
+          // border: 3px solid #99f100;
         }
         background-color: #f6f6f7;
         box-shadow: none;
-        width: 102%;
+        width: 101%;
         height: auto;
         flex-direction: column;
         padding: 0;
-        padding-bottom: 80px;
+        padding-bottom: 0px;
         .column1 {
           order: 2;
           width: 100%;
@@ -187,6 +199,7 @@
         .column2 {
           order: 1;
           width: 100%;
+          height: auto;
           margin-bottom: 16px;
           .thumbnail {
             width: 335px;
