@@ -1,5 +1,17 @@
+@import '../index';
+@import './variables';
+
 .team_grid_box {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-column-gap: 250px;
+}
+
+@include mobile {
+  .team_grid_box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
 }

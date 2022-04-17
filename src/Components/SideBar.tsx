@@ -42,6 +42,9 @@ const SideBar = ({ clickMenu, clickedSideBar }: any) => {
         <Link to="/contents" className="sidebar-item" onClick={() => clickMenu()}>
           content
         </Link>
+        <Link to="/stake" className="sidebar-item" onClick={() => clickMenu()}>
+          stake
+        </Link>
         <Link to="/team" className="sidebar-item" onClick={() => clickMenu()}>
           team
         </Link>

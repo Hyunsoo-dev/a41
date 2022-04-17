@@ -32,6 +32,9 @@
     margin-top: 15px;
     word-break: keep-all;
     width: 100%;
+    min-height: 65px;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
   .stake_button {
