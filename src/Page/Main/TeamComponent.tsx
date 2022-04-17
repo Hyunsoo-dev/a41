@@ -4,7 +4,7 @@ import { ReactComponent as LinkedIn } from "../../Assets/image/mainPage/linkedIn
 import { ReactComponent as Twitter } from "../../Assets/twitter.svg";
 
 const TeamComponent = ({ thumbnail, enName, koName, position, sns }: any) => {
-  console.log("sns :", sns);
+  // console.log("sns :", sns);
   return (
     <section className="team-container">
       <section className="team-column1">
@@ -20,9 +20,8 @@ const TeamComponent = ({ thumbnail, enName, koName, position, sns }: any) => {
           <article>{position}</article>
         </section>
         <section className="sns-box">
-          <Twitter className="sns" />
-
-          <LinkedIn className="sns" />
+          <Twitter className="sns" onClick={() => window.open(`${sns.twitter}`, "_blank")} />
+          <LinkedIn className="sns" onClick={() => window.open(`${sns.linkedin}`, "_blank")} />
         </section>
       </section>
     </section>
