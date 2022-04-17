@@ -1,5 +1,10 @@
 import React from "react";
-const TeamComponent = ({ thumbnail, enName, koName, position, Sns }: any) => {
+import { Link } from "react-router-dom";
+import { ReactComponent as LinkedIn } from "../../Assets/image/mainPage/linkedIn.svg";
+import { ReactComponent as Twitter } from "../../Assets/twitter.svg";
+
+const TeamComponent = ({ thumbnail, enName, koName, position, sns }: any) => {
+  // console.log("sns :", sns);
   return (
     <section className="team-container">
       <section className="team-column1">
@@ -15,9 +20,8 @@ const TeamComponent = ({ thumbnail, enName, koName, position, Sns }: any) => {
           <article>{position}</article>
         </section>
         <section className="sns-box">
-          <article className="sns-logo">
-            <Sns />
-          </article>
+          <Twitter className="sns" onClick={() => window.open(`${sns.twitter}`, "_blank")} />
+          <LinkedIn className="sns" onClick={() => window.open(`${sns.linkedin}`, "_blank")} />
         </section>
       </section>
     </section>

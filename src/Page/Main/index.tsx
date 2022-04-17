@@ -19,10 +19,12 @@ import { getAllMemberInfo, getMemberInfo } from "../../Contentful/Contentful";
 import ViewMoreButton from "../../Components/ViewMoreButton";
 import { useRecoilState } from "recoil";
 import { colorTheme } from "../../GlobalState/recoil";
+import { Link } from "react-router-dom";
 
 const Main = () => {
   const [headerColor, setHeaderColor] = useRecoilState(colorTheme);
   const [scrollPosition, setScrollPosition] = useState(0);
+  const [allMemberInfo, setAllMemberInfo] = useState<any[]>([]);
 
   const mainTitle1 = useRef(null);
   const mainTitle2 = useRef(null);
@@ -37,7 +39,12 @@ const Main = () => {
       setScrollPosition(window.scrollY);
     }
 
-    console.log("window.pageYOffset :", window.pageYOffset, "headerColor :", headerColor);
+    // console.log(
+    //   "window.pageYOffset :",
+    //   window.pageYOffset,
+    //   "headerColor :",
+    //   headerColor
+    // );
   };
 
   useEffect(() => {
@@ -46,9 +53,16 @@ const Main = () => {
   }, []);
   useEffect(() => {
     setHeaderColor("black");
-    getAllMemberInfo();
+    getAllMemberInfo().then((res) => {
+      // console.log("res :", res);
+      res.items.sort((itemA, itemB) => {
+        return itemA.fields.index - itemB.fields.index;
+      });
+      setAllMemberInfo([...allMemberInfo, ...res.items.slice(0, 4)]);
+    });
     return () => {};
   }, []);
+  console.log("allMemberInfo :", allMemberInfo);
   useEffect(() => {
     window.addEventListener("scroll", updateScrollPosition);
     return () => {
@@ -164,7 +178,7 @@ const Main = () => {
           <section className="main-portfolio">
             <div className="main-title-wrapper">
               <H0 title="Portfolio" />
-              <ViewMoreButton />
+              <ViewMoreButton pathname="portfolio" />
             </div>
             <div className="main-portfolio-wrapper">
               <div className="portfolio-box">
@@ -184,7 +198,9 @@ const Main = () => {
                   <img src={BribeLogo} alt="" />
                 </article>
                 <article className="view-more-button-box">
-                  <img src={ViewMoreIconMobile} alt="" />
+                  <Link to="/portfolio">
+                    <img src={ViewMoreIconMobile} alt="" />
+                  </Link>
                 </article>
               </div>
             </div>
@@ -196,7 +212,7 @@ const Main = () => {
           <section className="main-contents">
             <div className="main-title-wrapper">
               <H0 title="Contents" />
-              <ViewMoreButton />
+              <ViewMoreButton pathname="contents" />
             </div>
             <div className="main-contents-wrapper">
               <div className="contents-box">
@@ -233,10 +249,12 @@ const Main = () => {
                   />
                 </div>
               </div>
+              <article className="view-more-button-box">
+                <Link to="/contents">
+                  <img src={ViewMoreIconMobile} alt="" />
+                </Link>
+              </article>
             </div>
-            <article className="view-more-button-box">
-              <img src={ViewMoreIconMobile} alt="" />
-            </article>
           </section>
         </section>
       </section>
@@ -245,31 +263,27 @@ const Main = () => {
           <section className="main-team">
             <div className="main-title-wrapper">
               <H0 title="Team" />
-              <ViewMoreButton />
+              <ViewMoreButton pathname="team" />
             </div>
             <div className="main-team-wrapper">
               <article className="main-team-box">
-                <TeamComponent
-                  thumbnail={team_thumbnail}
-                  enName="John Park"
-                  koName="박광성"
-                  position="Co-Founder | Managing Partner"
-                  Sns={SnsLogo}
-                />
-                <TeamComponent
-                  thumbnail={team_thumbnail}
-                  enName="John Park"
-                  koName="박광성"
-                  position="Co-Founder | Managing Partner"
-                  Sns={SnsLogo}
-                />
-                <TeamComponent
-                  thumbnail={team_thumbnail}
-                  enName="John Park"
-                  koName="박광성"
-                  position="Co-Founder | Managing Partner"
-                  Sns={SnsLogo}
-                />
+                {allMemberInfo.map((info: any) => {
+                  return (
+                    <TeamComponent
+                      key={info.sys.id}
+                      thumbnail={info.fields.profileImage.fields.file.url}
+                      enName={info.fields.name}
+                      koName={info.fields.koreanName}
+                      position={info.fields.position}
+                      sns={info.fields.sns}
+                    />
+                  );
+                })}
+              </article>
+              <article className="view-more-button-box">
+                <Link to="/team">
+                  <img src={ViewMoreIconMobile} alt="" />
+                </Link>
               </article>
             </div>
           </section>

@@ -95,7 +95,8 @@
   color: $gray0;
 }
 .main-vision-wrapper {
-  width: 1024px;
+  width: 100%;
+  max-width: 1024px;
 }
 .main-vision-wrapper .title1,
 .main-vision-wrapper .title2 {
@@ -135,8 +136,9 @@
 .main-ourThesis-wrapper .content-wrapper {
   margin-top: 40px;
 }
-.main-ourThesis-wrapper .main-content-box {
+.main-ourThesis-wrapper .content-wrapper .main-content-box {
   // font-size: clamp($footnote1_size, 3vw, $h1-size);
+  margin-bottom: 10px;
   font-size: 18px;
   font-family: "GmarketSansBold", "GmarketSansMedium", "GmarketSansLight", sans-serif;
   font-weight: $default-weight;
@@ -367,6 +369,9 @@
 /*
   main contents
 */
+.main-contents .view-more-button-box {
+  display: none;
+}
 .main-title-wrapper {
   width: 100%;
   height: auto;
@@ -398,6 +403,7 @@
   justify-content: center;
   gap: 88px;
 }
+
 .main-contents-wrapper .contents-box .contents-box-column1 {
   // margin-right: 124px;
 }
@@ -480,10 +486,17 @@
 /*
   Team section
 */
+.main-team {
+  .main-team-wrapper {
+    .view-more-button-box {
+      display: none;
+    }
+  }
+}
 .main-team-wrapper {
   display: flex;
   flex-direction: column;
-  width: 85%;
+  width: 100%;
 }
 .main-team-wrapper .h0_title {
   color: $gray0;
@@ -529,6 +542,8 @@
   width: 200px;
   height: 200px;
   border-radius: 50%;
+  object-fit: cover;
+  object-position: top;
 }
 
 .team-container .team-column2 {
@@ -577,9 +592,15 @@
   font-family: "GmarketSansBold", "GmarketSansMedium", "GmarketSansLight", sans-serif;
   font-weight: $default-weight;
   color: $gray0;
-  .sns-logo {
-    margin-right: 30px;
+  gap: 20px;
+  .sns {
+    fill: black;
+    cursor: pointer;
+    &:hover {
+      fill: #99f100;
+    }
   }
+
   .sns-name {
   }
 }
@@ -667,6 +688,11 @@
 
       .main-portfolio {
         justify-content: normal;
+
+        .icon-box {
+          display: none;
+        }
+
         .main-portfolio-wrapper {
           width: 100%;
           .portfolio-box {
@@ -717,6 +743,8 @@
             flex-direction: column;
             flex-wrap: wrap;
             align-items: center;
+            gap: 15px;
+            margin-bottom: 0px;
             .contents-box-column1 {
               margin-right: 0;
             }
@@ -747,6 +775,7 @@
           }
         }
         .view-more-button-box {
+          display: block;
           width: 100%;
           max-width: 337px;
           margin: 0 auto;
@@ -756,7 +785,11 @@
       .main-team {
         width: 100%;
         min-width: 320px;
-
+        .main-title-wrapper {
+          .icon-box {
+            display: none;
+          }
+        }
         .main-team-wrapper {
           width: 100%;
           .main-team-box {
@@ -780,6 +813,14 @@
                 font-size: 16px;
               }
             }
+          }
+          .view-more-button-box {
+            display: block;
+            width: 100%;
+            max-width: 337px;
+            margin: 0 auto;
+            text-align: right;
+            margin-bottom: 30px;
           }
         }
       }

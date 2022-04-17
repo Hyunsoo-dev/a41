@@ -32,7 +32,7 @@ export const getPortfolioInfo = async (id) => {
 
 // Get Stake
 export const getAllStake = async () => {
-  const stake = await client.getEntries({content_type: "staking"});
+  const stake = await client.getEntries({ content_type: "staking" });
   console.log(stake);
   return stake;
-}
+};
