@@ -23,6 +23,7 @@ import { colorTheme } from "../../GlobalState/recoil";
 const Main = () => {
   const [headerColor, setHeaderColor] = useRecoilState(colorTheme);
   const [scrollPosition, setScrollPosition] = useState(0);
+  const [allMemberInfo, setAllMemberInfo] = useState<any[]>([]);
 
   const mainTitle1 = useRef(null);
   const mainTitle2 = useRef(null);
@@ -37,7 +38,12 @@ const Main = () => {
       setScrollPosition(window.scrollY);
     }
 
-    console.log("window.pageYOffset :", window.pageYOffset, "headerColor :", headerColor);
+    // console.log(
+    //   "window.pageYOffset :",
+    //   window.pageYOffset,
+    //   "headerColor :",
+    //   headerColor
+    // );
   };
 
   useEffect(() => {
@@ -46,9 +52,15 @@ const Main = () => {
   }, []);
   useEffect(() => {
     setHeaderColor("black");
-    getAllMemberInfo();
+    getAllMemberInfo().then((res) => {
+      res.items.sort((itemA, itemB) => {
+        return itemA.fields.index - itemB.fields.index;
+      });
+      setAllMemberInfo([...allMemberInfo, ...res.items]);
+    });
     return () => {};
   }, []);
+  console.log("allMemberInfo :", allMemberInfo);
   useEffect(() => {
     window.addEventListener("scroll", updateScrollPosition);
     return () => {
@@ -103,54 +115,113 @@ const Main = () => {
     <>
       <section className="sticky-container">
         <section className="sticky">
-          <section id={scrollPosition > 1000 && scrollPosition <= 4000 ? "opacity-bg" : ""} className="slide-container">
-            <article id="main-vision-visible" className={`slide ${scrollPosition < 1000 ? "visible" : "hidden"}`}>
+          <section
+            id={
+              scrollPosition > 1000 && scrollPosition <= 4000
+                ? "opacity-bg"
+                : ""
+            }
+            className="slide-container"
+          >
+            <article
+              id="main-vision-visible"
+              className={`slide ${
+                scrollPosition < 1000 ? "visible" : "hidden"
+              }`}
+            >
               <section className="main-vision">
                 <div className="main-vision-wrapper">
-                  <article ref={mainTitle1} className={`title1 ${controlMainTitle(mainTitle1, scrollPosition)}`}>
+                  <article
+                    ref={mainTitle1}
+                    className={`title1 ${controlMainTitle(
+                      mainTitle1,
+                      scrollPosition
+                    )}`}
+                  >
                     We are the sidekicks of heroes
                   </article>
-                  <article ref={mainTitle2} className={`title2 ${controlMainTitle(mainTitle2, scrollPosition)}`}>
+                  <article
+                    ref={mainTitle2}
+                    className={`title2 ${controlMainTitle(
+                      mainTitle2,
+                      scrollPosition
+                    )}`}
+                  >
                     building digital innovation
                   </article>
                 </div>
               </section>
             </article>
-            <article className={`slide ${scrollPosition > 1000 && scrollPosition <= 2000 ? "visible" : "hidden"}`}>
+            <article
+              className={`slide ${
+                scrollPosition > 1000 && scrollPosition <= 2000
+                  ? "visible"
+                  : "hidden"
+              }`}
+            >
               <section className="main-ventures">
-                <div className={`main-ventures-wrapper ${controlVentures(scrollPosition)}`}>
+                <div
+                  className={`main-ventures-wrapper ${controlVentures(
+                    scrollPosition
+                  )}`}
+                >
                   <div className="main-sticky-title-wrapper">
                     a41 Ventures
                     <span className={"dot"}>.</span>
                   </div>
                   <article className="content">
-                    a41 invests in disruptive technologies that will lead the next digital innovation. We believe that those who
-                    do the heavy lifting on the ground - members of the projects that we invest in - are the true heroes that
-                    should stand out, with the help of sidekicks like us. Members of a41 are dedicated to becoming the bridge and
-                    catalyst of the next digital innovation.
+                    a41 invests in disruptive technologies that will lead the
+                    next digital innovation. We believe that those who do the
+                    heavy lifting on the ground - members of the projects that
+                    we invest in - are the true heroes that should stand out,
+                    with the help of sidekicks like us. Members of a41 are
+                    dedicated to becoming the bridge and catalyst of the next
+                    digital innovation.
                   </article>
                 </div>
               </section>
             </article>
-            <article className={`slide ${scrollPosition > 2000 && scrollPosition <= 3000 ? "visible" : "hidden"}`}>
+            <article
+              className={`slide ${
+                scrollPosition > 2000 && scrollPosition <= 3000
+                  ? "visible"
+                  : "hidden"
+              }`}
+            >
               <section className="main-ourThesis">
-                <div className={`main-ourThesis-wrapper ${controlOurThesis(scrollPosition)}`}>
+                <div
+                  className={`main-ourThesis-wrapper ${controlOurThesis(
+                    scrollPosition
+                  )}`}
+                >
                   <div className="main-sticky-title-wrapper">
                     our thesis
                     <span className={"dot"}>.</span>
                   </div>
                   <div className="content-wrapper">
                     <div className="main-content-box">
-                      <article className="dark-content">Winning the next era of&nbsp;&nbsp;</article>
-                      <article className="light-content">internet - Web 3,</article>
+                      <article className="dark-content">
+                        Winning the next era of&nbsp;&nbsp;
+                      </article>
+                      <article className="light-content">
+                        internet - Web 3,
+                      </article>
                     </div>
                     <div className="main-content-box">
-                      <article className="dark-content">Winning the next era of&nbsp;&nbsp;</article>
-                      <article className="light-content">finance - Open Finance</article>
+                      <article className="dark-content">
+                        Winning the next era of&nbsp;&nbsp;
+                      </article>
+                      <article className="light-content">
+                        finance - Open Finance
+                      </article>
                     </div>
                     <div className="main-content-box">
-                      <article className="dark-content">Winning the next era of&nbsp;&nbsp;</article>
-                      <article className="light-content">digital experience - Metaverse</article>
+                      <article className="dark-content">
+                        Winning the next era of&nbsp;&nbsp;
+                      </article>
+                      <article className="light-content">
+                        digital experience - Metaverse
+                      </article>
                     </div>
                   </div>
                 </div>
@@ -164,7 +235,7 @@ const Main = () => {
           <section className="main-portfolio">
             <div className="main-title-wrapper">
               <H0 title="Portfolio" />
-              <ViewMoreButton />
+              <ViewMoreButton pathname="portfolio" />
             </div>
             <div className="main-portfolio-wrapper">
               <div className="portfolio-box">
@@ -196,7 +267,7 @@ const Main = () => {
           <section className="main-contents">
             <div className="main-title-wrapper">
               <H0 title="Contents" />
-              <ViewMoreButton />
+              <ViewMoreButton pathname="contents" />
             </div>
             <div className="main-contents-wrapper">
               <div className="contents-box">
@@ -204,14 +275,18 @@ const Main = () => {
                   <ContentComponent
                     thumbnail={column1_row1}
                     title={"[Research] Pricing Everlasting Options"}
-                    subtitle={"This post explores ways to price everlasting options."}
+                    subtitle={
+                      "This post explores ways to price everlasting options."
+                    }
                     author={"Steve Kim"}
                     date={"Dec 24, 2021"}
                   />
                   <ContentComponent
                     thumbnail={column1_row1}
                     title={"[Research] Pricing Everlasting Options"}
-                    subtitle={"This post explores ways to price everlasting options."}
+                    subtitle={
+                      "This post explores ways to price everlasting options."
+                    }
                     author={"Steve Kim"}
                     date={"Dec 24, 2021"}
                   />
@@ -220,14 +295,18 @@ const Main = () => {
                   <ContentComponent
                     thumbnail={column1_row1}
                     title={"[Research] Pricing Everlasting Options"}
-                    subtitle={"This post explores ways to price everlasting options."}
+                    subtitle={
+                      "This post explores ways to price everlasting options."
+                    }
                     author={"Steve Kim"}
                     date={"Dec 24, 2021"}
                   />
                   <ContentComponent
                     thumbnail={column1_row1}
                     title={"[Research] Pricing Everlasting Options"}
-                    subtitle={"This post explores ways to price everlasting options."}
+                    subtitle={
+                      "This post explores ways to price everlasting options."
+                    }
                     author={"Steve Kim"}
                     date={"Dec 24, 2021"}
                   />
@@ -245,11 +324,23 @@ const Main = () => {
           <section className="main-team">
             <div className="main-title-wrapper">
               <H0 title="Team" />
-              <ViewMoreButton />
+              <ViewMoreButton pathname="team" />
             </div>
             <div className="main-team-wrapper">
               <article className="main-team-box">
-                <TeamComponent
+                {allMemberInfo.map((info: any) => {
+                  return (
+                    <TeamComponent
+                      key={info.fields.index}
+                      thumbnail={info.fields.profileImage.fields.file.url}
+                      enName={info.fields.name}
+                      koName={info.fields.koreanName}
+                      position={info.fields.position}
+                      sns={info.fields.sns}
+                    />
+                  );
+                })}
+                {/* <TeamComponent
                   thumbnail={team_thumbnail}
                   enName="John Park"
                   koName="박광성"
@@ -269,7 +360,7 @@ const Main = () => {
                   koName="박광성"
                   position="Co-Founder | Managing Partner"
                   Sns={SnsLogo}
-                />
+                /> */}
               </article>
             </div>
           </section>
