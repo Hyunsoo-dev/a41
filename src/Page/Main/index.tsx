@@ -3,6 +3,7 @@ import "../../Style/Main.scss";
 import ContentComponent from "./ContentComponent";
 import TeamComponent from "./TeamComponent";
 import column1_row1 from "../../Assets/image/mainPage/column1_row1.png";
+import column2_row1 from "../../Assets/image/mainPage/column2_row1.png"
 import AlexLogo from "../../Assets/image/mainPage/alexLogo.png";
 import ApricotLogo from "../../Assets/image/mainPage/apricotLogo.png";
 import ArkadikoLogo from "../../Assets/image/mainPage/arkadikoLogo.png";
@@ -10,7 +11,7 @@ import BlockSurveLogo from "../../Assets/image/mainPage/blockSurveLogo.png";
 import BribeLogo from "../../Assets/image/mainPage/bribeLogo.png";
 import { ReactComponent as GreenDot } from "../../Assets/image/mainPage/greenDot.svg";
 import { ReactComponent as SnsLogo } from "../../Assets/image/mainPage/sns.svg";
-import { ReactComponent as RightArrow } from "../../Assets/image/mainPage/rightArrowIcon.svg";
+import RightArrow from "../../Assets/image/mainPage/rightArrowIcon.png";
 import { ReactComponent as ViewMoreIcon } from "../../Assets/image/mainPage/viewMoreIcon.svg";
 import ViewMoreIconMobile from "../../Assets/image/mainPage/viewMoreIconMobile.png";
 import team_thumbnail from "../../Assets/image/mainPage/team_thumbnail.png";
@@ -218,14 +219,14 @@ const Main = () => {
               <div className="contents-box">
                 <div className="contents-box-column1">
                   <ContentComponent
-                    thumbnail={column1_row1}
+                    thumbnail={column2_row1}
                     title={"[Research] Pricing Everlasting Options"}
                     subtitle={"This post explores ways to price everlasting options."}
                     author={"Steve Kim"}
                     date={"Dec 24, 2021"}
                   />
                   <ContentComponent
-                    thumbnail={column1_row1}
+                    thumbnail={column2_row1}
                     title={"[Research] Pricing Everlasting Options"}
                     subtitle={"This post explores ways to price everlasting options."}
                     author={"Steve Kim"}
@@ -234,14 +235,14 @@ const Main = () => {
                 </div>
                 <div className="contents-box-column2">
                   <ContentComponent
-                    thumbnail={column1_row1}
+                    thumbnail={column2_row1}
                     title={"[Research] Pricing Everlasting Options"}
                     subtitle={"This post explores ways to price everlasting options."}
                     author={"Steve Kim"}
                     date={"Dec 24, 2021"}
                   />
                   <ContentComponent
-                    thumbnail={column1_row1}
+                    thumbnail={column2_row1}
                     title={"[Research] Pricing Everlasting Options"}
                     subtitle={"This post explores ways to price everlasting options."}
                     author={"Steve Kim"}

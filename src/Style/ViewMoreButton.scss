@@ -1,7 +1,6 @@
 @import "../index.scss";
 @import "../Style/variables.scss";
 .icon-box {
-  margin-right: 20px;
   height: 30px;
   width: 150px;
   white-space: nowrap;
@@ -13,7 +12,9 @@
   .right-arrow {
     display: block;
     position: absolute;
-    margin-left: 112px;
+    margin-left: 109px;
+    width: 48px;
+    height: 28px;
   }
   .view-more-text {
     position: absolute;
