@@ -25,8 +25,9 @@ const Header = ({clickMenu, clickedSideBar}: any) => {
         switch (parsedCurrentPathname) {
             case "/":
                 return scrollPosition > 4000 ? <MenuBlack/> : <MenuWhite/>;
+            case "/ourthes":
+                return <MenuWhite/>;
             default:
-                console.log("!!");
                 return headerColor === "black" ? <MenuWhite/> : <MenuBlack/>;
         }
     };
@@ -74,6 +75,20 @@ const Header = ({clickMenu, clickedSideBar}: any) => {
                 break;
             case "trans":
                 return location.pathname === "/ourthesis" ? "header-container-trans" : "header-container-trans-with-black";
+                break;
+        }
+    }
+
+    const getLanguageColor = () => {
+        switch (headerColor) {
+            case "black" :
+                return "language_wrapper-black";
+                break;
+            case "white" :
+                return "language_wrapper-white";
+                break;
+            case "trans":
+                return location.pathname === "/ourthesis" ? "language_wrapper-white" : "language_wrapper-black";
                 break;
         }
     }

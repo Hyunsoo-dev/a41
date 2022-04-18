@@ -421,9 +421,22 @@
 
   margin-bottom: 80px;
   border: none;
-  border: 1px solid #ffffff;
+  border: 1px solid $gray5;
+
+  .plus-btn {
+    display: none;
+  }
   &:hover {
-    border: 1px solid #99f100;
+    border: 3px solid $point;
+
+    .plus-btn {
+      width: 22px;
+      height: 22px;
+      display: block;
+      position: relative;
+      bottom: 336px;
+      left: 342px;
+    }
   }
 }
 .content-container .content-thumbnail {
@@ -506,44 +519,50 @@
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  align-items: space-around;
+  align-items: stretch;
 
   :nth-child(even) {
     justify-content: flex-end;
   }
 }
-/* 
+/*
   Team Component section 
 */
 
 .team-container {
   display: flex;
   padding: 50px 0px;
-}
-.team-column1 {
-  position: relative;
-}
 
-.team-column1 .thumbnail-circle {
-  width: 200px;
-  height: 200px;
-  // border: 1px solid #99f100;
-  border-radius: 50%;
-  position: absolute;
-  transform: translate(-20px, -20px);
+  .team-column1 {
+    position: relative;
+  }
+
+  .team-column1 .thumbnail-circle {
+    width: 200px;
+    height: 200px;
+    // border: 1px solid #99f100;
+    border-radius: 50%;
+    position: absolute;
+    transform: translate(-10px, -10px);
+  }
+
+  .team-column1 .thumbnail {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: top;
+  }
 
   &:hover {
-    background-color: rgba(153, 241, 0, 0.2);
-    border: 1px solid #99f100;
-    transform: translate(0px, 0px);
+    .team-column1 .thumbnail-circle {
+      background-color: rgba(153, 241, 0, 0.2);
+      border: 1px solid #99f100;
+      transform: translate(0px, 0px);
+      transition-duration: 0.5s;
+    }
   }
-}
-.team-column1 .thumbnail {
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
-  object-fit: cover;
-  object-position: top;
+
 }
 
 .team-container .team-column2 {
@@ -749,14 +768,22 @@
               margin-right: 0;
             }
             .content-container {
+              box-sizing: border-box;
               width: 100%;
               height: auto;
               padding-bottom: 47px;
+              &:hover {
+                .plus-btn {
+                  bottom: 328px;
+                  left: 315px;
+                }
+              }
               .content-thumbnail {
                 width: 335px;
                 height: 220px;
               }
               .content-box {
+
                 width: 335px;
                 .content-title {
                   font-size: $headline_mobile_size;

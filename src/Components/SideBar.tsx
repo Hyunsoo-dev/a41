@@ -33,7 +33,7 @@ const SideBar = ({ clickMenu, clickedSideBar }: any) => {
       </div>
 
       <div className="sidebar-category-wrapper">
-        <Link to="/ourThesis" className="sidebar-item" onClick={() => clickMenu()}>
+        <Link to="/ourthesis" className="sidebar-item" onClick={() => clickMenu()}>
           our thesis
         </Link>
         <Link to="/portfolio" className="sidebar-item" onClick={() => clickMenu()}>

@@ -61,7 +61,6 @@ const OurThesis = () => {
               : {}
           }
         >
-          {console.log(scrollY)}
           <div className="thesis_h0">We make investments based on</div>
           <div className="thesis_h0">
             our thesis<span className="dot">.</span>
