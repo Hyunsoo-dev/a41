@@ -12,8 +12,9 @@ const OurThesis = () => {
   const [headerColor, setHeaderColor] = useRecoilState(colorTheme);
 
   useEffect(() => {
-    setHeaderColor("black");
+    setHeaderColor("trans");
   });
+
   useEffect(() => {
     window.scrollTo({ top: 0, left: 0, behavior: "auto" });
     return () => {};

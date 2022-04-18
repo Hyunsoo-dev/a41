@@ -160,6 +160,17 @@
   @extend .header-container-white;
   background-color: $gray5;
 }
+
+.header-container-trans {
+  @extend .header-container-black;
+  background: transparent;
+}
+
+.header-container-trans-with-black {
+  @extend .header-container-white;
+  background: transparent;
+}
+
 @include mobile {
   .header-container-black {
     max-width: 768px;
@@ -197,6 +208,7 @@
     }
   }
 }
+
 
 @include mobile {
   .header-container-white {
