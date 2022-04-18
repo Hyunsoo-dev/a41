@@ -19,7 +19,6 @@ function App() {
       <BrowserRouter>
         <Header clickMenu={clickMenu} clickedSideBar={clickedSideBar} />
         <SideBar clickMenu={clickMenu} clickedSideBar={clickedSideBar} />
-        {/*<main id="mainContainer">*/}
         <Routes>
           <Route path="/" element={<Main />} />
           <Route path="/ourThesis" element={<OurThesis />} />
@@ -32,8 +31,7 @@ function App() {
           <Route path="/team/:id" element={<Team2 />} />
           <Route path="/contact" element={<Contact />} />
         </Routes>
-        {/*</main>*/}
-        <Footer dark={true} />
+        <Footer />
       </BrowserRouter>
     </div>
   );
