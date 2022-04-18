@@ -8,7 +8,7 @@
 
 .container_img {
   width: 100%;
-  min-height: 200vh;
+  min-height: 190vh;
   height: auto;
   display: flex;
   justify-content: center;
@@ -19,12 +19,13 @@
 .container_bk {
   @extend .container_img;
   background: $gray0;
+  border: 1px solid black;
 }
 
 .title_box {
   margin: 0;
   position: fixed;
-  top: 300px;
+  top: 232px;
   .thesis_h0 {
     font-family: "GmarketSansBold", "GmarketSansMedium", "GmarketSansLight", sans-serif;
     font-size: $h0_size;
@@ -41,7 +42,7 @@
 
 .thesis_content_box {
   position: fixed;
-  top: 500px;
+  top: 390px;
 }
 
 .thesis1_action3 {
@@ -54,7 +55,7 @@
 
 .thesis_2nd_content_box {
   position: fixed;
-  top: 500px;
+  top: 390px;
   display: none;
 }
 
@@ -65,9 +66,11 @@
 
 .thesis2_action2 {
   display: block;
+  animation: fade-in-translate 1s forwards;
 }
 
 .thesis2_action3 {
+
   display: block;
 }
 

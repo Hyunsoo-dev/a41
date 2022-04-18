@@ -22,11 +22,11 @@ const OurThesis = () => {
 
   const thesis1ContentControl = () => {
     let className;
-    if (scrollY < 250) {
+    if (scrollY < 150) {
       className = "thesis1_action1";
-    } else if (scrollY >= 500 && scrollY < 600) {
+    } else if (scrollY >= 250 && scrollY < 375) {
       className = "thesis1_action3";
-    } else if (scrollY >= 600) {
+    } else if (scrollY >= 375) {
       className = "thesis1_action4";
     }
     return className;
@@ -34,11 +34,11 @@ const OurThesis = () => {
 
   const thesis2ContentControl = () => {
     let className;
-    if (scrollY > 600 && scrollY < 700) {
+    if (scrollY > 375 && scrollY < 480) {
       className = "thesis2_action1";
-    } else if (scrollY >= 700 && scrollY < 850) {
+    } else if (scrollY >= 480 && scrollY < 600) {
       className = "thesis2_action2";
-    } else if (scrollY >= 850) {
+    } else if (scrollY >= 600) {
       className = "thesis2_action3";
     }
     return className;
@@ -46,7 +46,7 @@ const OurThesis = () => {
   return (
     <div
       className={
-        scrollY >= 528 ? "container_img background_action1" : "container_img"
+        scrollY >= 250 ? "container_img background_action1" : "container_img"
       }
     >
       <div className="content-box">
@@ -56,11 +56,12 @@ const OurThesis = () => {
           style={
             scrollY > 785
               ? innerWidth > 768
-                ? { top: `${300 - (scrollY - 645 - (divTop as number))}px` }
+                ? { top: `${232 - (scrollY - 645 - (divTop as number))}px` }
                 : { top: `${160 - (scrollY - 633 - (divTop as number))}px` }
               : {}
           }
         >
+          {console.log(scrollY)}
           <div className="thesis_h0">We make investments based on</div>
           <div className="thesis_h0">
             our thesis<span className="dot">.</span>
@@ -95,17 +96,14 @@ const OurThesis = () => {
           style={
             scrollY > 785
               ? innerWidth > 768
-                ? { top: `${500 - (scrollY - 645 - (divTop as number))}px` }
+                ? { top: `${390 - (scrollY - 645 - (divTop as number))}px` }
                 : { top: `${350 - (scrollY - 633 - (divTop as number))}px` }
               : {}
           }
         >
           <div className={"thesis_2nd_content"}>
-            In our publications,
-            <br />
-            we will be sharing our thoughts on our investment,
-            <br />
-            technical writings on projects and our ideas regarding the future.
+            In our publications, we will be sharing our thoughts on our investment,
+            <br /> technical writings on projects and our ideas regarding the future.
           </div>
         </div>
       </div>
