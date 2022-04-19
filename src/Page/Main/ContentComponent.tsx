@@ -1,5 +1,5 @@
 import React from "react";
-import {ReactComponent as ViewMoreBtn} from "../../Assets/icon/viewmorebtn.svg";
+import { ReactComponent as ViewMoreBtn } from "../../Assets/icon/viewmorebtn.svg";
 
 const ContentComponent = ({ thumbnail, title, subtitle, author, date }: any) => {
   return (
@@ -13,7 +13,7 @@ const ContentComponent = ({ thumbnail, title, subtitle, author, date }: any) => 
           <div className="content-date">{date}</div>
         </div>
       </div>
-        <ViewMoreBtn className={"plus-btn"} />
+      {/* <ViewMoreBtn className={"plus-btn"} /> */}
     </div>
   );
 };
