@@ -48,9 +48,17 @@
         height: 26px;
         color: $gray5;
         text-decoration: none;
-        font-size: $footnote1_size;
-        font-family: "GmarketSansBold", "GmarketSansMedium", "GmarketSansLight", sans-serif;
-        font-weight: $h2_weight;
+        // font-size: $footnote1_size;
+        // font-family: "GmarketSansBold", "GmarketSansMedium", "GmarketSansLight", sans-serif;
+        // font-weight: $h2_weight;
+
+        font-family: "PretendardBold";
+        font-size: 18px;
+        font-weight: 700;
+        line-height: 22px;
+        letter-spacing: 0em;
+        text-align: right;
+
         padding: 0 5px;
         padding-top: 1px;
       }
@@ -81,9 +89,17 @@
         justify-content: space-around;
         align-items: center;
         padding-top: 3px;
-        font-family: "GmarketSansBold", "GmarketSansMedium", "GmarketSansLight", sans-serif;
-        font-size: $caption_size;
-        font-weight: $h2_weight;
+        // font-family: "GmarketSansBold", "GmarketSansMedium", "GmarketSansLight", sans-serif;
+        // font-size: $caption_size;
+        // font-weight: $h2_weight;
+
+        font-family: Pretendard;
+        font-size: 14px;
+        font-weight: 700;
+        line-height: 17px;
+        letter-spacing: 0em;
+        text-align: right;
+
         margin-bottom: 0px;
       }
       .EN-active {
@@ -184,8 +200,8 @@
       .logo_wrapper {
         #a41LogoWhite,
         #a41LogoGreen {
-          width: 80px;
-          height: 36px;
+          width: 106px;
+          height: 40px;
         }
       }
       .category_wrapper {
@@ -208,7 +224,6 @@
     }
   }
 }
-
 
 @include mobile {
   .header-container-white {
