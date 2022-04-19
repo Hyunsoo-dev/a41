@@ -56,8 +56,8 @@ const OurThesis = () => {
           style={
             scrollY > 785
               ? innerWidth > 768
-                ? { top: `${232 - (scrollY - 645 - (divTop as number))}px` }
-                : { top: `${160 - (scrollY - 633 - (divTop as number))}px` }
+                ? 232 - (scrollY - 645 - (divTop as number)) > 110 ? { top: `${232 - (scrollY - 645 - (divTop as number))}px` } : {top: '110px'}
+                : 160 - (scrollY - 633 - (divTop as number)) > 110 ? { top: `${160 - (scrollY - 633 - (divTop as number))}px` } : {top: '110px'}
               : {}
           }
         >
@@ -95,8 +95,8 @@ const OurThesis = () => {
           style={
             scrollY > 785
               ? innerWidth > 768
-                ? { top: `${390 - (scrollY - 645 - (divTop as number))}px` }
-                : { top: `${350 - (scrollY - 633 - (divTop as number))}px` }
+                ? 390 - (scrollY - 645 - (divTop as number)) > 268 ? { top: `${390 - (scrollY - 645 - (divTop as number))}px` } : {top : '268px'}
+                : 350 - (scrollY - 633 - (divTop as number)) > 294 ? { top: `${350 - (scrollY - 633 - (divTop as number))}px` } : {top : '294px'}
               : {}
           }
         >
