@@ -32,6 +32,21 @@ Font face
   src: url("./Assets/Fonts/GmarketSansTTFLight.ttf") format("truetype");
   font-weight: 300;
 }
+@font-face {
+  font-family: "PretendardBold";
+  src: url("./Assets/Fonts/Pretendard-Bold.ttf") format("truetype");
+  font-weight: bold;
+}
+@font-face {
+  font-family: "PretendardLight";
+  src: url("./Assets/Fonts/Pretendard-Light.ttf") format("truetype");
+  font-weight: 300;
+}
+@font-face {
+  font-family: "PretendardMedium";
+  src: url("./Assets/Fonts/Pretendard-Regular.ttf") format("truetype");
+  font-weight: normal;
+}
 /*
 Desktop font size
 */
@@ -93,8 +108,7 @@ html {
 }
 
 body {
-  font-family: "GmarketSansMedium", "GmarketSansLight", "GmarketSansBold",
-    sans-serif;
+  font-family: "GmarketSansMedium", "GmarketSansLight", "GmarketSansBold", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   box-sizing: border-box;
