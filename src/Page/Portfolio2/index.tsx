@@ -49,7 +49,7 @@ const Portfolio2 = () => {
                   ? ""
                   : pf.fields.introduction.content[0].content[0].value
               }
-              tags={["tag1", "tag2"]}
+              tags={null}
               sns={pf.fields.sns === undefined ? "" : pf.fields.sns.twitter}
               web={pf.fields.webUrl}
               flex={false}

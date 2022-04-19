@@ -31,7 +31,7 @@ const Contact = () => {
 
                 <div className={"contact_row_box"}>
                     <Download title={"Logo File Download"}/>
-                    <Download title={"Brand Guid Download"}/>
+                    <Download title={"Brand Guide Download"}/>
                 </div>
                 <a href={"https://twitter.com/a41_ventures"} target={"_blank"} rel={"noreferrer"}>
                     <Twitter className={"team_twitter"} />

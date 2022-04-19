@@ -113,6 +113,7 @@
   display: flex;
   margin-bottom: 14px;
   .thesis_headline_gray2 {
+    font-family: "PretendardBold", "PretendardMedium", "Pretendard", sans-serif;
     font-size: $headline_size;
     font-weight: $h2_weight;
     line-height: $headline-height;
@@ -132,7 +133,7 @@
 
 
 .thesis_2nd_content {
-  font-family: "GmarketSansBold", "GmarketSansMedium", "GmarketSansLight", sans-serif;
+  font-family: "PretendardBold", "PretendardMedium", "Pretendard", sans-serif;
   font-size: $headline_size;
   font-weight: $h2_weight;
   line-height: $headline-height;
@@ -167,7 +168,7 @@
     height: 80px;
     padding: 15px 20px;
     .thesis_headline_gray2 {
-      font-family: "GmarketSansBold", "GmarketSansMedium", "GmarketSansLight", sans-serif;
+      font-family: "PretendardBold", "PretendardMedium", "Pretendard", sans-serif;
       font-size: $headline_mobile_size;
       font-weight: $h2_weight;
       line-height: $headline_mobile_height;
@@ -188,7 +189,7 @@
 
 
   .thesis_2nd_content {
-    font-family: "GmarketSansBold", "GmarketSansMedium", "GmarketSansLight", sans-serif;
+    font-family: "PretendardBold", "PretendardMedium", "Pretendard", sans-serif;
     font-size: $h2_mobile_size;
     font-weight: $h2_weight;
     line-height: $h2_mobile_height;
