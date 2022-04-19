@@ -13,15 +13,9 @@ import H0 from "../../Components/H0";
 const Contents1 = () => {
   const [headerColor, setHeaderColor] = useRecoilState(colorTheme);
 
-<<<<<<< HEAD
-    useEffect(() => {
-        setHeaderColor("trans");
-    });
-=======
   useEffect(() => {
-    setHeaderColor("white");
+    setHeaderColor("trans");
   });
->>>>>>> df7f0d1 (Fix: a41 피드백 반영)
 
   useEffect(() => {
     window.scrollTo({ top: 0, left: 0, behavior: "auto" });
