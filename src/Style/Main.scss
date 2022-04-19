@@ -97,7 +97,6 @@
 .main-vision-wrapper {
   width: 100%;
   max-width: 1024px;
-  padding: 0 18px;
 }
 .main-vision-wrapper .title1,
 .main-vision-wrapper .title2 {
@@ -128,9 +127,18 @@
 }
 .main-ventures-wrapper .content {
   // font-size: clamp($footnote1_size, 3vw, $h1-size);
+  // font-size: 18px;
+  // font-family: "GmarketSansMedium", "GmarketSansBold", "GmarketSansLight", sans-serif;
+  // font-weight: $default-weight;
+
+  //styleName: 🖥 Desktop/Body/Regular 1;
+  font-family: "PretendardMedium";
   font-size: 18px;
-  font-family: "GmarketSansMedium", "GmarketSansBold", "GmarketSansLight", sans-serif;
-  font-weight: $default-weight;
+  font-weight: 400;
+  line-height: 28px;
+  letter-spacing: 0em;
+  text-align: left;
+
   margin-top: 40px;
 }
 
@@ -148,9 +156,18 @@
 .main-ourThesis-wrapper .content-wrapper .main-content-box {
   // font-size: clamp($footnote1_size, 3vw, $h1-size);
   margin-bottom: 10px;
-  font-size: 18px;
-  font-family: "GmarketSansBold", "GmarketSansMedium", "GmarketSansLight", sans-serif;
-  font-weight: $default-weight;
+  // font-size: 18px;
+  // font-family: "GmarketSansBold", "GmarketSansMedium", "GmarketSansLight", sans-serif;
+  // font-weight: $default-weight;
+
+  //styleName: 🖥 Desktop/H1/Bold/Gmarket;
+  font-family: "GmarketSansBold";
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 20px;
+  letter-spacing: 0em;
+  text-align: center;
+
   display: flex;
   .dark-content {
     color: $gray2;
@@ -166,7 +183,7 @@
 .sticky-container {
   // width: 100%;
   background-color: $gray0;
-  margin-top: 100px;
+  // margin-top: 100px;
   width: 100%;
   // min-width: 1280px;
   // height: 350vh;
@@ -212,9 +229,16 @@
 .main-sticky-title-wrapper {
   font-family: "GmarketSansBold", "GmarketSansMedium", "GmarketSansLight", sans-serif;
   // font-size: $h0_size;
+  // font-size: 34px;
+  // font-weight: $default_weight;
+  // line-height: $h0_height;
+
+  //styleName: 🖥 Desktop/H0/Bold/Gmarket;
+  font-family: "GmarketSansBold";
   font-size: 34px;
-  font-weight: $default_weight;
-  line-height: $h0_height;
+  font-weight: 400;
+  line-height: 34px;
+  letter-spacing: 0em;
 
   color: $gray5;
 }
@@ -462,39 +486,73 @@
 
 .content-container .content-title {
   // font-size: $headline_size;
-  font-size: 20px;
-  font-family: "GmarketSansBold", "GmarketSansMedium", "GmarketSansLight", sans-serif;
-  font-weight: $h2_weight;
+  // font-size: 20px;
+  // font-family: "GmarketSansBold", "GmarketSansMedium", "GmarketSansLight", sans-serif;
+  // font-weight: $h2_weight;
   color: $gray0;
   display: flex;
   align-items: flex-end;
   margin: 10px 0px;
-  font-style: normal;
+  // font-style: normal;
+  // font-weight: 700;
+  // font-size: 20px;
+  // line-height: 30px;
+
+  //styleName: 🖥 Desktop/Headline/Bold;
+  font-family: "PretendardBold";
+  font-size: 19px;
   font-weight: 700;
-  font-size: 20px;
   line-height: 30px;
+  letter-spacing: 0em;
+  text-align: left;
 }
 
 .content-container .content-subtitle {
   // font-size: $body_size;
+  // font-size: 18px;
+  // font-family: "GmarketSansMedium", "GmarketSansBold", "GmarketSansLight", sans-serif;
+  // font-weight: $default_weight;
+
+  //styleName: 🖥 Desktop/Body/Regular 2;
+  font-family: "PretendardMedium";
   font-size: 18px;
-  font-family: "GmarketSansMedium", "GmarketSansBold", "GmarketSansLight", sans-serif;
-  font-weight: $default_weight;
+  font-weight: 400;
+  line-height: 25px;
+  letter-spacing: 0em;
+  text-align: left;
+
   color: $gray2;
   margin-bottom: 10px;
 }
 .content-container .content-author {
   // font-size: $footnote2_size;
+  // font-size: 15px;
+  // font-family: "GmarketSansLight", "GmarketSansBold", "GmarketSansMedium", sans-serif;
+  // font-weight: $default_weight;
+
+  //styleName: 🖥 Desktop/Footnote/light 2;
+  font-family: "PretendardLight";
   font-size: 15px;
-  font-family: "GmarketSansLight", "GmarketSansBold", "GmarketSansMedium", sans-serif;
-  font-weight: $default_weight;
+  font-weight: 400;
+  line-height: 18px;
+  letter-spacing: 0em;
+  text-align: left;
+
   color: $gray2;
 }
 .content-container .content-date {
   // font-size: $footnote2_size;
+  // font-size: 15px;
+  // font-family: "GmarketSansLight", "GmarketSansBold", "GmarketSansMedium", sans-serif;
+  // font-weight: $default_weight;
+  //styleName: 🖥 Desktop/Footnote/light 2;
+  font-family: "PretendardLight";
   font-size: 15px;
-  font-family: "GmarketSansLight", "GmarketSansBold", "GmarketSansMedium", sans-serif;
-  font-weight: $default_weight;
+  font-weight: 400;
+  line-height: 18px;
+  letter-spacing: 0em;
+  text-align: left;
+
   color: $gray2;
 }
 .content-author-date-box {
@@ -569,6 +627,7 @@
       border: 1px solid #99f100;
       transform: translate(0px, 0px);
       transition-duration: 0.5s;
+      cursor: pointer;
     }
   }
 }
@@ -586,28 +645,56 @@
   margin: 15px 0px;
   .enName {
     // font-size: $h1_size;
+    // font-size: 22px;
+    // font-family: "GmarketSansBold", "GmarketSansMedium", "GmarketSansLight", sans-serif;
+    // font-weight: $h2_weight;
+
+    //styleName: 🖥 Desktop/H2/Bold;
+    font-family: "PretendardBold";
     font-size: 22px;
-    font-family: "GmarketSansBold", "GmarketSansMedium", "GmarketSansLight", sans-serif;
-    font-weight: $h2_weight;
+    font-weight: 700;
+    line-height: 26px;
+    letter-spacing: 0em;
+    text-align: left;
+
     color: $gray0;
 
-    margin-right: 20px;
+    margin-right: 12px;
   }
   .koName {
     // font-size: $footnote1_size;
+    // font-size: 16px;
+    // font-family: "GmarketSansLight", "GmarketSansBold", "GmarketSansMedium", sans-serif;
+    // font-weight: $default-weight;
+
+    font-family: "PretendardBold";
     font-size: 16px;
-    font-family: "GmarketSansLight", "GmarketSansBold", "GmarketSansMedium", sans-serif;
-    font-weight: $default-weight;
-    color: $gray2;
+    font-weight: 5 00;
+    line-height: 19px;
+    letter-spacing: 0em;
+    text-align: left;
+
+    // color: $gray2;
+    color: #818181;
+
     padding-top: 9px;
   }
 }
 
 .team-column2 .job-box {
   // font-size: $body_size;
+  // font-size: 18px;
+  // font-family: "GmarketSansMedium", "GmarketSansBold", "GmarketSansLight", sans-serif;
+  // font-weight: $default-weight;
+
+  //styleName: 🖥 Desktop/Body/Regular 2;
+  font-family: "PretendardMedium";
   font-size: 18px;
-  font-family: "GmarketSansMedium", "GmarketSansBold", "GmarketSansLight", sans-serif;
-  font-weight: $default-weight;
+  font-weight: 400;
+  line-height: 25px;
+  letter-spacing: 0em;
+  text-align: left;
+
   color: $gray0;
 }
 
@@ -658,18 +745,44 @@
           }
           .title1,
           .title2 {
-            font-size: $h0_mobile_size;
-            font-family: "GmarketSansBold", "GmarketSansMedium", "GmarketSansLight", sans-serif;
-            font-weight: $default-weight;
+            padding: 0 18px;
+            // font-size: $h0_mobile_size;
+            // font-family: "GmarketSansBold", "GmarketSansMedium", "GmarketSansLight", sans-serif;
+            // font-weight: $default-weight;
+
+            //styleName: 📱 Mobile/H0/Bold/Gmarket;
+            font-family: "GmarketSansBold";
+            font-size: 34px;
+            font-weight: 400;
+            line-height: 38px;
+            letter-spacing: 0em;
+            text-align: left;
           }
+        }
+        .main-sticky-title-wrapper {
+          //styleName: 📱 Mobile/H1/Bold/Gmarket;
+          font-family: "GmarketSansBold";
+          font-size: 27px;
+          font-weight: 400;
+          line-height: 27px;
+          letter-spacing: 0em;
+          text-align: left;
         }
         .main-ventures {
           width: 80%;
           min-width: 320px;
           .content {
-            font-size: $body1_mobile_size;
-            font-family: "GmarketSansMedium", "GmarketSansBold", "GmarketSansLight", sans-serif;
-            font-weight: $default-weight;
+            // font-size: $body1_mobile_size;
+            // font-family: "GmarketSansMedium", "GmarketSansBold", "GmarketSansLight", sans-serif;
+            // font-weight: $default-weight;
+
+            //styleName: 📱 Mobile/Body 1/Regular;
+            font-family: "PretendardMedium";
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 24px;
+            letter-spacing: 0em;
+            text-align: left;
           }
         }
         .main-ourThesis {
@@ -687,15 +800,33 @@
             justify-content: space-evenly;
             padding-left: 20px;
             .dark-content {
-              font-size: $headline_mobile_size;
-              font-family: "GmarketSansBold", "GmarketSansMedium", "GmarketSansLight", sans-serif;
-              font-weight: $default-weight;
+              // font-size: $headline_mobile_size;
+              // font-family: "GmarketSansBold", "GmarketSansMedium", "GmarketSansLight", sans-serif;
+              // font-weight: $default-weight;
+
+              //styleName: 📱 Mobile/Headline/Bold;
+              font-family: "PretendardBold";
+              font-size: 18px;
+              font-weight: 700;
+              line-height: 22px;
+              letter-spacing: 0em;
+              text-align: left;
+
               color: $gray3;
             }
             .light-content {
-              font-size: $headline_mobile_size;
-              font-family: "GmarketSansBold", "GmarketSansMedium", "GmarketSansLight", sans-serif;
-              font-weight: $default-weight;
+              // font-size: $headline_mobile_size;
+              // font-family: "GmarketSansBold", "GmarketSansMedium", "GmarketSansLight", sans-serif;
+              // font-weight: $default-weight;
+
+              //styleName: 📱 Mobile/Headline/Bold;
+              font-family: "PretendardBold";
+              font-size: 18px;
+              font-weight: 700;
+              line-height: 22px;
+              letter-spacing: 0em;
+              text-align: left;
+
               color: $gray5;
             }
           }
@@ -741,6 +872,7 @@
               display: block;
               width: 95.67px;
               height: 84px;
+
               img {
                 width: 100%;
                 height: auto;
@@ -837,8 +969,16 @@
                     font-size: 20px;
                   }
                   .koName {
-                    font-size: 14px;
+                    // font-size: 14px;
                     padding-top: 5px;
+                    //styleName: 📱 Mobile/Body 2/Regular;
+                    font-family: "PretendardMedium";
+                    font-size: 14px;
+                    font-weight: 400;
+                    line-height: 22px;
+                    letter-spacing: 0em;
+                    text-align: left;
+                    color: #818181;
                   }
                 }
               }

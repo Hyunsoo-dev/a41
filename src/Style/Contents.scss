@@ -22,8 +22,7 @@
   .title {
     // font-size: $h0-size;
     font-size: 34px;
-    font-family: "GmarketSansBold", "GmarketSansMedium", "GmarketSansLight",
-      sans-serif;
+    font-family: "GmarketSansBold", "GmarketSansMedium", "GmarketSansLight", sans-serif;
     font-weight: $default-weight;
     color: $gray0;
     display: flex;
@@ -42,7 +41,7 @@
   }
 }
 .item {
-  box-sizing: content-box;
+  box-sizing: border-box;
   text-decoration: none;
   background: #ffffff;
   box-shadow: 2px 2px 0px rgba(0, 0, 0, 0.08);
@@ -54,10 +53,9 @@
     width: 25px;
     height: 25px;
     display: none;
-
   }
   padding: 46px 30px;
-  border: 1px solid $gray5;
+  border: 3px solid $gray5;
   &:hover {
     border: 3px solid $point;
     .plus-btn {
@@ -87,28 +85,49 @@
 .column1 {
   .title {
     // font-size: $h1_size;
+    // font-size: 22px;
+    // font-family: "GmarketSansBold", "GmarketSansMedium", "GmarketSansLight", sans-serif;
+    // font-weight: $h2_weight;
+    //styleName: 🖥 Desktop/H2/Bold;
+    font-family: "PretendardBold";
     font-size: 22px;
-    font-family: "GmarketSansBold", "GmarketSansMedium", "GmarketSansLight",
-      sans-serif;
-    font-weight: $h2_weight;
+    font-weight: 700;
+    line-height: 26px;
+    letter-spacing: 0em;
+    text-align: left;
+
     color: $gray0;
     margin-bottom: 10px;
   }
   .subTitle {
     // font-size: $body_size;
+    // font-size: 18px;
+    // font-family: "GmarketSansMedium", "GmarketSansBold", "GmarketSansLight", sans-serif;
+    // font-weight: $default_weight;
+    //styleName: 🖥 Desktop/Body/Regular 2;
+    font-family: "PretendardMedium";
     font-size: 18px;
-    font-family: "GmarketSansMedium", "GmarketSansBold", "GmarketSansLight",
-      sans-serif;
-    font-weight: $default_weight;
+    font-weight: 400;
+    line-height: 25px;
+    letter-spacing: 0em;
+    text-align: left;
+
     color: $gray0;
     margin-bottom: 16px;
   }
   .content {
     // font-size: $body_size;
+    // font-size: 18px;
+    // font-family: "GmarketSansMedium", "GmarketSansBold", "GmarketSansLight", sans-serif;
+    // font-weight: $default_weight;
+    //styleName: 🖥 Desktop/Body/Regular 2;
+    font-family: "PretendardMedium";
     font-size: 18px;
-    font-family: "GmarketSansMedium", "GmarketSansBold", "GmarketSansLight",
-      sans-serif;
-    font-weight: $default_weight;
+    font-weight: 400;
+    line-height: 25px;
+    letter-spacing: 0em;
+    text-align: left;
+
     color: $gray2;
     margin-bottom: 16px;
   }
@@ -124,10 +143,17 @@
       width: 66px;
       height: 27px;
       // font-size: $footnote2_size;
+      // font-size: 15px;
+      // font-family: "GmarketSansLight", "GmarketSansMedium", "GmarketSansBold", sans-serif;
+      // font-weight: $default_weight;
+      //styleName: 🖥 Desktop/Footnote/light 2;
+      font-family: "PretendardLight";
       font-size: 15px;
-      font-family: "GmarketSansLight", "GmarketSansMedium", "GmarketSansBold",
-        sans-serif;
-      font-weight: $default_weight;
+      font-weight: 400;
+      line-height: 18px;
+      letter-spacing: 0em;
+      text-align: left;
+
       color: $gray2;
       margin-right: 30px;
       border: 1px solid #818181;
@@ -142,10 +168,17 @@
     .author,
     .date {
       // font-size: $footnote2_size;
+      // font-size: 15px;
+      // font-family: "GmarketSansLight", "GmarketSansMedium", "GmarketSansBold", sans-serif;
+      // font-weight: $default_weight;
+      //styleName: 🖥 Desktop/Footnote/light 2;
+      font-family: "PretendardLight";
       font-size: 15px;
-      font-family: "GmarketSansLight", "GmarketSansMedium", "GmarketSansBold",
-        sans-serif;
-      font-weight: $default_weight;
+      font-weight: 400;
+      line-height: 18px;
+      letter-spacing: 0em;
+      text-align: left;
+
       color: $gray2;
     }
     .gray-dot {
@@ -174,18 +207,18 @@
     }
     .page-content-box {
       .item {
-          &:hover {
-            border: 3px solid $point;
-            .plus-btn {
-              display: block;
-              position: relative;
-              bottom: 350px;
-              right: -313px;
-            }
+        &:hover {
+          border: 3px solid $point;
+          .plus-btn {
+            display: block;
+            position: relative;
+            bottom: 350px;
+            right: -313px;
+          }
         }
         background-color: #f6f6f7;
         box-shadow: none;
-        width: 101%;
+        width: 102%;
         height: auto;
         flex-direction: column;
         padding: 0;
