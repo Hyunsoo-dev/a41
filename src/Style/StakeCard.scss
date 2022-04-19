@@ -10,6 +10,7 @@
   flex-direction: column;
   padding: 30px;
   align-items: center;
+  justify-content: center;
   box-sizing: border-box;
 
   .stake_thumbnail {
@@ -31,7 +32,6 @@
     font-size: $caption_size;
     margin-top: 15px;
     word-break: keep-all;
-    width: 100%;
     min-height: 65px;
     overflow: hidden;
     text-overflow: ellipsis;
