@@ -54,7 +54,7 @@
 }
 
 .en_name {
-  font-family: "GmarketSansBold", "GmarketSansMedium", "GmarketSansLight", sans-serif;
+  font-family: "PretendardBold", "PretendardMedium", "PretendardLight", sans-serif;
   font-size: $h1_size;
   font-weight: $h2_weight;
   line-height: $h2_height;
@@ -63,7 +63,7 @@
 }
 
 .ko_name {
-  font-family: "GmarketSansLight", "GmarketSansBold", "GmarketSansMedium", sans-serif;
+  font-family: "PretendardLight", "PretendardBold", "PretendardMedium", sans-serif;
   font-size: $footnote1_size;
   font-weight: 600;
   line-height: $footnote1_height;
@@ -72,13 +72,12 @@
 }
 
 .position {
-  font-family: "GmarketSansMedium", "GmarketSansLight", "GmarketSansBold", sans-serif;
+  font-family: "PretendardMedium", "PretendardLight", "PretendardBold", sans-serif;
   font-size: $body_size;
   font-weight: $default_weight;
   line-height: $body2_height;
   color: $gray5;
   margin-bottom: 30px;
-  letter-spacing: -0.4px;
 }
 
 @include mobile {
@@ -127,17 +126,16 @@
   }
 
   .ko_name {
-    font-family: "GmarketSansMedium", "GmarketSansLight", "GmarketSansBold", sans-serif;
+    font-family: "PretendardMedium", "PretendardLight", "Pretendard", sans-serif;
     font-size: $body2_mobile_size;
     font-weight: $default_weight;
     line-height: $body2_mobile_height;
   }
 
   .position {
-    font-family: "GmarketSansLight", "GmarketSansBold", "GmarketSansMedium", sans-serif;
+    font-family: "PretendardLight", "PretendardBold", "PretendardMedium", sans-serif;
     font-size: $body1_mobile_size;
     line-height: $body1_mobile_height;
-    letter-spacing: -1px;
     word-break: break-all;
   }
 }
