@@ -3,7 +3,7 @@ import "../../Style/Main.scss";
 import ContentComponent from "./ContentComponent";
 import TeamComponent from "./TeamComponent";
 import column1_row1 from "../../Assets/image/mainPage/column1_row1.png";
-import column2_row1 from "../../Assets/image/mainPage/column2_row1.png"
+import column2_row1 from "../../Assets/image/mainPage/column2_row1.png";
 import AlexLogo from "../../Assets/image/mainPage/alexLogo.png";
 import ApricotLogo from "../../Assets/image/mainPage/apricotLogo.png";
 import ArkadikoLogo from "../../Assets/image/mainPage/arkadikoLogo.png";
@@ -272,6 +272,7 @@ const Main = () => {
                   return (
                     <TeamComponent
                       key={info.sys.id}
+                      id={info.sys.id}
                       thumbnail={info.fields.profileImage.fields.file.url}
                       enName={info.fields.name}
                       koName={info.fields.koreanName}
