@@ -81,13 +81,30 @@
 }
 
 @include mobile {
-
-  svg {
+  .team_twitter {
     margin-right: 25px;
     path {
       fill: $gray5;
       width: 20px;
       height: 16px;
+    }
+    &:hover {
+      path {
+        fill: $point;
+      }
+    }
+  }
+
+  .team_linkedIn {
+    path {
+      fill: $gray5;
+      width: 20px;
+      height: 16px;
+    }
+    &:hover {
+      path {
+        fill: $point;
+      }
     }
   }
 
