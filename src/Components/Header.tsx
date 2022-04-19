@@ -88,7 +88,7 @@ const Header = ({clickMenu, clickedSideBar}: any) => {
                 return "language_wrapper-white";
                 break;
             case "trans":
-                return location.pathname === "/ourthesis" ? "language_wrapper-white" : "language_wrapper-black";
+                return location.pathname === "/ourthesis" ? "language_wrapper-black" : "language_wrapper-white";
                 break;
         }
     }
@@ -144,9 +144,7 @@ const Header = ({clickMenu, clickedSideBar}: any) => {
 
                 <div
                     className={
-                        headerColor === "black"
-                            ? "language_wrapper-black"
-                            : "language_wrapper-white"
+              getLanguageColor()
                     }
                 >
                     <div className="language_box">

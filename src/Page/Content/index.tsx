@@ -13,7 +13,7 @@ const Content = () => {
     const [headerColor, setHeaderColor] = useRecoilState(colorTheme);
 
     useEffect(() => {
-        setHeaderColor("trans");
+        setHeaderColor("white");
     });
 
     useEffect(() => {
