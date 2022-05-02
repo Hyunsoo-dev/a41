@@ -1,9 +1,9 @@
-@import '../index';
-@import './variables';
+@import "../index";
+@import "./variables";
 
 .card_container {
   width: 380px;
-  height: 440px;
+  height: 400px;
   border-radius: 20px;
   background: rgba(255, 255, 255, 0.1);
   display: flex;
@@ -20,7 +20,8 @@
   }
 
   .staking_title {
-    font-family: "PretendardBold", "PretendardMedium", "PretendardLight", sans-serif;
+    font-family: "PretendardBold", "PretendardMedium", "PretendardLight",
+      sans-serif;
     font-size: $headline_size;
     font-weight: $h2_weight;
     line-height: $headline_height;
@@ -38,7 +39,8 @@
   }
 
   .stake_button {
-    font-family: "PretendardBold", "PretendardMedium", "PretendardLight", sans-serif;
+    font-family: "PretendardBold", "PretendardMedium", "PretendardLight",
+      sans-serif;
     font-size: $h1_size;
     font-weight: $h2_weight;
     line-height: $h2_height;
@@ -62,19 +64,24 @@
   }
 }
 
-
 @include mobile {
   .card_container {
     width: 100%;
     height: auto;
-    padding: 36px;
+    // min-height: 323px;
+    min-height: 345px;
+    // padding: 36px 0px;
+    padding: 0px;
     .stake_thumbnail {
-      width: 70px;
+      width: 80px;
+      width: 100px;
+      // width: 80px;
     }
     .staking_title {
       font-size: $body2_mobile_size;
       line-height: $body2_mobile_height;
-      margin-top: 10px;
+      // margin-top: 10px;
+      margin-top: 30px;
     }
     .stake_button {
       height: 42px;
