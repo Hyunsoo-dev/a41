@@ -186,7 +186,6 @@
 }
 .header-container-gray {
   @extend .header-container-white;
-
   border-bottom: 1px solid #f6f6f7;
   background-color: #f6f6f7;
 }
@@ -227,7 +226,7 @@
         #a41LogoWhite,
         #a41LogoGreen {
           width: 106px;
-          height: 40px;
+          height: 44px;
         }
       }
       .category_wrapper {
@@ -270,5 +269,14 @@
         cursor: pointer;
       }
     }
+  }
+
+  .header-container-gray {
+    // // @extend .header-container-gray;
+    // border-bottom: 1px solid #e5e5e5;
+    background-color: #f6f6f7;
+  }
+  .header-container-gray-stroke {
+    // @extend .header-container-gray-stroke;
   }
 }
