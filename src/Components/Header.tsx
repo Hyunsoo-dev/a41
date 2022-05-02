@@ -101,6 +101,8 @@ const Header = ({ clickMenu, clickedSideBar }: any) => {
               <div id="a41LogoWhite"></div>
             ) : scrollPosition > 4000 ? (
               <div id="a41LogoGreen"></div>
+            ) : headerColor === "trans" ? (
+              <div id="a41LogoWhite"></div>
             ) : (
               <div id="a41LogoGreen"></div>
             )}
