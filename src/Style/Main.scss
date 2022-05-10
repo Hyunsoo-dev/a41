@@ -50,7 +50,8 @@
   height: 1024px;
   color: white;
   background: rgba(0, 0, 0, 0.1);
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../Assets/image/mainPage/darkerBg.png");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("../Assets/image/mainPage/darkerBg.png");
   background-repeat: no-repeat;
 
   background-size: contain;
@@ -120,7 +121,8 @@
 .main-ventures-wrapper .title {
   // font-size: $h0-size;
   font-size: 34px;
-  font-family: "GmarketSansBold", "GmarketSansMedium", "GmarketSansLight", sans-serif;
+  font-family: "GmarketSansBold", "GmarketSansMedium", "GmarketSansLight",
+    sans-serif;
   font-weight: $default-weight;
   display: flex;
   align-items: flex-end;
@@ -145,7 +147,8 @@
 .main-ourThesis-wrapper .title {
   // font-size: $h0-size;
   font-size: 34px;
-  font-family: "GmarketSansBold", "GmarketSansMedium", "GmarketSansLight", sans-serif;
+  font-family: "GmarketSansBold", "GmarketSansMedium", "GmarketSansLight",
+    sans-serif;
   font-weight: $default-weight;
   display: flex;
   align-items: flex-end;
@@ -181,14 +184,12 @@
   ------------- sticky start -----------
 */
 .sticky-container {
-  // width: 100%;
   background-color: $gray0;
-  // margin-top: 100px;
   width: 100%;
-  // min-width: 1280px;
-  // height: 350vh;
-  height: 4000px;
-  max-height: 4000px;
+  // height: 4000px;
+  // max-height: 4000px;
+  height: 7500px;
+  max-height: 7500px;
 }
 
 .sticky {
@@ -223,11 +224,13 @@
 
 #opacity-bg {
   @extend .slide-container;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../Assets/image/mainPage/darkerBg.png");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("../Assets/image/mainPage/darkerBg.png");
   transition: all 2s ease-in-out;
 }
 .main-sticky-title-wrapper {
-  font-family: "GmarketSansBold", "GmarketSansMedium", "GmarketSansLight", sans-serif;
+  font-family: "GmarketSansBold", "GmarketSansMedium", "GmarketSansLight",
+    sans-serif;
   // font-size: $h0_size;
   // font-size: 34px;
   // font-weight: $default_weight;
@@ -424,7 +427,8 @@
 
 .main-contents-wrapper .title {
   font-size: $h0-size;
-  font-family: "GmarketSansBold", "GmarketSansMedium", "GmarketSansLight", sans-serif;
+  font-family: "GmarketSansBold", "GmarketSansMedium", "GmarketSansLight",
+    sans-serif;
   font-weight: $default-weight;
   display: flex;
   align-items: flex-end;
@@ -703,7 +707,8 @@
   align-items: flex-end;
   height: 50px;
   font-size: $body_size;
-  font-family: "GmarketSansBold", "GmarketSansMedium", "GmarketSansLight", sans-serif;
+  font-family: "GmarketSansBold", "GmarketSansMedium", "GmarketSansLight",
+    sans-serif;
   font-weight: $default-weight;
   color: $gray0;
   gap: 20px;
@@ -723,9 +728,11 @@
   .sticky-container {
     min-width: 320px;
     width: 100%;
-    height: 450vh;
+    // height: 450vh;
     max-width: 768px;
-    max-height: 4000px;
+    // max-height: 4000px;
+    height: 7500px;
+    max-height: 7500px;
     // display: none;
     .sticky {
       width: 100%;
