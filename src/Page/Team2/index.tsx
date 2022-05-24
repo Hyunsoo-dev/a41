@@ -1,107 +1,98 @@
-import React, {useEffect, useState} from "react";
+import React, { useEffect, useState } from "react";
 import H0 from "../../Components/H0";
-import {useParams} from "react-router-dom";
-import {ReactComponent as Twitter} from "../../Assets/twitter.svg";
-import {ReactComponent as LinkedIn} from "../../Assets/linkedin.svg";
+import { useParams } from "react-router-dom";
+import { ReactComponent as Twitter } from "../../Assets/twitter.svg";
+import { ReactComponent as LinkedIn } from "../../Assets/linkedin.svg";
 import ArticleCard from "../Portfolio2/ArticleCard";
 
 import "../../Style/Team2.scss";
-import {getMemberInfo} from "../../Contentful/Contentful";
-import {useRecoilState} from "recoil";
-import {colorTheme} from "../../GlobalState/recoil";
-
+import { getMemberInfo } from "../../Contentful/Contentful";
+import { useRecoilState } from "recoil";
+import { colorTheme } from "../../GlobalState/recoil";
+import MarkdownRenderer from "../../Components/MarkdownRenderer";
 const Team2 = () => {
-    const [detail, setDetail] = useState<any>();
-    let {id} = useParams();
-    const [headerColor, setHeaderColor] = useRecoilState(colorTheme);
+  const [detail, setDetail] = useState<any>();
+  let { id } = useParams();
+  const [headerColor, setHeaderColor] = useRecoilState(colorTheme);
 
-    useEffect(() => {
-        setHeaderColor("black");
-    });
-    useEffect(() => {
-        const ac = new AbortController();
-        getMemberInfo(id).then((res) => setDetail(res.fields));
-        return () => {
-            return ac.abort();
-        };
-    }, [id]);
+  useEffect(() => {
+    setHeaderColor("black");
+  });
+  useEffect(() => {
+    const ac = new AbortController();
+    getMemberInfo(id).then((res) => setDetail(res.fields));
+    return () => {
+      return ac.abort();
+    };
+  }, [id]);
 
-    useEffect(() => {
-        window.scrollTo({top: 0, left: 0, behavior: "auto"});
-        return () => {
-        };
-    }, []);
+  useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+    return () => {};
+  }, []);
 
-    return (
-        <div className={"container_bk"}>
-            <div className={"content_box"}>
-                {detail && (
-                    <>
-                        <H0 title={detail.name}/>
-                        <div className={"profile_box"}>
-                            <img
-                                src={detail.profileImage.fields.file.url}
-                                alt={"profile_img"}
-                                className={"big_profile_img"}
-                            />
-                            <div>
-                                <div className={"row_box"}>
-                                    <div className={"en_name"}>{detail.name}</div>
-                                    <div className={"ko_name"}>{detail.koreanName}</div>
-                                </div>
-                                <div className={"position"}>{detail.position}</div>
-                                <a
-                                    href={detail.sns.twitter}
-                                    target={"_blank"}
-                                    rel={"noreferrer"}
-                                >
-                                    <Twitter className={"team_twitter"}/>
-                                </a>
-                                <a
-                                    href={detail.sns.linkedin}
-                                    target={"_blank"}
-                                    rel={"noreferrer"}
-                                >
-                                    <LinkedIn className={"team_linkedIn"}/>
-                                </a>
-                            </div>
-                        </div>
-                        <hr/>
-                        <div className={"profile_article"}>
-                            {detail &&
-                                detail.introduction.content.map((p: any, idx: number) => {
-                                    return (
-                                        <div className={"profile_section"} key={idx}>
-                                            {p.content[0].value}
-                                        </div>
-                                    );
-                                })}
-                        </div>
-                        <div className={"article_title_box"}>
-                            <div className={"article_title"}>article</div>
-                            <span className={"article_count"}>
-                {detail.article ? detail.article.length : 0}
-              </span>
-                        </div>
-                        {detail.article === undefined ? <div className={"no_article"}>No article</div> : (
-                            <div className={"grid_box"}>
-                                {detail.article.map((e: any) => {
-                                    return (
-                                        <ArticleCard
-                                            title={e.title}
-                                            img={e.img}
-                                            link={e.link}
-                                            summary={e.summary}
-                                            author={e.author}
-                                            date={e.date}
-                                            key={e.title}
-                                        />
-                                    );
-                                })}
-                            </div>)}
-                    </>)}
+  return (
+    <div className={"container_bk"}>
+      <div className={"content_box"}>
+        {detail && (
+          <>
+            <H0 title={detail.name} />
+            <div className={"profile_box"}>
+              <img src={detail.profileImage.fields.file.url} alt={"profile_img"} className={"big_profile_img"} />
+              <div>
+                <div className={"row_box"}>
+                  <div className={"en_name"}>{detail.name}</div>
+                  <div className={"ko_name"}>{detail.koreanName}</div>
+                </div>
+                <div className={"position"}>{detail.position}</div>
+                <a href={detail.sns.twitter} target={"_blank"} rel={"noreferrer"}>
+                  <Twitter className={"team_twitter"} />
+                </a>
+                <a href={detail.sns.linkedin} target={"_blank"} rel={"noreferrer"}>
+                  <LinkedIn className={"team_linkedIn"} />
+                </a>
+              </div>
             </div>
-        </div>)
+            <hr />
+            <div className={"profile_article"}>
+              {detail &&
+                detail.introduction.content.map((p: any, idx: number) => {
+                  return (
+                    <div className={"profile_section"} key={idx}>
+                      {/* {p.content[0].value} */}
+                      <MarkdownRenderer markdown={p.content[0].value} />
+                    </div>
+                  );
+                })}
+            </div>
+            <div className={"article_title_box"}>
+              <div className={"article_title"}>article</div>
+              <span className={"article_count"}>{detail.article ? detail.article.length : 0}</span>
+            </div>
+            {detail.article === undefined ? (
+              <div className={"no_article"}>No article</div>
+            ) : (
+              <div className={"grid_box"}>
+                {detail.article.map((e: any) => {
+                  return (
+                    <ArticleCard
+                      title={e.title}
+                      img={e.img}
+                      link={e.link}
+                      summary={e.summary}
+                      author={e.author}
+                      date={e.date}
+                      key={e.title}
+                    />
+                  );
+                })}
+              </div>
+            )}
+          </>
+        )}
+      </div>
+    </div>
+  );
 };
 
 export default Team2;
