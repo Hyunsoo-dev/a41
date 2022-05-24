@@ -36,3 +36,8 @@ export const getAllStake = async () => {
   console.log(stake);
   return stake;
 };
+
+export const getContents = async () => {
+  const contents = await client.getEntries({ content_type: "content" });
+  console.log("contents :", contents);
+};
