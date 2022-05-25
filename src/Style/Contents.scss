@@ -22,8 +22,7 @@
   .title {
     // font-size: $h0-size;
     font-size: 34px;
-    font-family: "GmarketSansBold", "GmarketSansMedium", "GmarketSansLight",
-      sans-serif;
+    font-family: "GmarketSansBold", "GmarketSansMedium", "GmarketSansLight", sans-serif;
     font-weight: $default-weight;
     color: $gray0;
     display: flex;
@@ -161,6 +160,11 @@
       box-sizing: border-box;
       border-radius: 20px;
       line-height: 19px;
+    }
+
+    .no-tag {
+      width: 66px;
+      height: 27px;
     }
   }
   .content-info-box {

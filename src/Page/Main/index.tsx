@@ -27,6 +27,7 @@ const Main = () => {
   const [headerColor, setHeaderColor] = useRecoilState(colorTheme);
   const [scrollPosition, setScrollPosition] = useState(0);
   const [allMemberInfo, setAllMemberInfo] = useState<any[]>([]);
+  const [contents, setContents] = useState<any[]>([]);
 
   const mainTitle1 = useRef(null);
   const mainTitle2 = useRef(null);
@@ -64,9 +65,7 @@ const Main = () => {
       });
       setAllMemberInfo([...allMemberInfo, ...res.items.slice(0, 4)]);
     });
-    getContents().then((res) => {
-      console.log();
-    });
+
     return () => {};
   }, []);
   // console.log("allMemberInfo :", allMemberInfo);
@@ -143,8 +142,17 @@ const Main = () => {
     }
     return className;
   };
-
-  console.log("scrollPosition :", scrollPosition);
+  useEffect(() => {
+    getContents().then((res: any) => {
+      if (res.items.length > 4) {
+        setContents([...res.items.slice(0, 4)]);
+      } else {
+        setContents([...res.items]);
+      }
+    });
+  }, []);
+  // console.log("scrollPosition :", scrollPosition);
+  // console.log("contents :", contents);
   return (
     <>
       <section className="sticky-container">
@@ -270,7 +278,19 @@ const Main = () => {
             </div>
             <div className="main-contents-wrapper">
               <div className="contents-box">
-                <div className="contents-box-column1">
+                {contents &&
+                  contents.map((element, idx): any => (
+                    <ContentComponent
+                      key={idx}
+                      entryId={element.sys.id}
+                      thumbnail={element.fields.thumbnail.fields.file.url}
+                      title={element.fields.title}
+                      subtitle={element.fields.subtitle}
+                      author={element.fields.author}
+                      date={element.fields.createdAt}
+                    />
+                  ))}
+                {/* <div className="contents-box-column1">
                   <ContentComponent
                     thumbnail={column2_row1}
                     title={"[Research] Pricing Everlasting Options"}
@@ -301,7 +321,7 @@ const Main = () => {
                     author={"Steve Kim"}
                     date={"Dec 24, 2021"}
                   />
-                </div>
+                </div> */}
               </div>
               <article className="view-more-button-box">
                 <Link to="/contents">

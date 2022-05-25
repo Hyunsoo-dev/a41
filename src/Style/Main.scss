@@ -50,8 +50,7 @@
   height: 1024px;
   color: white;
   background: rgba(0, 0, 0, 0.1);
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url("../Assets/image/mainPage/darkerBg.png");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../Assets/image/mainPage/darkerBg.png");
   background-repeat: no-repeat;
 
   background-size: contain;
@@ -121,8 +120,7 @@
 .main-ventures-wrapper .title {
   // font-size: $h0-size;
   font-size: 34px;
-  font-family: "GmarketSansBold", "GmarketSansMedium", "GmarketSansLight",
-    sans-serif;
+  font-family: "GmarketSansBold", "GmarketSansMedium", "GmarketSansLight", sans-serif;
   font-weight: $default-weight;
   display: flex;
   align-items: flex-end;
@@ -147,8 +145,7 @@
 .main-ourThesis-wrapper .title {
   // font-size: $h0-size;
   font-size: 34px;
-  font-family: "GmarketSansBold", "GmarketSansMedium", "GmarketSansLight",
-    sans-serif;
+  font-family: "GmarketSansBold", "GmarketSansMedium", "GmarketSansLight", sans-serif;
   font-weight: $default-weight;
   display: flex;
   align-items: flex-end;
@@ -224,13 +221,11 @@
 
 #opacity-bg {
   @extend .slide-container;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url("../Assets/image/mainPage/darkerBg.png");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../Assets/image/mainPage/darkerBg.png");
   transition: all 2s ease-in-out;
 }
 .main-sticky-title-wrapper {
-  font-family: "GmarketSansBold", "GmarketSansMedium", "GmarketSansLight",
-    sans-serif;
+  font-family: "GmarketSansBold", "GmarketSansMedium", "GmarketSansLight", sans-serif;
   // font-size: $h0_size;
   // font-size: 34px;
   // font-weight: $default_weight;
@@ -427,8 +422,7 @@
 
 .main-contents-wrapper .title {
   font-size: $h0-size;
-  font-family: "GmarketSansBold", "GmarketSansMedium", "GmarketSansLight",
-    sans-serif;
+  font-family: "GmarketSansBold", "GmarketSansMedium", "GmarketSansLight", sans-serif;
   font-weight: $default-weight;
   display: flex;
   align-items: flex-end;
@@ -437,8 +431,10 @@
 .main-contents-wrapper .contents-box {
   display: flex;
   margin: 40px 0px;
-  justify-content: center;
-  gap: 88px;
+  // justify-content: center;
+  // gap: 88px;
+  gap: 40px;
+  flex-wrap: wrap;
 }
 
 .main-contents-wrapper .contents-box .contents-box-column1 {
@@ -717,8 +713,7 @@
   align-items: flex-end;
   height: 50px;
   font-size: $body_size;
-  font-family: "GmarketSansBold", "GmarketSansMedium", "GmarketSansLight",
-    sans-serif;
+  font-family: "GmarketSansBold", "GmarketSansMedium", "GmarketSansLight", sans-serif;
   font-weight: $default-weight;
   color: $gray0;
   gap: 20px;
@@ -928,6 +923,9 @@
               box-sizing: border-box;
               width: 100%;
               height: auto;
+              display: flex;
+              flex-direction: column;
+              align-items: center;
               // padding-bottom: 47px;
               &:hover {
                 .plus-btn {

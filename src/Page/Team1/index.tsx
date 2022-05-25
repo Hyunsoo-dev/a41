@@ -30,7 +30,7 @@ const Team1 = () => {
     window.scrollTo({ top: 0, left: 0, behavior: "auto" });
     return () => {};
   }, []);
-
+  // console.log("data :", data);
   return (
     <div className={"container_bk"}>
       <div className={"content_box"}>
@@ -45,8 +45,8 @@ const Team1 = () => {
                   enName={el.fields.name}
                   koName={el.fields.koreanName}
                   position={el.fields.position}
-                  twit={el.fields.sns.twitter}
-                  linkedIn={el.fields.sns.linkedin && el.fields.sns.linkedin}
+                  twit={el.fields.sns && el.fields.sns.twitter}
+                  linkedIn={el.fields.sns && el.fields.sns.linkedin}
                   key={el.sys.id}
                 />
               );

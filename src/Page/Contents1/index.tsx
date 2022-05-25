@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "../../Style/Contents.scss";
 import { ReactComponent as GreenDot } from "../../Assets/image/mainPage/greenDot.svg";
@@ -9,10 +9,10 @@ import { ReactComponent as ViewMoreBtn } from "../../Assets/icon/viewmorebtn.svg
 import { useRecoilState } from "recoil";
 import { colorTheme } from "../../GlobalState/recoil";
 import H0 from "../../Components/H0";
-
+import { getContents } from "../../Contentful/Contentful";
 const Contents1 = () => {
   const [headerColor, setHeaderColor] = useRecoilState(colorTheme);
-
+  const [contents, setContents] = useState<any[]>([]);
   useEffect(() => {
     // setHeaderColor("trans");
     setHeaderColor("white");
@@ -23,6 +23,11 @@ const Contents1 = () => {
     return () => {};
   }, []);
 
+  useEffect(() => {
+    getContents().then((res) => {
+      setContents([...res.items]);
+    });
+  }, []);
   return (
     <div className="contents-container">
       <div className="contents-page-container">
@@ -38,7 +43,38 @@ const Contents1 = () => {
         </div>
         <div className="contents-page-list-wrapper">
           <div className="page-content-box">
-            <Link to="/content/1" className="item">
+            {contents &&
+              contents.map((element, idx): any => (
+                <Link key={idx} to={`/content/${element.sys.id}`} className="item">
+                  <div className="column1">
+                    <div className="title">{element.fields.title}</div>
+                    <div className="subTitle">{element.fields.subtitle}</div>
+                    <div className="content">
+                      In a journey of personal growth, it’s easy to lose sight of just how far you’ve come.
+                    </div>
+                    <div className="tag-box">
+                      {element.fields.tags ? (
+                        element.fields.tags.map((element: any, idx: any) => (
+                          <div key={idx} className="tag">
+                            {element}
+                          </div>
+                        ))
+                      ) : (
+                        <div className="no-tag"></div>
+                      )}
+                    </div>
+                    <div className="content-info-box">
+                      <div className="author">Author: {element.fields.author}</div>
+                      <GrayDot className="gray-dot" />
+                      <div className="date">{element.fields.createdAt}</div>
+                    </div>
+                  </div>
+                  <div className="column2">
+                    <img src={element.fields.thumbnail.fields.file.url} className="thumbnail"></img>
+                  </div>
+                </Link>
+              ))}
+            {/* <Link to="/content/1" className="item">
               <div className="column1">
                 <div className="title">[Research] Pricing Everlasting Options</div>
                 <div className="subTitle">This post explores ways to price everlasting options.</div>
@@ -142,7 +178,7 @@ const Contents1 = () => {
               <div className="column2">
                 <div className="thumbnail"></div>
               </div>
-            </Link>
+            </Link> */}
           </div>
         </div>
       </div>
