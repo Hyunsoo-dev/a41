@@ -21,19 +21,23 @@ import ViewMoreButton from "../../Components/ViewMoreButton";
 import { useRecoilState } from "recoil";
 import { colorTheme } from "../../GlobalState/recoil";
 import { Link } from "react-router-dom";
+import { getContents } from "../../Contentful/Contentful";
 
 const Main = () => {
   const [headerColor, setHeaderColor] = useRecoilState(colorTheme);
   const [scrollPosition, setScrollPosition] = useState(0);
   const [allMemberInfo, setAllMemberInfo] = useState<any[]>([]);
+  const [contents, setContents] = useState<any[]>([]);
 
   const mainTitle1 = useRef(null);
   const mainTitle2 = useRef(null);
   const updateScrollPosition = () => {
-    if (window.pageYOffset > 4000 && headerColor !== "white") {
+    // if (window.pageYOffset > 4000 && headerColor !== "white") {
+    if (window.pageYOffset > 7500 && headerColor !== "white") {
       setHeaderColor("white");
       setScrollPosition(window.scrollY);
-    } else if (window.pageYOffset <= 4000 && headerColor !== "black") {
+      // } else if (window.pageYOffset <= 4000 && headerColor !== "black") {
+    } else if (window.pageYOffset <= 7500 && headerColor !== "black") {
       setHeaderColor("black");
       setScrollPosition(window.scrollY);
     } else {
@@ -61,6 +65,7 @@ const Main = () => {
       });
       setAllMemberInfo([...allMemberInfo, ...res.items.slice(0, 4)]);
     });
+
     return () => {};
   }, []);
   // console.log("allMemberInfo :", allMemberInfo);
@@ -79,13 +84,22 @@ const Main = () => {
       } else if (element.current.className.slice(0, 6) === "title2") {
         suffix = "p";
       }
-      if (scrollPosition > 100 && scrollPosition <= 400) {
+      // if (scrollPosition > 100 && scrollPosition <= 400) {
+      //   className = `main-title-action-${suffix}1`;
+      // } else if (scrollPosition > 400 && scrollPosition <= 600) {
+      //   className = `main-title-action-${suffix}2`;
+      // } else if (scrollPosition > 600 && scrollPosition <= 800) {
+      //   className = `main-title-action-${suffix}3`;
+      // } else if (scrollPosition > 800 && scrollPosition <= 1000) {
+      //   className = `main-title-action-${suffix}4`;
+      // }
+      if (scrollPosition > 200 && scrollPosition <= 500) {
         className = `main-title-action-${suffix}1`;
-      } else if (scrollPosition > 400 && scrollPosition <= 600) {
+      } else if (scrollPosition > 500 && scrollPosition <= 1000) {
         className = `main-title-action-${suffix}2`;
-      } else if (scrollPosition > 600 && scrollPosition <= 800) {
+      } else if (scrollPosition > 1000 && scrollPosition <= 1700) {
         className = `main-title-action-${suffix}3`;
-      } else if (scrollPosition > 800 && scrollPosition <= 1000) {
+      } else if (scrollPosition > 1700 && scrollPosition <= 2000) {
         className = `main-title-action-${suffix}4`;
       }
     }
@@ -94,33 +108,59 @@ const Main = () => {
 
   const controlVentures = (scrollPosition: number): any => {
     let className = "";
-    if (scrollPosition > 1000 && scrollPosition <= 1200) {
+    // if (scrollPosition > 1000 && scrollPosition <= 1200) {
+    //   className = "main-ventures-action1";
+    // } else if (scrollPosition > 1200 && scrollPosition <= 1700) {
+    //   className = "main-ventures-action2";
+    // } else if (scrollPosition > 1700 && scrollPosition <= 2000) {
+    //   className = "main-ventures-action3";
+    // }
+    if (scrollPosition > 2000 && scrollPosition <= 2300) {
       className = "main-ventures-action1";
-    } else if (scrollPosition > 1200 && scrollPosition <= 1700) {
+    } else if (scrollPosition > 2300 && scrollPosition <= 1700) {
       className = "main-ventures-action2";
-    } else if (scrollPosition > 1700 && scrollPosition <= 2000) {
+    } else if (scrollPosition > 3700 && scrollPosition <= 4000) {
       className = "main-ventures-action3";
     }
     return className;
   };
   const controlOurThesis = (scrollPosition: number): any => {
     let className = "";
-    if (scrollPosition > 2000 && scrollPosition <= 2200) {
+    // if (scrollPosition > 2000 && scrollPosition <= 2200) {
+    //   className = "main-our-thesis-action1";
+    // } else if (scrollPosition > 2200 && scrollPosition <= 2700) {
+    //   className = "main-our-thesis-action2";
+    // } else if (scrollPosition > 2700 && scrollPosition <= 3000) {
+    //   className = "main-our-thesis-action3";
+    // }
+    if (scrollPosition > 4000 && scrollPosition <= 4300) {
       className = "main-our-thesis-action1";
-    } else if (scrollPosition > 2200 && scrollPosition <= 2700) {
+    } else if (scrollPosition > 4300 && scrollPosition <= 5700) {
       className = "main-our-thesis-action2";
-    } else if (scrollPosition > 2700 && scrollPosition <= 3000) {
+    } else if (scrollPosition > 5700 && scrollPosition <= 6500) {
       className = "main-our-thesis-action3";
     }
     return className;
   };
+  useEffect(() => {
+    getContents().then((res: any) => {
+      if (res.items.length > 4) {
+        setContents([...res.items.slice(0, 4)]);
+      } else {
+        setContents([...res.items]);
+      }
+    });
+  }, []);
+  // console.log("scrollPosition :", scrollPosition);
+  // console.log("contents :", contents);
   return (
     <>
       <section className="sticky-container">
         <section className="sticky">
           <section
             id={
-              scrollPosition > 1000 && scrollPosition <= 4000
+              // scrollPosition > 1000 && scrollPosition <= 4000
+              scrollPosition > 2000 && scrollPosition <= 7400
                 ? "opacity-bg"
                 : ""
             }
@@ -129,7 +169,8 @@ const Main = () => {
             <article
               id="main-vision-visible"
               className={`slide ${
-                scrollPosition < 1000 ? "visible" : "hidden"
+                // scrollPosition < 1000 ? "visible" : "hidden"
+                scrollPosition < 2000 ? "visible" : "hidden"
               }`}
             >
               <section className="main-vision">
@@ -157,7 +198,8 @@ const Main = () => {
             </article>
             <article
               className={`slide ${
-                scrollPosition > 1000 && scrollPosition <= 2000
+                // scrollPosition > 1000 && scrollPosition <= 2000
+                scrollPosition > 2000 && scrollPosition <= 4000
                   ? "visible"
                   : "hidden"
               }`}
@@ -186,7 +228,8 @@ const Main = () => {
             </article>
             <article
               className={`slide ${
-                scrollPosition > 2000 && scrollPosition <= 3000
+                // scrollPosition > 2000 && scrollPosition <= 3000
+                scrollPosition > 4000 && scrollPosition <= 6500
                   ? "visible"
                   : "hidden"
               }`}
@@ -276,22 +319,30 @@ const Main = () => {
             </div>
             <div className="main-contents-wrapper">
               <div className="contents-box">
-                <div className="contents-box-column1">
+                {contents &&
+                  contents.map((element, idx): any => (
+                    <ContentComponent
+                      key={idx}
+                      entryId={element.sys.id}
+                      thumbnail={element.fields.thumbnail.fields.file.url}
+                      title={element.fields.title}
+                      subtitle={element.fields.subTitle}
+                      author={element.fields.author}
+                      date={element.fields.createdAt}
+                    />
+                  ))}
+                {/* <div className="contents-box-column1">
                   <ContentComponent
                     thumbnail={column2_row1}
                     title={"[Research] Pricing Everlasting Options"}
-                    subtitle={
-                      "This post explores ways to price everlasting options."
-                    }
+                    subtitle={"This post explores ways to price everlasting options."}
                     author={"Steve Kim"}
                     date={"Dec 24, 2021"}
                   />
                   <ContentComponent
                     thumbnail={column2_row1}
                     title={"[Research] Pricing Everlasting Options"}
-                    subtitle={
-                      "This post explores ways to price everlasting options."
-                    }
+                    subtitle={"This post explores ways to price everlasting options."}
                     author={"Steve Kim"}
                     date={"Dec 24, 2021"}
                   />
@@ -300,22 +351,18 @@ const Main = () => {
                   <ContentComponent
                     thumbnail={column2_row1}
                     title={"[Research] Pricing Everlasting Options"}
-                    subtitle={
-                      "This post explores ways to price everlasting options."
-                    }
+                    subtitle={"This post explores ways to price everlasting options."}
                     author={"Steve Kim"}
                     date={"Dec 24, 2021"}
                   />
                   <ContentComponent
                     thumbnail={column2_row1}
                     title={"[Research] Pricing Everlasting Options"}
-                    subtitle={
-                      "This post explores ways to price everlasting options."
-                    }
+                    subtitle={"This post explores ways to price everlasting options."}
                     author={"Steve Kim"}
                     date={"Dec 24, 2021"}
                   />
-                </div>
+                </div> */}
               </div>
               <article className="view-more-button-box">
                 <Link to="/contents">

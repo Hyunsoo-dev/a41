@@ -24,7 +24,8 @@ const Header = ({ clickMenu, clickedSideBar }: any) => {
     const parsedCurrentPathname = locations.pathname.slice(0, 8);
     switch (parsedCurrentPathname) {
       case "/":
-        return scrollPosition > 4000 ? <MenuBlack /> : <MenuWhite />;
+        // return scrollPosition > 4000 ? <MenuBlack /> : <MenuWhite />;
+        return scrollPosition > 7400 ? <MenuBlack /> : <MenuWhite />;
       case "/ourthes":
         return <MenuWhite />;
       default:
@@ -35,16 +36,22 @@ const Header = ({ clickMenu, clickedSideBar }: any) => {
   // console.log("headerColor :", headerColor);
   const onClickedCategory = (event: any) => {
     if (event.currentTarget.className === "logo_wrapper") {
-      categoryWrapper.current.childNodes.forEach((item: any) => item.classList.remove("selected"));
+      categoryWrapper.current.childNodes.forEach((item: any) =>
+        item.classList.remove("selected")
+      );
       return;
     }
 
     const parentElement = event.currentTarget;
     const element = event.target;
     const selectedItem = event.target.id;
-    const selectedCategoryIdx = Array.from(parentElement.childNodes).findIndex((ele: any) => ele.classList[1] === "selected");
+    const selectedCategoryIdx = Array.from(parentElement.childNodes).findIndex(
+      (ele: any) => ele.classList[1] === "selected"
+    );
     if (selectedCategoryIdx !== -1) {
-      parentElement.childNodes[selectedCategoryIdx].classList.remove("selected");
+      parentElement.childNodes[selectedCategoryIdx].classList.remove(
+        "selected"
+      );
     }
     element.classList.add("selected");
     setSelectedCategory(selectedItem);
@@ -64,14 +71,18 @@ const Header = ({ clickMenu, clickedSideBar }: any) => {
         return "header-container-black";
         break;
       case "white":
-        return location.pathname === "/contents" ? "header-container-gray" : "header-container-white";
+        return location.pathname === "/contents"
+          ? "header-container-gray"
+          : "header-container-white";
         break;
       case "trans":
-        return location.pathname === "/ourthesis" ? "header-container-trans" : "header-container-trans-with-black";
+        return location.pathname === "/ourthesis"
+          ? "header-container-trans"
+          : "header-container-trans-with-black";
         break;
     }
   };
-  console.log("headerColor :", headerColor);
+  // console.log("headerColor :", headerColor);
 
   const getLanguageColor = () => {
     switch (headerColor) {
@@ -82,7 +93,9 @@ const Header = ({ clickMenu, clickedSideBar }: any) => {
         return "language_wrapper-white";
         break;
       case "trans":
-        return location.pathname === "/ourthesis" ? "language_wrapper-black" : "language_wrapper-white";
+        return location.pathname === "/ourthesis"
+          ? "language_wrapper-black"
+          : "language_wrapper-white";
         break;
     }
   };
@@ -92,14 +105,21 @@ const Header = ({ clickMenu, clickedSideBar }: any) => {
   //     : headerColor === "trans" ?  "header-container-trans" : "header-container-white"
 
   return (
-    <div className={scrollPosition > 5 ? `${getHeaderColor()}-stroke` : `${getHeaderColor()}`}>
+    <div
+      className={
+        scrollPosition > 5
+          ? `${getHeaderColor()}-stroke`
+          : `${getHeaderColor()}`
+      }
+    >
       <div className="wrapper">
         <div className="logo_wrapper" onClick={onClickedCategory}>
           <Link className="category" to="/">
             {/* {scrollPosition > 4000 ? <div id="a41LogoGreen"></div> : <div id="a41LogoWhite"></div>} */}
             {headerColor === "black" ? (
               <div id="a41LogoWhite"></div>
-            ) : scrollPosition > 4000 ? (
+            ) : // ) : scrollPosition > 4000 ? (
+            scrollPosition > 7400 ? (
               <div id="a41LogoGreen"></div>
             ) : headerColor === "trans" ? (
               <div id="a41LogoWhite"></div>
@@ -109,7 +129,11 @@ const Header = ({ clickMenu, clickedSideBar }: any) => {
             {/* {toggleLogo(location)} */}
           </Link>
         </div>
-        <div ref={categoryWrapper} className="category_wrapper" onClick={onClickedCategory}>
+        <div
+          ref={categoryWrapper}
+          className="category_wrapper"
+          onClick={onClickedCategory}
+        >
           <Link id="headerOurthesis" className="category" to="/ourthesis">
             our thesis
           </Link>
@@ -132,10 +156,20 @@ const Header = ({ clickMenu, clickedSideBar }: any) => {
 
         <div className={getLanguageColor()}>
           <div className="language_box">
-            <div className={language === "KO" ? "selected_language" : "unselected_language"} onClick={() => selecLanguage("KO")}>
+            <div
+              className={
+                language === "KO" ? "selected_language" : "unselected_language"
+              }
+              onClick={() => selecLanguage("KO")}
+            >
               KO
             </div>
-            <div className={language === "EN" ? "selected_language" : "unselected_language"} onClick={() => selecLanguage("EN")}>
+            <div
+              className={
+                language === "EN" ? "selected_language" : "unselected_language"
+              }
+              onClick={() => selecLanguage("EN")}
+            >
               EN
             </div>
           </div>
