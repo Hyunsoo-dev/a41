@@ -17,15 +17,24 @@ const renderOptions = {
   renderNode: {
     [BLOCKS.OL_LIST]: (node: any, children: any) => {
       // return <li>{node.content[0].content[0].content[0].value}</li>;
-      return node.content.map((element: any, idx: any) => <li key={idx}>{element.content[0].content[0].value}</li>);
+      return node.content.map((element: any, idx: any) => (
+        <li key={idx}>{element.content[0].content[0].value}</li>
+      ));
     },
     [BLOCKS.UL_LIST]: (node: any, children: any) => {
-      return node.content.map((element: any, idx: any) => <li key={idx}>{element.content[0].content[0].value}</li>);
+      return node.content.map((element: any, idx: any) => (
+        <li key={idx}>{element.content[0].content[0].value}</li>
+      ));
     },
     [INLINES.EMBEDDED_ENTRY]: (node: any, children: any) => {
       // target the contentType of the EMBEDDED_ENTRY to display as you need
       if (node.data.target.sys.contentType.sys.id === "blogPost") {
-        return <a href={`/blog/${node.data.target.fields.slug}`}> {node.data.target.fields.title}</a>;
+        return (
+          <a href={`/blog/${node.data.target.fields.slug}`}>
+            {" "}
+            {node.data.target.fields.title}
+          </a>
+        );
       }
     },
     [BLOCKS.EMBEDDED_ENTRY]: (node: any, children: any) => {
@@ -90,7 +99,9 @@ const Content = () => {
   const [height, setHeight] = useState(0);
   const [content, setContent] = useState<any>();
   const updateScrollPosition = () => {
-    setScrollPosition(document.body.scrollTop || document.documentElement.scrollTop);
+    setScrollPosition(
+      document.body.scrollTop || document.documentElement.scrollTop
+    );
   };
 
   useEffect(() => {
@@ -101,13 +112,16 @@ const Content = () => {
   });
 
   useEffect(() => {
-    const winHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    const winHeight =
+      document.documentElement.scrollHeight -
+      document.documentElement.clientHeight;
 
     setHeight(winHeight);
   });
 
   useEffect(() => {
     getContent(contentId).then((res) => {
+      // console.log("res.fields :", res.fields);
       setContent(res.fields);
     });
   }, []);
@@ -184,12 +198,16 @@ const Content = () => {
             </div>
             <div className="content-page-progress-bar-wrapper">
               <div className="test">
-                <div className="content-page-progress-bar" style={{ width: `${(scrollPosition / height) * 100}%` }}></div>
+                <div
+                  className="content-page-progress-bar"
+                  style={{ width: `${(scrollPosition / height) * 100}%` }}
+                ></div>
               </div>
             </div>
 
             <div className="content-page-content-wrapper">
-              {content.content && documentToReactComponents(content.content, renderOptions)}
+              {content.content &&
+                documentToReactComponents(content.content, renderOptions)}
               {/* <div className="disclaimer">
               Disclaimer: This post is for informational purposes only, and the author will not be liable for the consequences
               arising from any investment or legal decision based on information contained in this post. Nothing contained in this

@@ -16,15 +16,24 @@ const renderOptions = {
   renderNode: {
     [BLOCKS.OL_LIST]: (node: any, children: any) => {
       // return <li>{node.content[0].content[0].content[0].value}</li>;
-      return node.content.map((element: any, idx: any) => <li key={idx}>{element.content[0].content[0].value}</li>);
+      return node.content.map((element: any, idx: any) => (
+        <li key={idx}>{element.content[0].content[0].value}</li>
+      ));
     },
     [BLOCKS.UL_LIST]: (node: any, children: any) => {
-      return node.content.map((element: any, idx: any) => <li key={idx}>{element.content[0].content[0].value}</li>);
+      return node.content.map((element: any, idx: any) => (
+        <li key={idx}>{element.content[0].content[0].value}</li>
+      ));
     },
     [INLINES.EMBEDDED_ENTRY]: (node: any, children: any) => {
       // target the contentType of the EMBEDDED_ENTRY to display as you need
       if (node.data.target.sys.contentType.sys.id === "blogPost") {
-        return <a href={`/blog/${node.data.target.fields.slug}`}> {node.data.target.fields.title}</a>;
+        return (
+          <a href={`/blog/${node.data.target.fields.slug}`}>
+            {" "}
+            {node.data.target.fields.title}
+          </a>
+        );
       }
     },
     [BLOCKS.EMBEDDED_ENTRY]: (node: any, children: any) => {
@@ -94,17 +103,29 @@ const Team2 = () => {
           <>
             <H0 title={detail.name} />
             <div className={"profile_box"}>
-              <img src={detail.profileImage.fields.file.url} alt={"profile_img"} className={"big_profile_img"} />
+              <img
+                src={detail.profileImage.fields.file.url}
+                alt={"profile_img"}
+                className={"big_profile_img"}
+              />
               <div>
                 <div className={"row_box"}>
                   <div className={"en_name"}>{detail.name}</div>
                   <div className={"ko_name"}>{detail.koreanName}</div>
                 </div>
                 <div className={"position"}>{detail.position}</div>
-                <a href={detail.sns.twitter} target={"_blank"} rel={"noreferrer"}>
+                <a
+                  href={detail.sns.twitter}
+                  target={"_blank"}
+                  rel={"noreferrer"}
+                >
                   <Twitter className={"team_twitter"} />
                 </a>
-                <a href={detail.sns.linkedin} target={"_blank"} rel={"noreferrer"}>
+                <a
+                  href={detail.sns.linkedin}
+                  target={"_blank"}
+                  rel={"noreferrer"}
+                >
                   <LinkedIn className={"team_linkedIn"} />
                 </a>
               </div>
@@ -112,7 +133,12 @@ const Team2 = () => {
             <hr />
             <div className={"profile_article"}>
               {
-                <div className={"profile_section"}>{documentToReactComponents(detail.introduction, renderOptions)}</div>
+                <div className={"profile_section"}>
+                  {documentToReactComponents(
+                    detail.introduction,
+                    renderOptions
+                  )}
+                </div>
                 //   return (
                 //     <div className={"profile_section"} key={idx}>
                 //       {/* {p.content[0].value} */}
@@ -123,7 +149,9 @@ const Team2 = () => {
             </div>
             <div className={"article_title_box"}>
               <div className={"article_title"}>article</div>
-              <span className={"article_count"}>{detail.article ? detail.article.length : 0}</span>
+              <span className={"article_count"}>
+                {detail.article ? detail.article.length : 0}
+              </span>
             </div>
             {detail.article === undefined ? (
               <div className={"no_article"}>No article</div>

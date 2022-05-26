@@ -22,7 +22,8 @@
   .title {
     // font-size: $h0-size;
     font-size: 34px;
-    font-family: "GmarketSansBold", "GmarketSansMedium", "GmarketSansLight", sans-serif;
+    font-family: "GmarketSansBold", "GmarketSansMedium", "GmarketSansLight",
+      sans-serif;
     font-weight: $default-weight;
     color: $gray0;
     display: flex;
@@ -140,7 +141,8 @@
       flex-direction: row;
       align-items: center;
       padding: 4px 9px;
-      width: 66px;
+      // width: 66px;
+      width: auto;
       height: 27px;
       // font-size: $footnote2_size;
       // font-size: 15px;

@@ -10,6 +10,22 @@ import { useRecoilState } from "recoil";
 import { colorTheme } from "../../GlobalState/recoil";
 import H0 from "../../Components/H0";
 import { getContents } from "../../Contentful/Contentful";
+import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
+import { BLOCKS, INLINES } from "@contentful/rich-text-types";
+
+const renderOptions = {
+  // renderNode: {
+  //   [BLOCKS.PARAGRAPH]: (node: any, children: any) => {
+  //     console.log("node.content :", node.content);
+  //     // let str = node.content.reduce(
+  //     //   (acc: any, cur: any) => acc.value + cur.value
+  //     // );
+  //     // console.log("str:", str);
+  //     return <></>;
+  //   },
+  // },
+};
+
 const Contents1 = () => {
   const [headerColor, setHeaderColor] = useRecoilState(colorTheme);
   const [contents, setContents] = useState<any[]>([]);
@@ -28,6 +44,8 @@ const Contents1 = () => {
       setContents([...res.items]);
     });
   }, []);
+  // console.log("contents:", contents);
+
   return (
     <div className="contents-container">
       <div className="contents-page-container">
@@ -45,12 +63,35 @@ const Contents1 = () => {
           <div className="page-content-box">
             {contents &&
               contents.map((element, idx): any => (
-                <Link key={idx} to={`/content/${element.sys.id}`} className="item">
+                <Link
+                  key={idx}
+                  to={`/content/${element.sys.id}`}
+                  className="item"
+                >
                   <div className="column1">
                     <div className="title">{element.fields.title}</div>
-                    <div className="subTitle">{element.fields.subtitle}</div>
+                    <div className="subTitle">{element.fields.subTitle}</div>
                     <div className="content">
-                      In a journey of personal growth, it’s easy to lose sight of just how far you’ve come.
+                      {/* In a journey of personal growth, it’s easy to lose sight
+                      of just how far you’ve come. */}
+
+                      {/* {element.fields.content.content.forEach((ele: any) =>
+                        console.log("ele :", ele)
+                      )} */}
+                      {/* 
+                      {element.fields.content.content.reduce(
+                        (acc: any, cur: any) =>
+                          acc.content[0].value +
+                          cur.content.reduce(
+                            (x: any, y: any) => x.value + y.value
+                          )
+
+                        
+                      )} */}
+                      {/* {documentToReactComponents(
+                        element.fields.content.content[0],
+                        renderOptions
+                      )} */}
                     </div>
                     <div className="tag-box">
                       {element.fields.tags ? (
@@ -64,13 +105,22 @@ const Contents1 = () => {
                       )}
                     </div>
                     <div className="content-info-box">
-                      <div className="author">Author: {element.fields.author}</div>
+                      <div className="author">
+                        Author: {element.fields.author}
+                      </div>
                       <GrayDot className="gray-dot" />
-                      <div className="date">{element.fields.createdAt}</div>
+                      <div className="date">
+                        {new Date(
+                          element.fields.createdAt
+                        ).toLocaleDateString()}
+                      </div>
                     </div>
                   </div>
                   <div className="column2">
-                    <img src={element.fields.thumbnail.fields.file.url} className="thumbnail"></img>
+                    <img
+                      src={element.fields.thumbnail.fields.file.url}
+                      className="thumbnail"
+                    ></img>
                   </div>
                 </Link>
               ))}
