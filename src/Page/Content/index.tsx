@@ -129,6 +129,9 @@ const Content = () => {
 
   const handleClickAuthor = () => {
     if (content.author === "a41") return;
+    // if (content.author === "a41") {
+    //   return navigate('../../team')
+    // }
     content && navigate(`../../team/${content.authorReference.sys.id}`)
   }
 
