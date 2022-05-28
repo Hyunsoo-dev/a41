@@ -2,19 +2,20 @@
 @import './variables';
 
 .card_box {
-  width: 530px;
-  height: 498px;
+  width: 390px;
+  height: auto;
   img {
     width: 100%;
     height: auto;
   }
   &:hover {
     border: 1px solid $point;
+    cursor: pointer;
   }
 }
 
 .card_title {
-  font-family: "GmarketSansBold", "GmarketSansMedium", "GmarketSansLight", sans-serif;
+  font-family: "PretendardMedium";
   font-size: $headline_size;
   font-weight: $h2_weight;
   line-height: $headline_height;
@@ -24,7 +25,7 @@
 }
 
 .card_summary {
-  font-family: "GmarketSansMedium", "GmarketSansLight", "GmarketSansBold", sans-serif;
+  font-family: "PretendardMedium";
   font-size: $body_size;
   font-weight: $default_weight;
   line-height: $body2_height;
@@ -36,7 +37,7 @@
   display: flex;
   align-items: center;
   span {
-    font-family: "GmarketSansLight", "GmarketSansBold", "GmarketSansMedium", sans-serif;
+    font-family: "PretendardMedium";
     font-size: $footnote2_size;
     font-weight: $default_weight;
     line-height: $footnote2_height;

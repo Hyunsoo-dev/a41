@@ -45,5 +45,6 @@ export const getContents = async () => {
 
 export const getContent = async (entryId) => {
   const content = await client.getEntry(entryId, { content_type: "content" });
+  // console.log("content ", content)
   return content;
 };

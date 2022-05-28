@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import LeftArrowIcon from "../../Assets/image/content/leftArrowIcon.png";
 import RightArrowIcon from "../../Assets/image/content/rightArrowIcon.png";
 import ContentThumbnail from "../../Assets/image/content/content_thumbnail.png";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import { useRecoilState } from "recoil";
 import { colorTheme } from "../../GlobalState/recoil";
 import "../../Style/Content.scss";
@@ -82,6 +82,7 @@ const renderOptions = {
 
 const Content = () => {
   const [headerColor, setHeaderColor] = useRecoilState(colorTheme);
+  const navigate = useNavigate();
 
   useEffect(() => {
     setHeaderColor("white");
@@ -125,6 +126,12 @@ const Content = () => {
       setContent(res.fields);
     });
   }, []);
+
+  const handleClickAuthor = () => {
+    if (content.author === "a41") return;
+    content && navigate(`../../team/${content.authorReference.sys.id}`)
+  }
+
   return (
     <div className="content-page-container">
       {/* <div className="content-page-wrapper">
@@ -192,7 +199,7 @@ const Content = () => {
               <div className="title">{content.title}</div>
               <div className="subtitle">{content.subTitle}</div>
               <div className="content-info-box">
-                <div className="author">Author: {content.author}</div>
+                <div className="author" onClick={handleClickAuthor}>Author: {content.author}</div>
                 <div className="date">{content.createAt}</div>
               </div>
             </div>

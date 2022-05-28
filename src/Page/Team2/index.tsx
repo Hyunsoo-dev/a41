@@ -150,23 +150,23 @@ const Team2 = () => {
             <div className={"article_title_box"}>
               <div className={"article_title"}>article</div>
               <span className={"article_count"}>
-                {detail.article ? detail.article.length : 0}
+                {detail.articles ? detail.articles.length : 0}
               </span>
             </div>
-            {detail.article === undefined ? (
+            {detail.articles === undefined ? (
               <div className={"no_article"}>No article</div>
             ) : (
               <div className={"grid_box"}>
-                {detail.article.map((e: any) => {
+                {detail.articles.map((e: any) => {
                   return (
                     <ArticleCard
-                      title={e.title}
-                      img={e.img}
-                      link={e.link}
-                      summary={e.summary}
-                      author={e.author}
-                      date={e.date}
-                      key={e.title}
+                        key={e.fields.title}
+                        title={e.fields.title}
+                        img={e.fields.thumbnail.fields.file.url}
+                        link={e.sys.id}
+                        summary={e.fields.subTitle}
+                        author={e.fields.author}
+                        date={new Date(e.fields.createdAt).toLocaleDateString()}
                     />
                   );
                 })}
