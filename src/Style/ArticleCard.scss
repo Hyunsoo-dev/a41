@@ -1,9 +1,10 @@
-@import '../index';
-@import './variables';
+@import "../index";
+@import "./variables";
 
 .card_box {
   width: 390px;
   height: auto;
+  border: 1px solid black;
   img {
     width: 100%;
     height: auto;
@@ -72,7 +73,6 @@
     font-weight: $default_weight;
     line-height: $body2_mobile_height;
   }
-
 
   .author_box {
     span {
