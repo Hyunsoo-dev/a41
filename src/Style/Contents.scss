@@ -22,8 +22,7 @@
   .title {
     // font-size: $h0-size;
     font-size: 34px;
-    font-family: "GmarketSansBold", "GmarketSansMedium", "GmarketSansLight",
-      sans-serif;
+    font-family: "GmarketSansBold", "GmarketSansMedium", "GmarketSansLight", sans-serif;
     font-weight: $default-weight;
     color: $gray0;
     display: flex;
@@ -115,6 +114,7 @@
 
     color: $gray0;
     margin-bottom: 16px;
+    min-height: 50px;
   }
   .content {
     // font-size: $body_size;
