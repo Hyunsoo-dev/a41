@@ -22,10 +22,20 @@ const SideBar = ({ clickMenu, clickedSideBar }: any) => {
         <div className="language">EN</div> */}
 
         <div className="language_box">
-          <div className={language === "KO" ? "selected_language" : "unselected_language"} onClick={() => selecLanguage("KO")}>
+          <div
+            className={
+              language === "KO" ? "selected_language" : "unselected_language"
+            }
+            onClick={() => selecLanguage("KO")}
+          >
             KO
           </div>
-          <div className={language === "EN" ? "selected_language" : "unselected_language"} onClick={() => selecLanguage("EN")}>
+          <div
+            className={
+              language === "EN" ? "selected_language" : "unselected_language"
+            }
+            onClick={() => selecLanguage("EN")}
+          >
             EN
           </div>
         </div>
@@ -33,24 +43,50 @@ const SideBar = ({ clickMenu, clickedSideBar }: any) => {
       </div>
 
       <div className="sidebar-category-wrapper">
-        <Link to="/ourthesis" className="sidebar-item" onClick={() => clickMenu()}>
-          our thesis
+        <Link
+          to="/ourthesis"
+          className="sidebar-item"
+          onClick={() => clickMenu()}
+        >
+          Our thesis
         </Link>
-        <Link to="/portfolio" className="sidebar-item" onClick={() => clickMenu()}>
-          portfolio
+        <Link
+          to="/portfolio"
+          className="sidebar-item"
+          onClick={() => clickMenu()}
+        >
+          Portfolio
         </Link>
-        <Link to="/contents" className="sidebar-item" onClick={() => clickMenu()}>
-          content
+        <Link
+          to="/contents"
+          className="sidebar-item"
+          onClick={() => clickMenu()}
+        >
+          Content
         </Link>
         <Link to="/stake" className="sidebar-item" onClick={() => clickMenu()}>
-          stake
+          Stake
         </Link>
         <Link to="/team" className="sidebar-item" onClick={() => clickMenu()}>
-          team
+          Team
         </Link>
-        <Link to="/contact" className="sidebar-item" onClick={() => clickMenu()}>
-          contact
+        <Link
+          to="/contact"
+          className="sidebar-item"
+          onClick={() => clickMenu()}
+        >
+          Contact
         </Link>
+        <div
+          className="sidebar-item"
+          onClick={() =>
+            window.open(
+              "https://narrow-cello-dab.notion.site/e91dcad98eea4e15833f62ee9f19ec93?v=1ba105ba44cc450783ab2216b780ab76"
+            )
+          }
+        >
+          Career
+        </div>
       </div>
     </div>
   );

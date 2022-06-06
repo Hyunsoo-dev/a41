@@ -135,23 +135,33 @@ const Header = ({ clickMenu, clickedSideBar }: any) => {
           onClick={onClickedCategory}
         >
           <Link id="headerOurthesis" className="category" to="/ourthesis">
-            our thesis
+            Our thesis
           </Link>
           <Link id="headerPortfolio" className="category" to="/portfolio">
-            portfolio
+            Portfolio
           </Link>
           <Link id="headerContents" className="category" to="/contents">
-            content
+            Content
           </Link>
           <Link id="headerStake" className="category" to="/stake">
-            stake
+            Stake
           </Link>
           <Link id="headerTeam" className="category" to="/team">
-            team
+            Team
           </Link>
           <Link id="headerContact" className="category" to="/contact">
-            contact
+            Contact
           </Link>
+          <div
+            className="category"
+            onClick={() =>
+              window.open(
+                "https://narrow-cello-dab.notion.site/e91dcad98eea4e15833f62ee9f19ec93?v=1ba105ba44cc450783ab2216b780ab76"
+              )
+            }
+          >
+            Career
+          </div>
         </div>
 
         <div className={getLanguageColor()}>
