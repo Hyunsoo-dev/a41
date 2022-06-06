@@ -36,19 +36,11 @@ const Portfolio2 = () => {
           <>
             <H0 title={pf.fields.name} />
             <PortfolioList
-              img={
-                pf.fields.image === undefined
-                  ? ""
-                  : pf.fields.image.fields.file.url
-              }
+              img={pf.fields.image === undefined ? "" : pf.fields.image.fields.file.url}
               title={pf.fields.name}
               chain={pf.fields.chain}
               abstract={pf.fields.abstract}
-              contents={
-                pf.fields.introduction === undefined
-                  ? ""
-                  : pf.fields.introduction.content[0].content[0].value
-              }
+              contents={pf.fields.introduction === undefined ? "" : pf.fields.introduction.content[0].content[0].value}
               tags={null}
               sns={pf.fields.sns === undefined ? "" : pf.fields.sns.twitter}
               web={pf.fields.webUrl}
@@ -60,25 +52,25 @@ const Portfolio2 = () => {
             />
             <div className={"article_title_box"}>
               <div className={"article_title"}>article</div>
-              <span className={"article_count"}>
-                {pf.fields.article === undefined ? 0 : pf.fields.article.length}
-              </span>
+              <span className={"article_count"}>{pf.fields.article === undefined ? 0 : pf.fields.article.length}</span>
             </div>
-            {pf.fields.article === undefined ? <div className={"no_article"}>No article</div> :  (
-                <div className={"grid_box"}>
-                  {pf.fields.article.map((e: any) => {
-                    return (
-                        <ArticleCard
-                            title={e.title}
-                            img={e.img}
-                            link={e.link}
-                            summary={e.summary}
-                            author={e.author}
-                            date={e.date}
-                            key={e.title}
-                        />
-                    );
-                  })}
+            {pf.fields.article === undefined ? (
+              <div className={"no_article"}>No article</div>
+            ) : (
+              <div className={"grid_box"}>
+                {pf.fields.article.map((e: any) => {
+                  return (
+                    <ArticleCard
+                      title={e.title}
+                      img={e.img}
+                      link={e.link}
+                      summary={e.summary}
+                      author={e.author}
+                      date={e.date}
+                      key={e.title}
+                    />
+                  );
+                })}
               </div>
             )}
           </>
