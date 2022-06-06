@@ -38,7 +38,10 @@ export const getAllStake = async () => {
 };
 
 export const getContents = async () => {
-  const contents = await client.getEntries({ content_type: "content" });
+  const contents = await client.getEntries({
+    content_type: "content",
+    order: "sys.createdAt",
+  });
   // console.log("contents :", contents);
   return contents;
 };

@@ -13,19 +13,6 @@ import { getContents } from "../../Contentful/Contentful";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import { BLOCKS, INLINES } from "@contentful/rich-text-types";
 
-const renderOptions = {
-  // renderNode: {
-  //   [BLOCKS.PARAGRAPH]: (node: any, children: any) => {
-  //     console.log("node.content :", node.content);
-  //     // let str = node.content.reduce(
-  //     //   (acc: any, cur: any) => acc.value + cur.value
-  //     // );
-  //     // console.log("str:", str);
-  //     return <></>;
-  //   },
-  // },
-};
-
 const Contents1 = () => {
   const [headerColor, setHeaderColor] = useRecoilState(colorTheme);
   const [contents, setContents] = useState<any[]>([]);
@@ -44,7 +31,6 @@ const Contents1 = () => {
       setContents([...res.items]);
     });
   }, []);
-  // console.log("contents:", contents);
 
   return (
     <div className="contents-container">
@@ -71,28 +57,7 @@ const Contents1 = () => {
                   <div className="column1">
                     <div className="title">{element.fields.title}</div>
                     <div className="subTitle">{element.fields.subTitle}</div>
-                    <div className="content">
-                      {/* In a journey of personal growth, it’s easy to lose sight
-                      of just how far you’ve come. */}
-
-                      {/* {element.fields.content.content.forEach((ele: any) =>
-                        console.log("ele :", ele)
-                      )} */}
-                      {/* 
-                      {element.fields.content.content.reduce(
-                        (acc: any, cur: any) =>
-                          acc.content[0].value +
-                          cur.content.reduce(
-                            (x: any, y: any) => x.value + y.value
-                          )
-
-                        
-                      )} */}
-                      {/* {documentToReactComponents(
-                        element.fields.content.content[0],
-                        renderOptions
-                      )} */}
-                    </div>
+                    <div className="content"></div>
                     <div className="tag-box">
                       {element.fields.tags ? (
                         element.fields.tags.map((element: any, idx: any) => (
@@ -124,111 +89,6 @@ const Contents1 = () => {
                   </div>
                 </Link>
               ))}
-            {/* <Link to="/content/1" className="item">
-              <div className="column1">
-                <div className="title">[Research] Pricing Everlasting Options</div>
-                <div className="subTitle">This post explores ways to price everlasting options.</div>
-                <div className="content">
-                  In a journey of personal growth, it’s easy to lose sight of just how far you’ve come.
-                </div>
-                <div className="tag-box">
-                  <div className="tag">#tag1</div>
-                  <div className="tag">#tag2</div>
-                </div>
-                <div className="content-info-box">
-                  <div className="author">Author: Steve Kim</div>
-                  <GrayDot className="gray-dot" />
-                  <div className="date">Dec 24, 2021</div>
-                </div>
-              </div>
-              <div className="column2">
-                <div className="thumbnail"></div>
-              </div>
-            </Link>
-            <Link to="/content/1" className="item">
-              <div className="column1">
-                <div className="title">[Research] Pricing Everlasting Options</div>
-                <div className="subTitle">This post explores ways to price everlasting options.</div>
-                <div className="content">
-                  In a journey of personal growth, it’s easy to lose sight of just how far you’ve come.
-                </div>
-                <div className="tag-box">
-                  <div className="tag">#tag1</div>
-                  <div className="tag">#tag2</div>
-                </div>
-                <div className="content-info-box">
-                  <div className="author">Author: Steve Kim</div>
-                  <GrayDot className="gray-dot" />
-                  <div className="date">Dec 24, 2021</div>
-                </div>
-              </div>
-              <div className="column2">
-                <div className="thumbnail"></div>
-              </div>
-            </Link>
-            <Link to="/content/1" className="item">
-              <div className="column1">
-                <div className="title">[Research] Pricing Everlasting Options</div>
-                <div className="subTitle">This post explores ways to price everlasting options.</div>
-                <div className="content">
-                  In a journey of personal growth, it’s easy to lose sight of just how far you’ve come.
-                </div>
-                <div className="tag-box">
-                  <div className="tag">#tag1</div>
-                  <div className="tag">#tag2</div>
-                </div>
-                <div className="content-info-box">
-                  <div className="author">Author: Steve Kim</div>
-                  <GrayDot className="gray-dot" />
-                  <div className="date">Dec 24, 2021</div>
-                </div>
-              </div>
-              <div className="column2">
-                <div className="thumbnail"></div>
-              </div>
-            </Link>
-            <Link to="/content/1" className="item">
-              <div className="column1">
-                <div className="title">[Research] Pricing Everlasting Options</div>
-                <div className="subTitle">This post explores ways to price everlasting options.</div>
-                <div className="content">
-                  In a journey of personal growth, it’s easy to lose sight of just how far you’ve come.
-                </div>
-                <div className="tag-box">
-                  <div className="tag">#tag1</div>
-                  <div className="tag">#tag2</div>
-                </div>
-                <div className="content-info-box">
-                  <div className="author">Author: Steve Kim</div>
-                  <GrayDot className="gray-dot" />
-                  <div className="date">Dec 24, 2021</div>
-                </div>
-              </div>
-              <div className="column2">
-                <div className="thumbnail"></div>
-              </div>
-            </Link>
-            <Link to="/content/1" className="item">
-              <div className="column1">
-                <div className="title">[Research] Pricing Everlasting Options</div>
-                <div className="subTitle">This post explores ways to price everlasting options.</div>
-                <div className="content">
-                  In a journey of personal growth, it’s easy to lose sight of just how far you’ve come.
-                </div>
-                <div className="tag-box">
-                  <div className="tag">#tag1</div>
-                  <div className="tag">#tag2</div>
-                </div>
-                <div className="content-info-box">
-                  <div className="author">Author: Steve Kim</div>
-                  <GrayDot className="gray-dot" />
-                  <div className="date">Dec 24, 2021</div>
-                </div>
-              </div>
-              <div className="column2">
-                <div className="thumbnail"></div>
-              </div>
-            </Link> */}
           </div>
         </div>
       </div>
