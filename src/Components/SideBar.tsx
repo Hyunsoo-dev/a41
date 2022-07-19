@@ -79,11 +79,7 @@ const SideBar = ({ clickMenu, clickedSideBar }: any) => {
         </Link>
         <div
           className="sidebar-item"
-          onClick={() =>
-            window.open(
-              "https://narrow-cello-dab.notion.site/e91dcad98eea4e15833f62ee9f19ec93?v=1ba105ba44cc450783ab2216b780ab76"
-            )
-          }
+          onClick={() => window.open("https://a41.career.greetinghr.com/")}
         >
           Career
         </div>
