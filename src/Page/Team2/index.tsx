@@ -15,7 +15,6 @@ import { BLOCKS, INLINES } from "@contentful/rich-text-types";
 const renderOptions = {
   renderNode: {
     [BLOCKS.OL_LIST]: (node: any, children: any) => {
-      // return <li>{node.content[0].content[0].content[0].value}</li>;
       return node.content.map((element: any, idx: any) => (
         <li key={idx}>{element.content[0].content[0].value}</li>
       ));
@@ -95,7 +94,7 @@ const Team2 = () => {
     window.scrollTo({ top: 0, left: 0, behavior: "auto" });
     return () => {};
   }, []);
-  // console.log("detail :", detail);
+
   return (
     <div className={"container_bk"}>
       <div className={"content_box"}>
@@ -139,12 +138,6 @@ const Team2 = () => {
                     renderOptions
                   )}
                 </div>
-                //   return (
-                //     <div className={"profile_section"} key={idx}>
-                //       {/* {p.content[0].value} */}
-                //       {/* <MarkdownRenderer markdown={p.content[0].value} /> */}
-                //     </div>
-                //   );
               }
             </div>
             <div className={"article_title_box"}>
@@ -160,13 +153,13 @@ const Team2 = () => {
                 {detail.articles.map((e: any) => {
                   return (
                     <ArticleCard
-                        key={e.fields.title}
-                        title={e.fields.title}
-                        img={e.fields.thumbnail.fields.file.url}
-                        link={e.sys.id}
-                        summary={e.fields.subTitle}
-                        author={e.fields.author}
-                        date={new Date(e.fields.createdAt).toLocaleDateString()}
+                      key={e.fields.title}
+                      title={e.fields.title}
+                      img={e.fields.thumbnail.fields.file.url}
+                      link={e.sys.id}
+                      summary={e.fields.subTitle}
+                      author={e.fields.author}
+                      date={new Date(e.fields.createdAt).toLocaleDateString()}
                     />
                   );
                 })}

@@ -331,38 +331,6 @@ const Main = () => {
                       date={element.fields.createdAt}
                     />
                   ))}
-                {/* <div className="contents-box-column1">
-                  <ContentComponent
-                    thumbnail={column2_row1}
-                    title={"[Research] Pricing Everlasting Options"}
-                    subtitle={"This post explores ways to price everlasting options."}
-                    author={"Steve Kim"}
-                    date={"Dec 24, 2021"}
-                  />
-                  <ContentComponent
-                    thumbnail={column2_row1}
-                    title={"[Research] Pricing Everlasting Options"}
-                    subtitle={"This post explores ways to price everlasting options."}
-                    author={"Steve Kim"}
-                    date={"Dec 24, 2021"}
-                  />
-                </div>
-                <div className="contents-box-column2">
-                  <ContentComponent
-                    thumbnail={column2_row1}
-                    title={"[Research] Pricing Everlasting Options"}
-                    subtitle={"This post explores ways to price everlasting options."}
-                    author={"Steve Kim"}
-                    date={"Dec 24, 2021"}
-                  />
-                  <ContentComponent
-                    thumbnail={column2_row1}
-                    title={"[Research] Pricing Everlasting Options"}
-                    subtitle={"This post explores ways to price everlasting options."}
-                    author={"Steve Kim"}
-                    date={"Dec 24, 2021"}
-                  />
-                </div> */}
               </div>
               <article className="view-more-button-box">
                 <Link to="/contents">
